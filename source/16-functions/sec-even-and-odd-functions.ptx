@@ -388,6 +388,8 @@
             </image>
         </figure>
     </paragraphs>
+
+    <!-- TODO: Could we have this as the activity at the top, and let students discover some of these? -->
     <paragraphs>
         <title>Properties of Even and Odd Functions</title>
         <p>
@@ -558,7 +560,7 @@
                     Determine whether the following functions are even, odd, or neither.
                 </p>
                 <p>
-                    <ol marker="(a)" cols="3">
+                    <ol marker="(a)" cols="2">
                         <li>
                             <p>
                                 <m>f(x) = x^4 - 3x^2 + 2</m>

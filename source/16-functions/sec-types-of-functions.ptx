@@ -240,32 +240,6 @@
 
     </paragraphs>
 
-    <paragraphs>
-
-        <title>One-to-One Functions vs. Relations</title>
-
-        <p>
-            When categorizing how inputs map to outputs, it is crucial to distinguish between functions and general relations:
-        </p>
-
-        <p>
-            <ul>
-                <li>
-                    <p>
-                        <term>One-to-One Functions (Injective):</term> A function where every output value corresponds to exactly <em>one</em> unique input value. Graphically, these functions pass the <term>horizontal line test</term> (no horizontal line intersects the graph more than once). For example, <m>f(x) = 2x</m> is a one-to-one function.
-                    </p>
-                </li>
-
-                <li>
-                    <p>
-                        <term>A "One-to-Many" Relation:</term> It is important to note that a "one-to-many" mapping is <alert>not a function</alert>. By definition, a function must have only one output for any given input. If one input yields multiple outputs (like a circle on a graph), it fails the <term>vertical line test</term> and is simply called a mathematical <em>relation</em>.
-                    </p>
-                </li>
-            </ul>
-        </p>
-
-    </paragraphs>
-
     <figure xml:id="fig-types-of-functions">
 
         <caption>Graphs illustrating Linear, Quadratic, and Trigonometric functions.</caption>
@@ -413,7 +387,7 @@
                 </p>
 
                 <p>
-                    <ol marker="1." cols="2">
+                    <ol marker="(a)" cols="2">
 
                         <li>
                             <p>

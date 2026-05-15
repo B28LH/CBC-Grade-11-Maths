@@ -263,7 +263,7 @@
                     Use the discovered rule to determine:
                 </p>
                 <p>
-                    <ol marker="i">
+                    <ol marker="(i)">
                         <li><p><m>f(50)</m></p></li>
                         <li><p><m>f(88)</m></p></li>
                     </ol>
@@ -301,7 +301,7 @@
             </p>
 
             <p>
-                which is read as “<q>a function from <m>A</m> to <m>B</m></q>.” 
+                which is read as <q>a function from <m>A</m> to <m>B</m></q>. 
                 The set <m>A</m> is called the <term>domain</term>, while the set <m>B</m> is called the 
                 <term>co-domain</term>. The collection of all actual outputs produced by the function is called the 
                 <term>range</term> or <term>image</term> of the function.

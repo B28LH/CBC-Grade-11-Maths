@@ -230,6 +230,19 @@
             \text{Domain} = \mathbb{R} = (-\infty,\infty)
         </me>
     </p>
+    <p>
+        By contrast, consider the function:
+        <md>
+            g(x) = \sqrt{2x}
+        </md>
+    </p>
+    <p>
+        Square roots are only defined for positive numbers and zero: this function will not accept negative inputs. Thus the domain is all real numbers greater than or equal to zero:
+        <md>
+            \text{Domain} = [0, \infty)
+        </md>
+        In other words, <m>x \ge 0</m>.
+    </p>
 
     <paragraphs>
 
@@ -383,13 +396,13 @@
             xml:id="interactive-domain-explorer"
             platform="jsxgraph"
             width="90%"
-            aspect="16:9"
+            aspect="1:1"
             source="jsxgraph/domain-function.js">
 
             <slate
                 xml:id="jsxgraph-domain-explorer-board"
                 surface="jsxboard"
-                aspect="16:9"/>
+                aspect="1:1"/>
 
             <!-- <interactive xml:id="interactive-even-odd" platform="jsxgraph" width="90%" aspect="1:1" source="jsxgraph/even-odd-functions.js">
             <slate xml:id="jsxgraph-even-odd" surface="jsxboard" aspect="1:1"/> -->
@@ -535,15 +548,11 @@
         <solution>
             <p>
                 For a square root function to produce a real number, the expression inside the radical must be greater than or equal to zero. We set up an inequality to find the valid inputs:
-            </p>
-            <p>
-                <m>3x - 15 \geq 0</m>
-            </p>
-            <p>
-                <m>3x \geq 15</m>
-            </p>
-            <p>
-                <m>x \geq 5</m>
+                <md>
+                    <mrow>3x - 15 \amp\geq 0</mrow>
+                    <mrow>3x \amp \geq 15</mrow>
+                    <mrow>x \amp \geq 5</mrow>
+                </md>
             </p>
             <p>
                 The function is only defined for values of <m>x</m> that are <m>5</m> or greater. In interval notation, the domain is <m>[5, \infty)</m>.
@@ -649,7 +658,7 @@
                     </p>
 
                     <p>
-                        <ol marker="1." cols="2">
+                        <ol marker="(a)" cols="2">
 
                             <li>
                                 <p>
