@@ -111,6 +111,26 @@
     <!-- <insight>
     </insight> -->
 
+    <!-- Borrowed from PRECALC fs-id1165137634037: Finding the Average Rate of Change of a Function -->
+  
+    <p>The functions describing the examples above involve a change over time. Change divided by time is one example of a rate. The rates of change in the previous examples are each different. In other words, some changed faster than others. If we were to graph the functions, we could compare the rates by determining the slopes of the graphs.</p>
+    
+    <p>A <term>tangent line</term> to a curve is a line that intersects the curve at only a single point but does not cross it there. (The tangent line may intersect the curve at another point away from the point of interest.) If we zoom in on a curve at that point, the curve appears linear, and the <term>slope of the curve</term> at that point is close to the slope of the tangent line at that point.</p>
+    
+    <p>
+        <xref ref="PRECALC-a5MPqBrEKC-v2" /> represents the function <m>f(x)=x^{3}-4x.</m> We can see the slope at various points along the curve.</p>
+    
+    <ul>
+        <li>slope at <m>x=-2</m> is 8</li>
+        <li>slope at <m>x=-1</m> is –1</li>
+        <li>slope at <m>x=2</m> is 8</li>
+        </ul>
+    
+    <figure xml:id="PRECALC-a5MPqBrEKC-v2" original="PRECALC/modules/m49455/index.cnxml" license="CC-BY-4.0">
+        <caption>Graph showing tangents to curve at –2, –1, and 2.</caption>
+        <image source="PRECALC/CNX_PreCalc_Figure_12_04_001.jpg" width="80%"/>
+        </figure>
+
     <!-- Add further instruction (not in a block) to develop ideas as needed -->
 
     <xi:include href="../lesson-plan-templates/example-intro.ptx" />
@@ -200,4 +220,9 @@
     <xi:include href="../lesson-plan-templates/assessment-methods.ptx" />
 
     <xi:include href="../lesson-plan-templates/reflection.ptx"/>
+
+    <convention>
+        <p>This section includes material adapted from "<url href="https://github.com/openstax/osbooks-college-algebra-bundle/tree/e10e6b91143fe884c7c60dc0ad82ef23e1be0aa5/modules/m49455/index.cnxml">Understanding the Instantaneous Rate of Change</url>" in Open STAX Precalculus 2e, used under <url href="https://creativecommons.org/licenses/by/4.0/deed.en">CC-BY-4.0</url>.</p>
+    </convention>
+
 </section>

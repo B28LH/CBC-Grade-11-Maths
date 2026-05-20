@@ -10,12 +10,11 @@
   <!-- include sections -->
   <!-- <xi:include href="sec-section-name.ptx" /> -->
   <xi:include href="sec-average-rates-of-change.ptx" />
-  <xi:include href="sec-introducing-the-derivative.ptx" />
-  <xi:include href="sec-derivatives-of-lines.ptx" />
+  <xi:include href="sec-finding-the-derivative-graphically.ptx" />
+  <xi:include href="sec-derivatives-from-first-principles.ptx" />
   <xi:include href="sec-power-rule.ptx" />
   <xi:include href="sec-derivatives-of-polynomials.ptx" />
-  <xi:include href="sec-finding-the-derivative-graphically.ptx" />
-  <xi:include href="sec-equations-of-gradients.ptx" />
+  <xi:include href="sec-equations-of-tangents.ptx" />
   <xi:include href="sec-equations-of-normals.ptx" />
   <xi:include href="sec-application-of-derivatives-to-kinematics.ptx" />
   <xi:include href="sec-differentiation-in-real-life.ptx" />

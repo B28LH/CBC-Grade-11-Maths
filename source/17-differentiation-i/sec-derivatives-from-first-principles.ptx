@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<section xml:id="sec-equations-of-gradients" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Equations of Gradients</title>
+<section xml:id="sec-derivatives-from-first-principles" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Derivatives from First Principles</title>
     <objectives component="outcomes">
         <introduction>
             <p>
@@ -21,7 +21,7 @@
                 <li>
                     <title>Specific Learning Outcomes</title> 
                     <p>
-                        Determine the equations of tangents and normal to a curve
+                        Determine the derivatives of polynomial functions
                     </p>
                 </li>
                 <li component="lesson-plan">
@@ -110,6 +110,74 @@
 
     <!-- <insight>
     </insight> -->
+
+    <p>Now that we can find the average rate of change, suppose we make <m>h</m> in <xref ref="PRECALC-h2P97umVs7"/> smaller and smaller. Then <m>a+h</m> will approach <m>a</m> as <m>h</m> gets smaller, getting closer and closer to 0. Likewise, the second point <m>(a+h,f(a+h))</m> will approach the first point, <m>(a,f(a)).</m> As a consequence, the connecting line between the two points, called the secant line, will get closer and closer to being a tangent to the function at <m>x=a,</m> and the slope of the secant line will get closer and closer to the slope of the tangent at <m>x=a.</m> See <xref ref="PRECALC-YRVPEZzgU0"/>.</p>
+  
+  <figure xml:id="PRECALC-YRVPEZzgU0" original="PRECALC/modules/m49455/index.cnxml" license="CC-BY-4.0">
+      <caption>The connecting line between two points moves closer to being a tangent line at <m>x=a.</m>
+      </caption>
+      <image source="PRECALC/CNX_Precalc_Figure_12_04_003.jpg" width="80%"/>
+    </figure>
+  
+  <p>Because we are looking for the <term>slope of the tangent</term> at <m>x=a,</m> we can think of the measure of the slope of the curve of a function <m>f</m> at a given point as the rate of change at a particular instant. We call this slope the <em>instantaneous rate of change</em>, or the <em>derivative</em> of the function at <m>x=a.</m> Both can be found by finding the limit of the slope of a line connecting the point at <m>x=a</m> with a second point infinitesimally close along the curve. For a function <m>f</m> both the instantaneous rate of change of the function and the derivative of the function at <m>x=a</m> are written as <m>f'(a),</m> and we can define them as a <term>two-sided limit</term> that has the same value whether approached from the left or the right.</p>
+  
+  <p>
+      <me>f'(a)=\lim_{h \to 0}\frac{f(a+h)-f(a)}{h}</me>
+    </p>
+  
+  <p>The expression by which the limit is found is known as the <term>difference quotient</term>.</p>
+  
+  <insight xml:id="PRECALC-fmeXCOah2m" original="PRECALC/modules/m49455/index.cnxml" license="CC-BY-4.0">
+      <title>Definition of Instantaneous Rate of Change and Derivative</title>
+      <p>The <term>derivative</term>, or <term>instantaneous rate of change</term>, of a function <m>f</m> at <m>x=a,</m> is given by</p>
+      <p>
+        <me>f'(a)=\lim_{h \to 0}\frac{f(a+h)-f(a)}{h}</me>
+      </p>
+      <p>The expression <m>\frac{f(a+h)-f(a)}{h}</m> is called the difference quotient.</p>
+      <p>We use the difference quotient to evaluate the limit of the rate of change of the function as <m>h</m> approaches 0.</p>
+    </insight>
+  
+  <paragraphs>
+      <title>Derivatives: Interpretations and Notation</title>
+    </paragraphs>
+  
+  <p>The <term>derivative</term> of a function can be interpreted in different ways. It can be observed as the behavior of a graph of the function or calculated as a numerical rate of change of the function.</p>
+  
+  <ul>
+      <li>The derivative of a function <m>f(x)</m> at a point <m>x=a</m> is the slope of the tangent line to the curve <m>f(x)</m> at <m>x=a.</m> The derivative of <m>f(x)</m> at <m>x=a</m> is written <m>f'(a).</m>
+      </li>
+      <li>The derivative <m>f'(a)</m> measures how the curve changes at the point <m>(a,f(a)).</m>
+      </li>
+      <li>The derivative <m>f'(a)</m> may be thought of as the instantaneous rate of change of the function <m>f(x)</m> at <m>x=a.</m>
+      </li>
+      <li>If a function measures distance as a function of time, then the derivative measures the instantaneous <term>velocity</term> at time <m>t=a.</m>
+      </li>
+    </ul>
+  
+  <insight xml:id="PRECALC-2h816Bh09j" original="PRECALC/modules/m49455/index.cnxml" license="CC-BY-4.0">
+      <title>Notations for the Derivative</title>
+      <p>The equation of the derivative of a function <m>f(x)</m> is written as <m>y'=f'(x),</m> where <m>y=f(x).</m> The notation <m>f'(x)</m> is read as “ <m>f\text{ prime of }x.</m> ” Alternate notations for the derivative include the following:</p>
+      <p>
+        <me>f'(x)=y'=\frac{dy}{dx}=\frac{df}{dx}=\frac{d}{dx}f(x)</me>
+      </p>
+      <p>The expression <m>f'(x)</m> is now a function of <m>x</m>; this function gives the slope of the curve <m>y=f(x)</m> at any value of <m>x.</m> The derivative of a function <m>f(x)</m> at a point <m>x=a</m> is denoted <m>f'(a).</m>
+      </p>
+    </insight>
+  
+  <insight xml:id="PRECALC-7rXzYVguNZ" original="PRECALC/modules/m49455/index.cnxml" license="CC-BY-4.0">
+    <title>Finding the Derivative</title>
+    <p> Given a function <m>f,</m> find the derivative by applying the definition of the derivative.</p>
+      <ol>
+        <li>Calculate <m>f(a+h).</m>
+        </li>
+        <li>Calculate <m>f(a).</m>
+        </li>
+        <li>Substitute and simplify <m>\frac{f(a+h)-f(a)}{h}.</m>
+        </li>
+        <li>Evaluate the limit if it exists: <m>f'(a)=\lim_{h \to 0}\frac{f(a+h)-f(a)}{h}.</m>
+        </li>
+      </ol>
+    </insight>
 
     <!-- Add further instruction (not in a block) to develop ideas as needed -->
 
