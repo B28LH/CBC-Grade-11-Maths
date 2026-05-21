@@ -69,7 +69,7 @@
         <activity>
             <statement>
                 <p>
-                    <term>Work in Groups to:</term>
+                    <term>Work in Groups</term>
                 </p>
                 <p>
                     Identify and record in the table the items in your surrounding environment that increase in value over time. Discuss the factors that contribute to the increase in value of these items.
@@ -96,14 +96,9 @@
                         <cell>?</cell>
                     </row>
                 </tabular>
-                <p>
-                    <alert>In your Groups Explore the question below;</alert>
-                </p>
+                <alert>In groups, consider and work through the following question.</alert>
                 <p>
                     Dr. Lucian Talu Mabayi bought a piece of land in Kisumu and Nairobi at Ksh <m>2,000,000</m> and Ksh <m>6,000,000</m> respectively. After <m>1</m> years, the land in Kisumu is now worth Ksh <m>2,600,000</m> while the land in Nairobi is worth Ksh <m>6,600,000</m>.
-                </p>
-                <p>
-                    <alert>In your groups</alert> you are required to;
                 </p>
                 <p>
                     <ol marker="(a)">
@@ -164,7 +159,7 @@
                     </md>
                 </p>
                 <p>
-                    <alert>Further Exploration:</alert> If the land continues to appreciate at the same rate every year, find the value after the second year and the third year.
+                    If the land continues to appreciate at the same rate every year, find the value after the second year and the third year.
                 </p>
             </statement>
         </activity>

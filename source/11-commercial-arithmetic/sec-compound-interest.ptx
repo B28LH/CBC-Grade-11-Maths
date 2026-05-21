@@ -89,13 +89,13 @@
                 If the interest rate is given to be <m>10 \%</m> p.a for both options.
             </p>
             <p>
-                <term>In Groups</term> you are required to:
+                Calculate
             </p>
             <p>
                 <ol marker="(a)">
                     <li>
                         <p>
-                            Calculate using option A,
+                            Using option A,
                         </p>
                         <p>
                             <ol marker="(i)">
@@ -122,7 +122,7 @@
                     </li>
                     <li>
                         <p>
-                            Calculate using option B,
+                            Using option B,
                         </p>
                         <p>
                             <ol marker="(i)">
@@ -150,7 +150,7 @@
                 </ol>
             </p>
             <p>
-                <term>Explore in your groups</term> how to express the interest and totals earned each year in option B in power form.
+                Explore in your groups how to express the interest and totals earned each year in option B in power form.
             </p>
             <p>
                 Predict the amount after:
@@ -312,7 +312,10 @@
         </statement>
         <solution>
             <p>
-                Because we are starting with Ksh <m>3,000</m>, <m>P=3000.</m> Our interest rate is <m>3 \%</m>, so <m>r=0.03.</m> Because we are compounding quarterly, we are compounding <m>4</m> times per year, so <m>n=4.</m> We want to know the value of the account in <m>10</m> years, so we are looking for <m>A(10),</m> the value when <m>t=10.</m>
+                Because we are starting with Ksh <m>3,000</m>, <m>P=3000.</m> Our interest rate is <m>3 \%</m>, so <m>r=0.03.</m> Because we are compounding quarterly, we are compounding <m>4</m> times per year, so <m>n=4.</m> 
+            </p>
+            <p>
+                We want to know the value of the account in <m>10</m> years, so we are looking for <m>A(10),</m> the value when <m>t=10.</m>
             </p>
             <p>
             <md>
@@ -529,7 +532,7 @@
         <exercise>
             <statement>
                 <p>
-                    Monica invests <m>50,000</m> Shillings for <m>2</m> years at <m>12 \%</m> p.a in three banks. The interests are calculated Annual, Semi-Annual, and Quarterly for Banks A, B, and C respectively. Calculate the interest Monica will receive from each bank?
+                    Monica invests <m>50,000</m> Shillings for <m>2</m> years at <m>12 \%</m> p.a in three banks. The interests are calculated annual, semi-annual, and quarterly for Banks A, B, and C respectively. Calculate the interest Monica will receive from each bank?
                 </p>
             </statement>
             <answer>
