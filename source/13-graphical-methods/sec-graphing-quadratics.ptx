@@ -134,6 +134,27 @@
         </statement>
     </activity>
 
+    <exploration>
+        <title>Constructing a Parabola With String</title>
+        <figure xml:id="fig-parabola-string">
+            <caption>Drawing A Parabola With String</caption>
+            <interactive xml:id="interactive-parabola-string" platform="jsxgraph" width="90%" aspect="1:1" source="jsxgraph/parabola-string.js">
+                <slate xml:id="jsxgraph-parabola-string" surface="jsxboard" aspect="1:1" width="90%"/>
+                <instructions xml:id="parabola-string-instructions">
+                    <p>
+                        Drag the blue vertical line left and right to see how the point <m>P</m> traces out a parabola. Notice how the string segments <m>OP</m> and <m>PH</m> are always the same length.
+                    </p>
+                    <p>
+                        You can also change the length of the string with the slider, and move the focus point <m>O</m> to see how it affects the shape of the parabola.
+                    </p>
+                    <p>
+                        Can you find the equation of the parabola in terms of the string length <m>L</m>? You can assume the focus point is at the origin. 
+                    </p>
+                </instructions>
+            </interactive>
+        </figure>
+    </exploration>
+
     <!-- [LP] Add guidance on structured lesson plan-->
 
     <axiom component="lesson-plan">
