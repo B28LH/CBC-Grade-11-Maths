@@ -75,11 +75,36 @@
     <activity>
         <statement>
             <p>
+                <alert>What you need</alert>
+                <ul>
+                    <li>
+                        <p>
+                            A piece of string (about <m>50</m> cm) and a pencil.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Two rulers / straight edges
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            A tack or pin to fix the string at a point.
+                        </p>
+                    </li>
+                </ul>
+            </p>
+            <p>
                 <alert>Work in groups</alert>
             </p>
             <p>
-                During a lesson, Grade 11 students explored how to visualize quadratic functions by using their bodies to represent different types of mathematical functions.
+                We will use a string and a pencil to draw a parabola, just as in <xref ref="fig-parabola-string-setup"/>
             </p>
+            <figure xml:id="fig-parabola-string-setup">
+                <caption>Drawing a Parabola with String</caption>
+                <image source="images/parabola-string.jpg" width="95%">
+                </image>
+            </figure>
             <p>
                 <alert>What to do</alert>
             </p>
@@ -87,46 +112,32 @@
                 <ol>
                     <li>
                         <p>
-                            Stand up and make sure you have enough space to move your arms.
+                            Place one ruler horizontally on your paper, and mark a point <m>O</m> above the line.
                         </p>
                     </li>
                     <li>
                         <p>
-                            Linear Graphs:
-                            <ul>
-                                <li>
-                                    <p>
-                                        Represent <m>y = x</m>: Hold your right arm up and your left arm down in a straight diagonal line.
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>
-                                        Represent <m>y = -x</m>: Hold your left arm up and your right arm down in a straight diagonal line.
-                                    </p>
-                                </li>
-                            </ul>
+                            Fix one end of the string at the point <m>O</m> with a tack. Tie the other end of string to the top of another ruler, which is placed vertically on top of the initial ruler. 
                         </p>
                     </li>
                     <li>
                         <p>
-                            Quadratic Graphs (Parabolas):
-                            <ul>
-                                <li>
-                                    <p>
-                                        Represent <m>y = x^2</m>: Hold both arms up in a "U" shape. This is called concave up.
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>
-                                        Represent <m>y = -x^2</m>: Hold both arms down in an upside-down "U" shape. This is called concave down.
-                                    </p>
-                                </li>
-                            </ul>
+                            With a pencil, press on the string so that the pencil keeps the string tight while staying on the vertical ruler. The pencil point is <m>P</m>.
                         </p>
                     </li>
                     <li>
                         <p>
-                            Discuss: What happens to the "arms" of the graph when the number in front of <m>x^2</m> is positive versus when it is negative?
+                            Slide the vertical ruler along the line while keeping the string taut, tracing out a curve with the pencil.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Discuss: What shape does the curve have? How does the distance between the fixed tack <m>O</m> and the pencil compare to the distance betwen the pencil and the bottom ruler?
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Challenge: Assume the fixed tack is at the origin. Try to find an equation for the curve in terms of the string length.
                         </p>
                     </li>
                 </ol>
