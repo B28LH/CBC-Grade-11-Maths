@@ -8,221 +8,929 @@
             <dl>
                 <li>
                     <title>Strand</title>
-                    <p>
-                        4.0 Calculus
-                    </p>
+                    <p>4.0 Calculus</p>
                 </li>
                 <li>
                     <title>Sub-Strand</title>
-                    <p>
-                        4.2 Differentiation I
-                    </p>
+                    <p>4.2 Differentiation I</p>
                 </li>
                 <li>
-                    <title>Specific Learning Outcomes</title> 
+                    <title>Specific Learning Outcomes</title>
                     <p>
-                        Compute average and instantaneous rates of change in different situations
+                        Sketch the derivative of a function from its graph and identify where
+                        the derivative is positive, negative, or zero
                     </p>
                 </li>
                 <li component="lesson-plan">
                     <title>Grade Level</title>
-                    <p>
-                        11
-                    </p>
+                    <p>11</p>
                 </li>
                 <li component="lesson-plan">
                     <title>Estimated Duration</title>
-                    <p>
-                        40 minutes
-                    </p>
+                    <p>40 minutes</p>
                 </li>
             </dl>
             </p>
         </introduction>
     </objectives>
 
-    <!-- [LP] Add guidance on activity -->
-
-    <!-- <axiom component="lesson-plan">
-            <title>Problem-Solving and Discovery</title>
-            <dl>
-                <li>
-                    <title>Suggested Time</title>
-                    <p>
-                        XX minutes
-                    </p>
-                </li>
-                <li>
-                    <title>Objective</title>
-                    <p>
-                        XXX
-                    </p>
-                </li>
-                <li>
-                    <title>Teacher's Role</title>
-                    <p>
-                        XXX
-                    </p>
-                </li>
-            </dl>
-        </axiom> -->
-
-    <!-- Add Activity -->
-
-    <!-- <activity>
-        <statement>
-        </statement>
-    </activity> -->
-
-    <!-- [LP] Add guidance on structured lesson plan-->
-
-    <!-- <axiom component="lesson-plan">
-        <title>Structured Instruction</title>
-        <p>
-            <dl>
+    <axiom component="lesson-plan">
+        <title>Problem-Solving and Discovery</title>
+        <dl>
             <li>
                 <title>Suggested Time</title>
-                <p>
-                    XX minutes
-                </p>
+                <p>12 minutes</p>
             </li>
             <li>
                 <title>Objective</title>
                 <p>
-                    To formalize the concepts and properties learners discovered in the anchor task.
+                    Discover that plotting the slopes of tangent lines at several points of
+                    <m>f</m> produces the graph of <m>f'</m>, and that the shape of <m>f</m>
+                    (increasing/decreasing/flat) determines the sign of <m>f'</m>.
                 </p>
             </li>
-            </dl>
-        </p>
-        <paragraphs>
-            <title>Key Takeaways &amp; Teacher Connection</title>
-            <ol>
+            <li>
+                <title>Teacher's Role</title>
+                <p>
+                    Distribute printed copies of <xref ref="fig-activity-graphical-blank"/> if
+                    possible. Ask learners to lay a ruler so it <em>just touches</em> the curve at
+                    each marked point without crossing it — that is the tangent.
+                    Push: <em>"Plot the point <m>(x, \text{slope})</m> for each of the five x-values.
+                    What shape do those five points make?"</em>
+                    Most learners will be surprised to see a straight line appear.
+                    Connect: <em>"That line IS the derivative graph."</em>
+                </p>
+            </li>
+        </dl>
+    </axiom>
+
+    <activity xml:id="activity-reading-slopes">
+        <title>Reading Slopes</title>
+        <statement>
+            <p>
+                The graph below shows <m>f(x) = x^2 - 4x + 3</m>. Five points on the curve
+                are marked at <m>x = 0, 1, 2, 3, 4</m>.
+            </p>
+
+            <figure xml:id="fig-activity-graphical-blank">
+                <caption>
+                    Graph of <m>f(x) = x^2 - 4x + 3</m> with five marked points.
+                    Draw a tangent line at each marked point.
+                </caption>
+                <image width="70%">
+                    <latex-image>
+                        \begin{tikzpicture}[scale=1.05]
+                            % Fine grid
+                            \draw[gray!25, step=0.5] (-0.5,-2.2) grid (4.5,4.2);
+                            % Bold grid
+                            \draw[gray!55, step=1] (-0.5,-2.2) grid (4.5,4.2);
+                            % Axes
+                            \draw[-&gt;, thick] (-0.5,0) -- (4.7,0) node[right] {$x$};
+                            \draw[-&gt;, thick] (0,-2.3) -- (0,4.5) node[above] {$y$};
+                            % Tick labels
+                            \foreach \x in {1,2,3,4}
+                                \draw (\x,0.08) -- (\x,-0.08) node[below] {\small $\x$};
+                            \foreach \y in {-2,-1,1,2,3,4}
+                                \draw (0.08,\y) -- (-0.08,\y) node[left] {\small $\y$};
+                            % Curve
+                            \draw[blue, very thick, domain=-0.25:4.25, smooth, samples=80]
+                                plot (\x, {\x*\x - 4*\x + 3});
+                            \node[blue] at (4.2,3.4) {$f(x)$};
+                            % Marked points
+                            \foreach \x/\y in {0/3, 1/0, 2/-1, 3/0, 4/3}
+                                \filldraw[red] (\x,\y) circle (3.5pt);
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </figure>
+
+            <ol marker="(a)">
                 <li>
                     <p>
-                        <alert>Connecting to Learner Work:</alert> XXXX
+                        Draw a tangent line at each of the five marked points.
+                        Use the grid to estimate the slope of each tangent line, then complete
+                        the table.
+                    </p>
+                    <table>
+                        <title>Estimated tangent slopes</title>
+                        <tabular halign="center">
+                            <row header="yes" bottom="minor">
+                                <cell><m>x</m></cell>
+                                <cell>0</cell>
+                                <cell>1</cell>
+                                <cell>2</cell>
+                                <cell>3</cell>
+                                <cell>4</cell>
+                            </row>
+                            <row>
+                                <cell>Estimated slope</cell>
+                                <cell></cell>
+                                <cell></cell>
+                                <cell></cell>
+                                <cell></cell>
+                                <cell></cell>
+                            </row>
+                        </tabular>
+                    </table>
+                </li>
+                <li>
+                    <p>
+                        Plot the points <m>(x, \text{slope})</m> on a new set of axes.
+                        What shape do they form?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        At which value of <m>x</m> is the tangent horizontal?
+                        What is special about <m>f</m> at that point?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Where is <m>f</m> increasing? Where is the estimated slope positive?
+                        Where is <m>f</m> decreasing? Where is the slope negative?
+                        What do you notice?
                     </p>
                 </li>
             </ol>
-        </paragraphs>
-    </axiom> -->
 
-    <!-- Add insight / key takeaway directly related to activity / learner experience -->
+            <p>
+                Use the Sage cell below to check your tangent estimates and explore further.
+            </p>
 
-    <!-- <insight>
-    </insight> -->
+            <sage>
+                <input>
+@interact
+def reading_slopes(x0=slider(0, 4, 0.1, default=1, label="x₀")):
+    x = var('x')
+    f = x^2 - 4*x + 3
+    fp = diff(f, x)
+    slope = fp.subs(x=x0)
+    tangent = slope*(x - x0) + f.subs(x=x0)
 
-    <!-- Borrowed from PRECALC fs-id1165137634037: Finding the Average Rate of Change of a Function -->
-  
-    <p>The functions describing the examples above involve a change over time. Change divided by time is one example of a rate. The rates of change in the previous examples are each different. In other words, some changed faster than others. If we were to graph the functions, we could compare the rates by determining the slopes of the graphs.</p>
-    
-    <p>A <term>tangent line</term> to a curve is a line that intersects the curve at only a single point but does not cross it there. (The tangent line may intersect the curve at another point away from the point of interest.) If we zoom in on a curve at that point, the curve appears linear, and the <term>slope of the curve</term> at that point is close to the slope of the tangent line at that point.</p>
-    
+    p1 = plot(f, (x, -0.3, 4.3), color='blue', thickness=2, legend_label='f(x)')
+    p1 += plot(tangent, (x, x0-0.8, x0+0.8), color='red', thickness=1.5, linestyle='dashed')
+    p1 += point((x0, f.subs(x=x0)), color='red', size=50, zorder=5)
+    p1.axes_labels(['x', 'y'])
+    p1.set_axes_range(-0.3, 4.3, -2.5, 4.5)
+
+    p2 = plot(fp, (x, -0.3, 4.3), color='green', thickness=2, legend_label="f'(x)")
+    p2 += point((x0, slope), color='darkgreen', size=50, zorder=5)
+    p2.axes_labels(['x', "slope"])
+    p2.set_axes_range(-0.3, 4.3, -5, 5)
+
+    g = graphics_array([p1, p2])
+    g.show(figsize=[10, 4])
+    print(f"At x₀ = {float(x0):.2f}:  slope of tangent = f'(x₀) = {float(slope):.2f}")
+                </input>
+            </sage>
+        </statement>
+
+        <solution component="lesson-plan">
+            <p>
+                (a) The tangent slopes are <m>-4, -2, 0, 2, 4</m> at <m>x = 0, 1, 2, 3, 4</m>
+                respectively. The diagram below shows the tangent lines drawn.
+            </p>
+
+            <figure xml:id="fig-activity-graphical-solved">
+                <caption>
+                    Tangent lines drawn at <m>x = 0, 1, 2, 3, 4</m> with slopes labelled.
+                </caption>
+                <image width="70%">
+                    <latex-image>
+                        \begin{tikzpicture}[scale=1.05]
+                            \draw[gray!25, step=0.5] (-0.5,-2.2) grid (4.5,4.2);
+                            \draw[gray!55, step=1] (-0.5,-2.2) grid (4.5,4.2);
+                            \draw[-&gt;, thick] (-0.5,0) -- (4.7,0) node[right] {$x$};
+                            \draw[-&gt;, thick] (0,-2.3) -- (0,4.5) node[above] {$y$};
+                            \foreach \x in {1,2,3,4}
+                                \draw (\x,0.08) -- (\x,-0.08) node[below] {\small $\x$};
+                            \foreach \y in {-2,-1,1,2,3,4}
+                                \draw (0.08,\y) -- (-0.08,\y) node[left] {\small $\y$};
+                            % Curve
+                            \draw[blue, very thick, domain=-0.25:4.25, smooth, samples=80]
+                                plot (\x, {\x*\x - 4*\x + 3});
+                            % Tangent at x=0: slope -4, y = -4x+3
+                            \draw[red!70, thick, domain=-0.1:0.75]
+                                plot (\x, {-4*\x + 3});
+                            \filldraw[red] (0,3) circle (3.5pt);
+                            \node[red, right] at (0.05,3.5) {\small $m=-4$};
+                            % Tangent at x=1: slope -2, y = -2x+2
+                            \draw[red!70, thick, domain=0.3:1.7]
+                                plot (\x, {-2*\x + 2});
+                            \filldraw[red] (1,0) circle (3.5pt);
+                            \node[red, above] at (0.4,0.6) {\small $m=-2$};
+                            % Tangent at x=2: slope 0, y = -1
+                            \draw[red!70, thick, domain=1.3:2.7]
+                                plot (\x, {-1});
+                            \filldraw[red] (2,-1) circle (3.5pt);
+                            \node[red, below] at (2,-1.25) {\small $m=0$};
+                            % Tangent at x=3: slope 2, y = 2x-6
+                            \draw[red!70, thick, domain=2.3:3.7]
+                                plot (\x, {2*\x - 6});
+                            \filldraw[red] (3,0) circle (3.5pt);
+                            \node[red, below right] at (3.4,-0.1) {\small $m=2$};
+                            % Tangent at x=4: slope 4, y = 4x-13
+                            \draw[red!70, thick, domain=3.3:4.3]
+                                plot (\x, {4*\x - 13});
+                            \filldraw[red] (4,3) circle (3.5pt);
+                            \node[red, right] at (3.9,2.5) {\small $m=4$};
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </figure>
+
+            <p>
+                (b) The five points <m>(0,-4),\,(1,-2),\,(2,0),\,(3,2),\,(4,4)</m> lie on a
+                straight line — they form a linear graph.
+            </p>
+            <p>
+                (c) At <m>x = 2</m> the tangent is horizontal (slope 0). This is the vertex
+                of the parabola — its minimum.
+            </p>
+            <p>
+                (d) <m>f</m> is decreasing for <m>x \lt 2</m>, and the slopes there are negative.
+                <m>f</m> is increasing for <m>x \gt 2</m>, and the slopes are positive.
+                The sign of the slope matches the direction of the curve.
+            </p>
+            <p>
+                The diagram below shows <m>f</m> and the line of slopes <m>f'(x) = 2x - 4</m>
+                side by side, with vertical dashed lines connecting <m>x = 2</m> on both graphs.
+            </p>
+
+            <sidebyside widths="48% 48%" margins="auto">
+                <figure xml:id="fig-activity-f">
+                    <caption><m>f(x) = x^2 - 4x + 3</m></caption>
+                    <image>
+                        <latex-image>
+                            \begin{tikzpicture}[scale=0.82]
+                                \draw[-&gt;, thick] (-0.4,0) -- (4.6,0) node[right] {$x$};
+                                \draw[-&gt;, thick] (0,-2.3) -- (0,4.5) node[above] {$y$};
+                                \foreach \x in {1,2,3,4}
+                                    \draw (\x,0.08) -- (\x,-0.08) node[below] {\small $\x$};
+                                \foreach \y in {-2,-1,1,2,3}
+                                    \draw (0.08,\y) -- (-0.08,\y) node[left] {\small $\y$};
+                                \draw[blue, very thick, domain=-0.2:4.2, smooth, samples=70]
+                                    plot (\x, {\x*\x - 4*\x + 3});
+                                \node[blue] at (0.6,3.5) {\small $f(x)$};
+                                % Horizontal tangent at vertex
+                                \draw[orange, thick] (1.3,-1) -- (2.7,-1);
+                                \node[orange, right] at (2.75,-0.7) {\scriptsize $f'=0$};
+                                % Dashed vertical at x=2
+                                \draw[dashed, gray!70] (2,-2.3) -- (2,4.5);
+                                % Region labels
+                                \node at (0.9,1.2) {\small $f'\!&lt;\!0$};
+                                \node at (3.1,1.2) {\small $f'\!>\!0$};
+                            \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+                <figure xml:id="fig-activity-fprime">
+                    <caption><m>f'(x) = 2x - 4</m> (the slopes plotted)</caption>
+                    <image>
+                        <latex-image>
+                            \begin{tikzpicture}[scale=0.82]
+                                \draw[-&gt;, thick] (-0.4,0) -- (4.6,0) node[right] {$x$};
+                                \draw[-&gt;, thick] (0,-5.2) -- (0,5.2) node[above] {$y$};
+                                \foreach \x in {1,2,3,4}
+                                    \draw (\x,0.08) -- (\x,-0.08) node[below] {\small $\x$};
+                                \foreach \y in {-4,-2,2,4}
+                                    \draw (0.08,\y) -- (-0.08,\y) node[left] {\small $\y$};
+                                \draw[red!80, very thick, domain=-0.1:4.2]
+                                    plot (\x, {2*\x - 4});
+                                \node[red!80] at (3.8,3.5) {\small $f'(x)$};
+                                \filldraw[red!80] (2,0) circle (3.5pt);
+                                \node[red!80, above right] at (2.05,0.1) {\scriptsize $f'(2)=0$};
+                                % Dashed vertical at x=2
+                                \draw[dashed, gray!70] (2,-5.2) -- (2,5.2);
+                                % Region labels
+                                \node at (0.9,-1.5) {\small $f'\!&lt;\!0$};
+                                \node at (3.1,1.5) {\small $f'\!>\!0$};
+                            \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+            </sidebyside>
+        </solution>
+    </activity>
+
+    <axiom component="lesson-plan">
+        <title>Structured Instruction</title>
+        <dl>
+            <li>
+                <title>Suggested Time</title>
+                <p>8 minutes</p>
+            </li>
+            <li>
+                <title>Objective</title>
+                <p>
+                    Formalise the geometric meaning of the derivative: the slope of the tangent
+                    line. Connect the shape of <m>f</m> to the sign of <m>f'</m>, and introduce
+                    the method of sketching <m>f'</m> from <m>f</m>.
+                </p>
+            </li>
+        </dl>
+    </axiom>
+
+    <insight>
+        <title>Key Ideas</title>
+        <p>
+            <ul>
+                <li>
+                    <p>
+                        The <term>tangent line</term> at a point on a curve is the line that
+                        best approximates the curve there. Its slope is the derivative at that point.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Where <m>f</m> is <em>increasing</em>, <m>f'(x) \gt 0</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Where <m>f</m> is <em>decreasing</em>, <m>f'(x) \lt 0</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        At a <em>local maximum or minimum</em> of <m>f</m>, the tangent is
+                        horizontal: <m>f'(x) = 0</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        To sketch <m>f'</m>: for each <m>x</m>, plot the slope of <m>f</m>
+                        at that point. The resulting curve is <m>y = f'(x)</m>.
+                    </p>
+                </li>
+            </ul>
+        </p>
+    </insight>
+
     <p>
-        <xref ref="PRECALC-a5MPqBrEKC-v2" /> represents the function <m>f(x)=x^{3}-4x.</m> We can see the slope at various points along the curve.</p>
-    
-    <ul>
-        <li>slope at <m>x=-2</m> is 8</li>
-        <li>slope at <m>x=-1</m> is –1</li>
-        <li>slope at <m>x=2</m> is 8</li>
-        </ul>
-    
-    <figure xml:id="PRECALC-a5MPqBrEKC-v2" original="PRECALC/modules/m49455/index.cnxml" license="CC-BY-4.0">
-        <caption>Graph showing tangents to curve at –2, –1, and 2.</caption>
-        <image source="PRECALC/CNX_PreCalc_Figure_12_04_001.jpg" width="80%"/>
-        </figure>
+        In <xref ref="sec-average-rates-of-change" text="title"/> we computed the slope of a
+        <em>secant line</em> — the straight line through two points on a curve.
+        <xref ref="fig-secant-to-tangent"/> shows what happens as the second point <m>Q</m>
+        slides toward the fixed point <m>P</m>: the secant line rotates and settles into the
+        tangent at <m>P</m>. The slope it settles to is the derivative at <m>P</m> — the
+        idea we will make precise with limits in the next section.
+    </p>
 
-    <!-- Add further instruction (not in a block) to develop ideas as needed -->
+    <figure xml:id="fig-secant-to-tangent">
+        <caption>
+            As <m>Q</m> approaches <m>P = (1,1)</m> along <m>f(x)=x^2</m>, the secant line
+            (grey shades) converges to the tangent at <m>P</m> (red).
+        </caption>
+        <image width="65%">
+            <latex-image>
+                \begin{tikzpicture}[scale=1.15]
+                    % Axes
+                    \draw[-&gt;, thick] (-0.3,0) -- (2.8,0) node[right] {$x$};
+                    \draw[-&gt;, thick] (0,-0.3) -- (0,4.8) node[above] {$y$};
+                    \foreach \x in {1,2}
+                        \draw (\x,0.07) -- (\x,-0.07) node[below] {\small $\x$};
+                    \foreach \y in {1,2,3,4}
+                        \draw (0.07,\y) -- (-0.07,\y) node[left] {\small $\y$};
+                    % Curve f(x) = x^2
+                    \draw[blue, very thick, domain=0:2.1, smooth, samples=60]
+                        plot (\x, {\x*\x});
+                    \node[blue] at (2.0,4.4) {$f(x)=x^2$};
+                    % Fixed point P
+                    \filldraw[black] (1,1) circle (2.5pt) node[below right] {$P$};
+                    % Secant 1: through Q1=(2,4), slope 3, y = 3x-2
+                    \draw[gray!55, domain=0.1:2.3] plot (\x, {3*\x - 2});
+                    \filldraw[gray!60] (2,4) circle (2.5pt);
+                    \node[gray!70, right] at (2.05,4) {\small $Q_1$};
+                    % Secant 2: through Q2=(1.5,2.25), slope 2.5, y = 2.5x-1.5
+                    \draw[gray!75, domain=0.2:2.2] plot (\x, {2.5*\x - 1.5});
+                    \filldraw[gray!80] (1.5,2.25) circle (2.5pt);
+                    \node[gray!80, right] at (1.55,2.25) {\small $Q_2$};
+                    % Secant 3: through Q3=(1.2,1.44), slope 2.2, y = 2.2x-1.2
+                    \draw[orange!70, domain=0.25:2.15] plot (\x, {2.2*\x - 1.2});
+                    \filldraw[orange!80] (1.2,1.44) circle (2.5pt);
+                    \node[orange!80, right] at (1.25,1.44) {\small $Q_3$};
+                    % Tangent at P: slope 2, y = 2x-1
+                    \draw[red, very thick, domain=0.1:2.2] plot (\x, {2*\x - 1});
+                    \node[red] at (2.25,3.6) {\small tangent};
+                    % Arrow showing Q approaching P
+                    \draw[-&gt;, thick, gray!70] (1.55,2.55) -- (1.1,1.25);
+                    \node[gray!80, right] at (1.6,2.7) {\scriptsize $Q \to P$};
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+    </figure>
+
+    <p>
+        The diagram below shows a cubic <m>f(x) = x^3 - 3x</m> with its two turning points.
+        Reading the curve from left to right, the tangent slope starts positive (curve rising),
+        falls to zero at the local maximum, becomes negative (curve falling), returns to zero at
+        the local minimum, and is positive again. The colours and arrows make the sign of <m>f'</m>
+        visible directly from the shape of <m>f</m>.
+    </p>
+
+    <figure xml:id="fig-sign-of-derivative">
+        <caption>
+            Sign of <m>f'</m> on <m>f(x) = x^3 - 3x</m>.
+            Green arrows show <m>f' \gt 0</m>; red shows <m>f' \lt 0</m>;
+            horizontal tangents mark <m>f' = 0</m>.
+        </caption>
+        <image width="60%">
+            <latex-image>
+                \begin{tikzpicture}[scale=1.1]
+                    \draw[-&gt;, thick] (-2.4,0) -- (2.4,0) node[right] {$x$};
+                    \draw[-&gt;, thick] (0,-2.8) -- (0,2.8) node[above] {$y$};
+                    \foreach \x in {-2,-1,1,2}
+                        \draw (\x,0.08) -- (\x,-0.08) node[below] {\small $\x$};
+                    \foreach \y in {-2,-1,1,2}
+                        \draw (0.08,\y) -- (-0.08,\y) node[left] {\small $\y$};
+                    % Curve f(x) = x^3 - 3x
+                    \draw[black, very thick, domain=-1.85:1.85, smooth, samples=80]
+                        plot (\x, {\x*\x*\x - 3*\x});
+                    \node[black] at (2.0, 1.8) {$f(x)$};
+                    % Turning points
+                    \filldraw[orange] (-1, 2) circle (3pt);
+                    \filldraw[orange] (1, -2) circle (3pt);
+                    % Horizontal tangents at turning points
+                    \draw[orange, thick] (-1.55,2) -- (-0.45,2);
+                    \node[orange, right] at (-0.4,2.05) {\small $f'=0$};
+                    \draw[orange, thick] (0.45,-2) -- (1.55,-2);
+                    \node[orange, left] at (0.4,-1.95) {\small $f'=0$};
+                    % Direction arrows (increasing, decreasing, increasing)
+                    \draw[-&gt;, green!60!black, very thick] (-1.9,-1.4) -- (-1.45,0.7);
+                    \node[green!60!black] at (-2.1,0) {\small $f'\!>\!0$};
+                    \draw[-&gt;, red!70, very thick] (-0.55,1.7) -- (0.55,-1.7);
+                    \node[red!70] at (0.35,0.5) {\small $f'\!&lt;\!0$};
+                    \draw[-&gt;, green!60!black, very thick] (1.45,-0.7) -- (1.9,1.4);
+                    \node[green!60!black] at (2.15,0) {\small $f'\!>\!0$};
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+    </figure>
+
+    <p>
+        The graph below (replacing the image from OpenStax) shows <m>f(x) = x^3 - 4x</m>
+        with tangent lines drawn at <m>x = -2</m>, <m>x = -1</m>, and <m>x = 2</m>.
+        Reading the slopes directly:
+        <m>f'(-2) = 8</m>, <m>f'(-1) = -1</m>, <m>f'(2) = 8</m>.
+        Notice that the curve is steeply rising at <m>x = -2</m> and <m>x = 2</m> but
+        has a small negative slope (gentle fall) at <m>x = -1</m>.
+    </p>
+
+    <figure xml:id="fig-tangents-cubic">
+        <caption>
+            Tangent lines to <m>f(x) = x^3 - 4x</m> at three points,
+            with their slopes labelled.
+        </caption>
+        <image width="65%">
+            <latex-image>
+                \begin{tikzpicture}[scale=0.85]
+                    \draw[-&gt;, thick] (-2.8,0) -- (2.8,0) node[right] {$x$};
+                    \draw[-&gt;, thick] (0,-4.5) -- (0,4.5) node[above] {$y$};
+                    \foreach \x in {-2,-1,1,2}
+                        \draw (\x,0.1) -- (\x,-0.1) node[below] {\small $\x$};
+                    \foreach \y in {-4,-2,2,4}
+                        \draw (0.1,\y) -- (-0.1,\y) node[left] {\small $\y$};
+                    % Curve f(x) = x^3 - 4x
+                    \draw[blue, very thick, domain=-2.1:2.1, smooth, samples=80]
+                        plot (\x, {\x*\x*\x - 4*\x});
+                    \node[blue, right] at (1.8,2.0) {$f(x)=x^3-4x$};
+                    % Tangent at x=-2: f(-2)=0, slope 8, y=8(x+2)=8x+16
+                    % Clip to x in [-2.4, -1.7]
+                    \draw[red!70, thick, domain=-2.38:-1.62]
+                        plot (\x, {8*\x + 16});
+                    \filldraw[red] (-2,0) circle (3pt);
+                    \node[red, above] at (-2.05,0.35) {\small $m=8$};
+                    % Tangent at x=-1: f(-1)=3, slope -1, y=-x+2
+                    \draw[red!70, thick, domain=-1.8:-0.2]
+                        plot (\x, {-\x + 2});
+                    \filldraw[red] (-1,3) circle (3pt);
+                    \node[red, above right] at (-1,3.1) {\small $m=-1$};
+                    % Tangent at x=2: f(2)=0, slope 8, y=8(x-2)=8x-16
+                    \draw[red!70, thick, domain=1.62:2.38]
+                        plot (\x, {8*\x - 16});
+                    \filldraw[red] (2,0) circle (3pt);
+                    \node[red, above] at (2.05,0.35) {\small $m=8$};
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+    </figure>
 
     <xi:include href="../lesson-plan-templates/example-intro.ptx" />
 
-    <!-- Add at least 3 examples -->
-
-    <!-- <example>
+    <example xml:id="example-sign-of-deriv-cubic">
+        <title>Identifying the Sign of the Derivative</title>
         <statement>
+            <p>
+                The graph below shows <m>f(x) = x^3 - 3x</m>.
+                <ol marker="(a)">
+                    <li>
+                        <p>State the intervals where <m>f'(x) \gt 0</m>, <m>f'(x) \lt 0</m>,
+                        and <m>f'(x) = 0</m>.</p>
+                    </li>
+                    <li>
+                        <p>Using part (a), sketch a rough graph of <m>f'(x)</m>.</p>
+                    </li>
+                </ol>
+            </p>
         </statement>
         <solution>
+            <p>
+                (a) Reading the curve in <xref ref="fig-sign-of-derivative"/>:
+                <ul>
+                    <li><p><m>f'(x) \gt 0</m> for <m>x \lt -1</m> and <m>x \gt 1</m>
+                        (curve rising).</p></li>
+                    <li><p><m>f'(x) \lt 0</m> for <m>-1 \lt x \lt 1</m> (curve falling).</p></li>
+                    <li><p><m>f'(x) = 0</m> at <m>x = -1</m> and <m>x = 1</m>
+                        (horizontal tangents at the turning points).</p></li>
+                </ul>
+            </p>
+            <p>
+                (b) The derivative <m>f'</m> is zero at <m>x = \pm 1</m>, positive outside,
+                and negative between them — so its graph is a U-shape (a parabola) touching
+                zero at <m>x = -1</m> and <m>x = 1</m>.
+                The two panels below show <m>f</m> and <m>f'</m> side by side.
+            </p>
+
+            <sidebyside widths="48% 48%" margins="auto">
+                <figure xml:id="fig-cubic-f">
+                    <caption><m>f(x) = x^3 - 3x</m></caption>
+                    <image>
+                        <latex-image>
+                            \begin{tikzpicture}[scale=0.95]
+                                \draw[-&gt;, thick] (-2.2,0) -- (2.2,0) node[right] {$x$};
+                                \draw[-&gt;, thick] (0,-2.8) -- (0,2.8) node[above] {$y$};
+                                \foreach \x in {-2,-1,1,2}
+                                    \draw (\x,0.08) -- (\x,-0.08) node[below] {\small $\x$};
+                                \foreach \y in {-2,-1,1,2}
+                                    \draw (0.08,\y) -- (-0.08,\y) node[left] {\small $\y$};
+                                \draw[blue, very thick, domain=-1.8:1.8, smooth, samples=70]
+                                    plot (\x, {\x*\x*\x - 3*\x});
+                                \node[blue, right] at (1.4,1.8) {\small $f(x)$};
+                                \filldraw[orange] (-1,2) circle (2.5pt) node[above right] {\scriptsize max};
+                                \filldraw[orange] (1,-2) circle (2.5pt) node[below left] {\scriptsize min};
+                                \draw[dashed, gray!60] (-1,-2.8) -- (-1,2.8);
+                                \draw[dashed, gray!60] (1,-2.8) -- (1,2.8);
+                            \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+                <figure xml:id="fig-cubic-fprime">
+                    <caption><m>f'(x) = 3x^2 - 3</m></caption>
+                    <image>
+                        <latex-image>
+                            \begin{tikzpicture}[scale=0.95]
+                                \draw[-&gt;, thick] (-2.2,0) -- (2.2,0) node[right] {$x$};
+                                \draw[-&gt;, thick] (0,-3.5) -- (0,3.5) node[above] {$y$};
+                                \foreach \x in {-2,-1,1,2}
+                                    \draw (\x,0.08) -- (\x,-0.08) node[below] {\small $\x$};
+                                \foreach \y in {-3,-2,-1,1,2,3}
+                                    \draw (0.08,\y) -- (-0.08,\y) node[left] {\scriptsize $\y$};
+                                \draw[red!80, very thick, domain=-1.8:1.8, smooth, samples=60]
+                                    plot (\x, {3*\x*\x - 3});
+                                \node[red!80, right] at (1.5,2.5) {\small $f'(x)$};
+                                \filldraw[orange] (-1,0) circle (2.5pt);
+                                \filldraw[orange] (1,0) circle (2.5pt);
+                                \draw[dashed, gray!60] (-1,-3.5) -- (-1,3.5);
+                                \draw[dashed, gray!60] (1,-3.5) -- (1,3.5);
+                                \node[red!70] at (0,-1.6) {\small $f'\!&lt;\!0$};
+                                \node[green!55!black] at (-1.6,1.2) {\small $f'\!>\!0$};
+                                \node[green!55!black] at (1.6,1.2) {\small $f'\!>\!0$};
+                            \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+            </sidebyside>
+
+            <p>
+                The zeros of <m>f'</m> correspond exactly to the turning points of <m>f</m>.
+                We will be able to verify algebraically that <m>f'(x) = 3x^2 - 3</m> once we
+                have differentiation rules.
+            </p>
         </solution>
     </example>
 
-    <example>
+    <example xml:id="example-reading-tangent-slopes">
+        <title>Reading Derivative Values from a Graph</title>
         <statement>
+            <p>
+                Use <xref ref="fig-tangents-cubic"/> to write down
+                <m>f'(-2)</m>, <m>f'(-1)</m>, and <m>f'(2)</m> for
+                <m>f(x) = x^3 - 4x</m>.
+                What do the values tell you about the curve at each point?
+            </p>
         </statement>
         <solution>
+            <p>
+                Reading the labelled slopes directly from the diagram:
+                <m>f'(-2) = 8</m>, <m>f'(-1) = -1</m>, <m>f'(2) = 8</m>.
+            </p>
+            <p>
+                At <m>x = -2</m> the curve is rising steeply (slope 8).
+                At <m>x = -1</m> the curve has just passed a local maximum and is falling gently
+                (slope <m>-1</m> — negative but small).
+                At <m>x = 2</m> the curve is rising steeply again after a local minimum.
+                The equal slopes at <m>x = -2</m> and <m>x = 2</m> reflect the odd symmetry
+                of <m>f</m> about the origin: the curve rises just as steeply leaving the
+                left turning point as it does leaving the right one.
+            </p>
         </solution>
     </example>
 
-    <example>
+    <example xml:id="example-sketch-deriv-parabola">
+        <title>Sketching the Derivative of an Inverted Parabola</title>
         <statement>
+            <p>
+                Let <m>h(x) = -x^2 + 4</m>.
+                Without computing, use the graph of <m>h</m> to sketch <m>h'(x)</m>
+                and describe its sign.
+            </p>
         </statement>
         <solution>
+            <p>
+                Reading the graph of <m>h</m>:
+                <ul>
+                    <li><p><m>h</m> is increasing for <m>x \lt 0</m>, so <m>h'(x) \gt 0</m> there.</p></li>
+                    <li><p><m>h</m> has a maximum at <m>x = 0</m>, so <m>h'(0) = 0</m>.</p></li>
+                    <li><p><m>h</m> is decreasing for <m>x \gt 0</m>, so <m>h'(x) \lt 0</m> there.</p></li>
+                </ul>
+                <m>h'</m> passes through zero at <m>x = 0</m> and changes from positive to negative —
+                it is a decreasing function. Because the parabola is symmetric, <m>h'</m> falls at
+                a constant rate: the sketch is a straight line with negative slope through the origin.
+            </p>
+
+            <sidebyside widths="48% 48%" margins="auto">
+                <figure xml:id="fig-inverted-parabola">
+                    <caption><m>h(x) = -x^2 + 4</m></caption>
+                    <image>
+                        <latex-image>
+                            \begin{tikzpicture}[scale=0.72]
+                                \draw[-&gt;, thick] (-2.7,0) -- (2.7,0) node[right] {$x$};
+                                \draw[-&gt;, thick] (0,-1.2) -- (0,4.8) node[above] {$y$};
+                                \foreach \x in {-2,-1,1,2}
+                                    \draw (\x,0.08) -- (\x,-0.08) node[below] {\small $\x$};
+                                \foreach \y in {1,2,3,4}
+                                    \draw (0.08,\y) -- (-0.08,\y) node[left] {\small $\y$};
+                                \draw[blue, very thick, domain=-2.1:2.1, smooth, samples=60]
+                                    plot (\x, {-\x*\x + 4});
+                                \node[blue] at (2.0,3.2) {\small $h(x)$};
+                                \filldraw[orange] (0,4) circle (2.5pt) node[right] {\scriptsize max};
+                                % Horizontal tangent at vertex
+                                \draw[orange, thick] (-0.6,4) -- (0.6,4);
+                                \node[orange, right] at (0.65,4) {\scriptsize $h'=0$};
+                                % Arrows
+                                \node[green!55!black] at (-1.5,2.8) {\small $h'\!>\!0$};
+                                \node[red!70] at (1.5,2.8) {\small $h'\!&lt;\!0$};
+                            \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+                <figure xml:id="fig-inverted-parabola-deriv">
+                    <caption>Sketch of <m>h'(x)</m></caption>
+                    <image>
+                        <latex-image>
+                            \begin{tikzpicture}[scale=0.72]
+                                \draw[-&gt;, thick] (-2.7,0) -- (2.7,0) node[right] {$x$};
+                                \draw[-&gt;, thick] (0,-4.8) -- (0,4.8) node[above] {$y$};
+                                \foreach \x in {-2,-1,1,2}
+                                    \draw (\x,0.08) -- (\x,-0.08) node[below] {\small $\x$};
+                                \foreach \y in {-4,-2,2,4}
+                                    \draw (0.08,\y) -- (-0.08,\y) node[left] {\small $\y$};
+                                % h'(x) = -2x
+                                \draw[red!80, very thick, domain=-2.2:2.2]
+                                    plot (\x, {-2*\x});
+                                \node[red!80, left] at (-1.5,3.2) {\small $h'(x)$};
+                                \filldraw[red!80] (0,0) circle (2.5pt) node[above right] {\scriptsize $h'(0)=0$};
+                                \node[green!55!black] at (-1.3,-1.2) {\small $h'\!>\!0$};
+                                \node[red!70] at (1.3,1.2) {\small $h'\!&lt;\!0$};
+                            \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+            </sidebyside>
+
+            <p>
+                The differentiation rules we develop in later sections will confirm
+                <m>h'(x) = -2x</m>.
+            </p>
         </solution>
-    </example> -->
+    </example>
 
     <xi:include href="../lesson-plan-templates/assessment-intro.ptx" />
 
-    <!-- If STACK questions are included, uncomment this: -->
+    <exercises>
 
-    <!-- <xi:include href="../lesson-plan-templates/checkpoint.ptx" /> -->
-
-    <!-- Add STACK exercises if made -->
-
-    <!-- Add static exercises -->
-
-    <!-- <exercises>
-        <exercise>
-            <statement>   
-
-            </statement>   
+        <exercise xml:id="exercise-sign-simple-parabola">
+            <statement>
+                <p>
+                    Sketch the graph of <m>f(x) = x^2 - 1</m>.
+                    <ol marker="(a)">
+                        <li><p>At which <m>x</m>-value is <m>f'(x) = 0</m>?</p></li>
+                        <li><p>State the intervals where <m>f'(x) \gt 0</m> and <m>f'(x) \lt 0</m>.</p></li>
+                        <li><p>Sketch a rough graph of <m>f'(x)</m>.</p></li>
+                    </ol>
+                </p>
+            </statement>
             <solution>
+                <p>
+                    <m>f</m> has its minimum at <m>x = 0</m>, so <m>f'(0) = 0</m>.
+                    <m>f'(x) \lt 0</m> for <m>x \lt 0</m>; <m>f'(x) \gt 0</m> for <m>x \gt 0</m>.
+                    The sketch of <m>f'</m> is a line through the origin with positive slope
+                    (in fact <m>f'(x) = 2x</m>).
+                </p>
+            </solution>
+        </exercise>
 
-            </solution>             
-        </exercise>        
-    </exercises> -->
+        <exercise xml:id="exercise-sketch-deriv-cubic">
+            <statement>
+                <p>
+                    The graph of a function <m>p</m> is shown below.
+                    It has a local maximum at <m>x = -1</m> and a local minimum at <m>x = 2</m>,
+                    and is otherwise monotone.
+                    Sketch a rough graph of <m>p'(x)</m>, indicating where it is positive,
+                    negative, and zero.
+                </p>
+                <image width="55%">
+                    <latex-image>
+                        \begin{tikzpicture}[scale=0.9]
+                            \draw[-&gt;, thick] (-2.2,0) -- (3.2,0) node[right] {$x$};
+                            \draw[-&gt;, thick] (0,-2.5) -- (0,3.5) node[above] {$y$};
+                            \foreach \x in {-2,-1,1,2,3}
+                                \draw (\x,0.08) -- (\x,-0.08) node[below] {\small $\x$};
+                            \foreach \y in {-2,-1,1,2,3}
+                                \draw (0.08,\y) -- (-0.08,\y) node[left] {\small $\y$};
+                            % A cubic-like curve with max at (-1,2) and min at (2,-2)
+                            % p(x) = x^3/3 - x^2/2 - 2x: local max at x=-1, local min at x=2
+                            \draw[blue, very thick, domain=-2.0:3.0, smooth, samples=80]
+                                plot (\x, {(1/3)*\x*\x*\x - (1/2)*\x*\x - 2*\x});
+                            \node[blue] at (2.9,1.5) {$p(x)$};
+                            % Mark turning points
+                            \filldraw[orange] (-1,{(1/3)*(-1)*(-1)*(-1) - (1/2)*(-1)*(-1) - 2*(-1)}) circle (2.5pt);
+                            \filldraw[orange] (2,{(1/3)*2*2*2 - (1/2)*2*2 - 2*2}) circle (2.5pt);
+                            \node[orange, right] at (-0.9,{(1/3)*(-1)^3-(1/2)^2+2.05}) {\scriptsize local max};
+                            \node[orange, right] at (2.05,{(1/3)*8-2-4+0.2}) {\scriptsize local min};
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </statement>
+            <solution>
+                <p>
+                    <m>p'(x) \gt 0</m> for <m>x \lt -1</m> and <m>x \gt 2</m>;
+                    <m>p'(-1) = 0</m>; <m>p'(x) \lt 0</m> for <m>-1 \lt x \lt 2</m>;
+                    <m>p'(2) = 0</m>.
+                    The sketch of <m>p'</m> is a U-shaped parabola with zeros at <m>x = -1</m>
+                    and <m>x = 2</m>, positive outside those zeros and negative between them.
+                    (In fact <m>p'(x) = x^2 - x - 2</m>.)
+                </p>
+            </solution>
+        </exercise>
 
-    <!-- [LP] Add information on how to differentiate  -->
+        <exercise xml:id="exercise-describe-f-from-fprime-constant">
+            <statement>
+                <p>
+                    The graph of <m>f'</m> is a horizontal line at <m>y = 3</m>.
+                    Describe the graph of <m>f</m>. Does <m>f</m> have any turning points?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <m>f'(x) = 3</m> everywhere means <m>f</m> has constant gradient 3 —
+                    it is a straight line with slope 3. It has no turning points.
+                </p>
+            </solution>
+        </exercise>
 
-    <!-- <axiom component="lesson-plan">
-        <title>Differentiation</title>
+        <exercise xml:id="exercise-reconstruct-f-from-fprime-sign">
+            <statement>
+                <p>
+                    A function <m>g</m> satisfies:
+                    <m>g'(x) \gt 0</m> for <m>x \lt 2</m>,
+                    <m>g'(2) = 0</m>, and
+                    <m>g'(x) \lt 0</m> for <m>x \gt 2</m>.
+                </p>
+                <ol marker="(a)">
+                    <li><p>Describe the behaviour of <m>g</m>.</p></li>
+                    <li><p>Does <m>g</m> have a local maximum or local minimum at <m>x = 2</m>?</p></li>
+                    <li><p>Sketch a possible graph of <m>g</m>, given also that <m>g(2) = 5</m>.</p></li>
+                </ol>
+            </statement>
+            <solution>
+                <p>
+                    (a) <m>g</m> is increasing for <m>x \lt 2</m> and decreasing for <m>x \gt 2</m>.
+                </p>
+                <p>
+                    (b) Local maximum at <m>x = 2</m>.
+                </p>
+                <p>
+                    (c) Any smooth curve that rises to a peak of 5 at <m>x = 2</m>
+                    and falls on both sides, e.g. an inverted parabola with vertex <m>(2, 5)</m>.
+                </p>
+            </solution>
+        </exercise>
 
-        <table>
-            <title>Differentiation</title>
-            <tabular halign="left">
-                <row header="yes" bottom="minor">
-                    <cell>Learner Group</cell>
-                    <cell>Strategy &amp; Learning Experience</cell>
-                    <cell></cell>
-                </row>
-                <row>
-                    <cell>Struggling Learners (Support)</cell>
-                    <cell>
-                        XXXX
-                    </cell>
-                    <cell></cell>
-                </row>
-                <row>
-                    <cell>On-Level Learners (Core)</cell>
-                    <cell>
-                        <line>The core lesson activities as described above.</line>
-                    </cell>
-                    <cell></cell>
-                </row>
-                <row>
-                    <cell>Advanced Learners (Challenge)</cell>
-                    <cell>
-                        XXXX
-                    </cell>
-                    <cell></cell>
-                </row>
-            </tabular>
-        </table>
-    </axiom> -->
+        <exercise xml:id="exercise-min-and-increasing">
+            <statement>
+                <p>
+                    A function <m>f</m> satisfies <m>f(0) = 2</m>, <m>f'(0) = 0</m>,
+                    <m>f'(x) \lt 0</m> for <m>x \lt 0</m>, and
+                    <m>f'(x) \gt 0</m> for <m>x \gt 0</m>.
+                </p>
+                <ol marker="(a)">
+                    <li><p>Is the point <m>(0, 2)</m> a local maximum or local minimum of <m>f</m>?</p></li>
+                    <li><p>Sketch a possible graph of <m>f</m>.</p></li>
+                </ol>
+            </statement>
+            <solution>
+                <p>
+                    (a) <m>f</m> is decreasing for <m>x \lt 0</m> and increasing for <m>x \gt 0</m>,
+                    so <m>f</m> has a local <em>minimum</em> at <m>x = 0</m>.
+                </p>
+                <p>
+                    (b) Any upward-opening curve with a minimum at <m>(0, 2)</m>,
+                    e.g. a parabola <m>f(x) = x^2 + 2</m>.
+                </p>
+            </solution>
+        </exercise>
+
+        <exercise xml:id="exercise-aroc-approx-deriv">
+            <statement>
+                <p>
+                    The table below gives values of a function <m>f</m>.
+                </p>
+                <table>
+                    <title>Values of <m>f</m></title>
+                    <tabular halign="center">
+                        <row header="yes" bottom="minor">
+                            <cell><m>x</m></cell>
+                            <cell>0</cell>
+                            <cell>1</cell>
+                            <cell>2</cell>
+                            <cell>3</cell>
+                            <cell>4</cell>
+                        </row>
+                        <row>
+                            <cell><m>f(x)</m></cell>
+                            <cell>1</cell>
+                            <cell>3</cell>
+                            <cell>7</cell>
+                            <cell>13</cell>
+                            <cell>21</cell>
+                        </row>
+                    </tabular>
+                </table>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            Estimate <m>f'(1)</m>, <m>f'(2)</m>, and <m>f'(3)</m> by computing
+                            the AROC over the interval on each side of the point and averaging:
+                            <me>f'(a) \approx \frac{f(a+1) - f(a-1)}{2}.</me>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            What pattern do you see in your estimates?
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Suggest a formula for <m>f'(x)</m>, and verify that it is consistent
+                            with the data by checking whether <m>f(x)</m> could be a polynomial.
+                        </p>
+                    </li>
+                </ol>
+            </statement>
+            <solution>
+                <p>
+                    (a) <m>f'(1) \approx \tfrac{f(2)-f(0)}{2} = \tfrac{7-1}{2} = 3</m>;
+                    <m>f'(2) \approx \tfrac{f(3)-f(1)}{2} = \tfrac{13-3}{2} = 5</m>;
+                    <m>f'(3) \approx \tfrac{f(4)-f(2)}{2} = \tfrac{21-7}{2} = 7</m>.
+                </p>
+                <p>
+                    (b) The estimates <m>3, 5, 7</m> are consecutive odd numbers — they increase
+                    by 2 each time, suggesting <m>f'(x) = 2x + 1</m>.
+                </p>
+                <p>
+                    (c) If <m>f'(x) = 2x + 1</m> then <m>f(x) = x^2 + x + c</m> for some constant.
+                    Check: <m>f(0) = c = 1</m>, so <m>f(x) = x^2 + x + 1</m>.
+                    Verify: <m>f(1)=3</m> ✓, <m>f(2)=7</m> ✓, <m>f(3)=13</m> ✓, <m>f(4)=21</m> ✓.
+                </p>
+            </solution>
+        </exercise>
+
+    </exercises>
 
     <xi:include href="../lesson-plan-templates/assessment-methods.ptx" />
 
     <xi:include href="../lesson-plan-templates/reflection.ptx"/>
 
     <convention>
-        <p>This section includes material adapted from "<url href="https://github.com/openstax/osbooks-college-algebra-bundle/tree/e10e6b91143fe884c7c60dc0ad82ef23e1be0aa5/modules/m49455/index.cnxml">Understanding the Instantaneous Rate of Change</url>" in Open STAX Precalculus 2e, used under <url href="https://creativecommons.org/licenses/by/4.0/deed.en">CC-BY-4.0</url>.</p>
+        <p>
+            Parts of this section include material adapted from
+            "<url href="https://github.com/openstax/osbooks-college-algebra-bundle/tree/e10e6b91143fe884c7c60dc0ad82ef23e1be0aa5/modules/m49455/index.cnxml">Understanding the Instantaneous Rate of Change</url>"
+            in OpenStax Precalculus 2e, used under
+            <url href="https://creativecommons.org/licenses/by/4.0/deed.en">CC-BY-4.0</url>.
+            The original OpenStax figure has been replaced by a TikZ diagram.
+        </p>
     </convention>
 
 </section>
