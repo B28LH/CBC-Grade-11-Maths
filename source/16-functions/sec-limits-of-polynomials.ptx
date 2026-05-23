@@ -197,7 +197,512 @@
         </table>
     </axiom> -->
 
+
     <xi:include href="../lesson-plan-templates/assessment-methods.ptx" />
 
     <xi:include href="../lesson-plan-templates/reflection.ptx"/>
+
+
+    <activity xml:id="activity-exploring-polynomial-limits">
+        <title>Exploring Limits of Polynomials</title>
+
+        <p>
+            Consider the polynomial function <m>f(x) = x^2 - 2x + 3</m>. In this activity, you will explore the behavior of the function as the input values approach a specific number and as the inputs become extremely large or extremely small.
+        </p>
+
+        <p>
+            Begin by evaluating the function for values of <m>x</m> close to <m>3</m>. As you complete the table, try to predict each output before calculating it.
+        </p>
+
+        <p>
+            <alert>
+                Pay close attention to how the values of <m>f(x)</m> change as <m>x</m> approaches <m>3</m> from both the left and the right.
+            </alert>
+        </p>
+
+        <table>
+            <tabular top="major" bottom="major" left="medium" right="medium">
+                <row>
+                    <cell><m>x</m></cell>
+                    <cell><m>2.9</m></cell>
+                    <cell><m>2.99</m></cell>
+                    <cell><m>3</m></cell>
+                    <cell><m>3.01</m></cell>
+                    <cell><m>3.1</m></cell>
+                </row>
+                <row>
+                    <cell><m>f(x)</m></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                </row>
+            </tabular>
+        </table>
+
+        <p>
+            After completing the table, discuss the following questions with a partner or as a group.
+        </p>
+
+        <p>
+            <ol marker="(a)">
+                <li>
+                    <p>
+                        What value do the outputs appear to approach as <m>x</m> gets closer to <m>3</m>?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Do the values approaching from the left and from the right show the same pattern?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Compare your observations with the exact value obtained by evaluating <m>f(3)</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        What does this suggest about the continuity of polynomial functions?
+                    </p>
+                </li>
+            </ol>
+        </p>
+
+        <p>
+            Next, investigate what happens when the input values become very large in magnitude (both positive and negative).
+        </p>
+
+        <table>
+            <tabular top="major" bottom="major" left="medium" right="medium">
+                <row>
+                    <cell><m>x</m></cell>
+                    <cell><m>-1000</m></cell>
+                    <cell><m>-100</m></cell>
+                    <cell><m>-10</m></cell>
+                    <cell><m>10</m></cell>
+                    <cell><m>100</m></cell>
+                    <cell><m>1000</m></cell>
+                </row>
+                <row>
+                    <cell><m>f(x)</m></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                </row>
+            </tabular>
+        </table>
+
+        <p>
+            Use your completed table to answer the following questions.
+        </p>
+
+        <p>
+            <ol marker="(a)">
+                <li>
+                    <p>
+                        What happens to the outputs as the magnitude of <m>x</m> increases?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Do the outputs appear to approach a fixed value, or do they continue to grow without bound?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        How does the sign of <m>x</m> affect the outputs of the function?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        What conclusion can you draw about the end behavior of polynomial functions?
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </activity>
+
+    <insight>
+        <paragraphs xml:id="para-direct-substitution">
+            <title>Limits of Polynomials at a Finite Point</title>
+
+            <p>
+                Polynomial functions are continuous everywhere, meaning they have no breaks, gaps, or sudden changes in value. Because of this, their limits at any real number can be found directly by substitution.
+            </p>
+
+            <p>
+                If <m>P(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0</m> is a polynomial and <m>c</m> is a real number, then
+                <me>\lim_{x \to c} P(x) = P(c)</me>
+                so the limit is obtained by simply replacing <m>x</m> with <m>c</m>.
+            </p>
+        </paragraphs>
+
+        <paragraphs xml:id="para-limits-at-infinity">
+            <title>Limits of Polynomials at Infinity</title>
+
+            <p>
+                To find limits as <m>x \to \infty</m> or <m>x \to -\infty</m>, we focus on the end behaviour of the polynomial. For very large values of <m>x</m>, the highest power term dominates the expression, while all lower-degree terms become insignificant.
+            </p>
+
+            <p>
+                Thus, the behaviour of the polynomial is determined by its leading term <m>a_n x^n</m>, and the limit can be analysed using
+                <me>\lim_{x \to \pm\infty} (a_n x^n + a_{n-1} x^{n-1} + \dots + a_0) = \lim_{x \to \pm\infty} a_n x^n</me>
+            </p>
+
+            <p>
+                The final outcome depends on the degree of the polynomial and the sign of the leading coefficient. Even and odd powers behave differently as <m>x</m> becomes large in magnitude, and the sign of <m>a_n</m> determines whether the graph rises or falls.
+            </p>
+        </paragraphs>
+    </insight>
+
+    <!-- Examples -->
+
+    <example xml:id="ex-drone-height">
+        <statement>
+            <p>
+                A student is flying a small drone. The height of the drone is measured in meters, <m>t</m> seconds after takeoff is modeled by the polynomial function
+            </p>
+
+            <p>
+                <me>h(t) = -2t^2 + 12t + 5</me>
+            </p>
+
+            <p>
+                Determine the height that the drone approaches as the time gets closer and closer to <m>3</m> seconds. Express your answer using limit notation and evaluate the limit.
+            </p>
+        </statement>
+
+        <solution>
+            <p>
+                Begin by expressing the situation using limit notation.
+            </p>
+
+            <p>
+                <me>\lim_{t \to 3} (-2t^2 + 12t + 5)</me>
+            </p>
+
+            <p>
+                Since <m>h(t)</m> is a polynomial function, it is continuous for all values of <m>t</m>. Therefore, the limit can be found by substituting <m>t=3</m> directly into the function.
+            </p>
+
+            <p>
+                Substitute and simplify.
+            </p>
+
+            <p>
+                <md>
+                    <mrow>h(3) \amp = -2(3)^2 + 12(3) + 5</mrow>
+                    <mrow>\amp = -2(9) + 36 + 5</mrow>
+                    <mrow>\amp = -18 + 36 + 5</mrow>
+                    <mrow>\amp = 23</mrow>
+                </md>
+            </p>
+
+            <p>
+                Therefore, as the time approaches <m>3</m> seconds, the height of the drone approaches <m>23</m> meters.
+            </p>
+
+            <p>
+                <me>\lim_{t \to 3} (-2t^2 + 12t + 5)=23</me>
+            </p>
+        </solution>
+    </example>
+
+    <example xml:id="ex-graph-end-behavior">
+        <statement>
+            <p>
+                Look at the graph of the polynomial function <m>f(x) = x^3 - 3x</m> drawn below.
+            </p>
+            <figure xml:id="fig-cubic-graph-limit">
+                <caption>Graph of <m>f(x) = x^3 - 3x</m></caption>
+                <image width="60%" xml:id="img-cubic-limit">
+                    <latex-image>
+                        \begin{tikzpicture}[&gt;=stealth, scale=1]
+                            \draw[help lines, color=gray!30, dashed] (-3,-4) grid (3,4);
+                            \draw[-&gt;, thick] (-3.5,0) -- (3.5,0) node[right] {$x$};
+                            \draw[-&gt;, thick] (0,-4.5) -- (0,4.5) node[above] {$y$};
+                            \draw[ultra thick, blue, &lt;-&gt;, domain=-2.3:2.3, samples=100] plot (\x, {\x*\x*\x - 3*\x});
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </figure>
+            <p>
+                Using the graph, find the following limits.
+            </p>
+            <p>
+            <ol marker="(a)" cols="2">
+                <li><m>\lim_{x \to \infty} f(x)</m></li>
+                <li><m>\lim_{x \to -\infty} f(x)</m></li>
+            </ol>
+            </p>
+            <p>
+                After finding the answers from the graph, verify your results algebraically using the leading term of the function.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                We can find the answers by observing the visual trends on the graph.
+            </p>
+            <p>
+            <ol marker="(a)">
+                <li>
+                    <p>
+                        The limit as <m>x \to \infty</m> asks what happens to the <m>y</m>-values as we move far to the right. Looking at the right side of the graph, the blue curve points straight up. This means the values keep getting bigger without stopping. So, <m>\lim_{x \to \infty} f(x) = \infty</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        The limit as <m>x \to -\infty</m> asks what happens to the <m>y</m>-values as we move far to the left. Looking at the left side of the graph, the curve points straight down. This means the values keep getting smaller into the negatives. So, <m>\lim_{x \to -\infty} f(x) = -\infty</m>.
+                    </p>
+                </li>
+            </ol>
+            </p>
+            <p>
+                To verify this with math, we look at the function <m>f(x) = x^3 - 3x</m>. For limits at infinity, we only care about the <term>leading term</term>, which is <m>x^3</m>.
+            </p>
+            <p>
+                Because the degree is an odd number (<m>3</m>) and the coefficient in front is positive (<m>1</m>), the ends of the graph will go in opposite directions. A huge positive number cubed becomes positive infinity. A huge negative number cubed remains negative. This perfectly matches the visual behavior we saw on the graph.
+            </p>
+        </solution>
+    </example>
+
+    <example xml:id="ex-bacteria-growth">
+        <statement>
+            <p>
+                A biologist is studying how a new type of bacteria grows in a lab dish. She finds that the population <m>P</m> of the bacteria after <m>x</m> hours can be estimated by the function:
+            </p>
+            <p><me>P(x) = 0.5x^4 - 2x^3 + 10x + 50</me></p>
+            <p>
+                According to this math model, what happens to the bacteria population as time goes on forever? Evaluate <m>\lim_{x \to \infty} P(x)</m> and explain what the answer means in real life.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                To find out what happens as time goes on endlessly, we need to evaluate the limit as <m>x \to \infty</m>.
+            </p>
+            <p><me>\lim_{x \to \infty} (0.5x^4 - 2x^3 + 10x + 50)</me></p>
+            <p>
+                When dealing with infinity, only the term with the highest power matters. The leading term here is <m>0.5x^4</m>. All the other terms (<m>-2x^3</m>, <m>10x</m>, and <m>50</m>) grow so slowly in comparison that they become unnoticeable. We can therefore simplify the limit to just that leading term.
+            </p>
+            <p><me>\lim_{x \to \infty} 0.5x^4</me></p>
+            <p>
+                If you take a very large positive number and raise it to the power of <m>4</m>, it becomes a massive positive number. Multiplying it by <m>0.5</m> still leaves a massive positive number.
+            </p>
+            <p><me>\lim_{x \to \infty} 0.5x^4 = \infty</me></p>
+            <p>
+                <alert>What this means:</alert> According to this mathematical model, if the bacteria have enough food and space, the population will continue to grow larger and larger without any bound.
+            </p>
+        </solution>
+    </example>
+
+    <example xml:id="ex-tricky-algebraic">
+        <statement>
+            <p>
+                Evaluate the following limit algebraically.
+            </p>
+            <p><me>\lim_{x \to -\infty} (-3x^6 + 8x^5 - 2x^2 + 100)</me></p>
+        </statement>
+        <solution>
+            <p>
+                We begin by identifying the leading term. As <m>x</m> gets extremely large in the negative direction, the term with the highest exponent takes over completely. In this polynomial, the leading term is <m>-3x^6</m>.
+            </p>
+            <p>
+                We can rewrite the problem to focus entirely on that single term:
+            </p>
+            <p><me>\lim_{x \to -\infty} -3x^6</me></p>
+            <p>
+                We then think about what happens to the <m>x</m> portion of the expression. We are plugging in a huge negative number. When you raise a negative number to an even power (like <m>6</m>), the negative signs cancel out in pairs, and the result becomes a massive positive value. So, the <m>x^6</m> part approaches positive infinity.
+            </p>
+            <p>
+                Finally, we apply the leading coefficient. We have a massive positive number from the exponent, but we must multiply it by <m>-3</m>. A positive number times a negative number gives a negative result. Therefore, the entire value plunges downwards into the negatives.
+            </p>
+            <p>
+                <me>\lim_{x \to -\infty} -3x^6 = -\infty</me>
+            </p>
+        </solution>
+    </example>
+
+    <!-- Exercises -->
+
+    <exercises xml:id="exercises-polynomial-limits-practice">
+        
+        <exercise>
+            <statement>
+                <p>
+                    Find the following limit using direct substitution.
+                </p>
+
+                <p>
+                    <me>\lim_{x \to 4} (x^2 - 6x + 8)</me>
+                </p>
+            </statement>
+
+            <answer>
+                <p><m>0</m></p>
+            </answer>
+
+            <solution>
+                <p>
+                    Because the expression is a polynomial, the limit can be found by directly substituting <m>x = 4</m> into the function.
+                </p>
+
+                <p>
+                    <md>
+                        <mrow>\lim_{x \to 4} (x^2 - 6x + 8) \amp = (4)^2 - 6(4) + 8</mrow>
+                        <mrow>\amp = 16 - 24 + 8</mrow>
+                        <mrow>\amp = -8 + 8</mrow>
+                        <mrow>\amp = 0</mrow>
+                    </md>
+                </p>
+
+                <p>
+                    Therefore,
+                    <m>\displaystyle \lim_{x \to 4} (x^2 - 6x + 8) = 0</m>.
+                </p>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    A company's daily profit <m>P</m> (in dollars) based on selling <m>x</m> items is modeled by <m>P(x) = -0.1x^3 + 5x^2 + 100</m>. Evaluate <m>\lim_{x \to 10} P(x)</m> to find the profit when the items sold get very close to <m>10</m>.
+                </p>
+            </statement>
+            <answer>
+                <p><m>500</m> dollars</p>
+            </answer>
+            <solution>
+                <p>
+                    We substitute <m>x = 10</m> directly into the profit function to see what value it approaches.
+                </p>
+                <p>
+                    <md>
+                        <mrow>\lim_{x \to 10} (-0.1x^3 + 5x^2 + 100) \amp = -0.1(10)^3 + 5(10)^2 + 100</mrow>
+                        <mrow>\amp = -0.1(1000) + 5(100) + 100</mrow>
+                        <mrow>\amp = -100 + 500 + 100 = 500</mrow>
+                    </md>
+                </p>
+            </solution>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    Evaluate the following end behavior limits.
+                </p>
+                <p>
+                    <ol marker="(a)" cols="2">
+                        <li>
+                            <me>\lim_{x \to \infty} (-4x^5 + 2x^2 - 1)</me>
+                        </li>
+
+                        <li>
+                            <me>\lim_{x \to -\infty} (5x^4 - 3x^3 + x)</me>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+
+            <answer>
+                <p>
+                    <ol marker="a">
+                        <li><m>-\infty</m></li>
+                        <li><m>\infty</m></li>
+                    </ol>
+                </p>
+            </answer>
+
+            <solution>
+                <p>
+                    To determine the end behavior of a polynomial, focus on the leading term because it dominates the expression for very large positive or negative values of <m>x</m>.
+                </p>
+
+                <p>
+                    <ol marker="(a)">
+
+                        <li>
+                            <p>
+                                The leading term is <m>-4x^5</m>.
+                            </p>
+
+                            <p>
+                                As <m>x \to \infty</m>, <m>x^5</m> becomes a very large positive number. Multiplying by the negative coefficient <m>-4</m> makes the expression decrease without bound.
+                            </p>
+
+                            <p>
+                                <me>\lim_{x \to \infty} (-4x^5 + 2x^2 - 1)=\lim_{x \to \infty}(-4x^5)=-\infty</me>
+                            </p>
+                        </li>
+
+                        <li>
+                            <p>
+                                The leading term is <m>5x^4</m>.
+                            </p>
+
+                            <p>
+                                As <m>x \to -\infty</m>, a negative number raised to the even power <m>4</m> becomes positive. Multiplying by the positive coefficient <m>5</m> keeps the expression positive and increasing without bound.
+                            </p>
+
+                            <p>
+                                <me>\lim_{x \to -\infty}(5x^4-3x^3+x)=\lim_{x \to -\infty}(5x^4)=\infty</me>
+                            </p>
+                        </li>
+
+                    </ol>
+                </p>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    Look at the polynomial <m>g(x) = ax^3 + bx^2 + cx + d</m>. If <m>a</m> is a negative number, determine the limit of <m>g(x)</m> as <m>x \to -\infty</m>.
+                </p>
+            </statement>
+            <answer>
+                <p><m>\infty</m></p>
+            </answer>
+            <solution>
+                <p>
+                    The leading term that controls the end behavior is <m>ax^3</m>. 
+                </p>
+                <p>
+                    As <m>x \to -\infty</m>, the <m>x^3</m> portion will be a very large negative number because an odd power preserves the negative sign.
+                </p>
+                <p>
+                    Since we are told the coefficient <m>a</m> is negative, we multiply a negative by a negative. This double negative cancels out, resulting in a positive infinity.
+                </p>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    Suppose <m>P(x) = kx^2 - 3x + 2</m>, where <m>k</m> is an unknown constant. If <m>\lim_{x \to -2} P(x) = 20</m>, determine the value of <m>k</m>.
+                </p>
+            </statement>
+            <answer>
+                <p><m>3</m></p>
+            </answer>
+            <solution>
+                <p>
+                    Because this is a finite limit of a polynomial, we substitute <m>x = -2</m> directly into the expression and set it equal to <m>20</m>. From there, we solve the equation for <m>k</m>.
+                </p>
+                <p>
+                    <md>
+                        <mrow>k(-2)^2 - 3(-2) + 2 \amp = 20</mrow>
+                        <mrow>4k + 6 + 2 \amp = 20</mrow>
+                        <mrow>4k + 8 \amp = 20</mrow>
+                        <mrow>4k \amp = 12</mrow>
+                        <mrow>k \amp = 3</mrow>
+                    </md>
+                </p>
+            </solution>
+        </exercise>
+
+    </exercises>
 </section>
