@@ -200,4 +200,912 @@
     <xi:include href="../lesson-plan-templates/assessment-methods.ptx" />
 
     <xi:include href="../lesson-plan-templates/reflection.ptx"/>
+
+    <activity xml:id="activity-exploring-core-trig-functions">
+        <title>Exploring the Core Trigonometric Functions</title>
+
+        <p>
+            Consider the unit circle centered at the origin with radius 1. For an angle <m>x</m>, the coordinates of the point on the circle are given by <m>(\cos(x), \sin(x))</m>. The tangent function is defined as the ratio
+            <m>\tan(x)=\frac{\sin(x)}{\cos(x)}</m>.
+        </p>
+
+        <p>
+            Complete the table below by evaluating the sine, cosine, and tangent values for each quadrantal angle.
+        </p>
+
+        <table>
+            <tabular top="major" bottom="major" left="medium" right="medium">
+                <row>
+                    <cell><m>x</m></cell>
+                    <cell><m>0</m></cell>
+                    <cell><m>\frac{\pi}{2}</m></cell>
+                    <cell><m>\pi</m></cell>
+                    <cell><m>\frac{3\pi}{2}</m></cell>
+                    <cell><m>2\pi</m></cell>
+                </row>
+
+                <row>
+                    <cell><m>\sin(x)</m></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                </row>
+
+                <row>
+                    <cell><m>\cos(x)</m></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                </row>
+
+                <row>
+                    <cell><m>\tan(x)</m></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                </row>
+            </tabular>
+        </table>
+
+        <p>
+            Use your completed table and the unit circle diagram to answer the following questions.
+        </p>
+
+        <p>
+            <ol marker="(a)">
+                <li>
+                    <p>
+                        Which angles make the tangent function undefined? Explain your observation using the formula <m>\tan(x)=\frac{\sin(x)}{\cos(x)}</m>.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        Describe how the sine and cosine values change as the angle moves around the unit circle.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        Identify the maximum and minimum values of the sine and cosine functions.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        Compare the periods of the sine, cosine, and tangent functions.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        Predict the values of <m>\sin(3\pi)</m> and <m>\cos(3\pi)</m> using the periodic behavior of the functions.
+                    </p>
+                </li>
+            </ol>
+        </p>
+
+        <figure xml:id="fig-unit-circle-activity">
+            <caption>Key quadrantal angles on the unit circle</caption>
+
+            <image width="55%">
+                <latex-image>
+                    \begin{tikzpicture}[scale=2.2]
+
+                        \draw (0,0) circle (1);
+
+                        \draw[-&gt;] (-1.3,0)--(1.3,0) node[right] {$x$};
+                        \draw[-&gt;] (0,-1.3)--(0,1.3) node[above] {$y$};
+
+                        \filldraw[blue] (1,0) circle (1pt) node[below right] {$\left(1,0\right)$};
+                        \filldraw[blue] (0,1) circle (1pt) node[above left] {$\left(0,1\right)$};
+                        \filldraw[blue] (-1,0) circle (1pt) node[below left] {$\left(-1,0\right)$};
+                        \filldraw[blue] (0,-1) circle (1pt) node[below left] {$\left(0,-1\right)$};
+
+                        \node at (0.3,0.15) {$0$};
+                        \node at (0.2,1.15) {$\frac{\pi}{2}$};
+                        \node at (-1.15,0.15) {$\pi$};
+                        \node at (-0.25,-1.15) {$\frac{3\pi}{2}$};
+
+                    \end{tikzpicture}
+                </latex-image>
+            </image>
+        </figure>
+    </activity>
+
+
+    <insight>
+        <p>
+            Sine, cosine, and tangent are the three primary trigonometric functions and are closely connected to the unit circle.
+        </p>
+
+        <p>
+            For any angle <m>x</m>, the point on the unit circle is written as <m>(\cos(x),\sin(x))</m>.
+        </p>
+
+        <p>
+            <ul>
+
+                <li>
+                    <p>
+                        <alert>Cosine</alert> gives the horizontal coordinate.
+                    </p>
+
+                    <p>
+                        <me>\cos(x)=x\text{-coordinate}</me>
+                    </p>
+
+                    <p>
+                        Domain <m>(-\infty,\infty)</m>
+                    </p>
+
+                    <p>
+                        Range <m>[-1,1]</m>
+                    </p>
+
+                    <p>
+                        Period <m>2\pi</m>
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <alert>Sine</alert> gives the vertical coordinate.
+                    </p>
+
+                    <p>
+                        <me>\sin(x)=y\text{-coordinate}</me>
+                    </p>
+
+                    <p>
+                        Domain <m>(-\infty,\infty)</m>
+                    </p>
+
+                    <p>
+                        Range <m>[-1,1]</m>
+                    </p>
+
+                    <p>
+                        Period <m>2\pi</m>
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <alert>Tangent</alert> is the ratio of sine to cosine.
+                    </p>
+
+                    <p>
+                        <me>\tan(x)=\frac{\sin(x)}{\cos(x)}</me>
+                    </p>
+
+                    <p>
+                        Tangent is undefined whenever <m>\cos(x)=0</m>.
+                    </p>
+
+                    <p>
+                        Domain excludes odd multiples of <m>\frac{\pi}{2}</m>
+                    </p>
+
+                    <p>
+                        Range <m>(-\infty,\infty)</m>
+                    </p>
+
+                    <p>
+                        Period <m>\pi</m>
+                    </p>
+                </li>
+
+            </ul>
+        </p>
+
+        <p>
+            The signs of the trigonometric functions depend on the quadrant in which the angle lies.
+        </p>
+
+        <figure xml:id="fig-trig-signs-quadrants">
+    <caption>Signs of trigonometric functions in each quadrant</caption>
+    
+    <image width="60%" xml:id="img-trig-signs-quadrants">
+        <shortdescription>
+            A diagram showing a coordinate plane divided into four quadrants. Labels indicate which trigonometric functions (Sine, Cosine, Tangent) are positive in each quadrant. 
+            Quadrant 1: All positive. Quadrant 2: Sine positive. Quadrant 3: Tangent positive. Quadrant 4: Cosine positive.
+        </shortdescription>
+        <latex-image>
+            \begin{tikzpicture}[scale=2.5, &gt;=stealth]
+                % Draw Axes
+                \draw[&lt;-&gt;, thick] (-1.3, 0) -- (1.3, 0) node[right] {$x$};
+                \draw[&lt;-&gt;, thick] (0, -1.3) -- (0, 1.3) node[above] {$y$};
+
+                % Draw Unit Circle (using a light color to remain background info)
+                \draw[gray!50, thin] (0,0) circle (1);
+
+                % Define a distance from the origin for labels to ensure they are inside circle
+                \def\r{0.65}
+
+                % --- Quadrant Labels ---
+                \node[font=\large\bfseries] at (0.9, 0.9) {I};
+                \node[font=\large\bfseries] at (-0.9, 0.9) {II};
+                \node[font=\large\bfseries] at (-0.9, -0.9) {III};
+                \node[font=\large\bfseries] at (0.9, -0.9) {IV};
+
+                % --- Trigonometric Signs Data ---
+                % Presented cleanly, standardizing presentation across all quadrants
+                
+                % Quadrant I: All Positive
+                \node[align=center, text=blue!80!black] at ({45}:\r) {
+                    \textbf{All Pos.}\\
+                    $\sin \theta &gt; 0$\\
+                    $\cos \theta &gt; 0$\\
+                    $\tan \theta &gt; 0$
+                };
+
+                % Quadrant II: Sine Positive
+                \node[align=center, text=green!60!black] at ({135}:\r) {
+                    \textbf{Sine Pos.}\\
+                    $\sin \theta &gt; 0$
+                };
+
+                % Quadrant III: Tangent Positive
+                \node[align=center, text=orange!80!black] at ({225}:\r) {
+                    \textbf{Tangent Pos.}\\
+                    $\tan \theta &gt; 0$
+                };
+
+                % Quadrant IV: Cosine Positive
+                \node[align=center, text=red!80!black] at ({315}:\r) {
+                    \textbf{Cosine Pos.}\\
+                    $\cos \theta &gt; 0$
+                };
+
+            \end{tikzpicture}
+        </latex-image>
+    </image>
+</figure>
+    </insight>
+
+
+    <example xml:id="ex-eval-sine-unit-circle">
+        <statement>
+            <p>
+                Evaluate the exact value of <m>\sin\left(\frac{5\pi}{6}\right)</m>.
+            </p>
+        </statement>
+
+        <solution>
+            <p>
+                The angle <m>\frac{5\pi}{6}</m> lies in Quadrant II.
+            </p>
+
+            <p>
+                First determine the reference angle.
+            </p>
+
+            <p>
+                <me>\pi-\frac{5\pi}{6}=\frac{\pi}{6}</me>
+            </p>
+
+            <p>
+                The reference angle is therefore <m>\frac{\pi}{6}</m>.
+            </p>
+
+            <p>
+                In Quadrant II, sine values are positive.
+            </p>
+
+            <p>
+                Since
+            </p>
+
+            <p>
+                <me>\sin\left(\frac{\pi}{6}\right)=\frac{1}{2}</me>
+            </p>
+
+            <p>
+                we conclude that
+            </p>
+
+            <p>
+                <me>\sin\left(\frac{5\pi}{6}\right)=\frac{1}{2}</me>
+            </p>
+
+            <figure xml:id="fig-sine-five-pi-six-improved">
+                <caption>Sine value in Quadrant II</caption>
+
+                <image width="45%">
+                    <latex-image>
+                        \begin{tikzpicture}[scale=2]
+
+                            \draw (0,0) circle (1);
+
+                            \draw[-&gt;] (-1.2,0)--(1.2,0);
+                            \draw[-&gt;] (0,-1.2)--(0,1.2);
+
+                            \coordinate (P) at ({cos(150)},{sin(150)});
+
+                            \draw[thick,blue] (0,0)--(P);
+
+                            \draw[dashed] ({cos(150)},0)--(P);
+
+                            \filldraw[blue] (P) circle (1pt);
+
+                            \node[above left] at (P)
+                            {$\left(-\frac{\sqrt3}{2},\frac12\right)$};
+
+                            \draw[-&gt;] (0.3,0) arc (0:150:0.3);
+
+                            \node at (-0.2,0.35) {$\frac{5\pi}{6}$};
+
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </figure>
+        </solution>
+    </example>
+
+
+    <example xml:id="ex-eval-cosine-unit-circle">
+        <statement>
+            <p>
+                Determine the exact value of <m>\cos\left(\frac{4\pi}{3}\right)</m>.
+            </p>
+        </statement>
+
+        <solution>
+            <p>
+                The angle <m>\frac{4\pi}{3}</m> is located in Quadrant III.
+            </p>
+
+            <p>
+                To find the reference angle, subtract <m>\pi</m>.
+            </p>
+
+            <p>
+                <me>\frac{4\pi}{3}-\pi=\frac{\pi}{3}</me>
+            </p>
+
+            <p>
+                The cosine of the reference angle is
+            </p>
+
+            <p>
+                <me>\cos\left(\frac{\pi}{3}\right)=\frac12</me>
+            </p>
+
+            <p>
+                Cosine values are negative in Quadrant III, so the answer becomes negative.
+            </p>
+
+            <p>
+                Therefore,
+            </p>
+
+            <p>
+                <me>\cos\left(\frac{4\pi}{3}\right)=-\frac12</me>
+            </p>
+
+            <figure xml:id="fig-cos-four-pi-three-improved">
+                <caption>Cosine value in Quadrant III</caption>
+
+                <image width="45%">
+                    <latex-image>
+                        \begin{tikzpicture}[scale=2]
+
+                            \draw (0,0) circle (1);
+
+                            \draw[-&gt;] (-1.2,0)--(1.2,0);
+                            \draw[-&gt;] (0,-1.2)--(0,1.2);
+
+                            \coordinate (P) at ({cos(240)},{sin(240)});
+
+                            \draw[thick,red] (0,0)--(P);
+
+                            \draw[dashed] (0,{sin(240)})--(P);
+
+                            \filldraw[red] (P) circle (1pt);
+
+                            \node[below left] at (P)
+                            {$\left(-\frac12,-\frac{\sqrt3}{2}\right)$};
+
+                            \draw[-&gt;] (0.25,0) arc (0:240:0.25);
+
+                            \node at (-0.25,0.25) {$\frac{4\pi}{3}$};
+
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </figure>
+        </solution>
+    </example>
+
+
+    <example xml:id="ex-eval-tangent-unit-circle">
+        <statement>
+            <p>
+                Evaluate the exact value of <m>\tan\left(-\frac{\pi}{4}\right)</m>.
+            </p>
+        </statement>
+
+        <solution>
+            <p>
+                A negative angle means the rotation is clockwise from the positive <m>x</m>-axis.
+            </p>
+
+            <p>
+                The angle <m>-\frac{\pi}{4}</m> lies in Quadrant IV.
+            </p>
+
+            <p>
+                On the unit circle, the corresponding coordinates are
+            </p>
+
+            <p>
+                <me>\left(\frac{\sqrt2}{2},-\frac{\sqrt2}{2}\right)</me>
+            </p>
+
+            <p>
+                Tangent is found using the ratio
+            </p>
+
+            <p>
+                <me>\tan(x)=\frac{\sin(x)}{\cos(x)}</me>
+            </p>
+
+            <p>
+                Substitute the coordinates into the ratio.
+            </p>
+
+            <p>
+                <md>
+                    <mrow>\tan\left(-\frac{\pi}{4}\right)\amp=\frac{-\frac{\sqrt2}{2}}{\frac{\sqrt2}{2}}</mrow>
+                    <mrow>\amp=-1</mrow>
+                </md>
+            </p>
+
+            <p>
+                Therefore,
+            </p>
+
+            <p>
+                <me>\tan\left(-\frac{\pi}{4}\right)=-1</me>
+            </p>
+
+            <figure xml:id="fig-tan-negative-pi-four-improved">
+                <caption>Tangent value in Quadrant IV</caption>
+
+                <image width="45%">
+                    <latex-image>
+                        \begin{tikzpicture}[scale=2]
+
+                            \draw (0,0) circle (1);
+
+                            \draw[-&gt;] (-1.2,0)--(1.2,0);
+                            \draw[-&gt;] (0,-1.2)--(0,1.2);
+
+                            \coordinate (P) at ({cos(-45)},{sin(-45)});
+
+                            \draw[thick,teal] (0,0)--(P);
+
+                            \draw[dashed] ({cos(-45)},0)--(P);
+
+                            \filldraw[teal] (P) circle (1pt);
+
+                            \node[below right] at (P)
+                            {$\left(\frac{\sqrt2}{2},-\frac{\sqrt2}{2}\right)$};
+
+                            \draw[-&gt;] (0.35,0) arc (0:-45:0.35);
+
+                            \node at (0.45,-0.2) {$-\frac{\pi}{4}$};
+
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </figure>
+        </solution>
+    </example>
+
+    <exercises xml:id="exercises-sin-cos-tan">
+
+        <exercise>
+            <statement>
+                <p>
+                    Evaluate the exact value of <m>\cos(\pi)</m>.
+                </p>
+            </statement>
+
+            <answer>
+                <p>
+                    <m>-1</m>
+                </p>
+            </answer>
+
+            <solution>
+                <p>
+                    The angle <m>\pi</m> radians corresponds to halfway around the unit circle, landing on the negative <m>x</m>-axis. The coordinates here are <m>(-1, 0)</m>. Since cosine is the <m>x</m>-coordinate, the output is <m>-1</m>.
+                </p>
+
+                <figure xml:id="fig-ex-cos-pi">
+                    <caption>Cosine at <m>\pi</m></caption>
+                    <image width="40%">
+                        <latex-image>
+                            \begin{tikzpicture}[scale=1.5]
+                                \draw (0,0) circle (1);
+                                \draw[-&gt;] (-1.5,0)--(1.5,0);
+                                \draw[-&gt;] (0,-1.5)--(0,1.5);
+                                \filldraw[red] (-1,0) circle (1.5pt) node[above left] {$(-1, 0)$};
+                                \draw[-&gt;, thick] (0.3,0) arc (0:180:0.3) node[midway, above] {$\pi$};
+                            \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    Graph one full period of the function <m>y = \sin(x)</m> on the interval <m>[0, 2\pi]</m>. Clearly identify the <m>x</m>-intercepts.
+                </p>
+            </statement>
+
+            <answer>
+                <p>
+                    The <m>x</m>-intercepts are <m>(0, 0)</m>, <m>(\pi, 0)</m>, and <m>(2\pi, 0)</m>.
+                </p>
+            </answer>
+
+            <solution>
+                <p>
+                    The sine function starts at 0, reaches its maximum of 1 at <m>\frac{\pi}{2}</m>, crosses the <m>x</m>-axis at <m>\pi</m>, reaches its minimum of -1 at <m>\frac{3\pi}{2}</m>, and completes its cycle at <m>2\pi</m> where it crosses the <m>x</m>-axis again.
+                </p>
+
+                <figure xml:id="fig-ex-sine-graph">
+                    <caption>Graph of <m>y = \sin(x)</m></caption>
+                    <image width="60%">
+                        <latex-image>
+                            \begin{tikzpicture}[scale=1.2]
+                                \draw[-&gt;] (-0.5,0) -- (6.8,0) node[right]{$x$};
+                                \draw[-&gt;] (0,-1.5) -- (0,1.5) node[above]{$y$};
+                                
+                                \draw[domain=0:6.28,smooth,thick,blue] plot (\x,{sin(\x r)});
+                                
+                                \fill (0,0) circle (1.5pt) node[below left] {$0$};
+                                \fill (3.14,0) circle (1.5pt) node[below left] {$\pi$};
+                                \fill (6.28,0) circle (1.5pt) node[below left] {$2\pi$};
+                                
+                                \draw[dashed, gray] (1.57,0) -- (1.57,1) node[above, black] {$(\frac{\pi}{2}, 1)$};
+                                \draw[dashed, gray] (4.71,0) -- (4.71,-1) node[below, black] {$(\frac{3\pi}{2}, -1)$};
+                            \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    Find the domain restrictions (vertical asymptotes) for <m>y = \tan(x)</m> on the interval <m>[0, 2\pi]</m>. Explain why they occur.
+                </p>
+            </statement>
+
+            <answer>
+                <p>
+                    <m>x = \frac{\pi}{2}</m> and <m>x = \frac{3\pi}{2}</m>. They occur because cosine is zero at these angles, making the tangent ratio undefined.
+                </p>
+            </answer>
+
+            <solution>
+                <p>
+                    Tangent is defined as <m>\tan(x) = \frac{\sin(x)}{\cos(x)}</m>. The function is undefined wherever the denominator, <m>\cos(x)</m>, equals zero. On the interval <m>[0, 2\pi]</m>, <m>\cos(x) = 0</m> at the top and bottom of the unit circle: <m>x = \frac{\pi}{2}</m> and <m>x = \frac{3\pi}{2}</m>. These create vertical asymptotes.
+                </p>
+
+                <figure xml:id="fig-ex-tan-asymptotes">
+                    <caption>Graph of <m>y = \tan(x)</m> with vertical asymptotes</caption>
+                    <image width="60%">
+                        <latex-image>
+                            \begin{tikzpicture}[scale=1.0]
+                                \draw[-&gt;] (-0.5,0) -- (6.8,0) node[right]{$x$};
+                                \draw[-&gt;] (0,-3) -- (0,3) node[above]{$y$};
+                                
+                                \draw[dashed, thick, red] (1.57, -3) -- (1.57, 3) node[above, black] {$x=\frac{\pi}{2}$};
+                                \draw[dashed, thick, red] (4.71, -3) -- (4.71, 3) node[above, black] {$x=\frac{3\pi}{2}$};
+                                
+                                \draw[domain=0:1.45,smooth,thick,teal] plot (\x,{tan(\x r)});
+                                \draw[domain=1.69:4.59,smooth,thick,teal] plot (\x,{tan(\x r)});
+                                \draw[domain=4.83:6.28,smooth,thick,teal] plot (\x,{tan(\x r)});
+                            \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    If <m>\sin(\theta) = \frac{3}{5}</m> and <m>\theta</m> is in Quadrant I, find the exact values of <m>\cos(\theta)</m> and <m>\tan(\theta)</m>.
+                </p>
+            </statement>
+
+            <answer>
+                <p>
+                    <m>\cos(\theta) = \frac{4}{5}</m>, <m>\tan(\theta) = \frac{3}{4}</m>
+                </p>
+            </answer>
+
+            <solution>
+                <p>
+                    We can model this situation using a right triangle in Quadrant I. The sine ratio is <m>\frac{\text{Opposite}}{\text{Hypotenuse}}</m>, so we can assign the opposite side a length of 3 and the hypotenuse a length of 5.
+                </p>
+
+                <p>
+                    Using the Pythagorean theorem (<m>a^2 + b^2 = c^2</m>), we find the adjacent side:
+                </p>
+                <p>
+                    <md>
+                        <mrow>a^2 + 3^2 \amp = 5^2</mrow>
+                        <mrow>a^2 + 9 \amp = 25</mrow>
+                        <mrow>a^2 \amp = 16 \implies a = 4</mrow>
+                    </md>
+                </p>
+
+                <figure xml:id="fig-ex-right-triangle">
+                    <caption>Right triangle for <m>\theta</m> in Quadrant I</caption>
+                    <image width="40%">
+                        <latex-image>
+                            \begin{tikzpicture}[scale=1.2]
+                                \draw[thick] (0,0) -- (4,0) node[midway, below] {$4$} -- (4,3) node[midway, right] {$3$} -- (0,0) node[midway, above left] {$5$};
+                                \draw (3.7,0) -- (3.7,0.3) -- (4,0.3);
+                                \draw (0.6,0) arc (0:36.87:0.6);
+                                \node at (0.9,0.3) {$\theta$};
+                            \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+
+                <p>
+                    Now we can find the remaining trigonometric ratios using the triangle:
+                </p>
+                <p>
+                    <ul>
+                        <li><p><m>\cos(\theta) = \frac{\text{Adjacent}}{\text{Hypotenuse}} = \frac{4}{5}</m></p></li>
+                        <li><p><m>\tan(\theta) = \frac{\text{Opposite}}{\text{Adjacent}} = \frac{3}{4}</m></p></li>
+                    </ul>
+                </p>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    Evaluate the exact value of <m>\sin\left(\frac{7\pi}{6}\right)</m>.
+                </p>
+            </statement>
+
+            <answer>
+                <p>
+                    <m>-\frac{1}{2}</m>
+                </p>
+            </answer>
+
+            <solution>
+                <p>
+                    The angle <m>\frac{7\pi}{6}</m> lies in Quadrant III because it is greater than <m>\pi</m> but less than <m>\frac{3\pi}{2}</m>.
+                </p>
+
+                <p>
+                    To determine the exact value, first find the reference angle.
+                </p>
+
+                <p>
+                    <me>\frac{7\pi}{6}-\pi=\frac{\pi}{6}</me>
+                </p>
+
+                <p>
+                    The reference angle is therefore <m>\frac{\pi}{6}</m>.
+                </p>
+
+                <p>
+                    Since sine represents the vertical coordinate on the unit circle and all points in Quadrant III have negative <m>y</m>-coordinates, the sine value will be negative.
+                </p>
+
+                <p>
+                    We know that
+                </p>
+
+                <p>
+                    <me>\sin\left(\frac{\pi}{6}\right)=\frac{1}{2}</me>
+                </p>
+
+                <p>
+                    Hence,
+                </p>
+
+                <p>
+                    <me>\sin\left(\frac{7\pi}{6}\right)=-\frac{1}{2}</me>
+                </p>
+
+                <figure xml:id="fig-sine-seven-pi-six">
+                    <caption>Evaluating sine at <m>\frac{7\pi}{6}</m></caption>
+
+                    <image width="45%">
+                        <latex-image>
+                            \begin{tikzpicture}[scale=2]
+                                \draw (0,0) circle (1);
+                                \draw[-&gt;] (-1.2,0)--(1.2,0);
+                                \draw[-&gt;] (0,-1.2)--(0,1.2);
+
+                                \coordinate (P) at ({cos(210)},{sin(210)});
+                                \draw[thick,blue] (0,0)--(P);
+                                \draw[dashed] ({cos(210)},0)--(P);
+
+                                \filldraw[blue] (P) circle (1pt);
+
+                                \node[below left] at (P)
+                                {$\left(-\frac{\sqrt3}{2},-\frac12\right)$};
+
+                                \draw[-&gt;] (0.3,0) arc (0:210:0.3);
+
+                                \node at (-0.35,-0.2) {$\frac{7\pi}{6}$};
+                            \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+            </solution>
+        </exercise>
+
+
+        <exercise>
+            <statement>
+                <p>
+                    A Ferris wheel rotates in a circular motion. A passenger starts at the middle height of the wheel and moves upward. The height of the passenger after time <m>t</m> seconds is modeled by
+                </p>
+
+                <p>
+                    <me>h(t)=20+15\sin(t)</me>
+                </p>
+
+                <p>
+                    Determine:
+                </p>
+
+                <p>
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                The maximum height of the passenger.
+                            </p>
+                        </li>
+
+                        <li>
+                            <p>
+                                The minimum height of the passenger.
+                            </p>
+                        </li>
+
+                        <li>
+                            <p>
+                                The height of the passenger when <m>t=\frac{\pi}{2}</m>.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+
+            <answer>
+                <p>
+                    <ol marker="(a)">
+                        <li>
+                            <p><m>35</m></p>
+                        </li>
+
+                        <li>
+                            <p><m>5</m></p>
+                        </li>
+
+                        <li>
+                            <p><m>35</m></p>
+                        </li>
+                    </ol>
+                </p>
+            </answer>
+
+            <solution>
+                <p>
+                    The function
+                </p>
+
+                <p>
+                    <me>h(t)=20+15\sin(t)</me>
+                </p>
+
+                <p>
+                    has a midline of <m>20</m> and an amplitude of <m>15</m>.
+                </p>
+
+                <p>
+                    Since the sine function ranges from <m>-1</m> to <m>1</m>, the largest possible value occurs when <m>\sin(t)=1</m>, while the smallest value occurs when <m>\sin(t)=-1</m>.
+                </p>
+
+                <p>
+                    <ol marker="(a)">
+
+                        <li>
+                            <p>
+                                Maximum height:
+                            </p>
+
+                            <p>
+                                <md>
+                                    <mrow>h_{\max} \amp = 20+15(1)</mrow>
+                                    <mrow>\amp = 35</mrow>
+                                </md>
+                            </p>
+                        </li>
+
+                        <li>
+                            <p>
+                                Minimum height:
+                            </p>
+
+                            <p>
+                                <md>
+                                    <mrow>h_{\min} \amp = 20+15(-1)</mrow>
+                                    <mrow>\amp = 5</mrow>
+                                </md>
+                            </p>
+                        </li>
+
+                        <li>
+                            <p>
+                                Substitute <m>t=\frac{\pi}{2}</m> into the model.
+                            </p>
+
+                            <p>
+                                <md>
+                                    <mrow>h\left(\frac{\pi}{2}\right) \amp = 20+15\sin\left(\frac{\pi}{2}\right)</mrow>
+                                    <mrow>\amp = 20+15(1)</mrow>
+                                    <mrow>\amp = 35</mrow>
+                                </md>
+                            </p>
+                        </li>
+
+                    </ol>
+                </p>
+
+                <figure xml:id="fig-ferris-wheel-sine">
+                    <caption>Ferris wheel height modeled by a sine function</caption>
+
+                    <image width="60%">
+                        <latex-image>
+                            \begin{tikzpicture}[scale=0.9]
+                                \draw[-&gt;] (-0.5,0)--(7,0) node[right] {$t$};
+                                \draw[-&gt;] (0,0)--(0,4.5) node[above] {$h(t)$};
+
+                                \draw[dashed] (0,2)--(6.5,2);
+                                \node[left] at (0,2) {$20$};
+
+                                \draw[domain=0:6.28,smooth,thick,blue]
+                                plot (\x,{2+1.5*sin(\x r)});
+
+                                \filldraw (1.57,3.5) circle (1.5pt);
+                                \node[right] at (1.57,3.5) {$\left(\frac{\pi}{2},35\right)$};
+
+                                \filldraw (4.71,0.5) circle (1.5pt);
+                                \node[right] at (4.71,0.5) {$\left(\frac{3\pi}{2},5\right)$};
+                            \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+            </solution>
+        </exercise>
+
+    </exercises>
 </section>
