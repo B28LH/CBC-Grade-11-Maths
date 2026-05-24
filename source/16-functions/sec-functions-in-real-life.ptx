@@ -203,4 +203,567 @@
     <xi:include href="../lesson-plan-templates/assessment-methods.ptx" />
 
     <xi:include href="../lesson-plan-templates/reflection.ptx"/>
+
+    <activity xml:id="activity-functions-real-life">
+
+        <title>Exploring Functions Around Us</title>
+
+        <p>
+            Functions are used every day to describe relationships between quantities. The value of one quantity often depends on another quantity.
+        </p>
+
+        <p>
+            Study the situations below and determine which quantity depends on the other.
+        </p>
+
+        <p>
+            <ol marker="(a)">
+
+                <li>
+                    <p>
+                        The total cost of buying mangoes depends on the number of kilograms purchased.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        The distance travelled by a car depends on the time taken when moving at a constant speed.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        The amount of money earned by an employee depends on the number of hours worked.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        The temperature of a cup of tea changes with time as it cools.
+                    </p>
+                </li>
+
+            </ol>
+        </p>
+
+        <p>
+            Discuss the following questions.
+        </p>
+
+        <p>
+            <ol marker="(i)">
+
+                <li>
+                    <p>
+                        Which quantity is the input in each situation?
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        Which quantity is the output?
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        How can each situation be represented using a function rule?
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        Why are functions useful in describing real-life situations?
+                    </p>
+                </li>
+
+            </ol>
+        </p>
+
+        <figure xml:id="fig-functions-real-life">
+            <caption>Functions help describe relationships between quantities in daily life</caption>
+
+            <image width="70%">
+                <latex-image>
+                    \begin{tikzpicture}[scale=1]
+
+                        \draw[rounded corners, thick] (0,0) rectangle (3,1);
+                        \node at (1.5,0.5) {Input};
+
+                        \draw[-&gt;, thick] (3,0.5)--(5,0.5);
+
+                        \draw[rounded corners, thick] (5,0) rectangle (8,1);
+                        \node at (6.5,0.5) {Function Rule};
+
+                        \draw[-&gt;, thick] (8,0.5)--(10,0.5);
+
+                        \draw[rounded corners, thick] (10,0) rectangle (13,1);
+                        \node at (11.5,0.5) {Output};
+
+                    \end{tikzpicture}
+                </latex-image>
+            </image>
+        </figure>
+
+    </activity>
+
+
+    <insight>
+
+        <p>
+            A function is a rule that connects one quantity to another quantity.
+        </p>
+
+        <p>
+            In real life, functions are used whenever one value depends on another.
+        </p>
+
+        <p>
+            Examples include
+        </p>
+
+        <p>
+            <ul>
+
+                <li>
+                    <p>
+                        The fare paid for a taxi ride depends on the distance travelled.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        Electricity bills depend on the number of units consumed.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        Mobile data usage depends on time spent online.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        The area of a circle depends on the radius.
+                    </p>
+                </li>
+
+            </ul>
+        </p>
+
+        <p>
+            Functions help us predict values, solve problems, and make decisions in everyday life.
+        </p>
+
+        <p>
+            A real-life function can be written using symbols.
+        </p>
+
+        <p>
+            <me>C(x)=50x</me>
+        </p>
+
+        <p>
+            This may represent the cost <m>C</m> of buying <m>x</m> exercise books at 50 shillings each.
+        </p>
+
+        <p>
+            In this example
+        </p>
+
+        <p>
+            <ul>
+
+                <li>
+                    <p>
+                        <m>x</m> is the input or independent variable
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        <m>C(x)</m> is the output or dependent variable
+                    </p>
+                </li>
+
+            </ul>
+        </p>
+
+    </insight>
+
+
+    <example xml:id="ex-taxi-fare-function">
+
+        <statement>
+            <p>
+                A taxi company charges a fixed fee of 200 shillings and an additional 50 shillings for every kilometre travelled.
+            </p>
+
+            <p>
+                <ol marker="(a)">
+
+                    <li>
+                        <p>
+                            Write a function to represent the total fare.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Find the fare for a journey of 8 kilometres.
+                        </p>
+                    </li>
+
+                </ol>
+            </p>
+        </statement>
+
+        <solution>
+
+            <p>
+                Let <m>x</m> represent the distance travelled in kilometres.
+            </p>
+
+            <p>
+                The total fare consists of a fixed charge of 200 shillings together with 50 shillings for each kilometre travelled.
+            </p>
+
+            <p>
+                The function is
+            </p>
+
+            <p>
+                <me>F(x)=50x+200</me>
+            </p>
+
+            <p>
+                Substitute <m>x=8</m> into the function.
+            </p>
+
+            <p>
+                <md>
+                    <mrow>F(8)\amp=50(8)+200</mrow>
+                    <mrow>\amp=400+200</mrow>
+                    <mrow>\amp=600</mrow>
+                </md>
+            </p>
+
+            <p>
+                The fare for the journey is 600 shillings.
+            </p>
+
+        </solution>
+
+    </example>
+
+
+    <example xml:id="ex-water-tank-function">
+
+        <statement>
+            <p>
+                A water tank already contains 300 litres of water. Water flows into the tank at a rate of 25 litres per minute.
+            </p>
+
+            <p>
+                <ol marker="(a)">
+
+                    <li>
+                        <p>
+                            Write a function representing the amount of water in the tank after <m>t</m> minutes.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Determine the amount of water after 12 minutes.
+                        </p>
+                    </li>
+
+                </ol>
+            </p>
+        </statement>
+
+        <solution>
+
+            <p>
+                Let <m>W(t)</m> represent the amount of water after <m>t</m> minutes.
+            </p>
+
+            <p>
+                The tank starts with 300 litres and gains 25 litres every minute.
+            </p>
+
+            <p>
+                The function is therefore:
+            </p>
+
+            <p>
+                <me>W(t)=300+25t</me>
+            </p>
+
+            <p>
+                Substitute <m>t=12</m> into the function.
+            </p>
+
+            <p>
+                <md>
+                    <mrow>W(12)\amp=300+25(12)</mrow>
+                    <mrow>\amp=300+300</mrow>
+                    <mrow>\amp=600</mrow>
+                </md>
+            </p>
+
+            <p>
+                After 12 minutes, the tank contains 600 litres of water.
+            </p>
+
+        </solution>
+
+    </example>
+
+
+    <example xml:id="ex-mobile-data-function">
+
+        <statement>
+            <p>
+                A mobile network charges 5 shillings per minute for a phone call.
+            </p>
+
+            <p>
+                <ol marker="(a)">
+
+                    <li>
+                        <p>
+                            Write a function representing the cost of a phone call lasting <m>m</m> minutes.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Find the cost of a 15-minute call.
+                        </p>
+                    </li>
+
+                </ol>
+            </p>
+        </statement>
+
+        <solution>
+
+            <p>
+                Let <m>C(m)</m> represent the total cost of the call.
+            </p>
+
+            <p>
+                Since each minute costs 5 shillings:
+            </p>
+
+            <p>
+                <me>C(m)=5m</me>
+            </p>
+
+            <p>
+                For a 15-minute call:
+            </p>
+
+            <p>
+                <md>
+                    <mrow>C(15)\amp=5(15)</mrow>
+                    <mrow>\amp=75</mrow>
+                </md>
+            </p>
+
+            <p>
+                The total cost of the call is 75 shillings.
+            </p>
+
+        </solution>
+
+    </example>
+
+
+    <exercises xml:id="ex-functions-real-life">
+
+        <exercise>
+
+            <statement>
+                <p>
+                    A shop sells pens at 40 shillings each.
+                </p>
+
+                <p>
+                    <ol marker="(a)">
+
+                        <li>
+                            <p>
+                                Write a function representing the total cost of buying <m>x</m> pens.
+                            </p>
+                        </li>
+
+                        <li>
+                            <p>
+                                Find the cost of 12 pens.
+                            </p>
+                        </li>
+
+                    </ol>
+                </p>
+            </statement>
+
+            <answer>
+                <p>
+                    <ol marker="(a)">
+
+                        <li>
+                            <p><m>C(x)=40x</m></p>
+                        </li>
+
+                        <li>
+                            <p><m>480</m></p>
+                        </li>
+
+                    </ol>
+                </p>
+            </answer>
+
+        </exercise>
+
+
+        <exercise>
+
+            <statement>
+                <p>
+                    A farmer harvests 80 bags of maize each season and stores an additional 15 bags every week.
+                </p>
+
+                <p>
+                    <ol marker="(a)">
+
+                        <li>
+                            <p>
+                                Write a function representing the total number of bags after <m>w</m> weeks.
+                            </p>
+                        </li>
+
+                        <li>
+                            <p>
+                                Determine the number of bags after 10 weeks.
+                            </p>
+                        </li>
+
+                    </ol>
+                </p>
+            </statement>
+
+            <answer>
+                <p>
+                    <ol marker="(a)">
+
+                        <li>
+                            <p><m>B(w)=80+15w</m></p>
+                        </li>
+
+                        <li>
+                            <p><m>230</m></p>
+                        </li>
+
+                    </ol>
+                </p>
+            </answer>
+
+        </exercise>
+
+
+        <exercise>
+
+            <statement>
+                <p>
+                    The perimeter of a square depends on the length of its side.
+                </p>
+
+                <p>
+                    <ol marker="(a)">
+
+                        <li>
+                            <p>
+                                Write a function for the perimeter of a square with side length <m>s</m>.
+                            </p>
+                        </li>
+
+                        <li>
+                            <p>
+                                Find the perimeter when <m>s=9</m>.
+                            </p>
+                        </li>
+
+                    </ol>
+                </p>
+            </statement>
+
+            <answer>
+                <p>
+                    <ol marker="(a)">
+
+                        <li>
+                            <p><m>P(s)=4s</m></p>
+                        </li>
+
+                        <li>
+                            <p><m>36</m></p>
+                        </li>
+
+                    </ol>
+                </p>
+            </answer>
+
+        </exercise>
+
+
+        <exercise>
+
+            <statement>
+                <p>
+                    A savings account starts with 1,500 shillings and increases by 250 shillings every month.
+                </p>
+
+                <p>
+                    <ol marker="(a)">
+
+                        <li>
+                            <p>
+                                Write a function representing the amount saved after <m>m</m> months.
+                            </p>
+                        </li>
+
+                        <li>
+                            <p>
+                                Find the amount saved after 6 months.
+                            </p>
+                        </li>
+
+                    </ol>
+                </p>
+            </statement>
+
+            <answer>
+                <p>
+                    <ol marker="(a)">
+
+                        <li>
+                            <p><m>S(m)=1500+250m</m></p>
+                        </li>
+
+                        <li>
+                            <p><m>3000</m></p>
+                        </li>
+
+                    </ol>
+                </p>
+            </answer>
+
+        </exercise>
+
+    </exercises>
+
 </section>
