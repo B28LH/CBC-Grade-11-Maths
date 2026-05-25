@@ -245,7 +245,7 @@ def kinematics_plot(t0=slider(0, 4, 0.1, default=1, label="t₀")):
         <p>
             Let <m>s(t)</m> be the position of an object at time <m>t</m>.
             The <term>instantaneous velocity</term> at time <m>t</m> is
-            <me>v(t) = s'(t).</me>
+            <md>v(t) = s'(t).</md>
             Velocity is positive when the object moves in the chosen positive direction and
             negative when it moves in the opposite direction.
         </p>
@@ -255,7 +255,7 @@ def kinematics_plot(t0=slider(0, 4, 0.1, default=1, label="t₀")):
         <title>Acceleration</title>
         <p>
             The <term>acceleration</term> of the object at time <m>t</m> is
-            <me>a(t) = v'(t) = s''(t).</me>
+            <md>a(t) = v'(t) = s''(t).</md>
             The notation <m>s''(t)</m> means <q>differentiate <m>s</m> twice</q>.
             Acceleration has units of m/s² (metres per second per second).
             Constant acceleration means the velocity changes at a steady rate.
@@ -296,7 +296,7 @@ def kinematics_plot(t0=slider(0, 4, 0.1, default=1, label="t₀")):
             </p>
             <p>
                 (c) The stone is at its highest point when <m>v(t) = 0</m>:
-                <me>20 - 10t = 0 \implies t = 2 \text{ seconds.}</me>
+                <md>20 - 10t = 0 \implies t = 2 \text{ seconds.}</md>
             </p>
             <p>
                 (d) <m>s(2) = 20(2) - 5(2)^2 = 40 - 20 = 20</m> m.
@@ -328,7 +328,7 @@ def kinematics_plot(t0=slider(0, 4, 0.1, default=1, label="t₀")):
             </p>
             <p>
                 (b) The particle is stationary when <m>v(t) = 0</m>:
-                <me>3(t-1)(t-3) = 0 \implies t = 1 \text{ s or } t = 3 \text{ s.}</me>
+                <md>3(t-1)(t-3) = 0 \implies t = 1 \text{ s or } t = 3 \text{ s.}</md>
             </p>
             <p>
                 (c) <m>v(t) \lt 0</m> when <m>3(t-1)(t-3) \lt 0</m>, i.e. when <m>1 \lt t \lt 3</m>.
@@ -362,7 +362,7 @@ def kinematics_plot(t0=slider(0, 4, 0.1, default=1, label="t₀")):
             </p>
             <p>
                 (b) Set <m>v(t) = 15</m>:
-                <me>4t - 1 = 15 \implies 4t = 16 \implies t = 4 \text{ minutes.}</me>
+                <md>4t - 1 = 15 \implies 4t = 16 \implies t = 4 \text{ minutes.}</md>
             </p>
             <p>
                 (c) <m>a(t) = v'(t) = 4</m> km/min². Yes — the acceleration is constant,

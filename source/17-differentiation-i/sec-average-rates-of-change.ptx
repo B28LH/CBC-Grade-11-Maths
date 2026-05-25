@@ -70,7 +70,7 @@
         <statement>
             <p>
                 A stone is thrown upward from the ground. Its height above the ground after <m>t</m> seconds is modelled by
-                <me>s(t) = 20t - 5t^2 \text{ metres.}</me>
+                <md>s(t) = 20t - 5t^2 \text{ metres.}</md>
             </p>
 
             <!-- TODO: TikZ figure — parabolic arc of s(t) = 20t - 5t² on [0,4], labelled with heights at t = 0,1,2,3,4, showing the stone rising and falling symmetrically about t = 2 -->
@@ -78,7 +78,7 @@
             <p>
                 The table below shows the height of the stone at one-second intervals.
             </p>
-
+            <p>
             <table xml:id="table-stone-heights">
                 <title>Height of stone at each second</title>
                 <tabular halign="center" top="minor" left="minor">
@@ -100,6 +100,7 @@
                     </row>
                 </tabular>
             </table>
+            </p>
 
             <ol marker="(a)">
                 <li>
@@ -115,11 +116,73 @@
                 <li>
                     <p>
                         For each time interval below, calculate
-                        <me>\frac{\text{change in height}}{\text{change in time}} = \frac{s(b) - s(a)}{b - a}</me>
+                        <md>\frac{\text{change in height}}{\text{change in time}} = \frac{s(b) - s(a)}{b - a}</md>
                         and record your answers in the table. Include units.
                     </p>
 
                     <table xml:id="table-stone-aroc">
+                        <title>Average rate of change over different intervals</title>
+                        <tabular halign="center" top="minor" left="minor">
+                            <row header="yes" bottom="medium">
+                                <cell right="minor">Start Time <m>a</m></cell>
+                                <cell right="minor">End Time <m>b</m></cell>
+                                <cell right="minor">Start Position <m>s(a)</m></cell>
+                                <cell right="minor">End Position <m>s(b)</m></cell>
+                                <cell right="minor">Average Rate of Change</cell>
+                            </row>
+                            <row bottom="minor">
+                                <cell right="minor"><m>0</m></cell>
+                                <cell right="minor"><m>1</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                            </row>
+                            <!-- <row bottom="minor">
+                                <cell right="minor"><m>0</m></cell>
+                                <cell right="minor"><m>2</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                            </row>
+                            <row bottom="minor">
+                                <cell right="minor"><m>0</m></cell>
+                                <cell right="minor"><m>4</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                            </row> -->
+                            <row bottom="minor">
+                                <cell right="minor"><m>1</m></cell>
+                                <cell right="minor"><m>2</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                            </row>
+                            <row bottom="minor">
+                                <cell right="minor"><m>2</m></cell>
+                                <cell right="minor"><m>3</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                            </row>
+                            <row bottom="minor">
+                                <cell right="minor"><m>3</m></cell>
+                                <cell right="minor"><m>4</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                            </row>
+                            <row bottom="minor">
+                                <cell right="minor"><m>0</m></cell>
+                                <cell right="minor"><m>4</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                                <cell right="minor"><m>\phantom{00}</m></cell>
+                            </row>
+                        </tabular>
+                    </table>
+
+                    <!-- <table xml:id="table-stone-aroc">
                         <title>Average rate of change over different intervals</title>
                         <tabular halign="center" top="minor" left="minor">
                             <row header="yes" bottom="medium">
@@ -141,11 +204,11 @@
                                 <cell right="minor"><m>\phantom{00}</m></cell>
                             </row>
                         </tabular>
-                    </table>
+                    </table> -->
 
                     <solution component="lesson-plan">
                         <p>
-                            <m>[0,4]</m>: <m>0</m> m/s; <m>[0,2]</m>: <m>10</m> m/s; <m>[0,1]</m>: <m>15</m> m/s; <m>[1,2]</m>: <m>5</m> m/s; <m>[2,3]</m>: <m>-5</m> m/s; <m>[3,4]</m>: <m>-15</m> m/s.
+                            <m>[0,1]</m>: <m>15</m> m/s; <m>[1,2]</m>: <m>5</m> m/s; <m>[2,3]</m>: <m>-5</m> m/s; <m>[3,4]</m>: <m>-15</m> m/s; <m>[0,4]</m>: <m>0</m> m/s
                         </p>
                     </solution>
                 </li>
@@ -155,7 +218,7 @@
                     </p>
                     <solution component="lesson-plan">
                         <p>
-                            No — the stone rises and falls, returning to its starting height. The average rate is zero because the net displacement is zero, not because the stone wasn't moving.
+                            No<mdash/>the stone rises and falls, returning to its starting height. The average rate is zero because the net displacement is zero, not because the stone wasn't moving.
                         </p>
                     </solution>
                     <note component="lesson-plan">
@@ -221,7 +284,7 @@
     <insight xml:id="insight-aroc-key-ideas">
         <title>Average Rate of Change and Secant Lines</title>
         <p>
-            The ratio computed in the activity — change in output divided by change in input — is the <term>average rate of change</term> of the function over that interval. Geometrically, it is the slope of the <term>secant line</term> connecting the two points on the curve.
+            The ratio computed in the activity<mdash/>change in output divided by change in input<mdash/>is the <term>average rate of change</term> of the function over that interval. Geometrically, it is the slope of the <term>secant line</term> connecting the two points on the curve.
         </p>
         <ul>
             <li>
@@ -238,7 +301,7 @@
 
     <p>
         Consider a function <m>f</m> and two points on its graph: <m>(a, f(a))</m> and a second point to the right at <m>(a+h, f(a+h))</m> for some <m>h \gt 0</m>, as shown in <xref ref="PRECALC-h2P97umVs7"/>. The straight line connecting them is called the <term>secant line</term>. Its slope is
-        <me>\frac{f(a+h) - f(a)}{(a+h) - a} = \frac{f(a+h) - f(a)}{h}</me>
+        <md>\frac{f(a+h) - f(a)}{(a+h) - a} = \frac{f(a+h) - f(a)}{h}</md>
         and this is the average rate of change of <m>f</m> between <m>x = a</m> and <m>x = a+h</m>.
     </p>
 
@@ -253,7 +316,7 @@
         <title>Average Rate of Change</title>
         <p>
             The <term>average rate of change</term> (AROC) of a function <m>f</m> over the interval from <m>x = a</m> to <m>x = a + h</m> is
-            <me>\text{AROC} = \frac{f(a+h) - f(a)}{h}.</me>
+            <md>\text{AROC} = \frac{f(a+h) - f(a)}{h}.</md>
             This equals the slope of the secant line joining <m>(a,\, f(a))</m> and <m>(a+h,\, f(a+h))</m> on the graph of <m>f</m>.
         </p>
     </insight>
@@ -287,7 +350,10 @@
         <solution>
             <p>
                 <md>
-                    <mrow>\text{AROC} \amp= \frac{d(4) - d(2)}{4 - 2} = \frac{5(16) - 5(4)}{2} = \frac{80 - 20}{2} = 30 \text{ m/s}</mrow>
+                    <mrow>\text{AROC} \amp= \frac{d(4) - d(2)}{4 - 2} </mrow>
+                    <mrow> \amp = \frac{5(16) - 5(4)}{2}  </mrow>
+                    <mrow> \amp = \frac{80 - 20}{2} </mrow> 
+                    <mrow> \amp = 30 \text{ m/s}</mrow>
                 </md>
                 The object falls at an average speed of <m>30</m> m/s over this two-second interval.
             </p>
@@ -299,17 +365,23 @@
         <statement>
             <p>
                 A small business models its monthly profit (in thousands of KSh) from selling <m>x</m> units as
-                <me>P(x) = -x^2 + 80x - 400.</me>
+                <md>P(x) = -x^2 + 80x - 400.</md>
                 Find the average rate of change of profit as production increases from <m>20</m> to <m>40</m> units, and interpret your answer.
             </p>
         </statement>
         <solution>
             <p>
                 <md>
-                    <mrow>P(20) \amp= -(20)^2 + 80(20) - 400 = -400 + 1600 - 400 = 800</mrow>
-                    <mrow>P(40) \amp= -(40)^2 + 80(40) - 400 = -1600 + 3200 - 400 = 1200</mrow>
+                    <mrow>P(20) \amp= -(20)^2 + 80(20) - 400 </mrow>
+                    <mrow> \amp = -400 + 1600 - 400 </mrow>
+                    <mrow> \amp = 800</mrow>
+                    <mrow>P(40) \amp= -(40)^2 + 80(40) - 400 </mrow>
+                    <mrow> \amp = -1600 + 3200 - 400 </mrow>
+                    <mrow> \amp = 1200</mrow>
+                    <mrow> \text{AROC} \amp = \frac{P(40) - P(20)}{40 - 20} </mrow>
+                    <mrow> \amp = \frac{1200 - 800}{20} </mrow> 
+                    <mrow> \amp = 20,000 \text{ KSh per unit} </mrow>
                 </md>
-                <me>\text{AROC} = \frac{P(40) - P(20)}{40 - 20} = \frac{1200 - 800}{20} = 20 \text{ thousand KSh per unit}</me>
             </p>
             <p>
                 On average, each additional unit produced (between 20 and 40 units) increases monthly profit by KSh 20 000.
@@ -371,7 +443,10 @@
             <solution>
                 <p>
                     <md>
-                        <mrow>\text{AROC} \amp= \frac{R(20) - R(10)}{10} = \frac{(800+200) - (200+100)}{10} = \frac{1000 - 300}{10} = 70 \text{ KSh per item}</mrow>
+                        <mrow>\text{AROC} \amp= \frac{R(20) - R(10)}{10} </mrow>
+                        <mrow> \amp = \frac{(800+200) - (200+100)}{10} </mrow>
+                        <mrow> \amp = \frac{1000 - 300}{10} </mrow>
+                        <mrow> \amp = 70 \text{ KSh per item}</mrow>
                     </md>
                 </p>
             </solution>
@@ -407,7 +482,7 @@
             <solution>
                 <ol marker="(a)">
                     <li>
-                        <p>
+                        <p> We have:
                             <md>
                                 <mrow>\text{AROC} \amp= \frac{f(a+h) - f(a)}{h} = \frac{(a+h)^2 - a^2}{h}</mrow>
                                 <mrow>\amp= \frac{a^2 + 2ah + h^2 - a^2}{h} = \frac{2ah + h^2}{h} = 2a + h</mrow>
@@ -416,7 +491,7 @@
                     </li>
                     <li>
                         <p>
-                            As <m>h \to 0</m>, the AROC <m>= 2a + h \to 2a</m>. This limiting value is the slope of the tangent to <m>f(x) = x^2</m> at <m>x = a</m> — the instantaneous rate of change at that point.
+                            As <m>h \to 0</m>, the AROC <m>= 2a + h \to 2a</m>. This limiting value is the slope of the tangent to <m>f(x) = x^2</m> at <m>x = a</m>, the instantaneous rate of change at that point.
                         </p>
                     </li>
                 </ol>

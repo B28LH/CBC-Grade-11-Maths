@@ -345,12 +345,12 @@
         <title>The Power Rule</title>
         <p>
             If <m>f(x) = x^n</m> where <m>n</m> is any real number, then
-            <me>f'(x) = nx^{n-1}</me>
+            <md>f'(x) = nx^{n-1}</md>
             In Leibniz notation: <m>\displaystyle\frac{d}{dx}\!\left(x^n\right) = nx^{n-1}</m>.
         </p>
         <p>
             If <m>f(x) = cx^n</m> for a constant <m>c</m>, then the constant multiplies through:
-            <me>f'(x) = cnx^{n-1}</me>
+            <md>f'(x) = cnx^{n-1}</md>
         </p>
     </insight>
 
@@ -370,7 +370,7 @@
         <solution>
             <p>
                 Applying the power rule with <m>n = 6</m>:
-                <me>f'(x) = 6x^{6-1} = 6x^5</me>
+                <md>f'(x) = 6x^{6-1} = 6x^5</md>
             </p>
         </solution>
     </example>
@@ -385,9 +385,9 @@
         <solution>
             <p>
                 First, differentiate using the power rule:
-                <me>\frac{dy}{dx} = 4x^3</me>
+                <md>\frac{dy}{dx} = 4x^3</md>
                 Then substitute <m>x = 3</m>:
-                <me>4(3)^3 = 4 \times 27 = 108</me>
+                <md>4(3)^3 = 4 \times 27 = 108</md>
                 The gradient of the curve at <m>x = 3</m> is <m>108</m>.
             </p>
         </solution>
@@ -426,7 +426,7 @@
             <solution>
                 <p>
                     Applying the power rule with <m>n = 7</m>:
-                    <me>f'(x) = 7x^6</me>
+                    <md>f'(x) = 7x^6</md>
                 </p>
             </solution>
         </exercise>
@@ -439,7 +439,7 @@
             </statement>
             <solution>
                 <p>
-                    <me>\frac{dy}{dx} = 5x^4</me>
+                    <md>\frac{dy}{dx} = 5x^4</md>
                 </p>
             </solution>
         </exercise>
@@ -456,7 +456,7 @@
                 </p>
                 <p>
                     Substitute <m>x = -2</m>:
-                    <me>f'(-2) = 3(-2)^2 = 3 \times 4 = 12</me>
+                    <md>f'(-2) = 3(-2)^2 = 3 \times 4 = 12</md>
                     The gradient at <m>x = -2</m> is <m>12</m>.
                 </p>
             </solution>
@@ -484,7 +484,7 @@
                             <p>
                                 With <m>f(x) = x^5</m>, the power rule gives <m>f'(x) = 5x^4</m>.
                                 At <m>x = 2</m>:
-                                <me>f'(2) = 5 \times 2^4 = 5 \times 16 = 80</me>
+                                <md>f'(2) = 5 \times 2^4 = 5 \times 16 = 80</md>
                             </p>
                         </li>
                     </ol>
@@ -497,7 +497,7 @@
             <statement>
                 <p>
                     Use the definition of the derivative,
-                    <me>f'(x) = \lim_{h \to 0}\frac{f(x+h) - f(x)}{h},</me>
+                    <md>f'(x) = \lim_{h \to 0}\frac{f(x+h) - f(x)}{h},</md>
                     to find <m>f'(x)</m> for <m>f(x) = x^2</m>.
                     Verify your answer matches the power rule.
                 </p>
@@ -534,7 +534,7 @@
             <solution>
                 <p>
                     Compute <m>f(x+h) = (x+h)^3</m> by expanding:
-                    <me>(x+h)^3 = x^3 + 3x^2 h + 3x h^2 + h^3</me>
+                    <md>(x+h)^3 = x^3 + 3x^2 h + 3x h^2 + h^3</md>
                 </p>
                 <p>
                     Form the difference quotient:

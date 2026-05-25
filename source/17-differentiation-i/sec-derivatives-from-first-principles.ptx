@@ -274,7 +274,7 @@ limit((f(3 + h) - f(3)) / h, h, 0)
     <p>Because we are looking for the <term>slope of the tangent</term> at <m>x=a,</m> we can think of the measure of the slope of the curve of a function <m>f</m> at a given point as the rate of change at a particular instant. We call this slope the <em>instantaneous rate of change</em>, or the <em>derivative</em> of the function at <m>x=a.</m> Both can be found by finding the limit of the slope of a line connecting the point at <m>x=a</m> with a second point infinitesimally close along the curve. For a function <m>f</m> both the instantaneous rate of change of the function and the derivative of the function at <m>x=a</m> are written as <m>f'(a),</m> and we can define them as a <term>two-sided limit</term> that has the same value whether approached from the left or the right.</p>
 
     <p>
-        <me>f'(a)=\lim_{h \to 0}\frac{f(a+h)-f(a)}{h}</me>
+        <md>f'(a)=\lim_{h \to 0}\frac{f(a+h)-f(a)}{h}</md>
     </p>
 
     <p>The expression by which the limit is found is known as the <term>difference quotient</term>.</p>
@@ -283,7 +283,7 @@ limit((f(3 + h) - f(3)) / h, h, 0)
         <title>Definition of Instantaneous Rate of Change and Derivative</title>
         <p>The <term>derivative</term>, or <term>instantaneous rate of change</term>, of a function <m>f</m> at <m>x=a,</m> is given by</p>
         <p>
-            <me>f'(a)=\lim_{h \to 0}\frac{f(a+h)-f(a)}{h}</me>
+            <md>f'(a)=\lim_{h \to 0}\frac{f(a+h)-f(a)}{h}</md>
         </p>
         <p>The expression <m>\frac{f(a+h)-f(a)}{h}</m> is called the difference quotient.</p>
         <p>We use the difference quotient to evaluate the limit of the rate of change of the function as <m>h</m> approaches 0.</p>
@@ -312,7 +312,7 @@ limit((f(3 + h) - f(3)) / h, h, 0)
         <title>Notations for the Derivative</title>
         <p>The equation of the derivative of a function <m>f(x)</m> is written as <m>y'=f'(x),</m> where <m>y=f(x).</m> The notation <m>f'(x)</m> is read as "<m>f</m> prime of <m>x</m>." Alternate notations for the derivative include the following:</p>
         <p>
-            <me>f'(x)=y'=\frac{dy}{dx}=\frac{df}{dx}=\frac{d}{dx}f(x)</me>
+            <md>f'(x)=y'=\frac{dy}{dx}=\frac{df}{dx}=\frac{d}{dx}f(x)</md>
         </p>
         <p>The expression <m>f'(x)</m> is now a function of <m>x</m>; this function gives the slope of the curve <m>y=f(x)</m> at any value of <m>x.</m> The derivative of a function <m>f(x)</m> at a point <m>x=a</m> is denoted <m>f'(a).</m>
         </p>
@@ -344,7 +344,7 @@ limit((f(3 + h) - f(3)) / h, h, 0)
         <solution>
             <p>
                 <alert>Step 1.</alert> Compute <m>f(x+h)</m>.
-                <me>f(x+h) = 2(x+h)+5 = 2x + 2h + 5</me>
+                <md>f(x+h) = 2(x+h)+5 = 2x + 2h + 5</md>
             </p>
             <p>
                 <alert>Step 2.</alert> Form the difference quotient and simplify.
@@ -354,7 +354,7 @@ limit((f(3 + h) - f(3)) / h, h, 0)
             </p>
             <p>
                 <alert>Step 3.</alert> Take the limit.
-                <me>f'(x) = \lim_{h \to 0}\, 2 = 2</me>
+                <md>f'(x) = \lim_{h \to 0}\, 2 = 2</md>
             </p>
             <p>
                 The derivative of a linear function equals its slope — constant everywhere.
@@ -370,7 +370,7 @@ limit((f(3 + h) - f(3)) / h, h, 0)
         <solution>
             <p>
                 <alert>Step 1.</alert> Compute <m>f(x+h)</m>.
-                <me>f(x+h) = (x+h)^2 = x^2 + 2xh + h^2</me>
+                <md>f(x+h) = (x+h)^2 = x^2 + 2xh + h^2</md>
             </p>
             <p>
                 <alert>Step 2.</alert> Form the difference quotient and simplify.
@@ -381,7 +381,7 @@ limit((f(3 + h) - f(3)) / h, h, 0)
             </p>
             <p>
                 <alert>Step 3.</alert> Take the limit.
-                <me>f'(x) = \lim_{h \to 0}(2x+h) = 2x</me>
+                <md>f'(x) = \lim_{h \to 0}(2x+h) = 2x</md>
             </p>
         </solution>
     </example>
@@ -394,7 +394,7 @@ limit((f(3 + h) - f(3)) / h, h, 0)
         <solution>
             <p>
                 <alert>Step 1.</alert> Compute <m>f(x+h)</m>.
-                <me>f(x+h) = (x+h)^2 - 3(x+h) = x^2 + 2xh + h^2 - 3x - 3h</me>
+                <md>f(x+h) = (x+h)^2 - 3(x+h) = x^2 + 2xh + h^2 - 3x - 3h</md>
             </p>
             <p>
                 <alert>Step 2.</alert> Form the difference quotient and simplify.
@@ -405,11 +405,11 @@ limit((f(3 + h) - f(3)) / h, h, 0)
             </p>
             <p>
                 <alert>Step 3.</alert> Take the limit.
-                <me>f'(x) = \lim_{h \to 0}(2x+h-3) = 2x - 3</me>
+                <md>f'(x) = \lim_{h \to 0}(2x+h-3) = 2x - 3</md>
             </p>
             <p>
                 Substituting <m>x = 2</m>:
-                <me>f'(2) = 2(2) - 3 = 1</me>
+                <md>f'(2) = 2(2) - 3 = 1</md>
             </p>
         </solution>
     </example>
@@ -502,7 +502,7 @@ limit((f(3 + h) - f(3)) / h, h, 0)
                     <li>
                         <p>
                             Since <m>f(x+h) = c</m>, the difference quotient is
-                            <me>\frac{f(x+h)-f(x)}{h} = \frac{c - c}{h} = 0.</me>
+                            <md>\frac{f(x+h)-f(x)}{h} = \frac{c - c}{h} = 0.</md>
                             Therefore <m>f'(x) = \lim_{h \to 0} 0 = 0</m>.
                         </p>
                     </li>

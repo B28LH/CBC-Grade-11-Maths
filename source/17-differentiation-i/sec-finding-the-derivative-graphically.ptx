@@ -883,7 +883,7 @@ def reading_slopes(x0=slider(0, 4, 0.1, default=1, label="x₀")):
                         <p>
                             Estimate <m>f'(1)</m>, <m>f'(2)</m>, and <m>f'(3)</m> by computing
                             the AROC over the interval on each side of the point and averaging:
-                            <me>f'(a) \approx \frac{f(a+1) - f(a-1)}{2}.</me>
+                            <md>f'(a) \approx \frac{f(a+1) - f(a-1)}{2}.</md>
                         </p>
                     </li>
                     <li>
