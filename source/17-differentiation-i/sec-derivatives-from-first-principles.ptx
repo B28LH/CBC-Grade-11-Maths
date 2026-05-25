@@ -186,7 +186,7 @@ limit((f(3 + h) - f(3)) / h, h, 0)
                     </solution>
                     <note component="lesson-plan">
                         <p>
-                            Learners who reach <m>\text{AROC} = 6 + h</m> have essentially computed the derivative — they just haven't named it yet. Ask: "So what is the <em>exact</em> slope of the tangent to <m>f(x) = x^2</m> at <m>x = 3</m>?"
+                            Learners who reach <m>\text{AROC} = 6 + h</m> have essentially computed the derivative. Ask: <q>So what is the <em>exact</em> slope of the tangent to <m>f(x) = x^2</m> at <m>x = 3</m>?</q>
                         </p>
                     </note>
                 </li>
@@ -265,6 +265,7 @@ limit((f(3 + h) - f(3)) / h, h, 0)
 
     <p>Now that we can find the average rate of change, suppose we make <m>h</m> in <xref ref="PRECALC-h2P97umVs7"/> smaller and smaller. Then <m>a+h</m> will approach <m>a</m> as <m>h</m> gets smaller, getting closer and closer to 0. Likewise, the second point <m>(a+h,f(a+h))</m> will approach the first point, <m>(a,f(a)).</m> As a consequence, the connecting line between the two points, called the secant line, will get closer and closer to being a tangent to the function at <m>x=a,</m> and the slope of the secant line will get closer and closer to the slope of the tangent at <m>x=a.</m> See <xref ref="PRECALC-YRVPEZzgU0"/>.</p>
 
+    <!-- TODO: Replace with a jsxgraph that shows the secant -> tangent-->
     <figure xml:id="PRECALC-YRVPEZzgU0" original="PRECALC/modules/m49455/index.cnxml" license="CC-BY-4.0">
         <caption>The connecting line between two points moves closer to being a tangent line at <m>x=a.</m>
         </caption>
@@ -279,6 +280,8 @@ limit((f(3 + h) - f(3)) / h, h, 0)
 
     <p>The expression by which the limit is found is known as the <term>difference quotient</term>.</p>
 
+    
+
     <insight xml:id="PRECALC-fmeXCOah2m" original="PRECALC/modules/m49455/index.cnxml" license="CC-BY-4.0">
         <title>Definition of Instantaneous Rate of Change and Derivative</title>
         <p>The <term>derivative</term>, or <term>instantaneous rate of change</term>, of a function <m>f</m> at <m>x=a,</m> is given by</p>
@@ -287,6 +290,22 @@ limit((f(3 + h) - f(3)) / h, h, 0)
         </p>
         <p>The expression <m>\frac{f(a+h)-f(a)}{h}</m> is called the difference quotient.</p>
         <p>We use the difference quotient to evaluate the limit of the rate of change of the function as <m>h</m> approaches 0.</p>
+    </insight>
+
+    <insight xml:id="PRECALC-7rXzYVguNZ" original="PRECALC/modules/m49455/index.cnxml" license="CC-BY-4.0">
+        <title>Finding the Derivative</title>
+        <p>Given a function <m>f,</m> find the derivative by applying the definition of the derivative.</p>
+        <ol>
+            <li>
+                <p>Calculate <m>f(x+h).</m></p>
+            </li>
+            <li>
+                <p>Substitute and simplify <m>\dfrac{f(x+h)-f(x)}{h}.</m></p>
+            </li>
+            <li>
+                <p>Evaluate the limit: <md>f'(x)=\lim_{h \to 0}\dfrac{f(x+h)-f(x)}{h}.</md></p>
+            </li>
+        </ol>
     </insight>
 
     <paragraphs>
@@ -302,9 +321,6 @@ limit((f(3 + h) - f(3)) / h, h, 0)
             <li>
                 <p>The derivative <m>f'(a)</m> may be thought of as the instantaneous rate of change of the function <m>f(x)</m> at <m>x=a.</m></p>
             </li>
-            <li>
-                <p>If a function measures distance as a function of time, then the derivative measures the instantaneous <term>velocity</term> at time <m>t=a.</m></p>
-            </li>
         </ul>
     </paragraphs>
 
@@ -318,21 +334,7 @@ limit((f(3 + h) - f(3)) / h, h, 0)
         </p>
     </insight>
 
-    <insight xml:id="PRECALC-7rXzYVguNZ" original="PRECALC/modules/m49455/index.cnxml" license="CC-BY-4.0">
-        <title>Finding the Derivative</title>
-        <p>Given a function <m>f,</m> find the derivative by applying the definition of the derivative.</p>
-        <ol>
-            <li>
-                <p>Calculate <m>f(x+h).</m></p>
-            </li>
-            <li>
-                <p>Substitute and simplify <m>\dfrac{f(x+h)-f(x)}{h}.</m></p>
-            </li>
-            <li>
-                <p>Evaluate the limit: <m>f'(x)=\lim_{h \to 0}\dfrac{f(x+h)-f(x)}{h}.</m></p>
-            </li>
-        </ol>
-    </insight>
+
 
     <xi:include href="../lesson-plan-templates/example-intro.ptx" />
 
@@ -344,12 +346,17 @@ limit((f(3 + h) - f(3)) / h, h, 0)
         <solution>
             <p>
                 <alert>Step 1.</alert> Compute <m>f(x+h)</m>.
-                <md>f(x+h) = 2(x+h)+5 = 2x + 2h + 5</md>
+                <md>
+                    <mrow> f(x+h) \amp = 2(x+h)+5  </mrow>
+                    <mrow> \amp = 2x + 2h + 5 </mrow>
+                </md>
             </p>
             <p>
                 <alert>Step 2.</alert> Form the difference quotient and simplify.
                 <md>
-                    <mrow>\frac{f(x+h)-f(x)}{h} \amp= \frac{(2x+2h+5)-(2x+5)}{h} = \frac{2h}{h} = 2</mrow>
+                    <mrow>\frac{f(x+h)-f(x)}{h} \amp= \frac{(2x+2h+5)-(2x+5)}{h} </mrow>
+                    <mrow> \amp = \frac{2h}{h} </mrow> 
+                    <mrow> \amp = 2</mrow>
                 </md>
             </p>
             <p>
@@ -357,7 +364,7 @@ limit((f(3 + h) - f(3)) / h, h, 0)
                 <md>f'(x) = \lim_{h \to 0}\, 2 = 2</md>
             </p>
             <p>
-                The derivative of a linear function equals its slope — constant everywhere.
+                The derivative of a linear function equals its slope, which is constant everywhere.
             </p>
         </solution>
     </example>
@@ -376,7 +383,9 @@ limit((f(3 + h) - f(3)) / h, h, 0)
                 <alert>Step 2.</alert> Form the difference quotient and simplify.
                 <md>
                     <mrow>\frac{f(x+h)-f(x)}{h} \amp= \frac{x^2+2xh+h^2 - x^2}{h}</mrow>
-                    <mrow>\amp= \frac{2xh + h^2}{h} = \frac{h(2x+h)}{h} = 2x + h</mrow>
+                    <mrow>\amp= \frac{2xh + h^2}{h} </mrow>
+                    <mrow>\amp= \frac{h(2x+h)}{h} </mrow>
+                    <mrow>\amp= 2x + h</mrow>
                 </md>
             </p>
             <p>
@@ -400,7 +409,9 @@ limit((f(3 + h) - f(3)) / h, h, 0)
                 <alert>Step 2.</alert> Form the difference quotient and simplify.
                 <md>
                     <mrow>\frac{f(x+h)-f(x)}{h} \amp= \frac{(x^2+2xh+h^2-3x-3h)-(x^2-3x)}{h}</mrow>
-                    <mrow>\amp= \frac{2xh + h^2 - 3h}{h} = \frac{h(2x+h-3)}{h} = 2x + h - 3</mrow>
+                    <mrow>\amp= \frac{2xh + h^2 - 3h}{h} </mrow>
+                    <mrow>\amp= \frac{h(2x+h-3)}{h} </mrow>
+                    <mrow>\amp= 2x + h - 3</mrow>
                 </md>
             </p>
             <p>
@@ -509,6 +520,145 @@ limit((f(3 + h) - f(3)) / h, h, 0)
                     <li>
                         <p>
                             The tangent to the curve at <m>x = a</m> is horizontal — the curve is neither rising nor falling at that point.
+                        </p>
+                    </li>
+                </ol>
+            </solution>
+        </exercise>
+
+
+        <exercise xml:id="ex-fp-reciprocal-extension">
+            <title>Extension: Differentiating <m>\dfrac{1}{x}</m></title>
+            <statement>
+                <p>
+                    Use first principles to find the derivative of <m>f(x) = \dfrac{1}{x}</m>.
+                </p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            Write down the difference quotient <m>\dfrac{f(x+h)-f(x)}{h}</m> for <m>f(x) = \dfrac{1}{x}</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Combine the two fractions in the numerator over a common denominator and simplify.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Cancel the factor of <m>h</m> and hence find <m>f'(x)</m> by letting <m>h \to 0</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Find the gradient of <m>y = \dfrac{1}{x}</m> at <m>x = 2</m>, and write down the equation of the tangent at that point.
+                        </p>
+                    </li>
+                </ol>
+            </statement>
+            <solution>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            <me>\frac{f(x+h)-f(x)}{h} = \frac{\dfrac{1}{x+h} - \dfrac{1}{x}}{h}.</me>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Combining over the common denominator <m>x(x+h)</m>:
+                            <md>
+                                <mrow>\frac{\dfrac{1}{x+h} - \dfrac{1}{x}}{h} \amp= \frac{\dfrac{x - (x+h)}{x(x+h)}}{h}</mrow>
+                                <mrow>\amp= \frac{x - x - h}{h \cdot x(x+h)}</mrow>
+                                <mrow>\amp= \frac{-h}{h \cdot x(x+h)}.</mrow>
+                            </md>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Cancelling <m>h</m> (valid since <m>h \neq 0</m>):
+                            <me>\frac{-h}{h \cdot x(x+h)} = \frac{-1}{x(x+h)}.</me>
+                            As <m>h \to 0</m>:
+                            <me>f'(x) = \lim_{h \to 0} \frac{-1}{x(x+h)} = \frac{-1}{x \cdot x} = -\frac{1}{x^2}.</me>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            At <m>x = 2</m>: <m>f(2) = \tfrac{1}{2}</m> and <m>f'(2) = -\tfrac{1}{4}</m>.
+                            The equation of the tangent is
+                            <me>y - \tfrac{1}{2} = -\tfrac{1}{4}(x - 2) \implies y = -\tfrac{1}{4}x + 1.</me>
+                        </p>
+                    </li>
+                </ol>
+            </solution>
+        </exercise>
+
+        <exercise xml:id="ex-fp-sqrt-extension">
+            <title>Extension: Differentiating <m>\sqrt{x}</m></title>
+            <statement>
+                <p>
+                    In the section on average rates of change you estimated the gradient of <m>f(x) = \sqrt{x}</m> numerically.
+                    Here you will find it exactly using first principles.
+                </p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            Write down the difference quotient
+                            <me>\frac{f(x+h)-f(x)}{h}</me>
+                            for <m>f(x) = \sqrt{x}</m>, and explain why you cannot simply let <m>h = 0</m> straight away.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Rationalise the numerator by multiplying the top and bottom of the difference quotient by <m>\bigl(\sqrt{x+h}+\sqrt{x}\bigr)</m>.
+                            Show that after simplifying you obtain
+                            <me>\frac{1}{\sqrt{x+h}+\sqrt{x}}.</me>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Hence find <m>f'(x)</m> by letting <m>h \to 0</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Use your result to find the exact gradient of <m>y = \sqrt{x}</m> at <m>x = 4</m>.
+                            Does this agree with the estimate you made earlier using a table of values?
+                        </p>
+                    </li>
+                </ol>
+            </statement>
+            <solution>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            The difference quotient is
+                            <me>\frac{\sqrt{x+h}-\sqrt{x}}{h}.</me>
+                            Setting <m>h = 0</m> immediately gives <m>\tfrac{0}{0}</m>, which is undefined, so we must simplify first.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Multiply numerator and denominator by <m>\bigl(\sqrt{x+h}+\sqrt{x}\bigr)</m>:
+                            <md>
+                                <mrow>\frac{\sqrt{x+h}-\sqrt{x}}{h} \amp= \frac{\bigl(\sqrt{x+h}-\sqrt{x}\bigr)\bigl(\sqrt{x+h}+\sqrt{x}\bigr)}{h\bigl(\sqrt{x+h}+\sqrt{x}\bigr)}</mrow>
+                                <mrow>\amp= \frac{(x+h)-x}{h\bigl(\sqrt{x+h}+\sqrt{x}\bigr)}</mrow>
+                                <mrow>\amp= \frac{h}{h\bigl(\sqrt{x+h}+\sqrt{x}\bigr)}</mrow>
+                                <mrow>\amp= \frac{1}{\sqrt{x+h}+\sqrt{x}}.</mrow>
+                            </md>
+                            The key step is that <m>\bigl(\sqrt{x+h}-\sqrt{x}\bigr)\bigl(\sqrt{x+h}+\sqrt{x}\bigr) = (x+h)-x = h</m> by the difference of squares identity.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            As <m>h \to 0</m>, the expression <m>\sqrt{x+h} \to \sqrt{x}</m>, so
+                            <me>f'(x) = \lim_{h \to 0} \frac{1}{\sqrt{x+h}+\sqrt{x}} = \frac{1}{\sqrt{x}+\sqrt{x}} = \frac{1}{2\sqrt{x}}.</me>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            At <m>x = 4</m>:
+                            <me>f'(4) = \frac{1}{2\sqrt{4}} = \frac{1}{4}.</me>
+                            The gradient of <m>y = \sqrt{x}</m> at <m>x = 4</m> is <m>\tfrac{1}{4}</m>, which matches the numerical estimate from the earlier section.
                         </p>
                     </li>
                 </ol>
