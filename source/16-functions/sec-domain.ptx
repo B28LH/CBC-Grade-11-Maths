@@ -448,30 +448,6 @@
                         <li>
 
                             <p>
-                                For square root functions, the expression inside the square root must be greater than or equal to zero.
-                            </p>
-
-                        </li>
-
-                        <li>
-
-                            <p>
-                                For rational functions, values that make the denominator equal to zero are excluded from the domain.
-                            </p>
-
-                        </li>
-
-                        <li>
-
-                            <p>
-                                For logarithmic functions, the expression inside the logarithm must always be positive.
-                            </p>
-
-                        </li>
-
-                        <li>
-
-                            <p>
                                 Observe the highlighted boundary points and asymptotes carefully. These help determine where the function starts, stops, or becomes undefined.
                             </p>
 
@@ -524,12 +500,10 @@
             <p>
                 For a rational function, the denominator cannot equal zero because division by zero is undefined. To find the values that must be excluded from the domain, we set the denominator equal to zero and solve for <m>x</m>:
             </p>
-            <p>
-                <m>x^2 - 16 = 0</m>
-            </p>
-            <p>
-                <m>(x - 4)(x + 4) = 0</m>
-            </p>
+            <md>
+                <mrow> x^2 - 16 \amp = 0</mrow>
+                <mmrow>(x - 4)(x + 4) \amp = 0</mrow>
+            </md>
             <p>
                 This gives us two restricted values: <m>x = 4</m> and <m>x = -4</m>. 
             </p>
@@ -729,7 +703,7 @@
 
                     <p>
 
-                        <ol marker="1." cols="2">
+                        <ol marker="(a)" cols="2">
 
                             <li>
                                 <p>
@@ -866,7 +840,7 @@
             <p>Find the domain of <m>q(x) = \tan(x)</m>.</p>
         </statement>
         <answer>
-            <p><m>\mathbb{R} - (2n + 1)\frac{\pi}{2}</m>, where <m>n</m> is any integer.</p>
+            <p>All real <m>x</m> except <m>x = (2n + 1)\frac{\pi}{2}</m>, where <m>n</m> is any integer.</p>
         </answer>
     </exercise>
 
