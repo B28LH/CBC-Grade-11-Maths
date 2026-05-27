@@ -68,95 +68,174 @@
         </axiom> -->
 
     <!-- Add Activity -->
-     <activity>
-        <p>
-            <term>Study the following patterns in Groups</term>
-        </p>
-        <p>
-            <ol marker="(i)">
-                <li>
-                    <p>
-                        <m>2,4,6,8 ...</m>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>1,4,9,16 ... </m>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>1,-2,4,-88 ...</m>
-                    </p>
-                </li>
-            </ol>
-        </p>
-        <p>
-            In each case, state the next two numbers. Share with other groups how you obtained your answers?
-        </p>
-        
-     </activity>
+    <activity>
+        <introduction>
+            <p>
+                <term>Visual Patterns — Work in Groups</term>
+            </p>
+            <p>
+                The diagrams below show sequences of tile arrangements.
+                For each pattern:
+            </p>
+            <p>
+                <ul>
+                    <li><p>Count the number of tiles at each step and record your results in a table.</p></li>
+                    <li><p>Describe the rule connecting one step to the next.</p></li>
+                    <li><p>Predict the number of tiles at Step 5.</p></li>
+                    <li><p>Write a formula for the number of tiles at Step <m>n</m>.</p></li>
+                </ul>
+            </p>
+        </introduction>
+
+        <task>
+            <title>Pattern A</title>
+            <figure xml:id="fig-seq-staircase-pattern">
+                <caption>Staircase pattern — Steps 1 to 4.</caption>
+                <image width="90%">
+                    <latex-image>
+                    \begin{tikzpicture}[scale=0.65]
+                    % Step 1 (1 tile) — teal (odd steps)
+                    \filldraw[fill=teal!65, draw=black] (0,0) rectangle ++(1,1);
+                    % Step 2 (3 tiles) — orange (even steps)
+                    \foreach \x/\y in {2/0, 3/0, 2/1} {
+                        \filldraw[fill=orange!85!yellow, draw=black] (\x,\y) rectangle ++(1,1);
+                    }
+                    % Step 3 (6 tiles) — teal (odd steps)
+                    \foreach \x/\y in {5/0, 6/0, 7/0, 5/1, 6/1, 5/2} {
+                        \filldraw[fill=teal!65, draw=black] (\x,\y) rectangle ++(1,1);
+                    }
+                    % Step 4 (10 tiles) — orange (even steps)
+                    \foreach \x/\y in {9/0, 10/0, 11/0, 12/0, 9/1, 10/1, 11/1, 9/2, 10/2, 9/3} {
+                        \filldraw[fill=orange!85!yellow, draw=black] (\x,\y) rectangle ++(1,1);
+                    }
+                    \node[below] at (0.5,-0.2) {\small Step 1};
+                    \node[below] at (3.0,-0.2) {\small Step 2};
+                    \node[below] at (6.5,-0.2) {\small Step 3};
+                    \node[below] at (11.0,-0.2) {\small Step 4};
+                    \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </figure>
+        </task>
+
+        <task>
+            <title>Pattern B</title>
+            <figure xml:id="fig-seq-cross-pattern">
+                <caption>Cross pattern — Steps 1 to 4.</caption>
+                <image width="90%">
+                    <latex-image>
+                    \begin{tikzpicture}[scale=0.5]
+                    % All crosses vertically centered: center square at y=3 for all steps.
+                    % Step 1 (1 tile) — blue (odd steps): single square at (0,3)
+                    \filldraw[fill=blue!55!white, draw=black] (0,3) rectangle ++(1,1);
+                    % Step 2 (5 tiles) — red (even steps): center=(3,3), arm=1
+                    \foreach \x/\y in {2/3, 3/3, 4/3, 3/2, 3/4} {
+                        \filldraw[fill=red!60!white, draw=black] (\x,\y) rectangle ++(1,1);
+                    }
+                    % Step 3 (9 tiles) — blue (odd steps): center=(8,3), arm=2
+                    \foreach \x/\y in {6/3, 7/3, 8/3, 9/3, 10/3, 8/1, 8/2, 8/4, 8/5} {
+                        \filldraw[fill=blue!55!white, draw=black] (\x,\y) rectangle ++(1,1);
+                    }
+                    % Step 4 (13 tiles) — red (even steps): center=(15,3), arm=3
+                    \foreach \x/\y in {12/3, 13/3, 14/3, 15/3, 16/3, 17/3, 18/3, 15/0, 15/1, 15/2, 15/4, 15/5, 15/6} {
+                        \filldraw[fill=red!60!white, draw=black] (\x,\y) rectangle ++(1,1);
+                    }
+                    % Labels sit below each step's lowest tile
+                    \node[below] at (0.5,3.0) {\small Step 1};
+                    \node[below] at (3.5,2.0) {\small Step 2};
+                    \node[below] at (8.5,1.0) {\small Step 3};
+                    \node[below] at (15.5,0.0) {\small Step 4};
+                    \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </figure>
+        </task>
+
+        <task>
+            <title>Pattern C</title>
+            <figure xml:id="fig-seq-rectangle-pattern">
+                <caption>Rectangle pattern — Steps 1 to 4.</caption>
+                <image width="90%">
+                    <latex-image>
+                    \begin{tikzpicture}[scale=0.55]
+                    % Step 1: 1 row x 2 cols (2 tiles) — green (odd steps)
+                    \foreach \col in {0,1} {
+                        \filldraw[fill=green!55, draw=black] (\col,0) rectangle ++(1,1);
+                    }
+                    % Step 2: 2 rows x 3 cols (6 tiles) — violet (even steps)
+                    \foreach \row in {0,1} {
+                        \foreach \col in {0,1,2} {
+                            \filldraw[fill=violet!60, draw=black] ({3+\col},\row) rectangle ++(1,1);
+                        }
+                    }
+                    % Step 3: 3 rows x 4 cols (12 tiles) — green (odd steps)
+                    \foreach \row in {0,1,2} {
+                        \foreach \col in {0,1,2,3} {
+                            \filldraw[fill=green!55, draw=black] ({7+\col},\row) rectangle ++(1,1);
+                        }
+                    }
+                    % Step 4: 4 rows x 5 cols (20 tiles) — violet (even steps)
+                    \foreach \row in {0,1,2,3} {
+                        \foreach \col in {0,1,2,3,4} {
+                            \filldraw[fill=violet!60, draw=black] ({12+\col},\row) rectangle ++(1,1);
+                        }
+                    }
+                    \node[below] at (1.0,-0.2) {\small Step 1};
+                    \node[below] at (4.5,-0.2) {\small Step 2};
+                    \node[below] at (9.0,-0.2) {\small Step 3};
+                    \node[below] at (14.5,-0.2) {\small Step 4};
+                    \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </figure>
+        </task>
+
+        <task>
+            <title>Pattern D</title>
+            <figure xml:id="fig-seq-doubling-pattern">
+                <caption>Doubling pattern — Steps 1 to 4.</caption>
+                <image width="90%">
+                    <latex-image>
+                    \begin{tikzpicture}[scale=0.65]
+                    % Step 1: 1x1 (1 tile) — cyan (odd steps)
+                    \filldraw[fill=cyan!65, draw=black] (0,0) rectangle ++(1,1);
+                    % Step 2: 1x2 (2 tiles) — magenta (even steps)
+                    \foreach \col in {0,1} {
+                        \filldraw[fill=magenta!55, draw=black] ({2+\col},0) rectangle ++(1,1);
+                    }
+                    % Step 3: 2x2 (4 tiles) — cyan (odd steps)
+                    \foreach \row in {0,1} {
+                        \foreach \col in {0,1} {
+                            \filldraw[fill=cyan!65, draw=black] ({5+\col},\row) rectangle ++(1,1);
+                        }
+                    }
+                    % Step 4: 2x4 (8 tiles) — magenta (even steps)
+                    \foreach \row in {0,1} {
+                        \foreach \col in {0,1,2,3} {
+                            \filldraw[fill=magenta!55, draw=black] ({8+\col},\row) rectangle ++(1,1);
+                        }
+                    }
+                    \node[below] at (0.5,-0.2) {\small Step 1};
+                    \node[below] at (3.0,-0.2) {\small Step 2};
+                    \node[below] at (6.0,-0.2) {\small Step 3};
+                    \node[below] at (10.0,-0.2) {\small Step 4};
+                    \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </figure>
+        </task>
+
+        <conclusion>
+            <p>
+                Share your findings with another group.
+                Which pattern was most surprising?
+                Can you describe what kind of sequence (arithmetic, geometric, or other) each pattern produces?
+            </p>
+        </conclusion>
+    </activity>
 
      <p>
-        What is a sequence?
-     </p>
-     <p>
-        Look around your school, rows of desks, steps on a staircase, days in a timetable. Many things in life follow an order. Therefowe we can define a sequence as.
-     </p>
-     <p>
-        A <term>sequence</term> is an ordered list of numbers that follow a rule. Each number in the list is called a <term>term</term>.
-     </p>
-     <p>
-        We can write a sequence as: <m>a_1, \; a_2, \;a_3, \; a_4, \; \ldots a_n</m>
-     </p>
-     <p>
-        <ol marker="(a)">
-            <li>
-                <p>
-                    <m>a_1</m> is the first term,
-                </p>
-            </li>
-            <li>
-                <p>
-                    <m>a_2</m> is the second term,
-                </p>
-            </li>
-            <li>
-                <p>
-                    <m>a_n</m> is the <m>n^{th}</m> term.
-                </p>
-            </li>
-        </ol>
-     </p>
-     <p>
-        On a school price giving day, Chairs are arranged in rows as follows.
-     </p>
-     <p>
-        The student and parents chairs.
-     </p>
-     <p>
-        <m>20, \; 25, \; 30, \; 35, \; \ldots</m>
-     </p>
-     <p>
-        The staff chairs.
-     </p>
-     <p>
-        <m>1,\;2,\;4,\;8,\;\ldots</m>
-     </p>
-     <p>
-        Find the first, second, and forth terms?
-     </p>
-     <p>
-        Did you notice a rule for the sequences, what is the rule?
-     </p>
-     <p>
-        Sequences help us describe patterns, predict what comes next, and solve problems involving repeated steps.
-     </p>
-     <p>
-        <term>Sequences</term> let you turn patterns into formulas. Instead of counting every step, you can find the <m>20^{th}</m> term or the <m>100^{th}</m> term directly.
-     </p>
-     <p>
-        Find the <m>20^{th} </m> terms of the two sequences using the rule you identified?
+        Look around your school, rows of desks, steps on a staircase, days in a timetable. Many things in life follow an order.
      </p>
 
 
@@ -194,12 +273,38 @@
 
     <insight>
         <p>
-            The next two numbers is obtained using some rule. If numbers are arranged in a definite order (following a specific rule), they form a sequence.
+            A <term>sequence</term> is an ordered list of numbers that follow a rule. Each number in the list is called a <term>term</term>.
         </p>
         <p>
-            All the three patterns above are examples of sequences. Each of the numbers in a sequence is called a term. In sequence (i) above the first term is <m>2</m>, the third term is <m>6</m>, and the fifth term is <m>10</m>. For the remaining sequences (ii) and (iii), state the first, third and fifth terms.
+            We can write a sequence as: <m>a_1, \; a_2, \;a_3, \; a_4, \; \ldots, a_n</m>
+        </p>
+        <p>
+            <ul>
+                <li>
+                    <p>
+                        <m>a_1</m> is the first term,
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>a_2</m> is the second term,
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>a_n</m> is the <m>n^{th}</m> term.
+                    </p>
+                </li>
+            </ul>
         </p>
     </insight>
+
+    <p>
+        Sequences help us describe patterns, predict what comes next, and solve problems involving repeated steps.
+     </p>
+     <p>
+        <term>Sequences</term> let you turn patterns into formulas. Instead of counting every step, you can find the <m>20^{th}</m> term or the <m>100^{th}</m> term directly.
+     </p>
 
     <!-- Add insight / key takeaway directly related to activity / learner experience -->
 
@@ -220,22 +325,22 @@
                 <ol marker="(a)">
                     <li>
                         <p>
-                            <m>1,3,5,7...</m>
+                            <m>1,3,5,7,\ldots</m>
                         </p>
                     </li>
                     <li>
                         <p> 
-                            <m>\frac{1}{3},\frac{1}{9},\frac{1}{27}... </m>
+                            <m>\frac{1}{3},\frac{1}{9},\frac{1}{27},\ldots </m>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <m>1,8,27... </m>
+                            <m>1,8,27,\ldots </m>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <m>-3,6,-12,...</m>
+                            <m>-3,6,-12,\ldots</m>
                         </p>
                     </li>
                 </ol>
@@ -339,7 +444,7 @@
      <example>
         <statement>
             <p>
-                Deduce the general rule in the sequence given below; <m>2,5,8,11 ...</m>
+                Deduce the general rule in the sequence given below; <m>2,5,8,11 ,\ldots</m>
             </p>
         </statement>
         <solution>
@@ -410,7 +515,7 @@
                                 The seventh and twelfth terms.
                             </p>
                             <p>
-                                <m>0,2,6,12,...</m>
+                                <m>0,2,6,12,\ldots</m>
                             </p>
                         </li>
                         <li>
@@ -418,7 +523,7 @@
                                 The seventh and the ninth terms.
                             </p>
                             <p>
-                                <m>\frac{1}{3}, \frac{5}{3}, \frac{9}{3}, \frac{13}{3} ... </m>
+                                <m>\frac{1}{3}, \frac{5}{3}, \frac{9}{3}, \frac{13}{3} ,\ldots </m>
                             </p>
                         </li>
                         <li>
@@ -426,7 +531,7 @@
                                 The fifth and eighth terms.
                             </p>
                             <p>
-                                <m> \frac{1}{5}, 1, \frac{9}{5}, \frac{13}{5} ... </m>
+                                <m> \frac{1}{5}, 1, \frac{9}{5}, \frac{13}{5} ,\ldots </m>
                             </p>
                         </li>
                     </ol>
@@ -538,22 +643,22 @@
                     <ol marker="(a)">
                         <li>
                             <p>
-                               <m>3,6,9,12 ...</m> 
+                               <m>3,6,9,12 ,\ldots</m> 
                             </p>
                         </li>
                         <li>
                             <p>
-                                <m>1,3,5,7,9 ...</m>
+                                <m>1,3,5,7,9 ,\ldots</m>
                             </p>
                         </li>
                         <li>
                             <p>
-                                <m>6,11,16 ...</m>
+                                <m>6,11,16 ,\ldots</m>
                             </p>
                         </li>
                         <li>
                             <p>
-                                <m>0,3,8,15 ...</m>
+                                <m>0,3,8,15 ,\ldots</m>
                             </p>
                         </li>
                     </ol>
@@ -586,6 +691,61 @@
                 </p>
             </answer>
         </exercise>
+    <exercise>
+        <introduction>
+            <p>
+                Consider the sequence of dominoes shown below:
+                <figure xml:id="dominoes-sequence">
+                    <image source="images/square-sequence.png" width="100%">
+                        <shortdescription></shortdescription>
+                    </image>
+                    <caption><q><url href="https://www.visualpatterns.org/patterns/401-through-450">Pattern 407</url></q> by Johnothon Sauer is licensed under <url href="https://creativecommons.org/licenses/by/4.0/deed.en">CC-BY-4.0</url>.</caption>
+                </figure>
+            </p>
+        </introduction>
+        <task>
+            <statement>
+                <p>
+                    Let <m>D_n</m> represent the number of dominoes in the <m>n^{\text{th}}</m> square. How many dominoes are in the first square, <m>D_1</m>?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The first square has <m>4 + 8 = 12</m> dominoes, so <m>D_1 = 12</m>.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    How many dominoes are in the second square, <m>D_2</m>?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The second square has <m>4 + 8 + 12 = 24</m> dominoes, so <m>D_2 = 24</m>.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Can you find a formula for the number of dominoes in the <m>n^{\text{th}}</m> square, <m>D_n</m>?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The innermost ring has 4 dominoes, the next ring has 8 dominoes, the next has 12 dominoes, and so on. The <m>n^{\text{th}}</m> ring has <m>4n</m> dominoes. Since there are <m>n</m> rings in the <m>n^{\text{th}}</m> square, the total number of dominoes is:
+                    <md>
+                        D_n = 4 + 8 + 12 + \ldots 4n
+                    </md>
+                </p>
+                <p>
+                    We'll learn how to find a closed-form formula for this sum in <xref ref="sec-finding-the-sum-of-arithmetic-sequences"/>.
+                </p>
+            </solution>
+        </task>
+    </exercise>
     </exercises>
 
     <!-- [LP] Add information on how to differentiate  -->

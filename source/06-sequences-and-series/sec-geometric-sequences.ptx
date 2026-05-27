@@ -83,14 +83,45 @@
                 At each new stage, <em>every square</em> is divided again into <m>4</m> equal smaller squares.
             </p>
 
+            <figure xml:id="fig-square-subdivision-activity">
+                <caption>Stages 1 to 4 of the square subdivision process.</caption>
+                <image width="85%">
+                    <latex-image>
+                    \begin{tikzpicture}[scale=0.9]
+                    % Each stage drawn as a fixed 2x2 outer square with internal grid lines.
+                    % Stage 1: 1 square — teal
+                    \filldraw[fill=teal!55, draw=black] (0,0) rectangle ++(2,2);
+                    % Stage 2: 2x2 grid (4 squares) — orange
+                    \filldraw[fill=teal!55, draw=black] (2.8,0) rectangle ++(2,2);
+                    \draw[black] (3.8,0) -- (3.8,2);
+                    \draw[black] (2.8,1) -- (4.8,1);
+                    % Stage 3: 4x4 grid (16 squares) — teal
+                    \filldraw[fill=teal!55, draw=black] (5.6,0) rectangle ++(2,2);
+                    \foreach \i in {1,2,3} {
+                        \draw[black] ({5.6+\i*0.5},0) -- ({5.6+\i*0.5},2);
+                        \draw[black] (5.6,{\i*0.5}) -- (7.6,{\i*0.5});
+                    }
+                    % Stage 4: 8x8 grid (64 squares) — teal
+                    \filldraw[fill=teal!55, draw=black] (8.4,0) rectangle ++(2,2);
+                    \foreach \i in {1,...,7} {
+                        \draw[black, very thin] ({8.4+\i*0.25},0) -- ({8.4+\i*0.25},2);
+                        \draw[black, very thin] (8.4,{\i*0.25}) -- (10.4,{\i*0.25});
+                    }
+                    % Labels
+                    \node[below] at (1.0,-0.2) {\small Stage 1};
+                    \node[below] at (3.8,-0.2) {\small Stage 2};
+                    \node[below] at (6.6,-0.2) {\small Stage 3};
+                    \node[below] at (9.4,-0.2) {\small Stage 4};
+                    \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </figure>
+
             <p>
                 <term>Work in groups:</term>
             </p>
             <p>
                 <ol marker="(a)">
-                    <li>
-                        <p>Draw Stage <m>1</m>, Stage <m>2</m> and Stage <m>3</m> of this process.</p>
-                    </li>
                     <li>
                         <p>Count the total number of small squares at each stage.</p>
                     </li>
@@ -110,24 +141,21 @@
                     </row>
                     <row>
                         <cell>2</cell>
-                        <cell>4</cell>
+                        <cell>?</cell>
                     </row>
                     <row>
                         <cell>3</cell>
-                        <cell>16</cell>
+                        <cell>?</cell>
                     </row>
                     <row>
                         <cell>4</cell>
-                        <cell>64</cell>
+                        <cell>?</cell>
                     </row>
                 </tabular>
             <p>
                 <ol marker="(i)">
                     <li>
                         <p>Describe how the number of squares changes from one stage to the next.</p>
-                    </li>
-                    <li>
-                        <p>What is the common ratio?</p>
                     </li>
                     <li>
                         <p>Write the sequence formed.</p>
@@ -235,16 +263,10 @@
             A geometric sequence is a sequence in which each term is obtained by multiplying the previous term by a constant value called the common ratio.
         </p>
         <p>
-            In repeated splitting patterns, the number of parts grows multiplicatively. This leads to sequences such as:
+            If the first term is <m>a</m> and the common ratio is <m>r</m>, then the <m>n^{\text{th}}</m> term <m>t_n</m> is given by:
         </p>
         <p>
-            <m>1, 4, 16, 64, \dots</m>
-        </p>
-        <p>
-            If the first term is <m>a</m> and the common ratio is <m>r</m>, then the <m>n^{th}</m> term is given by:
-        </p>
-        <p>
-            <m>n^{th} = ar^{n-1}</m>
+            <m>t_n = ar^{n-1}</m>
         </p>
         <p>
             This formula allows us to determine any term in the sequence without listing all previous terms.
@@ -256,6 +278,163 @@
     <xi:include href="../lesson-plan-templates/example-intro.ptx" />
 
     <!-- Add at least 3 examples -->
+
+    <example>
+        <statement>
+            <p>
+                The diagram shows a growing pattern of diamond shapes.
+            </p>
+            <figure xml:id="fig-geom-diamond-example">
+                <caption>A growing diamond pattern — Steps 1 to 3.</caption>
+                <image width="85%">
+                    <latex-image>
+                    \begin{tikzpicture}[scale=0.65]
+                    % Step 1: 1 diamond — teal (odd step)
+                    \filldraw[fill=teal!65, draw=black] (0.5,1) -- (1,0.5) -- (0.5,0) -- (0,0.5) -- cycle;
+                    % Step 2: 3 diamonds in a row — orange (even step)
+                    \foreach \col in {0,1,2} {
+                        \filldraw[fill=orange!85!yellow, draw=black] ({3+\col+0.5},1) -- ({3+\col+1},0.5) -- ({3+\col+0.5},0) -- ({3+\col},0.5) -- cycle;
+                    }
+                    % Step 3: 9 diamonds in a 3x3 grid — teal (odd step)
+                    \foreach \row in {0,1,2} {
+                        \foreach \col in {0,1,2} {
+                            \filldraw[fill=teal!65, draw=black] ({8+\col+0.5},{\row+1}) -- ({8+\col+1},{\row+0.5}) -- ({8+\col+0.5},\row) -- ({8+\col},{\row+0.5}) -- cycle;
+                        }
+                    }
+                    \node[below] at (0.5,-0.2) {\small Step 1};
+                    \node[below] at (4.5,-0.2) {\small Step 2};
+                    \node[below] at (9.5,-0.2) {\small Step 3};
+                    \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </figure>
+            <p>
+                <ol marker="(a)">
+                    <li><p>Write down the first three terms of the sequence.</p></li>
+                    <li><p>What is the common ratio?</p></li>
+                    <li><p>Find the number of diamonds at Step 4.</p></li>
+                    <li><p>Write a formula for the <m>n^{th}</m> term.</p></li>
+                </ol>
+            </p>
+        </statement>
+        <solution>
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            Counting the diamonds at each step: <m>1, 3, 9</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <md>
+                                <mrow>r \amp =\; \frac{3}{1} = \frac{9}{3} = 3</mrow>
+                            </md>
+                            The common ratio is <m>r = 3</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <md>
+                                <mrow>\text{Step 4} \amp =\; 1 \times 3^{4-1} = 3^3 = 27 \text{ diamonds}</mrow>
+                            </md>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            With first term <m>a = 1</m> and common ratio <m>r = 3</m>:
+                            <md>
+                                <mrow>T_n \amp =\; 3^{n-1}</mrow>
+                            </md>
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </solution>
+    </example>
+
+    <example>
+        <statement>
+            <p>
+                The diagram shows a growing pattern of pentagon shapes, doubling at each step.
+            </p>
+            <figure xml:id="fig-geom-pentagon-example">
+                <caption>A doubling pentagon pattern — Steps 1 to 4.</caption>
+                <image width="90%">
+                    <latex-image>
+                    \begin{tikzpicture}[scale=0.65]
+                    % Step 1: 1 pentagon — purple (odd step)
+                    \begin{scope}[shift={(0.5,0.5)}]
+                        \filldraw[fill=purple!60!white, draw=black] (90:0.42)--(162:0.42)--(234:0.42)--(306:0.42)--(18:0.42)--cycle;
+                    \end{scope}
+                    % Step 2: 2 pentagons in a column — lime (even step)
+                    \foreach \row in {0,1} {
+                        \begin{scope}[shift={(2.5,{\row+0.5})}]
+                            \filldraw[fill=lime!65, draw=black] (90:0.42)--(162:0.42)--(234:0.42)--(306:0.42)--(18:0.42)--cycle;
+                        \end{scope}
+                    }
+                    % Step 3: 4 pentagons in 2x2 — purple (odd step)
+                    \foreach \row in {0,1} {
+                        \foreach \col in {0,1} {
+                            \begin{scope}[shift={({5+\col+0.5},{\row+0.5})}]
+                                \filldraw[fill=purple!60!white, draw=black] (90:0.42)--(162:0.42)--(234:0.42)--(306:0.42)--(18:0.42)--cycle;
+                            \end{scope}
+                        }
+                    }
+                    % Step 4: 8 pentagons in 2x4 — lime (even step)
+                    \foreach \row in {0,...,3} {
+                        \foreach \col in {0,1} {
+                            \begin{scope}[shift={({8+\col+0.5},{\row+0.5})}]
+                                \filldraw[fill=lime!65, draw=black] (90:0.42)--(162:0.42)--(234:0.42)--(306:0.42)--(18:0.42)--cycle;
+                            \end{scope}
+                        }
+                    }
+                    \node[below] at (0.5,-0.2) {\small Step 1};
+                    \node[below] at (2.5,-0.2) {\small Step 2};
+                    \node[below] at (6.0,-0.2) {\small Step 3};
+                    \node[below] at (9.0,-0.2) {\small Step 4};
+                    \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </figure>
+            <p>
+                <ol marker="(a)">
+                    <li><p>Write down the sequence formed and state the common ratio.</p></li>
+                    <li><p>Find the number of pentagons at Step 6.</p></li>
+                    <li><p>At which step will there first be more than 100 pentagons?</p></li>
+                </ol>
+            </p>
+        </statement>
+        <solution>
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            The sequence is <m>1, 2, 4, 8, \ldots</m> with common ratio <m>r = 2</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <md>
+                                <mrow>T_6 \amp =\; 1 \times 2^{6-1} = 2^5 = 32 \text{ pentagons}</mrow>
+                            </md>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            We need <m>2^{n-1} &gt; 100</m>.
+                            <md>
+                                <mrow>2^6 \amp =\; 64 &lt; 100</mrow>
+                                <mrow>2^7 \amp =\; 128 &gt; 100</mrow>
+                            </md>
+                            So <m>n - 1 = 7</m>, meaning Step <m>8</m> is the first step with more than 100 pentagons.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </solution>
+    </example>
+
     <example>
         <statement>
             <p>
@@ -435,6 +614,301 @@
                     The second term of the geometric sequence is <m>x^2 - 1</m>.
                 </p>
             </answer>
+        </exercise>
+
+        <exercise>
+            <introduction>
+                <p>
+                    The following pattern shows circles arranged in growing grids.
+                </p>
+                <figure xml:id="fig-geom-circle-pattern">
+                    <caption>A growing circle pattern — Steps 1 to 3.</caption>
+                    <image width="85%">
+                        <latex-image>
+                        \begin{tikzpicture}[scale=0.65]
+                        % Step 1: 1 circle — cyan (odd step)
+                        \filldraw[fill=cyan!65, draw=black] (0.5,0.5) circle (0.42);
+                        % Step 2: 3 circles in a row — magenta (even step)
+                        \foreach \col in {0,1,2} {
+                            \filldraw[fill=magenta!55, draw=black] ({3+\col+0.5},0.5) circle (0.42);
+                        }
+                        % Step 3: 9 circles in a 3x3 grid — cyan (odd step)
+                        \foreach \row in {0,1,2} {
+                            \foreach \col in {0,1,2} {
+                                \filldraw[fill=cyan!65, draw=black] ({8+\col+0.5},{\row+0.5}) circle (0.42);
+                            }
+                        }
+                        \node[below] at (0.5,-0.2) {\small Step 1};
+                        \node[below] at (4.5,-0.2) {\small Step 2};
+                        \node[below] at (9.5,-0.2) {\small Step 3};
+                        \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        Count the circles at each step and write down the first three terms of the sequence.
+                        What is the common ratio <m>r</m>?
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        The sequence is <m>1, 3, 9, \ldots</m> with common ratio <m>r = 3</m>.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        <md>
+                            <mrow>\text{Step 1} \amp =\; 1</mrow>
+                            <mrow>\text{Step 2} \amp =\; 3</mrow>
+                            <mrow>\text{Step 3} \amp =\; 9 = 3^2</mrow>
+                        </md>
+                        Each step has three times as many circles as the one before, so <m>r = 3</m>.
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Write a formula for <m>T_n</m>, the number of circles at Step <m>n</m>.
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        <m>T_n = 3^{n-1}</m>
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        With first term <m>a = 1</m> and common ratio <m>r = 3</m>:
+                        <md>
+                            <mrow>T_n \amp =\; a \cdot r^{n-1} = 1 \times 3^{n-1} = 3^{n-1}</mrow>
+                        </md>
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        How many circles are at Step 5?
+                        At which step are there 729 circles?
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        Step 5 has <m>81</m> circles. There are 729 circles at Step 7.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        <md>
+                            <mrow>T_5 \amp =\; 3^4 = 81</mrow>
+                        </md>
+                        For 729 circles: <m>3^{n-1} = 729 = 3^6</m>, so <m>n - 1 = 6</m> and <m>n = 7</m>.
+                    </p>
+                </solution>
+            </task>
+        </exercise>
+
+        <exercise>
+            <introduction>
+                <p>
+                    The following pattern shows hexagons arranged in growing clusters.
+                </p>
+                <figure xml:id="fig-geom-hexagon-pattern">
+                    <caption>A growing hexagon pattern — Steps 1 to 4.</caption>
+                    <image width="90%">
+                        <latex-image>
+                        \begin{tikzpicture}[scale=0.65]
+                        % Step 1: 1 hexagon — blue (odd step)
+                        \begin{scope}[shift={(0.5,0.5)}]
+                            \filldraw[fill=blue!55!white, draw=black] (0:0.45)--(60:0.45)--(120:0.45)--(180:0.45)--(240:0.45)--(300:0.45)--cycle;
+                        \end{scope}
+                        % Step 2: 2 hexagons in a row — red (even step)
+                        \foreach \col in {0,1} {
+                            \begin{scope}[shift={({3+\col+0.5},0.5)}]
+                                \filldraw[fill=red!60!white, draw=black] (0:0.45)--(60:0.45)--(120:0.45)--(180:0.45)--(240:0.45)--(300:0.45)--cycle;
+                            \end{scope}
+                        }
+                        % Step 3: 4 hexagons in 2x2 — blue (odd step)
+                        \foreach \row in {0,1} {
+                            \foreach \col in {0,1} {
+                                \begin{scope}[shift={({6+\col+0.5},{\row+0.5})}]
+                                    \filldraw[fill=blue!55!white, draw=black] (0:0.45)--(60:0.45)--(120:0.45)--(180:0.45)--(240:0.45)--(300:0.45)--cycle;
+                                \end{scope}
+                            }
+                        }
+                        % Step 4: 8 hexagons in 2x4 — red (even step)
+                        \foreach \row in {0,...,3} {
+                            \foreach \col in {0,1} {
+                                \begin{scope}[shift={({9+\col+0.5},{\row+0.5})}]
+                                    \filldraw[fill=red!60!white, draw=black] (0:0.45)--(60:0.45)--(120:0.45)--(180:0.45)--(240:0.45)--(300:0.45)--cycle;
+                                \end{scope}
+                            }
+                        }
+                        \node[below] at (0.5,-0.2) {\small Step 1};
+                        \node[below] at (4.0,-0.2) {\small Step 2};
+                        \node[below] at (7.0,-0.2) {\small Step 3};
+                        \node[below] at (10.0,-0.2) {\small Step 4};
+                        \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        Count the hexagons at each step. Write down the sequence and state the common ratio.
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        The sequence is <m>1, 2, 4, 8, \ldots</m> with common ratio <m>r = 2</m>.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        <md>
+                            <mrow>\text{Step 1} \amp =\; 1, \quad \text{Step 2} = 2, \quad \text{Step 3} = 4, \quad \text{Step 4} = 8</mrow>
+                        </md>
+                        Each step doubles the number of hexagons, so <m>r = 2</m>.
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Write a formula for <m>T_n</m>, the number of hexagons at Step <m>n</m>.
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        <m>T_n = 2^{n-1}</m>
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        With <m>a = 1</m> and <m>r = 2</m>:
+                        <md>
+                            <mrow>T_n = 2^{n-1}</mrow>
+                        </md>
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        At which step will there first be <m>32</m> hexagons?
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        Step 6.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        Solve <m>2^{n-1} = 32 = 2^5</m>, so <m>n - 1 = 5</m> and <m>n = 6</m>.
+                    </p>
+                </solution>
+            </task>
+        </exercise>
+
+        <exercise>
+            <introduction>
+                <p>
+                    The following pattern shows triangles arranged in growing grids.
+                </p>
+                <figure xml:id="fig-geom-triangle-pattern">
+                    <caption>A growing triangle pattern — Steps 1 to 4.</caption>
+                    <image width="90%">
+                        <latex-image>
+                        \begin{tikzpicture}[scale=0.65]
+                        % Step 1: 1 triangle — green (odd step)
+                        \filldraw[fill=green!55, draw=black] (0.5,0.9) -- (0.05,0.05) -- (0.95,0.05) -- cycle;
+                        % Step 2: 2 triangles in a row — violet (even step)
+                        \foreach \col in {0,1} {
+                            \filldraw[fill=violet!60, draw=black] ({3+\col+0.5},0.9) -- ({3+\col+0.05},0.05) -- ({3+\col+0.95},0.05) -- cycle;
+                        }
+                        % Step 3: 4 triangles in 2x2 — green (odd step)
+                        \foreach \row in {0,1} {
+                            \foreach \col in {0,1} {
+                                \filldraw[fill=green!55, draw=black] ({6+\col+0.5},{\row+0.9}) -- ({6+\col+0.05},{\row+0.05}) -- ({6+\col+0.95},{\row+0.05}) -- cycle;
+                            }
+                        }
+                        % Step 4: 8 triangles in 2x4 — violet (even step)
+                        \foreach \row in {0,...,3} {
+                            \foreach \col in {0,1} {
+                                \filldraw[fill=violet!60, draw=black] ({9+\col+0.5},{\row+0.9}) -- ({9+\col+0.05},{\row+0.05}) -- ({9+\col+0.95},{\row+0.05}) -- cycle;
+                            }
+                        }
+                        \node[below] at (0.5,-0.2) {\small Step 1};
+                        \node[below] at (4.0,-0.2) {\small Step 2};
+                        \node[below] at (7.0,-0.2) {\small Step 3};
+                        \node[below] at (10.0,-0.2) {\small Step 4};
+                        \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        Count the triangles at each step. Write down the sequence and state the common ratio.
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        The sequence is <m>1, 2, 4, 8, \ldots</m> with common ratio <m>r = 2</m>.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        <md>
+                            <mrow>\text{Step 1} \amp =\; 1, \quad \text{Step 2} = 2, \quad \text{Step 3} = 4, \quad \text{Step 4} = 8</mrow>
+                        </md>
+                        Each step doubles the previous count, so <m>r = 2</m>.
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        The first term is <m>a = 1</m>. Write a formula for <m>T_n</m>.
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        <m>T_n = 2^{n-1}</m>
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        <md>
+                            <mrow>T_n = a \cdot r^{n-1} = 1 \times 2^{n-1} = 2^{n-1}</mrow>
+                        </md>
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        At which step will there be <m>128</m> triangles?
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        Step 8.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        Solve <m>2^{n-1} = 128 = 2^7</m>, so <m>n - 1 = 7</m> and <m>n = 8</m>.
+                    </p>
+                </solution>
+            </task>
         </exercise>
     </exercises>
 

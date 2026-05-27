@@ -92,6 +92,47 @@
                 </ol>
             </p>
 
+            <figure xml:id="fig-triangular-number-activity">
+                <caption>A large equilateral triangle divided into 4 rows of smaller triangles.</caption>
+                <image width="55%">
+                    <latex-image>
+                    \begin{tikzpicture}[scale=1.0]
+                    \pgfmathsetmacro{\h}{sqrt(3)/2}
+                    % Inverted (downward) triangles — light gray spacers
+                    % Between row 0 and row 1: c=0,1,2
+                    \foreach \c in {0,1,2} {
+                        \filldraw[fill=gray!20, draw=black] ({\c+1},0) -- ({\c+0.5},{\h}) -- ({\c+1.5},{\h}) -- cycle;
+                    }
+                    % Between row 1 and row 2: c=0,1
+                    \foreach \c in {0,1} {
+                        \filldraw[fill=gray!20, draw=black] ({\c+1.5},{\h}) -- ({\c+1.0},{2*\h}) -- ({\c+2.0},{2*\h}) -- cycle;
+                    }
+                    % Between row 2 and top: c=0
+                    \filldraw[fill=gray!20, draw=black] (2.0,{2*\h}) -- (1.5,{3*\h}) -- (2.5,{3*\h}) -- cycle;
+                    % Row 4 (bottom, r=0): 4 upward triangles — orange (even row)
+                    \foreach \c in {0,1,2,3} {
+                        \filldraw[fill=orange!70, draw=black] ({\c},0) -- ({\c+1},0) -- ({\c+0.5},{\h}) -- cycle;
+                    }
+                    % Row 3 (r=1): 3 upward triangles — teal (odd row)
+                    \foreach \c in {0,1,2} {
+                        \filldraw[fill=teal!60, draw=black] ({\c+0.5},{\h}) -- ({\c+1.5},{\h}) -- ({\c+1.0},{2*\h}) -- cycle;
+                    }
+                    % Row 2 (r=2): 2 upward triangles — orange (even row)
+                    \foreach \c in {0,1} {
+                        \filldraw[fill=orange!70, draw=black] ({\c+1.0},{2*\h}) -- ({\c+2.0},{2*\h}) -- ({\c+1.5},{3*\h}) -- cycle;
+                    }
+                    % Row 1 (top, r=3): 1 upward triangle — teal (odd row)
+                    \filldraw[fill=teal!60, draw=black] (1.5,{3*\h}) -- (2.5,{3*\h}) -- (2.0,{4*\h}) -- cycle;
+                    % Row labels to the right
+                    \node[right] at (4.2,{0.5*\h})  {\small Row 4 \;(4 \(\triangle\)s)};
+                    \node[right] at (3.7,{1.5*\h})  {\small Row 3 \;(3 \(\triangle\)s)};
+                    \node[right] at (3.2,{2.5*\h})  {\small Row 2 \;(2 \(\triangle\)s)};
+                    \node[right] at (2.7,{3.5*\h})  {\small Row 1 \;(1 \(\triangle\))};
+                    \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </figure>
+
             <p>
                 <term>Work in groups:</term>
             </p>
@@ -480,6 +521,77 @@
                 </p>
             </answer>
         </exercise>
+         <exercise>
+        <introduction>
+            <p>
+                Consider the sequence of tiles shown below:
+                <figure xml:id="snake-sequence">
+                    <image source="images/snake-sequence.png" width="100%">
+                        <shortdescription></shortdescription>
+                    </image>
+                    <caption><q><url href="https://www.visualpatterns.org/patterns/401-through-450">Pattern 403</url></q> by Johnothon Sauer is licensed under <url href="https://creativecommons.org/licenses/by/4.0/deed.en">CC-BY-4.0</url>.</caption>
+                </figure>
+            </p>
+            <term>The image shows the 4th, 5th and 6th terms in the sequence, respectively.</term>
+        </introduction>
+        <task>
+            <statement>
+                <p>
+                    Let <m>S_n</m> represent the number of tiles in the <m>n^{\text{th}}</m> snake. How many tiles are in the 4th term (the left image), <m>S_4</m>?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The fourth term has <md>S_4 = 1 + 1 + 2 + 2 + 3 + 3 + 4 + 4 = 20 \text{ tiles}</md>
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    How many tiles are in the fifth snake, the middle image, <m>S_5</m>?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The fifth snake has <md>S_5 = S_4 + 5 + 5 = 30 \text{ tiles}</md>, so <m>S_5 = 30</m>.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Can you find a formula for the number of tiles in the <m>n^{\text{th}}</m> snake, <m>S_n</m>? You can write this formula using dots (like <m>\ldots</m>).
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    We are adding up natural, each repeated twice, until we reach <m>n</m>. Therefore, the formula for the number of tiles in the <m>n^{\text{th}}</m> snake is:
+                    <md>
+                        S_n = 2 + 4 + 6 + \ldots + 2n
+                    </md>
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Using our formula for the sum of an arithmetic sequence, can you find a single expression for the number of tiles in the <m>n^{\text{th}}</m> snake, <m>S_n</m>, without using dots?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    In our arithmetic series <m>2 + 4 + 6 + \ldots + 2n</m>, the first term is <m>a = 2</m> and the common difference is <m>d = 2</m>. The number of terms is <m>n</m>. Using the formula for the sum of an arithmetic sequence:
+                    <md>
+                        <mrow> S_n \amp = \; \frac{n}{2}\left[2a + (n-1)d\right] </mrow>
+                        <mrow> \amp = \; \frac{n}{2}\left[2\times 2 + (n-1)2\right] </mrow>
+                        <mrow> \amp = \frac{n}{2}\left[4 + 2n - 2\right]</mrow>
+                        <mrow> \amp = \; n(n+1) </mrow>
+                    </md>
+                </p>
+            </solution>
+        </task>
+    </exercise>
      </exercises>
 
     <!-- [LP] Add information on how to differentiate  -->
