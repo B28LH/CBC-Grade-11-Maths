@@ -763,6 +763,95 @@
             </answer>
 
         </exercise>
+        <exercise>
+            <introduction>
+                <p>
+                    Suppose you are a pilot flying between Nairobi and Cape Town, and you need to find the distance between the two cities. You know that:
+                </p>
+                <p>
+                    <figure xml:id="nairobi-cape-town">
+                        <caption>Direct Route</caption>
+                        <image source="images/great-circle.png" width="80%">
+                            <shortdescription></shortdescription>
+                        </image>
+                    </figure>    
+                </p>  
+                <p>            
+                    <ul>
+                        <li>
+                            <p>
+                                Nairobi has latitude <m>1.2921^{\circ}</m> South and longitude <m>36.8219^{\circ}</m> East.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Cape Town has latitude <m>33.9249^{\circ}</m> South and longitude <m>18.4241^{\circ}</m> East.
+                            </p>
+                        </li>
+                    </ul>  
+                </p>
+                <p>
+                   The great circle distance formula tells us how to calculate the distance between two locations, with latitudes <m>\phi_1</m> and <m>\phi_2</m>, and longitudes <m>\lambda_1</m> and <m>\lambda_2</m>:
+                   <md>
+                    d = R \cos^{-1}\left[\sin(\phi_1)\sin(\phi_2) + \cos(\phi_1)\cos(\phi_2)\cos \left(|\lambda_2 - \lambda_1|\right) \right]
+                   </md>
+                   where <m>R = 6371\,\text{km}</m> is the radius of the Earth. 
+                </p>
+            </introduction>
+            <task>
+                <statement>
+                <p>
+                    What will we set <m>\phi_1</m> and <m>\lambda_1</m> equal to, if they represent Nairobi?
+                </p>
+                </statement>
+                <solution>
+                    <p>
+                        We will set <m>\phi_1 = -1.2921^\deg</m> and <m>\lambda_1 = 36.8219^\deg</m>.
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        What will we set <m>\phi_2</m> and <m>\lambda_2</m> equal to, if they represent Cape Town?
+                    </p>
+                </statement>
+            <solution>
+                <p>
+                    We will set <m>\phi_2 = -33.9249^\deg</m> and <m>\lambda_2 = 18.4241^\deg</m>.
+                </p>
+            </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Calculate <m>\left|\lambda_2 - \lambda_1\right|</m>
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        We have <m>\left|\lambda_2 - \lambda_1\right| = \left|18.4241^\deg - 36.8219^\deg\right| = 18.3978^\deg</m>.
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Hence use the formula to calculate the distance between Nairobi and Cape Town.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        Substituting the values into the formula, we get
+                        <md>
+                                <mrow> d \amp = 6371 \cos^{-1}\left[\sin(-1.2921^\deg)\sin(-33.9249^\deg) + \cos(-1.2921^\deg)\cos(-33.9249^\deg)\cos(18.3978^\deg) \right] </mrow>
+                                <mrow> \amp 4102.58\, \text{km}</mrow>
+                        </md>
+                        Therefore, the distance between Nairobi and Cape Town is approximately 4102.58 km.
+                    </p>
+                </solution>
+            </task>
+        </exercise>
 
     </exercises>
 
