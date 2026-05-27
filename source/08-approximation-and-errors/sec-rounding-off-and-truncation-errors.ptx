@@ -67,12 +67,79 @@
             </dl>
         </axiom> -->
 
-    <!-- Add Activity -->
+    <activity>
+        <p>
+            <term>Work in Groups</term>
+        </p>
 
-    <!-- <activity>
-        <statement>
-        </statement>
-    </activity> -->
+        <p>
+            For each of the following numbers:
+        </p>
+        <p>
+            <ol marker="(a)">
+                <li>
+                    <p>
+                        Round off to the stated number of significant figures.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        Truncate to the stated number of significant figures.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        Calculate the percentage error in each case.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        State which method gives the more accurate approximation.
+                    </p>
+                </li>
+            </ol>
+        </p>
+        <p>
+            Use:
+        </p>
+        <p>
+            <md>
+                \text{Percentage Error}=
+                \frac{|\text{True Value}-\text{Approximate Value}|}
+                {\text{True Value}}
+                \times100\%
+            </md>
+        </p>
+        <p>
+            <ol marker="(i)">
+                <li>
+                    <m>48.769</m> correct to <m>3</m> significant figures.
+                </li>
+
+                <li>
+                    <m>0.0047865</m> correct to <m>2</m> significant figures.
+                </li>
+
+                <li>
+                    <m>3958</m> correct to <m>2</m> significant figures.
+                </li>
+
+                <li>
+                    <m>126.498</m> correct to <m>4</m> significant figures.
+                </li>
+
+                <li>
+                    <m>0.99949</m> correct to <m>3</m> significant figures.
+                </li>
+            </ol>
+        </p>
+        <p>
+            Present your answers and explain your calculations to the class.
+        </p>
+    </activity>
 
     <!-- [LP] Add guidance on structured lesson plan-->
 
@@ -106,10 +173,17 @@
         </paragraphs>
     </axiom> -->
 
-    <!-- Add insight / key takeaway directly related to activity / learner experience -->
-
-    <!-- <insight>
-    </insight> -->
+    <insight>
+        <p>
+            Rounding-off and truncation are methods of approximation used to simplify numbers.  
+        </p>
+        <p>
+            Rounding-off usually gives a more accurate approximation because the next digit is considered, while truncation simply cuts off digits.
+        </p>
+        <p>
+            The accuracy of an approximation can be measured using percentage error.
+        </p>
+    </insight>
 
     <!-- Add further instruction (not in a block) to develop ideas as needed -->
 
@@ -118,26 +192,480 @@
     <!-- Add at least 3 examples -->
 
     <example>
-        <statement> 
+        <statement>
+            <p>
+                Approximate <m>0.05792</m> to <m>2</m> significant figures.
+            </p>
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                           Rounding off 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Truncation
+                        </p>
+                    </li>
+                </ol>
+            </p>
+            <p>
+                Calculate the percentage error in each case.
+            </p>
         </statement>
         <solution>
+            <p>
+                The first two significant figures are <m>5</m> and <m>7</m>.
+            </p>
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            Rounding Off
+                        </p>
+                        <p>
+                            The next digit is <m>9</m>, so <m>7</m> increases to <m>8</m>.
+                        </p>
+                        <p>
+                            <m>0.05792 \approx 0.058</m>
+                        </p>
+                        <p>
+                            Percentage error
+                        </p>
+                        <p>
+                            <md>
+                                <mrow>\frac{|0.05792-0.058|}{0.05792}\times100 = \amp \; 0.14\% </mrow>
+                            </md>
+                            
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Truncation
+                        </p>
+                        <p>
+                            <m>0.05792 \approx 0.057</m>
+                        </p>
+                        <p>
+                            Percentage error
+                        </p>
+                        <p>
+                            <md>
+                                <mrow>\frac{|0.05792-0.057|}{0.05792}\times100 = \amp \; 1.59 \% </mrow>
+                            </md>
+                            
+                        </p>
+                    </li>
+                </ol>
+            </p>
         </solution>
     </example>
 
     <example>
         <statement>
+            <p>
+                Approximate <m>48.769</m> to <m>3</m> significant figures.
+            </p>
+
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>Rounding off</p>
+                    </li>
+
+                    <li>
+                        <p>Truncation</p>
+                    </li>
+                </ol>
+            </p>
+
+            <p>
+                Calculate the percentage error in each case.
+            </p>
         </statement>
+
         <solution>
+            <p>
+                The first three significant figures are <m>4</m>, <m>8</m> and <m>7</m>.
+            </p>
+
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            Rounding Off
+                        </p>
+
+                        <p>
+                            The next digit is <m>6</m>, therefore <m>7</m> increases to <m>8</m>.
+                        </p>
+
+                        <p>
+                            <m>48.769 \approx 48.8</m>
+                        </p>
+
+                        <p>
+                            Percentage error
+                        </p>
+                        <p>
+                            <md>
+                                <mrow>\frac{|48.769-48.8|}{48.769}\times100 = \amp \; 0.064\% </mrow>
+                            </md>
+                            
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Truncation
+                        </p>
+
+                        <p>
+                            <m>48.769 \approx 48.7</m>
+                        </p>
+
+                        <p>
+                            Percentage error
+                        </p>
+                        <p>
+                            <md>
+                                <mrow>\frac{|48.769-48.7|}{48.769}\times100 = \amp \; 0.141\% </mrow>
+                            </md>
+                            
+                        </p>
+                    </li>
+                </ol>
+            </p>
         </solution>
     </example>
+
+
+
+
 
     <example>
         <statement>
+            <p>
+                Approximate <m>0.0047865</m> to <m>2</m> significant figures.
+            </p>
+
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>Rounding off</p>
+                    </li>
+
+                    <li>
+                        <p>Truncation</p>
+                    </li>
+                </ol>
+            </p>
+
+            <p>
+                Calculate the percentage error in each case.
+            </p>
         </statement>
+
         <solution>
+            <p>
+                The first two significant figures are <m>4</m> and <m>7</m>.
+            </p>
+
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            Rounding Off
+                        </p>
+
+                        <p>
+                            The next digit is <m>8</m>, so <m>7</m> increases to <m>8</m>.
+                        </p>
+
+                        <p>
+                            <m>0.0047865 \approx 0.0048</m>
+                        </p>
+
+                        <p>
+                            Percentage error
+                        </p>
+                        <p>
+                            <md>
+                                <mrow>\frac{|0.0047865-0.0048|}{0.0047865}\times100 = \amp \; 0.28\%</mrow>
+                            </md>
+                            
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Truncation
+                        </p>
+
+                        <p>
+                            <m>0.0047865 \approx 0.0047</m>
+                        </p>
+
+                        <p>
+                            Percentage error
+                        </p>
+                        <p>
+                            <md>
+                                <mrow>\frac{|0.0047865-0.0047|}{0.0047865}\times100 = \amp\; 1.81\% </mrow>
+                            </md>
+                            
+                        </p>
+                    </li>
+                </ol>
+            </p>
         </solution>
     </example>
 
+
+
+
+
+    <example>
+        <statement>
+            <p>
+                Approximate <m>3958</m> to <m>2</m> significant figures.
+            </p>
+
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>Rounding off</p>
+                    </li>
+
+                    <li>
+                        <p>Truncation</p>
+                    </li>
+                </ol>
+            </p>
+
+            <p>
+                Calculate the percentage error in each case.
+            </p>
+        </statement>
+
+        <solution>
+            <p>
+                The first two significant figures are <m>3</m> and <m>9</m>.
+            </p>
+
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            Rounding Off
+                        </p>
+
+                        <p>
+                            The next digit is <m>5</m>, therefore <m>9</m> increases.
+                        </p>
+
+                        <p>
+                            <m>3958 \approx 4000</m>
+                        </p>
+
+                        <p>
+                            Percentage error
+                        </p>
+                        <p>
+                            <md>
+                                <mrow>\frac{|3958-4000|}{3958}\times100 = \amp\; 1.06\% </mrow>
+                            </md>
+                            
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Truncation
+                        </p>
+
+                        <p>
+                            <m>3958 \approx 3900</m>
+                        </p>
+
+                        <p>
+                            Percentage error
+                        </p>
+                        <p>
+                            <md>
+                                <mrow>\frac{|3958-3900|}{3958}\times100 = \amp\; 1.47\% </mrow>
+                            </md>
+                            
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </solution>
+    </example>
+
+
+
+
+
+    <example>
+        <statement>
+            <p>
+                Approximate <m>126.498</m> to <m>4</m> significant figures.
+            </p>
+
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>Rounding off</p>
+                    </li>
+
+                    <li>
+                        <p>Truncation</p>
+                    </li>
+                </ol>
+            </p>
+
+            <p>
+                Calculate the percentage error in each case.
+            </p>
+        </statement>
+
+        <solution>
+            <p>
+                The first four significant figures are <m>1</m>, <m>2</m>, <m>6</m> and <m>4</m>.
+            </p>
+
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            Rounding Off
+                        </p>
+
+                        <p>
+                            The next digit is <m>9</m>, therefore <m>4</m> increases to <m>5</m>.
+                        </p>
+
+                        <p>
+                            <m>126.498 \approx 126.5</m>
+                        </p>
+
+                        <p>
+                            Percentage error
+                        </p>
+                        <p>
+                            <md>
+                                <mrow>\frac{|126.498-126.5|}{126.498}\times100 = \amp  \;0.002\% </mrow>
+                            </md>
+                            
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Truncation
+                        </p>
+
+                        <p>
+                            <m>126.498 \approx 126.4</m>
+                        </p>
+
+                        <p>
+                            Percentage error
+                        </p>
+                        <p>
+                            <md>
+                                <mrow>\frac{|126.498-126.4|}{126.498}\times100 = \amp \; 0.077\% </mrow>
+                            </md>
+                            
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </solution>
+    </example>
+
+
+
+
+
+    <example>
+        <statement>
+            <p>
+                Approximate <m>0.99949</m> to <m>3</m> significant figures.
+            </p>
+
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>Rounding off</p>
+                    </li>
+
+                    <li>
+                        <p>Truncation</p>
+                    </li>
+                </ol>
+            </p>
+
+            <p>
+                Calculate the percentage error in each case.
+            </p>
+        </statement>
+
+        <solution>
+            <p>
+                The first three significant figures are <m>9</m>, <m>9</m> and <m>9</m>.
+            </p>
+
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            Rounding Off
+                        </p>
+
+                        <p>
+                            The next digit is <m>4</m>, therefore the digits remain unchanged.
+                        </p>
+
+                        <p>
+                            <m>0.99949 \approx 0.999</m>
+                        </p>
+
+                        <p>
+                            Percentage error
+                        </p>
+                        <p>
+                            <md>
+                                <mrow> \frac{|0.99949-0.999|}{0.99949}\times100 = \amp \; 0.049\% </mrow>
+                            </md>
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            Truncation
+                        </p>
+
+                        <p>
+                            <m>0.99949 \approx 0.999</m>
+                        </p>
+
+                        <p>
+                            Percentage error
+                        </p>
+                        <p>
+                            <md>
+                                <mrow> \frac{|0.99949-0.999|}{0.99949}\times100 = \amp \; 0.049\% </mrow>
+                            </md>
+                            
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </solution>
+    </example>
     <xi:include href="../lesson-plan-templates/assessment-intro.ptx" />
 
     <!-- If STACK questions are included, uncomment this: -->

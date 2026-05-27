@@ -70,13 +70,78 @@
             </dl>
         </axiom> -->
 
-    <!-- Add Activity -->
-
-    <!-- <activity>
+    <activity>
         <statement>
+            <p>
+                <term>Work in your Groups</term>
+            </p>
+            <p>
+                Your school is hosting sports day event. The sports committee needs to arrange chairs for spectators in a stepped layout so everyone can have a clear view of what's hapenning in the field.
+            </p>
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                           The first row has <m>20</m> chairs. Each row behind it has <m>5</m> more chairs than the row infront. 
+                        </p>
+                        <p>
+                            <ol marker="(i)">
+                                <li>
+                                    <p>
+                                        Write the sequence for the number of chairs in the first <m>6</m> rows?
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        How many chairs are in row <m>10</m>?
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        If there are <m>15</m> rows, what is the total number of chairs needed?
+                                    </p>
+                                </li>
+                            </ol>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The sports committee also plans a terchers section where the number of chairs in every row double in size. If the first row has <m>8</m> chairs.
+                        </p>
+                        <p>
+                            <ol marker="(i)">
+                                <li>
+                                    <p>
+                                       Write the sequence for the first five rows? 
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        How many chairs are in row <m>8</m>?
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        If the budget allows for <m>7</m> rows, what is the total cost if each chair costs Ksh <m>3</m>?
+                                    </p>
+                                </li>
+                            </ol>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If the field can fit a maximum of <m>300</m> chairs, which layout lets you fit more rows?
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Which layout should the sports committee choose and why?
+                        </p>
+                    </li>
+                </ol>
+            </p>
         </statement>
-    </activity> -->
-
+    </activity>
     <!-- [LP] Add guidance on structured lesson plan-->
 
     <!-- <axiom component="lesson-plan">
@@ -120,26 +185,190 @@
 
     <!-- Add at least 3 examples -->
 
-    <!-- <example>
+    <example>
         <statement>
+            <p>
+                Your group needs to buy a new scientific calculator for calculations. You decide as a group to save Ksh <m>50</m> for the first week. Each week you save Ksh <m>15</m> more than the previous week. 
+            </p>
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                           How much do you save in week <m>8</m>? 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            How much have the group saved in total after <m>8</m> weeks?
+                        </p>
+                    </li>
+                </ol>
+            </p>
         </statement>
         <solution>
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            Groups save in week <m>8</m>.
+                        </p>
+                        <p>
+                            <md>
+                                <mrow>a = \amp \; 50 </mrow>
+                                <mrow>d = \amp \; 15 </mrow>
+                                <mrow>n = \amp \; 8 </mrow>
+                                <mrow>8^{th} term = \amp \; a + 7d </mrow>
+                                <mrow> = \amp \; 50 + 7 \times 15 </mrow>
+                                <mrow> = \amp \; \text{Ksh}\; 155 </mrow>
+                            </md>
+                        </p>
+                        <p>
+                            The group saved Ksh <m>155</m> in the <m>8^{th} </m> week.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Total saved in <m>8</m> weeks.
+                        </p>
+                        <p>
+                            <md>
+                                <mrow>a = \amp \; 50 </mrow>
+                                <mrow>d = \amp \; 15 </mrow>
+                                <mrow>n = \amp \; 8 </mrow>
+                                <mrow>s_8 = \amp \; \frac{8}{2} \left(2\;a + 7d \right) </mrow>
+                                <mrow> = \amp \; 4 (100 + 105)</mrow>
+                                <mrow> = \amp \; \text{Ksh}\; 820</mrow>
+                            </md>
+                        </p>
+                    </li>
+                </ol>
+            </p>
         </solution>
     </example>
 
     <example>
         <statement>
+            <p>
+                Your School club posts about the science fair. On the first day they posts <m>4</m> shares, each of the following days the number of shares double.
+            </p>
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            How many shares will the club post on day <m>6</m>?
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            What is the total shares after <m>6</m> days?
+                        </p>
+                        
+                    </li>
+                </ol>
+            </p>
         </statement>
         <solution>
+            <p>
+                <ol>
+                    <li>
+                        <p>
+                            Shares on day <m>6</m>.
+                        </p>
+                        <p>
+                            <md>
+                                <mrow>a = \amp \; 4 </mrow>
+                                <mrow>r = \amp \; 2 </mrow>
+                                <mrow>n = \amp \; 6 </mrow>
+                                <mrow>6^{th} term = \amp \; a\; r^5 </mrow>
+                                <mrow> = \amp \; 4 \times 2^5</mrow>
+                                <mrow> = \amp \; \text{shares}\; 128 </mrow>
+                            </md>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                           Total shares after <m>6</m> days. 
+                        </p>
+                        <p>
+                            <md>
+                                <mrow>a = \amp \; 4 </mrow>
+                                <mrow>r = \amp \; 2 </mrow>
+                                <mrow>n = \amp \; 6 </mrow>
+                                <mrow>s_6 = \amp \; \frac{a\; \left(r^n - 1\right)}{r-1} </mrow>
+                                <mrow> = \amp \; \frac{4 \; (64-1)}{2-1} </mrow>
+                                <mrow> = \amp \; \text{shares}\; 252 </mrow>
+                            </md>
+                        </p>
+                    </li>
+                </ol>
+            </p>
+            
         </solution>
     </example>
 
     <example>
         <statement>
+            <p>
+                A school hall can hold a maximum of <m>200</m> seats. Rows are arranged with <m>18</m> seats in the first row and each of the remaining rows adds <m>4</m> seats. 
+            </p>
+            <p>
+                <ol>
+                    <li>
+                        <p>
+                            How many full rows can fit in the hall?
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            What is the total number of seats in the full rows?
+                        </p>
+                    </li>
+                </ol>
+            </p>
         </statement>
         <solution>
+            <p>
+                <ol>
+                    <li>
+                        <p>
+                           Full rows to fit in the hall.
+                        </p>
+                        <p>
+                            <md>
+                                <mrow> a = \amp \; 18 </mrow>
+                                <mrow>d = \amp \; 4 </mrow>
+                                <mrow>s_n = \amp \; 200 </mrow>
+                                <mrow> n = \amp \; ? </mrow>
+                                <mrow>s_n = \amp \; \frac{n}{2}\left(2 \; a + (n-1)\; d \right) </mrow>
+                                <mrow> 200 = \amp \; \frac{n}{2}\left(36 + 4\;n - 4 \right) </mrow>
+                                <mrow> 100 = \amp \; n^2 + 8\;n </mrow>
+                            </md>
+                        </p>
+                        <p>
+                            Solving for <m>n</m> from the quadratic equation usin quadratic formula
+                        </p>
+                        <p>
+                            <m> n = 6.8</m>
+                        </p>
+                        <p>
+                            Therefore there are <m>6</m> full rows in the hall.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <md>
+                                <mrow>s_6 = \amp \; 3(36 + 5 \times 4) </mrow>
+                                <mrow> = \amp \; 168 \text{seats} </mrow>
+                            </md>
+                        </p>
+                        <p>
+                            The full rows can be fit by <m>168</m> seats.
+                        </p>
+                    </li>
+                </ol>
+            </p>
         </solution>
-    </example> -->
+    </example> 
 
     <xi:include href="../lesson-plan-templates/assessment-intro.ptx" />
 
@@ -148,19 +377,94 @@
     <!-- <xi:include href="../lesson-plan-templates/checkpoint.ptx" /> -->
 
     <!-- Add STACK exercises if made -->
-
-    <!-- Add static exercises -->
-
-    <!-- <exercises>
+    <exercises>
         <exercise>
-            <statement>   
-
-            </statement>   
-            <solution>
-
-            </solution>             
-        </exercise>        
-    </exercises> -->
+            <statement>
+                <p>
+                    The school library charges a fine of Ksh <m>0.50</m> on day <m>1</m> for an overdue book. Each day the fine increases by Ksh <m>0.20</m>.
+                </p>
+                <p>
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                How much will the fine be on day <m>10</m>?
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                What is the total fine if the book is returned <m>10</m> days later?
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+            <answer>
+                <p>
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                Ksh <m>2.30</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Ksh <m>14</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </answer>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    A school starts a science club with <m>6</m> members. Each month, the number of new members is <m>3</m> times that of the previous month. 
+                </p>
+                <p>
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                How many new members join in month <m>5</m>?
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                What is the total number of members after <m>5</m> months?
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+            <answer>
+                <p>
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>486</m> members
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>726</m> members
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </answer>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                   A student plans to study <m>30</m> minutes on day <m>1</m> and increase by <m>5</m> minutes each day. What is the total study time after <m>12</m> days?
+                </p>
+            </statement>
+            <answer>
+                <p>
+                    <m>11 \;\text{hours}\; 30 \; \text{minutes} </m>
+                </p>
+            </answer>
+        </exercise>
+    </exercises>
 
     <!-- [LP] Add information on how to differentiate  -->
 

@@ -70,7 +70,7 @@
     <activity>
         <statement>
             <p>
-                <term>Work in Groups to:</term>
+                <term>Work in Groups</term>
             </p>
             <p>
                 Identify and record in the table the items in your surrounding environment that decrease in value over time. Discuss the factors that contribute to the decrease in value of these items.
@@ -96,15 +96,11 @@
             </tabular>
 
             <p>
-                <alert>In your groups explore the situation below:</alert>
+                Consider the following:
             </p>
 
             <p>
-                <term>Mr. Ondiala J</term> bought a motorbike at Ksh <m>200,000</m>. After <m>1</m> year, its value reduced to Ksh <m>140,000</m>.
-            </p>
-
-            <p>
-                <alert>In your groups you are required to:</alert>
+                Ondiala J bought a motorbike at Ksh <m>200,000</m>. After <m>1</m> year, its value reduced to Ksh <m>140,000</m>.
             </p>
 
             <p>
@@ -126,8 +122,30 @@
                     </li>
                 </ol>
             </p>
+
             <p>
-                <alert>Further Exploration:</alert> If the motorbike continues to lose value at the same rate every year, find the value after the second year and the third year.
+                The decrease in value of an asset over time is referred to as <term>Depreciation</term>.
+            </p>
+
+            <p>
+                Let the original value be <m>P</m>, the new value be <m>A</m>, the decrease in value be <m>I</m>, and the percentage decrease be <m>R</m>.
+            </p>
+
+            <p>
+                <alert>Relationships:</alert>
+            </p>
+
+            <p>
+                <md>
+                    <mrow> I = \amp \; P - A </mrow>
+                    <mrow> R = \amp \; \frac{I}{P} \times 100\% </mrow>
+                    <mrow> = \amp \; \frac{P - A}{P} \times 100\% </mrow>
+                    <mrow> A = \amp \; P - I </mrow>
+                </md>
+            </p>
+
+            <p>
+                If the motorbike continues to lose value at the same rate every year, find the value after the second year and the third year.
             </p>
         </statement>
     </activity>

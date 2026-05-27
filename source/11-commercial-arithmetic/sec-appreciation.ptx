@@ -69,7 +69,7 @@
         <activity>
             <statement>
                 <p>
-                    <term>Work in Groups to:</term>
+                    <term>Work in Groups</term>
                 </p>
                 <p>
                     Identify and record in the table the items in your surrounding environment that increase in value over time. Discuss the factors that contribute to the increase in value of these items.
@@ -96,14 +96,9 @@
                         <cell>?</cell>
                     </row>
                 </tabular>
-                <p>
-                    <alert>In your Groups Explore the question below;</alert>
-                </p>
+                <alert>In groups, consider and work through the following question.</alert>
                 <p>
                     Dr. Lucian Talu Mabayi bought a piece of land in Kisumu and Nairobi at Ksh <m>2,000,000</m> and Ksh <m>6,000,000</m> respectively. After <m>1</m> years, the land in Kisumu is now worth Ksh <m>2,600,000</m> while the land in Nairobi is worth Ksh <m>6,600,000</m>.
-                </p>
-                <p>
-                    <alert>In your groups</alert> you are required to;
                 </p>
                 <p>
                     <ol marker="(a)">
@@ -147,7 +142,24 @@
                     </ol>
                 </p>
                 <p>
-                    <alert>Further Exploration:</alert> If the land continues to appreciate at the same rate every year, find the value after the second year and the third year.
+                    The increase in value of an asset over time is referred to as <term>Appreciation</term>.
+                </p>
+                <p>
+                    Let the original value of the land be <m>P</m>, the new value be <m>A</m>, the increase in value be <m>I</m>, and the percentage increase be <m>R</m>. 
+                </p>
+                <p>
+                    <alert>Discuss and express the following relationships:</alert>
+                </p>
+                <p>
+                    <md>
+                        <mrow> I = \amp \; A - P </mrow>
+                        <mrow> R = \amp \; \frac{I}{P} \times100 \% </mrow>
+                        <mrow> = \amp \;\frac{A - P}{P} \times100 \% </mrow>
+                        <mrow> A = \amp \; P + I </mrow>
+                    </md>
+                </p>
+                <p>
+                    If the land continues to appreciate at the same rate every year, find the value after the second year and the third year.
                 </p>
             </statement>
         </activity>

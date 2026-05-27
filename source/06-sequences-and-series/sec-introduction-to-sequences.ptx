@@ -97,6 +97,68 @@
         
      </activity>
 
+     <p>
+        What is a sequence?
+     </p>
+     <p>
+        Look around your school, rows of desks, steps on a staircase, days in a timetable. Many things in life follow an order. Therefowe we can define a sequence as.
+     </p>
+     <p>
+        A <term>sequence</term> is an ordered list of numbers that follow a rule. Each number in the list is called a <term>term</term>.
+     </p>
+     <p>
+        We can write a sequence as: <m>a_1, \; a_2, \;a_3, \; a_4, \; \ldots a_n</m>
+     </p>
+     <p>
+        <ol marker="(a)">
+            <li>
+                <p>
+                    <m>a_1</m> is the first term,
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>a_2</m> is the second term,
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>a_n</m> is the <m>n^{th}</m> term.
+                </p>
+            </li>
+        </ol>
+     </p>
+     <p>
+        On a school price giving day, Chairs are arranged in rows as follows.
+     </p>
+     <p>
+        The student and parents chairs.
+     </p>
+     <p>
+        <m>20, \; 25, \; 30, \; 35, \; \ldots</m>
+     </p>
+     <p>
+        The staff chairs.
+     </p>
+     <p>
+        <m>1,\;2,\;4,\;8,\;\ldots</m>
+     </p>
+     <p>
+        Find the first, second, and forth terms?
+     </p>
+     <p>
+        Did you notice a rule for the sequences, what is the rule?
+     </p>
+     <p>
+        Sequences help us describe patterns, predict what comes next, and solve problems involving repeated steps.
+     </p>
+     <p>
+        <term>Sequences</term> let you turn patterns into formulas. Instead of counting every step, you can find the <m>20^{th}</m> term or the <m>100^{th}</m> term directly.
+     </p>
+     <p>
+        Find the <m>20^{th} </m> terms of the two sequences using the rule you identified?
+     </p>
+
 
     <!-- [LP] Add guidance on structured lesson plan-->
 

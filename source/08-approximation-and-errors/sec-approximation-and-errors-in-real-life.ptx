@@ -67,12 +67,114 @@
             </dl>
         </axiom> -->
 
-    <!-- Add Activity -->
+    <activity>
+        <p>
+            <term>Work in Groups</term>.
+        </p>
 
-    <!-- <activity>
-        <statement>
-        </statement>
-    </activity> -->
+        <p>
+            Discuss how approximation is used in everyday life such as:
+        </p>
+
+        <ul>
+            <li>measuring length and height,</li>
+            <li>money and banking,</li>
+            <li>construction work,</li>
+            <li>scientific measurements,</li>
+            <li>distance and travel.</li>
+        </ul>
+
+        <p>
+            Each group should complete the following tasks.
+        </p>
+        <p>
+
+            <ol marker="(a)">
+                <li>
+                    <p>
+                        Measure the length of a desk, width of a book, or height of a door using a ruler or tape measure.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        Record the actual measurement.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        Approximate the measurement to:
+                    </p>
+                    <p>
+                        <ol marker="(i)">
+                            <li>
+                                <p>
+                                    The nearest whole number.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <m>1</m> decimal place.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <m>2</m> significant figures.
+                                </p>
+                            </li>
+                        </ol>
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        Calculate the absolute error for each approximation.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        Identify which approximation gives the smallest error.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        Discuss situations where large approximation errors may cause problems.
+                    </p>
+                </li>
+            </ol>
+        </p>
+
+        <p>
+            Each group should present:
+        </p>
+        <p>
+            <ol marker="(i)">
+                <li>
+                    <p>
+                        Their measurements?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Their approximations?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        The calculated errors?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Their conclusions on accuracy?
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </activity>
 
     <!-- [LP] Add guidance on structured lesson plan-->
 
@@ -106,37 +208,128 @@
         </paragraphs>
     </axiom> -->
 
-    <!-- Add insight / key takeaway directly related to activity / learner experience -->
-
-    <!-- <insight>
-    </insight> -->
+    <insight>
+        <p>
+            Approximation is widely used in real life to simplify measurements, but every approximation introduces an error. 
+        </p>
+        <p>
+            The size of the error depends on the method and level of accuracy used. 
+        </p>
+        <p>
+            Smaller errors give more reliable results, which is why accuracy is important in fields like engineering, science, banking, and construction.
+        </p>
+    </insight>
 
     <!-- Add further instruction (not in a block) to develop ideas as needed -->
 
     <xi:include href="../lesson-plan-templates/example-intro.ptx" />
-
-    <!-- Add at least 3 examples -->
-
-    <!-- <example>
-        <statement>
-        </statement>
-        <solution>
-        </solution>
-    </example>
-
     <example>
         <statement>
+            <p>
+                A tailor measures a piece of cloth as <m>2.486 \text{ m}</m>. The value is recorded to the nearest <m>0.1 \text{ m}</m>.
+            </p>
+
+            <p>
+                Determine:
+            </p>
+            <p>
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            The rounded value.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The absolute error.
+                        </p>
+                    </li>
+                </ol>
+            </p>
         </statement>
+
         <solution>
+            <p>
+                Rounded value: <m>2.5 \text{ m}</m>
+            </p>
+            <p>
+                <md>
+                    \text{Absolute Error} = |2.486 - 2.5| = 0.014 \text{ m}
+                </md>
+            </p>
         </solution>
     </example>
-
     <example>
         <statement>
+            <p>
+                A bank rounds a transaction amount of <m>1584.72</m> to the nearest shilling.
+            </p>
+
+            <p>
+                Find the rounded value and absolute error.
+            </p>
         </statement>
+
         <solution>
+            <p>
+                Rounded value: <m>1585</m>
+            </p>
+
+            <p>
+                <md>
+                    \text{Absolute Error} = |1584.72 - 1585| = 0.28
+                </md>
+            </p>
         </solution>
-    </example> -->
+    </example>
+    <example>
+        <statement>
+            <p>
+                A student measures the length of a table as <m>1.734 \text{ m}</m>
+                and records it to <m>2</m> decimal places.
+            </p>
+
+            <p>
+                Determine the recorded value and absolute error.
+            </p>
+        </statement>
+
+        <solution>
+            <p>
+                Recorded value: <m>1.73 \text{ m}</m>
+            </p>
+
+            <p>
+                <md>
+                    \text{Absolute Error} = |1.734 - 1.73| = 0.004 \text{ m}
+                </md>
+            </p>
+        </solution>
+    </example>
+    <example>
+        <statement>
+            <p>
+                A cyclist records a distance of <m>9.876 \text{ km}</m>
+                but truncates it to <m>2</m> decimal places.
+            </p>
+
+            <p>
+                Find the truncated value and absolute error.
+            </p>
+        </statement>
+
+        <solution>
+            <p>
+                Truncated value: <m>9.87 \text{ km}</m>
+            </p>
+
+            <p>
+                <md>
+                    \text{Absolute Error} = |9.876 - 9.87| = 0.006 \text{ km}
+                </md>
+            </p>    
+        </solution>
+    </example>
 
     <xi:include href="../lesson-plan-templates/assessment-intro.ptx" />
 
@@ -146,18 +339,125 @@
 
     <!-- Add STACK exercises if made -->
 
-    <!-- Add static exercises -->
-
-    <!-- <exercises>
+    <exercises>
         <exercise>
-            <statement>   
+            <statement>
+                <p>
+                    A student measures a length as <m>5.678 \text{ cm}</m>.
+                    It is recorded to the nearest <m>0.1 \text{ cm}</m>.
+                </p>
 
-            </statement>   
-            <solution>
+                <p>
+                    Find:
+                </p>
 
-            </solution>             
-        </exercise>        
-    </exercises> -->
+                <ol marker="(a)">
+                    <li>the recorded value,</li>
+                    <li>the absolute error.</li>
+                </ol>
+            </statement>
+
+            <answer>
+                <p>
+                    Recorded value: <m>5.7 \text{ cm}</m>
+                </p>
+                <p>
+                    <md>
+                        \text{Absolute Error} = |5.678 - 5.7| = 0.022 \text{ cm}
+                    </md>
+                </p>
+            </answer>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    A shop records the mass of sugar as <m>2.456 \text{ kg}</m>
+                    but rounds it to <m>2.5 \text{ kg}</m>.
+                </p>
+
+                <p>
+                    Find the absolute error.
+                </p>
+            </statement>
+
+            <answer>
+                <p>
+                    <md>
+                        \text{Absolute Error} = |2.456 - 2.5| = 0.044 \text{ kg}
+                    </md>
+                </p>
+            </answer>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    A distance is measured as <m>18.349 \text{ km}</m> but truncated to <m>2</m> decimal places.
+                </p>
+
+                <p>
+                    Find the truncated value and absolute error.
+                </p>
+            </statement>
+
+            <answer>
+                <p>
+                    Truncated value: <m>18.34 \text{ km}</m>
+                </p>
+                <p>
+                    <md>
+                        \text{Absolute Error} = |18.349 - 18.34| = 0.009 \text{ km}
+                    </md>
+                </p>
+            </answer>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    A thermometer reads <m>36.784^\circ \text{C}</m>.
+                    It is rounded to <m>2</m> decimal places.
+                </p>
+
+                <p>
+                    Find the rounded value and absolute error.
+                </p>
+            </statement>
+
+            <answer>
+                <p>
+                    Rounded value: <m>36.78^\circ \text{C}</m>
+                </p>
+                <p>
+                    <md>
+                        \text{Absolute Error} = |36.784 - 36.78| = 0.004^\circ \text{C}
+                    </md>
+                </p>
+            </answer>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    A farmer records the length of a field as <m>123.56 \text{ m}</m>
+                    and truncates it to <m>3</m> significant figures.
+                </p>
+
+                <p>
+                    Find the truncated value and absolute error.
+                </p>
+            </statement>
+
+            <answer>
+                <p>
+                    Truncated value: <m>123 \text{ m}</m>
+                </p>
+                <p>
+                    <md>
+                        \text{Absolute Error} = |123.56 - 123| = 0.56 \text{ m}
+                    </md>
+                </p>
+            </answer>
+        </exercise>
+
+    </exercises>
 
     <!-- [LP] Add information on how to differentiate  -->
 
