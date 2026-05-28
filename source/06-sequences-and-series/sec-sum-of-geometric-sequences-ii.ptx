@@ -216,10 +216,6 @@
     <insight>
 
         <p>
-            A geometric sequence is a sequence where each term is obtained by multiplying the previous term by a constant called the common ratio <m>r</m>.
-        </p>
-
-        <p>
             In some geometric sequences, the terms become smaller and approach zero when:
         </p>
 
@@ -671,10 +667,110 @@
                 </statement>
                 <solution>
                     <p>
-                        Yes, consider the sequence <m>T_n = -\frac{1}{2^n}</m>. This has common ratio <m>r = \frac{1}{2} \lt 1 </m>, and thus an infinite sum, however the terms are increasing as they are getting less negative:
+                        Yes. Consider the sequence <m>T_n = -\dfrac{1}{2^n}</m>, which gives
                         <md>
-                            -\frac{1}{2} \lt -\frac{1}{4} \lt -\frac{1}{8} \ldots 
+                            <mrow>-\tfrac{1}{2},\; -\tfrac{1}{4},\; -\tfrac{1}{8},\; \ldots</mrow>
                         </md>
+                        Each term is negative but closer to zero than the previous one, so the terms are <em>increasing</em> (becoming less negative). The common ratio is <m>r = \dfrac{1}{2}</m>, which satisfies <m>|r| \lt 1</m>, so the series converges:
+                        <md>
+                            <mrow>S_\infty \amp =\; \frac{-\frac{1}{2}}{1 - \frac{1}{2}} = -1</mrow>
+                        </md>
+                    </p>
+                </solution>
+            </task>
+        </exercise>
+        <exercise>
+            <introduction>
+                <p>
+                    The diagram shows a rectangle divided into vertical strips.
+                    Each strip has height 1 and its width is half that of the strip to its left.
+                    The first strip has width 1, so area 1; the second has width <m>\frac{1}{2}</m>, and so on.
+                </p>
+                <figure xml:id="fig-strip-rectangle-infinity">
+                    <caption>An infinite series of strips fills a rectangle of total width <m>S_\infty</m>.</caption>
+                    <image width="72%">
+                        <latex-image>
+                        \begin{tikzpicture}[scale=2.0]
+                        % Strip 1: width 1
+                        \filldraw[fill=teal!22, draw=black, thick] (0,0) rectangle (1,1);
+                        \node at (0.5,0.5) {$1$};
+                        % Strip 2: width 0.5
+                        \filldraw[fill=teal!40, draw=black, thick] (1,0) rectangle (1.5,1);
+                        \node at (1.25,0.5) {$\tfrac{1}{2}$};
+                        % Strip 3: width 0.25
+                        \filldraw[fill=teal!58, draw=black, thick] (1.5,0) rectangle (1.75,1);
+                        \node at (1.625,0.5) {\small $\tfrac{1}{4}$};
+                        % Strip 4: width 0.125
+                        \filldraw[fill=teal!75, draw=black, thick] (1.75,0) rectangle (1.875,1);
+                        % Dots
+                        \node at (1.9375,0.5) {\small $\cdots$};
+                        % Outer rectangle outline (total width = 2)
+                        \draw[black, very thick] (0,0) rectangle (2,1);
+                        % Width annotation
+                        \draw[|-|] (0,-0.25) -- (2,-0.25) node[midway, below] {\small $S_\infty = \dfrac{a}{1-r}$};
+                        % Height annotation
+                        \draw[|-|] (-0.2,0) -- (-0.2,1) node[midway, left] {\small $1$};
+                        \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        Write down the areas of the strips as an infinite geometric series.
+                        State the first term <m>a</m> and common ratio <m>r</m>.
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        <m>1 + \dfrac{1}{2} + \dfrac{1}{4} + \cdots</m>; <m>a = 1</m>, <m>r = \dfrac{1}{2}</m>.
+                    </p>
+                </answer>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Apply the formula <m>S_\infty = \dfrac{a}{1-r}</m> to find the total area of the rectangle.
+                        What are its dimensions?
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        <m>S_\infty = \dfrac{1}{1-\frac{1}{2}} = 2</m>. The rectangle is <m>2 \times 1</m>.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        Since each strip has height 1, the area of each strip equals its width.
+                        The total area <m>= S_\infty = 2</m>, and the total width of the rectangle is therefore <m>2</m>.
+                        The dimensions are <m>2 \times 1</m>.
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Returning to the Sierpinski triangle from the previous section:
+                        the original triangle has area <m>16 \text{ cm}^2</m> and at each stage
+                        the removed areas form a geometric series with <m>a = 4</m> and <m>r = \dfrac{3}{4}</m>.
+                        Find <m>S_\infty</m>, the total area eventually removed as the process continues forever.
+                        What does this tell you about the area of the Sierpinski triangle?
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        <m>S_\infty = 16 \text{ cm}^2</m>. The Sierpinski triangle has area zero.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        <md>
+                            <mrow>S_\infty \amp =\; \frac{4}{1 - \frac{3}{4}} = \frac{4}{\frac{1}{4}} = 16 \text{ cm}^2</mrow>
+                        </md>
+                        All <m>16 \text{ cm}^2</m> of the original triangle is eventually removed.
+                        The Sierpinski triangle — the shape that remains after infinitely many removals — has area <m>0</m>,
+                        even though it contains infinitely many points.
                     </p>
                 </solution>
             </task>

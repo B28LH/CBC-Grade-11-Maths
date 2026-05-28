@@ -405,6 +405,118 @@
                 </p>
             </answer>
         </exercise>
+        <exercise>
+            <introduction>
+                <p>
+                    The diagram shows the first two stages of constructing a Sierpinski triangle.
+                    The original triangle has area <m>16 \text{ cm}^2</m>.
+                    At each stage, the middle triangle of every filled triangle is removed.
+                    White triangles show areas removed at Stage 1; grey triangles show areas removed at Stage 2.
+                    Numbers indicate area in cm<m>^2</m>.
+                </p>
+                <figure xml:id="fig-sierpinski-finite-sum">
+                    <caption>Removed areas at Stages 1 and 2 of the Sierpinski triangle (areas in cm<m>^2</m>).</caption>
+                    <image width="85%">
+                        <latex-image>
+                        \begin{tikzpicture}[scale=1.5]
+                        % Stage 1: big teal triangle, stage-1 middle removed (white)
+                        \filldraw[fill=teal!50, draw=black] (0,0) -- (2,0) -- (1,1.732) -- cycle;
+                        \filldraw[fill=white, draw=black!60] (1,0) -- (1.5,0.866) -- (0.5,0.866) -- cycle;
+                        \node[font=\small] at (1,0.45) {$4$};
+                        \node[below] at (1,-0.22) {\small Stage 1};
+
+                        % Stage 2: 3 teal sub-triangles, stage-1 middle white, 3 new middles grey
+                        \filldraw[fill=teal!50, draw=black] (3,0) -- (4,0) -- (3.5,0.866) -- cycle;
+                        \filldraw[fill=teal!50, draw=black] (4,0) -- (5,0) -- (4.5,0.866) -- cycle;
+                        \filldraw[fill=teal!50, draw=black] (3.5,0.866) -- (4.5,0.866) -- (4,1.732) -- cycle;
+                        % Stage 1 removed (white, shown again):
+                        \filldraw[fill=white, draw=black!60] (4,0) -- (4.5,0.866) -- (3.5,0.866) -- cycle;
+                        \node[font=\small] at (4,0.45) {$4$};
+                        % Stage 2 new removed (grey, 1 cm^2 each):
+                        \filldraw[fill=black!12, draw=black!50] (3.5,0) -- (3.75,0.433) -- (3.25,0.433) -- cycle;
+                        \node[font=\tiny] at (3.5,0.24) {$1$};
+                        \filldraw[fill=black!12, draw=black!50] (4.5,0) -- (4.75,0.433) -- (4.25,0.433) -- cycle;
+                        \node[font=\tiny] at (4.5,0.24) {$1$};
+                        \filldraw[fill=black!12, draw=black!50] (4,0.866) -- (4.25,1.299) -- (3.75,1.299) -- cycle;
+                        \node[font=\tiny] at (4,1.02) {$1$};
+                        \node[below] at (4,-0.22) {\small Stage 2};
+                        \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+                <p>
+                    At Stage 1, one triangle of area <m>4 \text{ cm}^2</m> is removed.
+                    At Stage 2, three triangles of area <m>1 \text{ cm}^2</m> each are removed (total <m>3 \text{ cm}^2</m>).
+                </p>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        Write down the total area removed at Stage 1, Stage 2, and Stage 3.
+                        Show that these form a geometric sequence and state the first term and common ratio.
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        Stage 1: <m>4</m>, Stage 2: <m>3</m>, Stage 3: <m>\frac{9}{4}</m>.
+                        Geometric with <m>a = 4</m>, <m>r = \frac{3}{4}</m>.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        At Stage 3, the 9 removed triangles each have area <m>\frac{1}{4} \text{ cm}^2</m>,
+                        giving total <m>\frac{9}{4} \text{ cm}^2</m>.
+                        <md>
+                            <mrow>\frac{3}{4} \amp =\; \frac{3}{4}, \qquad \frac{9/4}{3} = \frac{3}{4}</mrow>
+                        </md>
+                        The common ratio is <m>r = \dfrac{3}{4}</m>.
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Use the formula <m>S_n = \dfrac{a(1-r^n)}{1-r}</m> to find the total area removed after 4 stages.
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        <m>S_4 = \dfrac{175}{16} = 10.9375 \text{ cm}^2</m>
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        <md>
+                            <mrow>S_4 \amp =\; \frac{4\!\left(1-\left(\frac{3}{4}\right)^4\right)}{1-\frac{3}{4}}</mrow>
+                            <mrow> \amp =\; \frac{4\!\left(1-\frac{81}{256}\right)}{\frac{1}{4}}</mrow>
+                            <mrow> \amp =\; 16\left(\frac{175}{256}\right) = \frac{175}{16} \approx 10.94 \text{ cm}^2</mrow>
+                        </md>
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Write a formula for <m>S_n</m>, the total area removed after <m>n</m> stages.
+                        What fraction of the original <m>16 \text{ cm}^2</m> remains after <m>n</m> stages?
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        <m>S_n = 16\!\left(1-\left(\tfrac{3}{4}\right)^n\right)</m>; remaining fraction <m>= \left(\tfrac{3}{4}\right)^n</m>.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        <md>
+                            <mrow>S_n \amp =\; \frac{4\!\left(1-\left(\frac{3}{4}\right)^n\right)}{\frac{1}{4}} = 16\!\left(1-\left(\frac{3}{4}\right)^n\right)</mrow>
+                        </md>
+                        Area remaining <m>= 16 - S_n = 16\!\left(\frac{3}{4}\right)^n</m>,
+                        so the fraction remaining is <m>\left(\dfrac{3}{4}\right)^n</m>.
+                    </p>
+                </solution>
+            </task>
+        </exercise>
      </exercises>
 
     <!-- Add static exercises -->

@@ -2,7 +2,6 @@
 
 <section xml:id="sec-geometric-sequences" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Geometric Sequences</title>
-    <!--  -->
     <objectives component="outcomes">
         <introduction>
             <p>
@@ -283,38 +282,49 @@
     <example>
         <statement>
             <p>
-                The diagram shows a growing pattern of diamond shapes.
+                The diagram shows the first three stages of a Sierpinski triangle.
+                At each new stage, the middle triangle of every filled triangle is removed,
+                leaving three smaller filled triangles in its place.
             </p>
-            <figure xml:id="fig-geom-diamond-example">
-                <caption>A growing diamond pattern — Steps 1 to 3.</caption>
+            <figure xml:id="fig-geom-sierpinski-example">
+                <caption>Stages 1 to 3 of the Sierpinski triangle.</caption>
                 <image width="85%">
                     <latex-image>
-                    \begin{tikzpicture}[scale=0.65]
-                    % Step 1: 1 diamond — teal (odd step)
-                    \filldraw[fill=teal!65, draw=black] (0.5,1) -- (1,0.5) -- (0.5,0) -- (0,0.5) -- cycle;
-                    % Step 2: 3 diamonds in a row — orange (even step)
-                    \foreach \col in {0,1,2} {
-                        \filldraw[fill=orange!85!yellow, draw=black] ({3+\col+0.5},1) -- ({3+\col+1},0.5) -- ({3+\col+0.5},0) -- ({3+\col},0.5) -- cycle;
-                    }
-                    % Step 3: 9 diamonds in a 3x3 grid — teal (odd step)
-                    \foreach \row in {0,1,2} {
-                        \foreach \col in {0,1,2} {
-                            \filldraw[fill=teal!65, draw=black] ({8+\col+0.5},{\row+1}) -- ({8+\col+1},{\row+0.5}) -- ({8+\col+0.5},\row) -- ({8+\col},{\row+0.5}) -- cycle;
-                        }
-                    }
-                    \node[below] at (0.5,-0.2) {\small Step 1};
-                    \node[below] at (4.5,-0.2) {\small Step 2};
-                    \node[below] at (9.5,-0.2) {\small Step 3};
+                    \begin{tikzpicture}[scale=0.9]
+                    % Stage 1: 1 filled equilateral triangle, side 2
+                    \filldraw[fill=teal!55, draw=black] (0,0) -- (2,0) -- (1,1.732) -- cycle;
+                    \node[below] at (1,-0.25) {\small Stage 1};
+
+                    % Stage 2: 3 filled triangles of side 1
+                    \filldraw[fill=teal!55, draw=black] (3,0) -- (4,0) -- (3.5,0.866) -- cycle;
+                    \filldraw[fill=teal!55, draw=black] (4,0) -- (5,0) -- (4.5,0.866) -- cycle;
+                    \filldraw[fill=teal!55, draw=black] (3.5,0.866) -- (4.5,0.866) -- (4,1.732) -- cycle;
+                    \node[below] at (4,-0.25) {\small Stage 2};
+
+                    % Stage 3: 9 filled triangles of side 0.5
+                    % BL cluster
+                    \filldraw[fill=teal!55, draw=black] (6,0) -- (6.5,0) -- (6.25,0.433) -- cycle;
+                    \filldraw[fill=teal!55, draw=black] (6.5,0) -- (7,0) -- (6.75,0.433) -- cycle;
+                    \filldraw[fill=teal!55, draw=black] (6.25,0.433) -- (6.75,0.433) -- (6.5,0.866) -- cycle;
+                    % BR cluster
+                    \filldraw[fill=teal!55, draw=black] (7,0) -- (7.5,0) -- (7.25,0.433) -- cycle;
+                    \filldraw[fill=teal!55, draw=black] (7.5,0) -- (8,0) -- (7.75,0.433) -- cycle;
+                    \filldraw[fill=teal!55, draw=black] (7.25,0.433) -- (7.75,0.433) -- (7.5,0.866) -- cycle;
+                    % Top cluster
+                    \filldraw[fill=teal!55, draw=black] (6.5,0.866) -- (7,0.866) -- (6.75,1.299) -- cycle;
+                    \filldraw[fill=teal!55, draw=black] (7,0.866) -- (7.5,0.866) -- (7.25,1.299) -- cycle;
+                    \filldraw[fill=teal!55, draw=black] (6.75,1.299) -- (7.25,1.299) -- (7,1.732) -- cycle;
+                    \node[below] at (7,-0.25) {\small Stage 3};
                     \end{tikzpicture}
                     </latex-image>
                 </image>
             </figure>
             <p>
                 <ol marker="(a)">
-                    <li><p>Write down the first three terms of the sequence.</p></li>
-                    <li><p>What is the common ratio?</p></li>
-                    <li><p>Find the number of diamonds at Step 4.</p></li>
-                    <li><p>Write a formula for the <m>n^{th}</m> term.</p></li>
+                    <li><p>Write down the first three terms of the sequence of filled triangles.</p></li>
+                    <li><p>What is the common ratio? Explain why it makes geometric sense.</p></li>
+                    <li><p>How many filled triangles are at Stage 4?</p></li>
+                    <li><p>Write a formula for <m>T_n</m>, the number of filled triangles at Stage <m>n</m>.</p></li>
                 </ol>
             </p>
         </statement>
@@ -323,7 +333,7 @@
                 <ol marker="(a)">
                     <li>
                         <p>
-                            Counting the diamonds at each step: <m>1, 3, 9</m>.
+                            The number of filled triangles: <m>1, 3, 9</m>.
                         </p>
                     </li>
                     <li>
@@ -331,13 +341,15 @@
                             <md>
                                 <mrow>r \amp =\; \frac{3}{1} = \frac{9}{3} = 3</mrow>
                             </md>
-                            The common ratio is <m>r = 3</m>.
+                            The common ratio is <m>r = 3</m>. This makes geometric sense: at every stage,
+                            each filled triangle is split into three smaller ones (the central triangle is removed),
+                            so the count always triples.
                         </p>
                     </li>
                     <li>
                         <p>
                             <md>
-                                <mrow>\text{Step 4} \amp =\; 1 \times 3^{4-1} = 3^3 = 27 \text{ diamonds}</mrow>
+                                <mrow>T_4 \amp =\; 1 \times 3^{4-1} = 3^3 = 27 \text{ filled triangles}</mrow>
                             </md>
                         </p>
                     </li>
@@ -357,52 +369,76 @@
     <example>
         <statement>
             <p>
-                The diagram shows a growing pattern of pentagon shapes, doubling at each step.
+                A fractal tree grows by a simple rule: at each new stage, every tip branch splits
+                into two new branches. The teal branches show the current tip branches;
+                grey branches are from earlier stages.
             </p>
-            <figure xml:id="fig-geom-pentagon-example">
-                <caption>A doubling pentagon pattern — Steps 1 to 4.</caption>
+            <figure xml:id="fig-geom-tree-example">
+                <caption>Stages 1 to 4 of a fractal branching tree.</caption>
                 <image width="90%">
                     <latex-image>
-                    \begin{tikzpicture}[scale=0.65]
-                    % Step 1: 1 pentagon — purple (odd step)
-                    \begin{scope}[shift={(0.5,0.5)}]
-                        \filldraw[fill=purple!60!white, draw=black] (90:0.42)--(162:0.42)--(234:0.42)--(306:0.42)--(18:0.42)--cycle;
-                    \end{scope}
-                    % Step 2: 2 pentagons in a column — lime (even step)
-                    \foreach \row in {0,1} {
-                        \begin{scope}[shift={(2.5,{\row+0.5})}]
-                            \filldraw[fill=lime!65, draw=black] (90:0.42)--(162:0.42)--(234:0.42)--(306:0.42)--(18:0.42)--cycle;
-                        \end{scope}
-                    }
-                    % Step 3: 4 pentagons in 2x2 — purple (odd step)
-                    \foreach \row in {0,1} {
-                        \foreach \col in {0,1} {
-                            \begin{scope}[shift={({5+\col+0.5},{\row+0.5})}]
-                                \filldraw[fill=purple!60!white, draw=black] (90:0.42)--(162:0.42)--(234:0.42)--(306:0.42)--(18:0.42)--cycle;
-                            \end{scope}
-                        }
-                    }
-                    % Step 4: 8 pentagons in 2x4 — lime (even step)
-                    \foreach \row in {0,...,3} {
-                        \foreach \col in {0,1} {
-                            \begin{scope}[shift={({8+\col+0.5},{\row+0.5})}]
-                                \filldraw[fill=lime!65, draw=black] (90:0.42)--(162:0.42)--(234:0.42)--(306:0.42)--(18:0.42)--cycle;
-                            \end{scope}
-                        }
-                    }
-                    \node[below] at (0.5,-0.2) {\small Step 1};
-                    \node[below] at (2.5,-0.2) {\small Step 2};
-                    \node[below] at (6.0,-0.2) {\small Step 3};
-                    \node[below] at (9.0,-0.2) {\small Step 4};
+                    \begin{tikzpicture}[scale=0.9]
+                    % Stage 1: 1 tip branch (the trunk itself)
+                    \draw[teal!70!black, line width=2pt] (0.8,0) -- (0.8,1.0);
+                    \filldraw[teal!70!black] (0.8,1.0) circle (3pt);
+                    \node[below] at (0.8,-0.2) {\small Stage 1};
+
+                    % Stage 2: trunk (grey) splits into 2 tip branches (teal)
+                    \draw[black!40, line width=1.5pt] (3.3,0) -- (3.3,0.8);
+                    \draw[teal!70!black, line width=2pt] (3.3,0.8) -- (3.0,1.42);
+                    \draw[teal!70!black, line width=2pt] (3.3,0.8) -- (3.6,1.42);
+                    \filldraw[teal!70!black] (3.0,1.42) circle (2.5pt);
+                    \filldraw[teal!70!black] (3.6,1.42) circle (2.5pt);
+                    \node[below] at (3.3,-0.2) {\small Stage 2};
+
+                    % Stage 3: each tip splits again — 4 tip branches
+                    \draw[black!40, line width=1.5pt] (6.3,0) -- (6.3,0.8);
+                    \draw[black!40, line width=1.5pt] (6.3,0.8) -- (6.0,1.42);
+                    \draw[black!40, line width=1.5pt] (6.3,0.8) -- (6.6,1.42);
+                    \draw[teal!70!black, line width=2pt] (6.0,1.42) -- (5.78,2.0);
+                    \draw[teal!70!black, line width=2pt] (6.0,1.42) -- (6.22,2.0);
+                    \draw[teal!70!black, line width=2pt] (6.6,1.42) -- (6.38,2.0);
+                    \draw[teal!70!black, line width=2pt] (6.6,1.42) -- (6.82,2.0);
+                    \filldraw[teal!70!black] (5.78,2.0) circle (2pt);
+                    \filldraw[teal!70!black] (6.22,2.0) circle (2pt);
+                    \filldraw[teal!70!black] (6.38,2.0) circle (2pt);
+                    \filldraw[teal!70!black] (6.82,2.0) circle (2pt);
+                    \node[below] at (6.3,-0.2) {\small Stage 3};
+
+                    % Stage 4: 8 tip branches
+                    \draw[black!40, line width=1.5pt] (9.8,0) -- (9.8,0.8);
+                    \draw[black!40, line width=1.5pt] (9.8,0.8) -- (9.5,1.42);
+                    \draw[black!40, line width=1.5pt] (9.8,0.8) -- (10.1,1.42);
+                    \draw[black!40, line width=1.5pt] (9.5,1.42) -- (9.28,2.0);
+                    \draw[black!40, line width=1.5pt] (9.5,1.42) -- (9.72,2.0);
+                    \draw[black!40, line width=1.5pt] (10.1,1.42) -- (9.88,2.0);
+                    \draw[black!40, line width=1.5pt] (10.1,1.42) -- (10.32,2.0);
+                    \draw[teal!70!black, line width=2pt] (9.28,2.0) -- (9.14,2.45);
+                    \draw[teal!70!black, line width=2pt] (9.28,2.0) -- (9.42,2.45);
+                    \draw[teal!70!black, line width=2pt] (9.72,2.0) -- (9.58,2.45);
+                    \draw[teal!70!black, line width=2pt] (9.72,2.0) -- (9.86,2.45);
+                    \draw[teal!70!black, line width=2pt] (9.88,2.0) -- (9.74,2.45);
+                    \draw[teal!70!black, line width=2pt] (9.88,2.0) -- (10.02,2.45);
+                    \draw[teal!70!black, line width=2pt] (10.32,2.0) -- (10.18,2.45);
+                    \draw[teal!70!black, line width=2pt] (10.32,2.0) -- (10.46,2.45);
+                    \filldraw[teal!70!black] (9.14,2.45) circle (1.8pt);
+                    \filldraw[teal!70!black] (9.42,2.45) circle (1.8pt);
+                    \filldraw[teal!70!black] (9.58,2.45) circle (1.8pt);
+                    \filldraw[teal!70!black] (9.86,2.45) circle (1.8pt);
+                    \filldraw[teal!70!black] (9.74,2.45) circle (1.8pt);
+                    \filldraw[teal!70!black] (10.02,2.45) circle (1.8pt);
+                    \filldraw[teal!70!black] (10.18,2.45) circle (1.8pt);
+                    \filldraw[teal!70!black] (10.46,2.45) circle (1.8pt);
+                    \node[below] at (9.8,-0.2) {\small Stage 4};
                     \end{tikzpicture}
                     </latex-image>
                 </image>
             </figure>
             <p>
                 <ol marker="(a)">
-                    <li><p>Write down the sequence formed and state the common ratio.</p></li>
-                    <li><p>Find the number of pentagons at Step 6.</p></li>
-                    <li><p>At which step will there first be more than 100 pentagons?</p></li>
+                    <li><p>Write down the sequence formed by the number of tip branches and state the common ratio.</p></li>
+                    <li><p>Find the number of tip branches at Stage 6.</p></li>
+                    <li><p>At which stage will there first be more than 100 tip branches?</p></li>
                 </ol>
             </p>
         </statement>
@@ -412,12 +448,13 @@
                     <li>
                         <p>
                             The sequence is <m>1, 2, 4, 8, \ldots</m> with common ratio <m>r = 2</m>.
+                            Each tip splits into two, so the count always doubles.
                         </p>
                     </li>
                     <li>
                         <p>
                             <md>
-                                <mrow>T_6 \amp =\; 1 \times 2^{6-1} = 2^5 = 32 \text{ pentagons}</mrow>
+                                <mrow>T_6 \amp =\; 1 \times 2^{6-1} = 2^5 = 32 \text{ tip branches}</mrow>
                             </md>
                         </p>
                     </li>
@@ -428,7 +465,8 @@
                                 <mrow>2^6 \amp =\; 64 &lt; 100</mrow>
                                 <mrow>2^7 \amp =\; 128 &gt; 100</mrow>
                             </md>
-                            So <m>n - 1 = 7</m>, meaning Step <m>8</m> is the first step with more than 100 pentagons.
+                            So <m>n - 1 = 7</m>, giving <m>n = 8</m>.
+                            Stage 8 is the first stage with more than 100 tip branches.
                         </p>
                     </li>
                 </ol>
@@ -439,7 +477,7 @@
     <example>
         <statement>
             <p>
-                Given the geometric sequence <m>4,12,36,...</m>, find the <m>4^{th}, 5^{th},</m> and <m>n^{th} </m> terms.
+                Given the geometric sequence <m>4,12,36,...</m>, find the <m>4^{\text{th}}, 5^{\text{th}},</m> and <m>n^{\text{th}} </m> terms.
             </p>
         </statement>
         <solution>
@@ -447,13 +485,13 @@
                 <md>
                     <mrow> \text{The first term,}\; a =  \amp \; 4 </mrow>
                     <mrow> \text{The common ratio,}\; r \amp = \; 3 </mrow>
-                    <mrow> \therefore \;\text{the}\; 4^{th}\; \text{term}\; \amp = \; 4\times 3^{4-1} </mrow>
+                    <mrow> \therefore \;\text{the}\; 4^{\text{th}}\; \text{term}\; \amp = \; 4\times 3^{4-1} </mrow>
                     <mrow> \amp = \; 4 \times 3^3 </mrow>
                     <mrow> \amp = \; 108 </mrow>
-                    <mrow> \text{The}\; 5^{th} \; \text{term}\; \amp = \; 4 \times 3^{5-1} </mrow>
+                    <mrow> \text{The}\; 5^{\text{th}} \; \text{term}\; \amp = \; 4 \times 3^{5-1} </mrow>
                     <mrow> \amp = \; 4 \times 3^4 </mrow>
                     <mrow> \amp = \; 324 </mrow>
-                    <mrow> \text{The}\; n^{th} \; \text{term}\; \amp = \; 4 \times 3^{n-1} </mrow>
+                    <mrow> \text{The}\; n^{\text{th}} \; \text{term}\; \amp = \; 4 \times 3^{n-1} </mrow>
                 </md>
                 
             </p>
@@ -462,7 +500,7 @@
     <example>
         <statement>
             <p>
-                The <m>4^{th}</m> term of a geometric sequence is <m>16</m>. If the first term is <m>2</m>, find:
+                The <m>4^{\text{th}}</m> term of a geometric sequence is <m>16</m>. If the first term is <m>2</m>, find:
             </p>
             <p>
                 <ol marker="(a)">
@@ -489,7 +527,7 @@
                         <p>
                             <md>
                                 <mrow> \text{The first term,} \; a \amp = \; 2 </mrow>
-                                <mrow> \text{The}4^{th}\; \text{ term is}\; 2\times r^{4-1} \amp = \; 16 </mrow>
+                                <mrow> \text{The}4^{\text{th}}\; \text{ term is}\; 2\times r^{4-1} \amp = \; 16 </mrow>
                                 <mrow>\text{Thus,} \; 2r^3 \amp = \; 16 </mrow>
                                 <mrow> r^3 \amp = \; 8 </mrow>
                                 <mrow> \therefore \;\text{the common ratio} \; \amp = \; 2 </mrow>
@@ -498,11 +536,11 @@
                     </li>
                     <li>
                     <p>
-                        The <m>7^{th}</m> term.
+                        The <m>7^{\text{th}}</m> term.
                     </p>
                         <p>
                             <md>
-                                <mrow>\text{The}\; 7^{th}\; \text{term} \; \amp = \; 2 \times 2^6 </mrow>
+                                <mrow>\text{The}\; 7^{\text{th}}\; \text{term} \; \amp = \; 2 \times 2^6 </mrow>
                                 <mrow> \amp = \; 128 </mrow>
                             </md>
                             
@@ -521,8 +559,8 @@
         <solution>
             <p>
                 <md>
-                    <mrow>\text{The}\; 4^{th} \;\text{term is} \; ar^3 \amp = \; 8 </mrow>
-                    <mrow>\text{The}\; 6^{th} \;\text{term is} \; ar^5 \amp = \; 32 </mrow>
+                    <mrow>\text{The}\; 4^{\text{th}} \;\text{term is} \; ar^3 \amp = \; 8 </mrow>
+                    <mrow>\text{The}\; 6^{\text{th}} \;\text{term is} \; ar^5 \amp = \; 32 </mrow>
                     <mrow>\therefore \frac{ar^5}{ar^3} \amp = \; \frac{32}{8} </mrow>
                     <mrow> r^2 \amp = \; 4</mrow>
                     <mrow> r \amp = \; \pm 2 </mrow>
@@ -547,7 +585,7 @@
         <exercise>
             <statement>
                 <p>
-                    The ratio of the <m>10^{th}</m> to the <m>8^{th}</m> terms of a geometric sequence is <m>9</m>. Find the two possible common ratios.
+                    The ratio of the <m>10^{\text{th}}</m> to the <m>8^{\text{th}}</m> terms of a geometric sequence is <m>9</m>. Find the two possible common ratios.
                 </p>
             </statement>
             <answer>
@@ -571,7 +609,7 @@
         <exercise>
             <statement>
                 <p>
-                    The ratio of the forth to the first term of a geometric sequence is <m>\frac{1}{8}</m>. If the first term exceeds the second term by <m>5</m>, find the first and the <m>8^{th}</m> terms of the sequence.
+                    The ratio of the forth to the first term of a geometric sequence is <m>\frac{1}{8}</m>. If the first term exceeds the second term by <m>5</m>, find the first and the <m>8^{\text{th}}</m> terms of the sequence.
                 </p>
             </statement>
             <answer>
@@ -606,8 +644,8 @@
                         <mrow> r^2 \amp = \; x^2-2x+1 </mrow>
                         <mrow> r \amp = \; x-1 </mrow>
                         <mrow> \text{The second term} \; \amp = \; ar </mrow>
-                        <mrow>2^{nd} \;\text{term}\; \amp = \; (x+1)(x-1) </mrow>
-                        <mrow>2^{nd} \;\text{term}\; \amp = \; (x^2-1) </mrow>
+                        <mrow>2^{\text{nd}} \;\text{term}\; \amp = \; (x+1)(x-1) </mrow>
+                        <mrow>2^{\text{nd}} \;\text{term}\; \amp = \; (x^2-1) </mrow>
                     </md>
                     
                 </p>
@@ -620,28 +658,36 @@
         <exercise>
             <introduction>
                 <p>
-                    The following pattern shows circles arranged in growing grids.
+                    The diagram shows the first three stages of a Sierpinski triangle.
+                    At each stage, the middle triangle of every filled triangle is removed,
+                    leaving three smaller filled triangles in its place.
                 </p>
-                <figure xml:id="fig-geom-circle-pattern">
-                    <caption>A growing circle pattern — Steps 1 to 3.</caption>
+                <figure xml:id="fig-geom-sierpinski-exercise">
+                    <caption>Stages 1 to 3 of the Sierpinski triangle.</caption>
                     <image width="85%">
                         <latex-image>
-                        \begin{tikzpicture}[scale=0.65]
-                        % Step 1: 1 circle — cyan (odd step)
-                        \filldraw[fill=cyan!65, draw=black] (0.5,0.5) circle (0.42);
-                        % Step 2: 3 circles in a row — magenta (even step)
-                        \foreach \col in {0,1,2} {
-                            \filldraw[fill=magenta!55, draw=black] ({3+\col+0.5},0.5) circle (0.42);
-                        }
-                        % Step 3: 9 circles in a 3x3 grid — cyan (odd step)
-                        \foreach \row in {0,1,2} {
-                            \foreach \col in {0,1,2} {
-                                \filldraw[fill=cyan!65, draw=black] ({8+\col+0.5},{\row+0.5}) circle (0.42);
-                            }
-                        }
-                        \node[below] at (0.5,-0.2) {\small Step 1};
-                        \node[below] at (4.5,-0.2) {\small Step 2};
-                        \node[below] at (9.5,-0.2) {\small Step 3};
+                        \begin{tikzpicture}[scale=0.9]
+                        % Stage 1: 1 filled triangle, side 2
+                        \filldraw[fill=teal!55, draw=black] (0,0) -- (2,0) -- (1,1.732) -- cycle;
+                        \node[below] at (1,-0.25) {\small Stage 1};
+
+                        % Stage 2: 3 filled triangles of side 1
+                        \filldraw[fill=teal!55, draw=black] (3,0) -- (4,0) -- (3.5,0.866) -- cycle;
+                        \filldraw[fill=teal!55, draw=black] (4,0) -- (5,0) -- (4.5,0.866) -- cycle;
+                        \filldraw[fill=teal!55, draw=black] (3.5,0.866) -- (4.5,0.866) -- (4,1.732) -- cycle;
+                        \node[below] at (4,-0.25) {\small Stage 2};
+
+                        % Stage 3: 9 filled triangles of side 0.5
+                        \filldraw[fill=teal!55, draw=black] (6,0) -- (6.5,0) -- (6.25,0.433) -- cycle;
+                        \filldraw[fill=teal!55, draw=black] (6.5,0) -- (7,0) -- (6.75,0.433) -- cycle;
+                        \filldraw[fill=teal!55, draw=black] (6.25,0.433) -- (6.75,0.433) -- (6.5,0.866) -- cycle;
+                        \filldraw[fill=teal!55, draw=black] (7,0) -- (7.5,0) -- (7.25,0.433) -- cycle;
+                        \filldraw[fill=teal!55, draw=black] (7.5,0) -- (8,0) -- (7.75,0.433) -- cycle;
+                        \filldraw[fill=teal!55, draw=black] (7.25,0.433) -- (7.75,0.433) -- (7.5,0.866) -- cycle;
+                        \filldraw[fill=teal!55, draw=black] (6.5,0.866) -- (7,0.866) -- (6.75,1.299) -- cycle;
+                        \filldraw[fill=teal!55, draw=black] (7,0.866) -- (7.5,0.866) -- (7.25,1.299) -- cycle;
+                        \filldraw[fill=teal!55, draw=black] (6.75,1.299) -- (7.25,1.299) -- (7,1.732) -- cycle;
+                        \node[below] at (7,-0.25) {\small Stage 3};
                         \end{tikzpicture}
                         </latex-image>
                     </image>
@@ -650,7 +696,7 @@
             <task>
                 <statement>
                     <p>
-                        Count the circles at each step and write down the first three terms of the sequence.
+                        Count the filled triangles at each stage and write down the first three terms of the sequence.
                         What is the common ratio <m>r</m>?
                     </p>
                 </statement>
@@ -662,18 +708,18 @@
                 <solution>
                     <p>
                         <md>
-                            <mrow>\text{Step 1} \amp =\; 1</mrow>
-                            <mrow>\text{Step 2} \amp =\; 3</mrow>
-                            <mrow>\text{Step 3} \amp =\; 9 = 3^2</mrow>
+                            <mrow>\text{Stage 1} \amp =\; 1</mrow>
+                            <mrow>\text{Stage 2} \amp =\; 3</mrow>
+                            <mrow>\text{Stage 3} \amp =\; 9 = 3^2</mrow>
                         </md>
-                        Each step has three times as many circles as the one before, so <m>r = 3</m>.
+                        Each filled triangle becomes three smaller ones, so <m>r = 3</m>.
                     </p>
                 </solution>
             </task>
             <task>
                 <statement>
                     <p>
-                        Write a formula for <m>T_n</m>, the number of circles at Step <m>n</m>.
+                        Write a formula for <m>T_n</m>, the number of filled triangles at Stage <m>n</m>.
                     </p>
                 </statement>
                 <answer>
@@ -685,7 +731,7 @@
                     <p>
                         With first term <m>a = 1</m> and common ratio <m>r = 3</m>:
                         <md>
-                            <mrow>T_n \amp =\; a \cdot r^{n-1} = 1 \times 3^{n-1} = 3^{n-1}</mrow>
+                            <mrow>T_n \amp =\; 3^{n-1}</mrow>
                         </md>
                     </p>
                 </solution>
@@ -693,13 +739,13 @@
             <task>
                 <statement>
                     <p>
-                        How many circles are at Step 5?
-                        At which step are there 729 circles?
+                        How many filled triangles are at Stage 5?
+                        At which stage are there 729 filled triangles?
                     </p>
                 </statement>
                 <answer>
                     <p>
-                        Step 5 has <m>81</m> circles. There are 729 circles at Step 7.
+                        Stage 5 has <m>81</m> filled triangles. There are 729 filled triangles at Stage 7.
                     </p>
                 </answer>
                 <solution>
@@ -707,7 +753,7 @@
                         <md>
                             <mrow>T_5 \amp =\; 3^4 = 81</mrow>
                         </md>
-                        For 729 circles: <m>3^{n-1} = 729 = 3^6</m>, so <m>n - 1 = 6</m> and <m>n = 7</m>.
+                        For 729 triangles: <m>3^{n-1} = 729 = 3^6</m>, so <m>n - 1 = 6</m> and <m>n = 7</m>.
                     </p>
                 </solution>
             </task>
@@ -716,43 +762,67 @@
         <exercise>
             <introduction>
                 <p>
-                    The following pattern shows hexagons arranged in growing clusters.
+                    A fractal tree grows by a simple rule: at each new stage, every tip branch
+                    splits into two new branches. The teal branches show the current tip branches;
+                    grey branches are from earlier stages.
                 </p>
-                <figure xml:id="fig-geom-hexagon-pattern">
-                    <caption>A growing hexagon pattern — Steps 1 to 4.</caption>
+                <figure xml:id="fig-geom-tree-exercise">
+                    <caption>Stages 1 to 4 of a fractal branching tree.</caption>
                     <image width="90%">
                         <latex-image>
-                        \begin{tikzpicture}[scale=0.65]
-                        % Step 1: 1 hexagon — blue (odd step)
-                        \begin{scope}[shift={(0.5,0.5)}]
-                            \filldraw[fill=blue!55!white, draw=black] (0:0.45)--(60:0.45)--(120:0.45)--(180:0.45)--(240:0.45)--(300:0.45)--cycle;
-                        \end{scope}
-                        % Step 2: 2 hexagons in a row — red (even step)
-                        \foreach \col in {0,1} {
-                            \begin{scope}[shift={({3+\col+0.5},0.5)}]
-                                \filldraw[fill=red!60!white, draw=black] (0:0.45)--(60:0.45)--(120:0.45)--(180:0.45)--(240:0.45)--(300:0.45)--cycle;
-                            \end{scope}
-                        }
-                        % Step 3: 4 hexagons in 2x2 — blue (odd step)
-                        \foreach \row in {0,1} {
-                            \foreach \col in {0,1} {
-                                \begin{scope}[shift={({6+\col+0.5},{\row+0.5})}]
-                                    \filldraw[fill=blue!55!white, draw=black] (0:0.45)--(60:0.45)--(120:0.45)--(180:0.45)--(240:0.45)--(300:0.45)--cycle;
-                                \end{scope}
-                            }
-                        }
-                        % Step 4: 8 hexagons in 2x4 — red (even step)
-                        \foreach \row in {0,...,3} {
-                            \foreach \col in {0,1} {
-                                \begin{scope}[shift={({9+\col+0.5},{\row+0.5})}]
-                                    \filldraw[fill=red!60!white, draw=black] (0:0.45)--(60:0.45)--(120:0.45)--(180:0.45)--(240:0.45)--(300:0.45)--cycle;
-                                \end{scope}
-                            }
-                        }
-                        \node[below] at (0.5,-0.2) {\small Step 1};
-                        \node[below] at (4.0,-0.2) {\small Step 2};
-                        \node[below] at (7.0,-0.2) {\small Step 3};
-                        \node[below] at (10.0,-0.2) {\small Step 4};
+                        \begin{tikzpicture}[scale=0.9]
+                        % Stage 1: 1 tip branch
+                        \draw[teal!70!black, line width=2pt] (0.8,0) -- (0.8,1.0);
+                        \filldraw[teal!70!black] (0.8,1.0) circle (3pt);
+                        \node[below] at (0.8,-0.2) {\small Stage 1};
+
+                        % Stage 2: 2 tip branches
+                        \draw[black!40, line width=1.5pt] (3.3,0) -- (3.3,0.8);
+                        \draw[teal!70!black, line width=2pt] (3.3,0.8) -- (3.0,1.42);
+                        \draw[teal!70!black, line width=2pt] (3.3,0.8) -- (3.6,1.42);
+                        \filldraw[teal!70!black] (3.0,1.42) circle (2.5pt);
+                        \filldraw[teal!70!black] (3.6,1.42) circle (2.5pt);
+                        \node[below] at (3.3,-0.2) {\small Stage 2};
+
+                        % Stage 3: 4 tip branches
+                        \draw[black!40, line width=1.5pt] (6.3,0) -- (6.3,0.8);
+                        \draw[black!40, line width=1.5pt] (6.3,0.8) -- (6.0,1.42);
+                        \draw[black!40, line width=1.5pt] (6.3,0.8) -- (6.6,1.42);
+                        \draw[teal!70!black, line width=2pt] (6.0,1.42) -- (5.78,2.0);
+                        \draw[teal!70!black, line width=2pt] (6.0,1.42) -- (6.22,2.0);
+                        \draw[teal!70!black, line width=2pt] (6.6,1.42) -- (6.38,2.0);
+                        \draw[teal!70!black, line width=2pt] (6.6,1.42) -- (6.82,2.0);
+                        \filldraw[teal!70!black] (5.78,2.0) circle (2pt);
+                        \filldraw[teal!70!black] (6.22,2.0) circle (2pt);
+                        \filldraw[teal!70!black] (6.38,2.0) circle (2pt);
+                        \filldraw[teal!70!black] (6.82,2.0) circle (2pt);
+                        \node[below] at (6.3,-0.2) {\small Stage 3};
+
+                        % Stage 4: 8 tip branches
+                        \draw[black!40, line width=1.5pt] (9.8,0) -- (9.8,0.8);
+                        \draw[black!40, line width=1.5pt] (9.8,0.8) -- (9.5,1.42);
+                        \draw[black!40, line width=1.5pt] (9.8,0.8) -- (10.1,1.42);
+                        \draw[black!40, line width=1.5pt] (9.5,1.42) -- (9.28,2.0);
+                        \draw[black!40, line width=1.5pt] (9.5,1.42) -- (9.72,2.0);
+                        \draw[black!40, line width=1.5pt] (10.1,1.42) -- (9.88,2.0);
+                        \draw[black!40, line width=1.5pt] (10.1,1.42) -- (10.32,2.0);
+                        \draw[teal!70!black, line width=2pt] (9.28,2.0) -- (9.14,2.45);
+                        \draw[teal!70!black, line width=2pt] (9.28,2.0) -- (9.42,2.45);
+                        \draw[teal!70!black, line width=2pt] (9.72,2.0) -- (9.58,2.45);
+                        \draw[teal!70!black, line width=2pt] (9.72,2.0) -- (9.86,2.45);
+                        \draw[teal!70!black, line width=2pt] (9.88,2.0) -- (9.74,2.45);
+                        \draw[teal!70!black, line width=2pt] (9.88,2.0) -- (10.02,2.45);
+                        \draw[teal!70!black, line width=2pt] (10.32,2.0) -- (10.18,2.45);
+                        \draw[teal!70!black, line width=2pt] (10.32,2.0) -- (10.46,2.45);
+                        \filldraw[teal!70!black] (9.14,2.45) circle (1.8pt);
+                        \filldraw[teal!70!black] (9.42,2.45) circle (1.8pt);
+                        \filldraw[teal!70!black] (9.58,2.45) circle (1.8pt);
+                        \filldraw[teal!70!black] (9.86,2.45) circle (1.8pt);
+                        \filldraw[teal!70!black] (9.74,2.45) circle (1.8pt);
+                        \filldraw[teal!70!black] (10.02,2.45) circle (1.8pt);
+                        \filldraw[teal!70!black] (10.18,2.45) circle (1.8pt);
+                        \filldraw[teal!70!black] (10.46,2.45) circle (1.8pt);
+                        \node[below] at (9.8,-0.2) {\small Stage 4};
                         \end{tikzpicture}
                         </latex-image>
                     </image>
@@ -761,7 +831,7 @@
             <task>
                 <statement>
                     <p>
-                        Count the hexagons at each step. Write down the sequence and state the common ratio.
+                        Count the tip branches at each stage. Write down the sequence and state the common ratio.
                     </p>
                 </statement>
                 <answer>
@@ -772,16 +842,16 @@
                 <solution>
                     <p>
                         <md>
-                            <mrow>\text{Step 1} \amp =\; 1, \quad \text{Step 2} = 2, \quad \text{Step 3} = 4, \quad \text{Step 4} = 8</mrow>
+                            <mrow>\text{Stage 1} \amp =\; 1, \quad \text{Stage 2} = 2, \quad \text{Stage 3} = 4, \quad \text{Stage 4} = 8</mrow>
                         </md>
-                        Each step doubles the number of hexagons, so <m>r = 2</m>.
+                        Each tip splits into two, so the count doubles and <m>r = 2</m>.
                     </p>
                 </solution>
             </task>
             <task>
                 <statement>
                     <p>
-                        Write a formula for <m>T_n</m>, the number of hexagons at Step <m>n</m>.
+                        Write a formula for <m>T_n</m>, the number of tip branches at Stage <m>n</m>.
                     </p>
                 </statement>
                 <answer>
@@ -801,12 +871,12 @@
             <task>
                 <statement>
                     <p>
-                        At which step will there first be <m>32</m> hexagons?
+                        At which stage will there first be <m>32</m> tip branches?
                     </p>
                 </statement>
                 <answer>
                     <p>
-                        Step 6.
+                        Stage 6.
                     </p>
                 </answer>
                 <solution>
@@ -820,75 +890,81 @@
         <exercise>
             <introduction>
                 <p>
-                    The following pattern shows triangles arranged in growing grids.
+                    A large square has a smaller square drawn inside it by joining the midpoints of its four sides.
+                    A smaller square is then drawn inside that one the same way, and the process continues.
+                    The diagram shows five nested squares produced by this construction.
                 </p>
-                <figure xml:id="fig-geom-triangle-pattern">
-                    <caption>A growing triangle pattern — Steps 1 to 4.</caption>
-                    <image width="90%">
+                <figure xml:id="fig-geom-nested-squares">
+                    <caption>Five nested squares, each formed by joining the midpoints of the previous square's sides.</caption>
+                    <image width="55%">
                         <latex-image>
-                        \begin{tikzpicture}[scale=0.65]
-                        % Step 1: 1 triangle — green (odd step)
-                        \filldraw[fill=green!55, draw=black] (0.5,0.9) -- (0.05,0.05) -- (0.95,0.05) -- cycle;
-                        % Step 2: 2 triangles in a row — violet (even step)
-                        \foreach \col in {0,1} {
-                            \filldraw[fill=violet!60, draw=black] ({3+\col+0.5},0.9) -- ({3+\col+0.05},0.05) -- ({3+\col+0.95},0.05) -- cycle;
-                        }
-                        % Step 3: 4 triangles in 2x2 — green (odd step)
-                        \foreach \row in {0,1} {
-                            \foreach \col in {0,1} {
-                                \filldraw[fill=green!55, draw=black] ({6+\col+0.5},{\row+0.9}) -- ({6+\col+0.05},{\row+0.05}) -- ({6+\col+0.95},{\row+0.05}) -- cycle;
-                            }
-                        }
-                        % Step 4: 8 triangles in 2x4 — violet (even step)
-                        \foreach \row in {0,...,3} {
-                            \foreach \col in {0,1} {
-                                \filldraw[fill=violet!60, draw=black] ({9+\col+0.5},{\row+0.9}) -- ({9+\col+0.05},{\row+0.05}) -- ({9+\col+0.95},{\row+0.05}) -- cycle;
-                            }
-                        }
-                        \node[below] at (0.5,-0.2) {\small Step 1};
-                        \node[below] at (4.0,-0.2) {\small Step 2};
-                        \node[below] at (7.0,-0.2) {\small Step 3};
-                        \node[below] at (10.0,-0.2) {\small Step 4};
+                        \begin{tikzpicture}[scale=1.3]
+                        % Square 1 (outermost)
+                        \filldraw[fill=teal!15, draw=black, very thick] (0,0) -- (3,0) -- (3,3) -- (0,3) -- cycle;
+                        % Square 2 (rotated 45 degrees, midpoints of sq1)
+                        \filldraw[fill=teal!30, draw=black, thick] (1.5,0) -- (3,1.5) -- (1.5,3) -- (0,1.5) -- cycle;
+                        % Square 3 (axis-aligned, midpoints of sq2)
+                        \filldraw[fill=teal!45, draw=black, thick] (0.75,0.75) -- (2.25,0.75) -- (2.25,2.25) -- (0.75,2.25) -- cycle;
+                        % Square 4 (rotated 45 degrees, midpoints of sq3)
+                        \filldraw[fill=teal!60, draw=black, thick] (1.5,0.75) -- (2.25,1.5) -- (1.5,2.25) -- (0.75,1.5) -- cycle;
+                        % Square 5 (axis-aligned, midpoints of sq4)
+                        \filldraw[fill=teal!75, draw=black, thick] (1.125,1.125) -- (1.875,1.125) -- (1.875,1.875) -- (1.125,1.875) -- cycle;
+                        % Labels in visible rings
+                        \node at (0.28,2.72) {\small $A_1$};
+                        \node at (2.62,0.28) {\small $A_2$};
+                        \node at (2.1,2.1) {\small $A_3$};
+                        \node at (1.9,1.2) {\small $A_4$};
+                        \node at (1.5,1.5) {\small $A_5$};
                         \end{tikzpicture}
                         </latex-image>
                     </image>
                 </figure>
+                <p>
+                    The outermost square has area <m>A_1 = 64 \text{ cm}^2</m>.
+                </p>
             </introduction>
             <task>
                 <statement>
                     <p>
-                        Count the triangles at each step. Write down the sequence and state the common ratio.
+                        By what ratio does each successive square's area reduce?
+                        Explain why this must be true using the geometry of the construction.
                     </p>
                 </statement>
                 <answer>
                     <p>
-                        The sequence is <m>1, 2, 4, 8, \ldots</m> with common ratio <m>r = 2</m>.
+                        Each square has half the area of the one before, so <m>r = \dfrac{1}{2}</m>.
                     </p>
                 </answer>
                 <solution>
                     <p>
+                        The inner square's four corners are the midpoints of the outer square's sides.
+                        The inner square's diagonal equals the outer square's side length <m>s</m>,
+                        so the inner square has diagonal <m>s</m> and therefore area
                         <md>
-                            <mrow>\text{Step 1} \amp =\; 1, \quad \text{Step 2} = 2, \quad \text{Step 3} = 4, \quad \text{Step 4} = 8</mrow>
+                            <mrow>\frac{s^2}{2} \amp =\; \frac{1}{2} \times (\text{area of outer square})</mrow>
                         </md>
-                        Each step doubles the previous count, so <m>r = 2</m>.
+                        The common ratio is <m>r = \dfrac{1}{2}</m>.
                     </p>
                 </solution>
             </task>
             <task>
                 <statement>
                     <p>
-                        The first term is <m>a = 1</m>. Write a formula for <m>T_n</m>.
+                        Write down the areas <m>A_1, A_2, A_3, A_4</m> as a sequence.
                     </p>
                 </statement>
                 <answer>
                     <p>
-                        <m>T_n = 2^{n-1}</m>
+                        <m>64, \ 32, \ 16, \ 8 \ \text{cm}^2</m>
                     </p>
                 </answer>
                 <solution>
                     <p>
                         <md>
-                            <mrow>T_n = a \cdot r^{n-1} = 1 \times 2^{n-1} = 2^{n-1}</mrow>
+                            <mrow>A_1 \amp =\; 64 \text{ cm}^2</mrow>
+                            <mrow>A_2 \amp =\; 64 \times \tfrac{1}{2} = 32 \text{ cm}^2</mrow>
+                            <mrow>A_3 \amp =\; 32 \times \tfrac{1}{2} = 16 \text{ cm}^2</mrow>
+                            <mrow>A_4 \amp =\; 16 \times \tfrac{1}{2} = 8 \text{ cm}^2</mrow>
                         </md>
                     </p>
                 </solution>
@@ -896,17 +972,43 @@
             <task>
                 <statement>
                     <p>
-                        At which step will there be <m>128</m> triangles?
+                        Write a formula for <m>A_n</m>, the area of the <m>n</m>th square.
                     </p>
                 </statement>
                 <answer>
                     <p>
-                        Step 8.
+                        <m>A_n = 64 \times \left(\dfrac{1}{2}\right)^{n-1} \text{ cm}^2</m>
                     </p>
                 </answer>
                 <solution>
                     <p>
-                        Solve <m>2^{n-1} = 128 = 2^7</m>, so <m>n - 1 = 7</m> and <m>n = 8</m>.
+                        With first term <m>a = 64</m> and common ratio <m>r = \dfrac{1}{2}</m>:
+                        <md>
+                            <mrow>A_n \amp =\; 64 \times \left(\frac{1}{2}\right)^{n-1} \text{ cm}^2</mrow>
+                        </md>
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Which is the first square in the sequence with area less than <m>1 \text{ cm}^2</m>?
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        The 8th square, with area <m>\frac{1}{2} \text{ cm}^2</m>.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        We need <m>64 \times \left(\frac{1}{2}\right)^{n-1} &lt; 1</m>, that is <m>\left(\frac{1}{2}\right)^{n-1} &lt; \frac{1}{64} = \left(\frac{1}{2}\right)^6</m>.
+                        <md>
+                            <mrow>n - 1 \amp &gt;\; 6</mrow>
+                            <mrow>n \amp &gt;\; 7</mrow>
+                        </md>
+                        The smallest integer value is <m>n = 8</m>.
+                        Check: <m>A_8 = 64 \times \left(\frac{1}{2}\right)^7 = \frac{64}{128} = \frac{1}{2} \text{ cm}^2 &lt; 1 \text{ cm}^2</m>. <m>\checkmark</m>
                     </p>
                 </solution>
             </task>

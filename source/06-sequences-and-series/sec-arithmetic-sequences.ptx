@@ -73,34 +73,38 @@
 
     <!-- Add Activity -->
      <activity>
-        <p>
-            <alert>Group Exploration: Finding the Pattern</alert>
-        </p>
-        <p>
-            Consider the sequence: <m>3, 7, 11, 15, \dots</m>
-        </p>
-        <p>
-            <ol>
-                <li>
-                    <p>Find the next three terms of the sequence.</p>
-                </li>
-                <li>
-                    <p>Discuss with your group: How is each term related to the one before it?</p>
-                </li>
-                <li>
-                    <p>Share your findings with other groups.</p>
-                </li>
-            </ol>
-        </p>
-        
-        <p>
-            The next term is obtained by adding <m>4</m> to the preceding term. This constant value <m>4</m> is called the <term>common difference</term> (<m>d</m>). It is the difference between any two consecutive terms:
-            <me>d = 7 - 3 = 11 - 7 = 4</me>
-        </p>
-
-        <p>
-            <alert>Challenge:</alert> Without listing all the terms, how could you find the <m>20^{th}</m> term? Can you write a general rule for the <m>n^{th}</m> term?
-        </p>
+        <statement>
+            <p>
+                <alert>Group Exploration: Finding the Pattern</alert>
+            </p>
+            <p>
+                Consider the sequence: <m>3, 7, 11, 15, \dots</m>
+            </p>
+            <p>
+                <ol>
+                    <li>
+                        <p>Find the next three terms of the sequence.</p>
+                    </li>
+                    <li>
+                        <p>Discuss with your group: How is each term related to the one before it?</p>
+                    </li>
+                    <li>
+                        <p>Share your findings with other groups.</p>
+                    </li>
+                </ol>
+            </p>
+            <p>
+                <alert>Challenge:</alert> Without listing all the terms, how could you find the <m>20^{\text{th}}</m> term? Can you write a general rule for the <m>n^{\text{th}}</m> term?
+            </p>
+        </statement>
+        <solution component="lesson-plan">
+            <p>
+                The next term is obtained by adding <m>4</m> to the preceding term. This constant value <m>4</m> is called the <term>common difference</term> (<m>d</m>). It is the difference between any two consecutive terms:
+                <md>
+                    <mrow>d = 7 - 3 = 11 - 7 = 4</mrow>
+                </md>
+            </p>
+        </solution>
      </activity>
 
     <!-- [LP] Add guidance on structured lesson plan-->
@@ -139,30 +143,23 @@
 
     <insight>
         <p>
-            Any sequence of numbers which have a common difference is called an <term>arithmetic sequence</term>. In an arithmetic sequence, the first term is <m>a</m> and the common difference is <m>d</m>.
-        </p>
-        <p>
-            Can you explore how to find the second, third, forth, ... terms given the first term?
-        </p>
-        <p>
-            <term>Notice that:</term> The general form of an arithmetic sequence is <m>a, a+d, a+2d, a+3d ...</m>. 
-        </p>
-        <p>
-            In the general form, 
+            Any sequence of numbers that has a constant common difference is called an <term>arithmetic sequence</term>. In an arithmetic sequence, the first term is <m>a</m> and the common difference is <m>d</m>. The terms follow the pattern:
         </p>
         <p>
             <md>
-                <mrow> 1^{st} term \amp =\; a </mrow>
-                <mrow>2^{nd} term \amp =\; a+d </mrow>
-                <mrow>3^{rd} term \amp =\; a+2d </mrow>
-                <mrow>4^{th} term \amp =\; a+3d </mrow>
+                <mrow>1^{\text{st}} \text{ term} \amp =\; a</mrow>
+                <mrow>2^{\text{nd}} \text{ term} \amp =\; a + d</mrow>
+                <mrow>3^{\text{rd}} \text{ term} \amp =\; a + 2d</mrow>
+                <mrow>4^{\text{th}} \text{ term} \amp =\; a + 3d</mrow>
+                <mrow>n^{\text{th}} \text{ term} \amp =\; a + (n-1)d</mrow>
             </md>
         </p>
         <p>
-            What is the <m>10^{th}</m> term?
-        </p>
-        <p>
-            How do we find the <m>n^{th}</m> term of an arithmetic sequence?
+            The formula for the <m>n^{\text{th}}</m> term of an arithmetic sequence is:
+            <md>
+                <mrow>T_n = a + (n-1)d</mrow>
+            </md>
+            where <m>a</m> is the first term and <m>d</m> is the common difference.
         </p>
     </insight>
 
@@ -174,7 +171,9 @@
      <example>
         <statement>
             <p>
-                Given the arithmetic sequence <m>4,11,18, ... find:</m>
+                Members of a youth savings group in Kisumu record amounts saved each month.
+                The monthly savings form the arithmetic sequence <m>4, 11, 18, \ldots</m> (in hundreds of shillings).
+                Find:
             </p>
             <p>
                 <ol marker="(a)">
@@ -185,7 +184,7 @@
                     </li>
                     <li>
                         <p>
-                            The <m>6^{th}</m> term.
+                            The <m>6^{\text{th}}</m> term.
                         </p>
                     </li>
                 </ol>
@@ -208,11 +207,11 @@
                     </li>
                     <li>
                         <p>
-                            The <m>n^{th} \;\text{term}\; = a + (n-1)d </m>
+                            The <m>n^{\text{th}} \;\text{term}\; = a + (n-1)d </m>
                         </p>
                         <p>
                             <md>
-                                <mrow> 6^{th} \;\text{term}\; \amp =\; 4+(6-1)7 </mrow>
+                                <mrow> 6^{\text{th}} \;\text{term}\; \amp =\; 4+(6-1)7 </mrow>
                                 <mrow> \amp =\; 39 </mrow>
                             </md>
                             
@@ -225,15 +224,15 @@
      <example>
         <statement>
             <p>
-                The <m>20^{th}</m> term of an arithmetic sequence is <m>60</m> and <m>16^{th}</m> term is <m>20</m>. Find the first term and the common difference.
+                The <m>20^{\text{th}}</m> term of an arithmetic sequence is <m>60</m> and <m>16^{\text{th}}</m> term is <m>20</m>. Find the first term and the common difference.
             </p>
         </statement>
         <solution>
             <p>
                 <md>
-                    <mrow> \text{The} \; 20^{th}\;\text{term}\; \amp =\; a+(20-1)d =\amp\; 60 </mrow>
+                    <mrow> \text{The} \; 20^{\text{th}}\;\text{term}\; \amp =\; a+(20-1)d =\amp\; 60 </mrow>
                     <mrow>\therefore a+19d \amp =\; 60 ......(i) </mrow>
-                    <mrow> \text{The} \; 16^{th}\;\text{term}\; \amp =\; a+(16-1)d =\amp\; 20 </mrow>
+                    <mrow> \text{The} \; 16^{\text{th}}\;\text{term}\; \amp =\; a+(16-1)d =\amp\; 20 </mrow>
                     <mrow>\therefore a+15d \amp =\; 20 ......(ii) </mrow>
                 </md>
                 
@@ -244,7 +243,7 @@
             <p>
                 <md>
                     <mrow> 4d \amp =\; 40 </mrow>
-                    <mrow> \amp =\; 10 </mrow>
+                    <mrow> d \amp =\; 10 </mrow>
                 </md>
                 
             </p>
@@ -270,12 +269,12 @@
         </statement>
         <solution>
             <p>
-                The <m>n^{th}</m> term is <m>a+(n-1)d </m>
+                The <m>n^{\text{th}}</m> term is <m>a+(n-1)d </m>
             </p>
             <p>
                 <md>
                     <mrow> a \amp =\; -3, d = 3 </mrow>
-                    <mrow> n^{th} \;\text{term}\; \amp =\; 54 </mrow>
+                    <mrow> n^{\text{th}} \;\text{term}\; \amp =\; 54 </mrow>
                     <mrow>\therefore -3+(n-1)3 \amp =\; 54 </mrow>
                     <mrow> 3(n-1)\amp =\; 57 </mrow>
                     <mrow> n-1 \amp =\; 19 </mrow>
@@ -315,19 +314,19 @@
         <exercise>
             <statement>
                 <p>
-                    The <m>10^{th}</m> term of an arithmetic sequence is <m>42</m> more than the <m>7^{th}</m> term. If the first term is <m>-14</m>, find the second term of the sequance.
+                    The <m>10^{\text{th}}</m> term of an arithmetic sequence is <m>42</m> more than the <m>7^{\text{th}}</m> term. If the first term is <m>-14</m>, find the second term of the sequence.
                 </p>
             </statement>
             <answer>
                 <p>
-                    <m>2^{nd} term = 0</m>
+                    <m>2^{\text{nd}} term = 0</m>
                 </p>
             </answer>
         </exercise>
         <exercise>
             <statement>
                 <p>
-                    In an arithmetic sequemce, the <m>15^{th}</m> term is <m>52</m>, and the common difference is <m>3</m>.Find:
+                    In an arithmetic sequence, the <m>15^{\text{th}}</m> term is <m>52</m>, and the common difference is <m>3</m>.Find:
                 </p>
                 <p>
                     <ol marker="(a)">
@@ -338,7 +337,7 @@
                         </li>
                         <li>
                             <p>
-                                The <m>20^{th}</m> term.
+                                The <m>20^{\text{th}}</m> term.
                             </p>
                         </li>
                     </ol>
@@ -354,7 +353,7 @@
                         </li>
                         <li>
                             <p>
-                                <m>20^{th} term = 67 </m>
+                                <m>20^{\text{th}} term = 67 </m>
                             </p>
                         </li>
                     </ol>
@@ -570,22 +569,14 @@
                 </answer>
                 <solution>
                     <p>
-                        Step <m>n</m> shows a <m>(n+2) \times (n+2)</m> square with an <m>n \times n</m> hole in the middle:
-                        <md>
-                            <mrow>\text{Step 1} \amp =\; 3^2 - 1^2 = 9 - 1 = 8</mrow>
-                            <mrow>\text{Step 2} \amp =\; 4^2 - 2^2 = 16 - 4 = 12</mrow>
-                            <mrow>\text{Step 3} \amp =\; 5^2 - 3^2 = 25 - 9 = 16</mrow>
-                            <mrow>\text{Step 4} \amp =\; 6^2 - 4^2 = 36 - 16 = 20</mrow>
-                        </md>
-                        Each new step adds one tile to each of the four sides, so <m>d = 12 - 8 = 4</m>.
+                        Step 1 has <m>8</m> tiles (one on each corner, and one on each side). Each new step adds one tile to each of the four sides, so <m>d = 12 - 8 = 4</m>.
                     </p>
                 </solution>
             </task>
             <task>
                 <statement>
                     <p>
-                        Write a formula for <m>a_n</m>, the number of tiles at Step <m>n</m>.
-                        <em>Hint: expand <m>(n+2)^2 - n^2</m>.</em>
+                        Using the formula for the <m>n^{\text{th}}</m> term of an arithmetic sequence, write a formula for <m>a_n</m>, the number of tiles at Step <m>n</m>.
                     </p>
                 </statement>
                 <answer>
@@ -595,13 +586,26 @@
                 </answer>
                 <solution>
                     <p>
-                        Using the difference-of-squares identity:
+                        Alternatively, using <m>a_n = 8 + (n-1)(4) = 4n + 4</m>.
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Find the formula a different way by subtracting the number of tiles in the interior (the hole) from the outer square.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                       At Step 1, we have a <m>3\times 3</m> outer square with a <m>1 \times 1</m> interior. Thus for Step <m>n</m>, we have an outer square of side length <m>n+2</m> and an inner square of side length <m>n</m>. Using the difference of squares:
                         <md>
                             <mrow>a_n \amp =\; (n+2)^2 - n^2</mrow>
-                            <mrow> \amp =\; n^2 + 4n + 4 - n^2</mrow>
+                            <mrow> \amp =\; (n+2-n)(n+2+n)</mrow>
+                            <mrow> \amp =\; 2(2n+2)</mrow> 
                             <mrow> \amp =\; 4n + 4</mrow>
                         </md>
-                        Alternatively, using <m>a_n = 8 + (n-1)(4) = 4n + 4</m>.
+                        This agrees with our previous formula.
                     </p>
                 </solution>
             </task>
