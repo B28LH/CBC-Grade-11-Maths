@@ -95,6 +95,30 @@
                 The board has 9 squares arranged in a <m>3 \times 3</m> grid.
             </p>
 
+            <!-- <figure xml:id="fig-rice-board-activity">
+                <caption>A <m>3 \times 3</m> board showing the number of rice grains on each square.</caption>
+                <image width="55%">
+                    <latex-image>
+                    \begin{tikzpicture}[scale=0.9]
+                    % 3x3 rice board — alternating teal/orange by odd/even position
+                    % Squares numbered 1-9 reading left-to-right, top-to-bottom
+                    % Values: 1, 2, 4, 8, 16, 32, 64, 128, 256
+                    \foreach \val/\r/\c/\sqcol in {
+                        1/0/0/teal, 2/0/1/orange, 4/0/2/teal,
+                        8/1/0/orange, 16/1/1/teal, 32/1/2/orange,
+                        64/2/0/teal, 128/2/1/orange, 256/2/2/teal
+                    } {
+                        \filldraw[fill=\sqcol!50, draw=black] ({\c*1.8},{-\r*1.8}) rectangle ++(1.8,1.8);
+                        \node[font=\bfseries] at ({\c*1.8+0.9},{-\r*1.8+0.9}) {\val};
+                        \node[font=\tiny, gray] at ({\c*1.8+0.22},{-\r*1.8+1.58}) {\tiny sq.\,\pgfmathparse{int(\r*3+\c+1)}\pgfmathresult};
+                    }
+                    % Column label
+                    \node[below] at (2.7,-5.6) {\small (number of grains per square)};
+                    \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </figure> -->
+
             <p>
                 <term>Work in groups:</term>
             </p>
@@ -133,7 +157,7 @@
             </p>
 
             <p>
-                <m>S_9 = 1 + 2 + 4 + 8 + \dots + 2^8</m>
+                <md>S_9 = 1 + 2 + 4 + 8 + \dots + 2^8</md>
             </p>
 
             <p>
@@ -165,7 +189,7 @@
             </p>
 
             <p>
-                <m>S_n = a + ar + ar^2 + \dots + ar^{n-1}</m>
+                <md>S_n = a + ar + ar^2 + \dots + ar^{n-1}</md>
             </p>
 
             <p>
@@ -209,18 +233,11 @@
     </axiom> -->
 
     <insight>
-    <p>
-        In a geometric sequence, each term is obtained by multiplying the previous term by a constant ratio. When finding the sum, multiplying the entire sum by this ratio allows most terms to cancel when subtracted.
-    </p>
-    <p>
-        This leads to the formula:
-    </p>
-    <p>
-        <md>
-            <mrow number="yes"> S_n = \amp\; \frac{a(r^n - 1)}{r - 1} </mrow>
-        </md>
-    </p>
-</insight>
+        <p>
+            Suppose that <m>T_n = ar^{n-1}</m> is a geometric sequence. We can find the sum of the first <m>n</m> terms by:
+            <md> S_n = \frac{a\left(r^n - 1\right)}{r - 1} = \frac{a\left(1-r^n\right)}{1-r} </md>
+        </p>
+    </insight>
 
     <!-- Add further instruction (not in a block) to develop ideas as needed -->
 
@@ -230,19 +247,16 @@
      <example>
         <statement>
             <p>
-                Find the sum of the first <m>9</m> terms of the geometric sequence given as <m>8,24,72, ...</m>
+                Find the sum of the first <m>9</m> terms of the geometric sequence given as <m>8,24,72, \ldots</m>
             </p>
         </statement>
         <solution>
-            <p>
+            <p> We have <m>a = 8</m>, <m>r = 3</m> and <m>n = 9</m>. Substituting into the formula gives:
                 <md>
-                    <mrow>a \amp = \; 8 </mrow>
-                    <mrow> r \amp = \; \frac{24}{8} = 3 </mrow>
-                    <mrow> n \amp = \; 9 </mrow>
-                    <mrow> S_n =  \amp\; \frac{a(r^n-1)}{r-1} </mrow>
-                    <mrow>S_9 \amp = \; \frac{8(3^9 - 1)}{3-1} </mrow>
-                    <mrow> \amp = \; \frac{8(19683-1)} {2}</mrow>
-                    <mrow> \amp =\; 78728 </mrow>
+                    <mrow> S_n =  \amp \frac{a(r^n-1)}{r-1} </mrow>
+                    <mrow>S_9 \amp =  \frac{8(3^9 - 1)}{3-1} </mrow>
+                    <mrow> \amp =  \frac{8(19683-1)} {2}</mrow>
+                    <mrow> \amp = 78728 </mrow>
                 </md>
                 
             </p>
@@ -258,26 +272,19 @@
             <p>
                 <md>
                     <mrow>S_3 = 26 \amp </mrow>
-                    <mrow> r \amp = \; 3 </mrow>
-                    <mrow>n \amp = \; 3 </mrow>
+                    <mrow> r \amp = 3 </mrow>
+                    <mrow>n \amp = 3 </mrow>
                     <mrow> S_n \amp = \frac{a(r^n-1)}{r-1} </mrow>
                     <mrow> \text{Substituting} \amp </mrow>
-                    <mrow> 26 \amp = \; \frac{a(3^3 - 1)}{3-1} </mrow>
-                    <mrow> a \amp = \; \frac{26 \times 2}{26} </mrow>
-                    <mrow> \amp = \; 2 </mrow>
-                    <mrow> S_6 \amp = \; \frac{2(3^6 - 1)}{3-1} </mrow>
-                    <mrow> \amp = \; 728 </mrow>
+                    <mrow> 26 \amp = \frac{a(3^3 - 1)}{3-1} </mrow>
+                    <mrow> a \amp = \frac{26 \times 2}{26} </mrow>
+                    <mrow> \amp = 2 </mrow>
+                    <mrow> S_6 \amp = \frac{2(3^6 - 1)}{3-1} </mrow>
+                    <mrow> \amp = 728 </mrow>
                 </md>
                 
             </p>
         </solution>
-     </example>
-     <example>
-        <statement>
-            <p>
-                
-            </p>
-        </statement>
      </example>
 
     <xi:include href="../lesson-plan-templates/assessment-intro.ptx" />
@@ -297,7 +304,7 @@
                     <ol marker="(a)">
                         <li>
                             <p>
-                                The common ratio#.
+                                The common ratio.
                             </p>
                         </li>
                         <li>
@@ -340,7 +347,7 @@
         <exercise>
             <statement>
                 <p>
-                    In a geometric progression, the sum of the <m>2^{nd} </m> and <m>3^{rd} </m> terms is <m>4</m> and the sum of <m>3^{rd} </m> and <m>4^{th} </m> terms is <m>2</m>. Find the first term and the common ratio.
+                    In a geometric progression, the sum of the <m>2^{\text{nd}} </m> and <m>3^{\text{rd}} </m> terms is <m>4</m> and the sum of <m>3^{\text{rd}} </m> and <m>4^{\text{th}} </m> terms is <m>2</m>. Find the first term and the common ratio.
                 </p>
             </statement>
             <answer>
@@ -352,7 +359,7 @@
         <exercise>
             <statement>
                 <p>
-                    The <m>2^{nd}, 4^{th}, ;\text{and}\; 7^{th} </m> terms of an arithmetic progression are the first three consecutive terms of a geometric progression. Find:
+                    The <m>2^{\text{nd}}, 4^{\text{th}},\text{and}7^{\text{th}} </m> terms of an arithmetic progression are the first three consecutive terms of a geometric progression. Find:
                 </p>
                 <p>
                     <ol marker="(a)">

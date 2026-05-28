@@ -385,6 +385,360 @@
                 </p>
             </answer>
         </exercise>
+
+        <exercise>
+            <introduction>
+                <p>
+                    The following pattern of tiles grows at each step.
+                </p>
+                <figure xml:id="fig-arith-u-pattern">
+                    <caption>A growing U-shape pattern — Steps 1 to 4.</caption>
+                    <image width="90%">
+                        <latex-image>
+                        \begin{tikzpicture}[scale=0.5]
+                        % Step 1 (6 tiles) — purple (odd): base of 4 + sides of height 1
+                        \foreach \col in {0,...,3} {
+                            \filldraw[fill=purple!60!white, draw=black] (\col,0) rectangle ++(1,1);
+                        }
+                        \filldraw[fill=purple!60!white, draw=black] (0,1) rectangle ++(1,1);
+                        \filldraw[fill=purple!60!white, draw=black] (3,1) rectangle ++(1,1);
+                        % Step 2 (8 tiles) — lime (even): base + sides of height 2
+                        \foreach \col in {0,...,3} {
+                            \filldraw[fill=lime!65, draw=black] ({5+\col},0) rectangle ++(1,1);
+                        }
+                        \foreach \row in {1,2} {
+                            \filldraw[fill=lime!65, draw=black] (5,\row) rectangle ++(1,1);
+                            \filldraw[fill=lime!65, draw=black] (8,\row) rectangle ++(1,1);
+                        }
+                        % Step 3 (10 tiles) — purple: base + sides of height 3
+                        \foreach \col in {0,...,3} {
+                            \filldraw[fill=purple!60!white, draw=black] ({10+\col},0) rectangle ++(1,1);
+                        }
+                        \foreach \row in {1,...,3} {
+                            \filldraw[fill=purple!60!white, draw=black] (10,\row) rectangle ++(1,1);
+                            \filldraw[fill=purple!60!white, draw=black] (13,\row) rectangle ++(1,1);
+                        }
+                        % Step 4 (12 tiles) — lime: base + sides of height 4
+                        \foreach \col in {0,...,3} {
+                            \filldraw[fill=lime!65, draw=black] ({15+\col},0) rectangle ++(1,1);
+                        }
+                        \foreach \row in {1,...,4} {
+                            \filldraw[fill=lime!65, draw=black] (15,\row) rectangle ++(1,1);
+                            \filldraw[fill=lime!65, draw=black] (18,\row) rectangle ++(1,1);
+                        }
+                        \node[below] at (2.0,-0.2) {\small Step 1};
+                        \node[below] at (7.0,-0.2) {\small Step 2};
+                        \node[below] at (12.0,-0.2) {\small Step 3};
+                        \node[below] at (17.0,-0.2) {\small Step 4};
+                        \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        Count the number of tiles at each step and write down the first four terms of the sequence.
+                        What is the common difference <m>d</m>?
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        The sequence is <m>6, 8, 10, 12, \ldots</m> with common difference <m>d = 2</m>.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        At each step the base stays fixed at 4 tiles while each side column grows by 1:
+                        <md>
+                            <mrow>\text{Step 1} \amp =\; 4 + 2(1) = 6</mrow>
+                            <mrow>\text{Step 2} \amp =\; 4 + 2(2) = 8</mrow>
+                            <mrow>\text{Step 3} \amp =\; 4 + 2(3) = 10</mrow>
+                            <mrow>\text{Step 4} \amp =\; 4 + 2(4) = 12</mrow>
+                        </md>
+                        Each new step adds one tile to each side column, so <m>d = 8 - 6 = 2</m>.
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Write a formula for <m>a_n</m>, the number of tiles at Step <m>n</m>.
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        <m>a_n = 2n + 4</m>
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        Using <m>a_n = a_1 + (n-1)d</m> with <m>a_1 = 6</m> and <m>d = 2</m>:
+                        <md>
+                            <mrow>a_n \amp =\; 6 + (n-1)(2)</mrow>
+                            <mrow> \amp =\; 6 + 2n - 2</mrow>
+                            <mrow> \amp =\; 2n + 4</mrow>
+                        </md>
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        How many tiles are needed at Step 10?
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        <m>24</m> tiles.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        <md>
+                            <mrow>a_{10} = 2(10) + 4 = 24</mrow>
+                        </md>
+                    </p>
+                </solution>
+            </task>
+        </exercise>
+
+        <exercise>
+            <introduction>
+                <p>
+                    The following pattern shows a square border of tiles — the interior is always left empty.
+                </p>
+                <figure xml:id="fig-arith-frame-pattern">
+                    <caption>A growing hollow square frame — Steps 1 to 4.</caption>
+                    <image width="90%">
+                        <latex-image>
+                        \begin{tikzpicture}[scale=0.5]
+                        % Step 1 (8 tiles) — brown (odd): 3x3 border
+                        \foreach \col in {0,1,2} {
+                            \filldraw[fill=brown!65, draw=black] (\col,0) rectangle ++(1,1);
+                            \filldraw[fill=brown!65, draw=black] (\col,2) rectangle ++(1,1);
+                        }
+                        \filldraw[fill=brown!65, draw=black] (0,1) rectangle ++(1,1);
+                        \filldraw[fill=brown!65, draw=black] (2,1) rectangle ++(1,1);
+                        % Step 2 (12 tiles) — pink (even): 4x4 border, offset=4
+                        \foreach \col in {0,...,3} {
+                            \filldraw[fill=pink!70, draw=black] ({4+\col},0) rectangle ++(1,1);
+                            \filldraw[fill=pink!70, draw=black] ({4+\col},3) rectangle ++(1,1);
+                        }
+                        \foreach \row in {1,2} {
+                            \filldraw[fill=pink!70, draw=black] (4,\row) rectangle ++(1,1);
+                            \filldraw[fill=pink!70, draw=black] (7,\row) rectangle ++(1,1);
+                        }
+                        % Step 3 (16 tiles) — brown (odd): 5x5 border, offset=9
+                        \foreach \col in {0,...,4} {
+                            \filldraw[fill=brown!65, draw=black] ({9+\col},0) rectangle ++(1,1);
+                            \filldraw[fill=brown!65, draw=black] ({9+\col},4) rectangle ++(1,1);
+                        }
+                        \foreach \row in {1,2,3} {
+                            \filldraw[fill=brown!65, draw=black] (9,\row) rectangle ++(1,1);
+                            \filldraw[fill=brown!65, draw=black] (13,\row) rectangle ++(1,1);
+                        }
+                        % Step 4 (20 tiles) — pink (even): 6x6 border, offset=15
+                        \foreach \col in {0,...,5} {
+                            \filldraw[fill=pink!70, draw=black] ({15+\col},0) rectangle ++(1,1);
+                            \filldraw[fill=pink!70, draw=black] ({15+\col},5) rectangle ++(1,1);
+                        }
+                        \foreach \row in {1,...,4} {
+                            \filldraw[fill=pink!70, draw=black] (15,\row) rectangle ++(1,1);
+                            \filldraw[fill=pink!70, draw=black] (20,\row) rectangle ++(1,1);
+                        }
+                        \node[below] at (1.5,-0.2) {\small Step 1};
+                        \node[below] at (6.0,-0.2) {\small Step 2};
+                        \node[below] at (11.5,-0.2) {\small Step 3};
+                        \node[below] at (18.0,-0.2) {\small Step 4};
+                        \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        Count the border tiles at each step and write down the first four terms of the sequence.
+                        What is the common difference <m>d</m>?
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        The sequence is <m>8, 12, 16, 20, \ldots</m> with common difference <m>d = 4</m>.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        Step <m>n</m> shows a <m>(n+2) \times (n+2)</m> square with an <m>n \times n</m> hole in the middle:
+                        <md>
+                            <mrow>\text{Step 1} \amp =\; 3^2 - 1^2 = 9 - 1 = 8</mrow>
+                            <mrow>\text{Step 2} \amp =\; 4^2 - 2^2 = 16 - 4 = 12</mrow>
+                            <mrow>\text{Step 3} \amp =\; 5^2 - 3^2 = 25 - 9 = 16</mrow>
+                            <mrow>\text{Step 4} \amp =\; 6^2 - 4^2 = 36 - 16 = 20</mrow>
+                        </md>
+                        Each new step adds one tile to each of the four sides, so <m>d = 12 - 8 = 4</m>.
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Write a formula for <m>a_n</m>, the number of tiles at Step <m>n</m>.
+                        <em>Hint: expand <m>(n+2)^2 - n^2</m>.</em>
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        <m>a_n = 4n + 4</m>
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        Using the difference-of-squares identity:
+                        <md>
+                            <mrow>a_n \amp =\; (n+2)^2 - n^2</mrow>
+                            <mrow> \amp =\; n^2 + 4n + 4 - n^2</mrow>
+                            <mrow> \amp =\; 4n + 4</mrow>
+                        </md>
+                        Alternatively, using <m>a_n = 8 + (n-1)(4) = 4n + 4</m>.
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        How many tiles are needed at Step 10?
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        <m>44</m> tiles.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        <md>
+                            <mrow>a_{10} = 4(10) + 4 = 44</mrow>
+                        </md>
+                    </p>
+                </solution>
+            </task>
+        </exercise>
+
+        <exercise>
+            <introduction>
+                <p>
+                    The following pattern grows by adding tiles to three arms simultaneously.
+                </p>
+                <figure xml:id="fig-arith-t-pattern">
+                    <caption>A growing T-shape pattern — Steps 1 to 4.</caption>
+                    <image width="90%">
+                        <latex-image>
+                        \begin{tikzpicture}[scale=0.4]
+                        % Step 1 (4 tiles) — olive (odd): cx=1, arm=1
+                        \foreach \dx in {-1,0,1} {
+                            \filldraw[fill=olive!70, draw=black] ({1+\dx},0) rectangle ++(1,1);
+                        }
+                        \filldraw[fill=olive!70, draw=black] (1,1) rectangle ++(1,1);
+                        % Step 2 (7 tiles) — orange (even): cx=6, arm=2
+                        \foreach \dx in {-2,...,2} {
+                            \filldraw[fill=orange!70, draw=black] ({6+\dx},0) rectangle ++(1,1);
+                        }
+                        \foreach \dy in {1,2} {
+                            \filldraw[fill=orange!70, draw=black] (6,\dy) rectangle ++(1,1);
+                        }
+                        % Step 3 (10 tiles) — olive: cx=13, arm=3
+                        \foreach \dx in {-3,...,3} {
+                            \filldraw[fill=olive!70, draw=black] ({13+\dx},0) rectangle ++(1,1);
+                        }
+                        \foreach \dy in {1,2,3} {
+                            \filldraw[fill=olive!70, draw=black] (13,\dy) rectangle ++(1,1);
+                        }
+                        % Step 4 (13 tiles) — orange: cx=22, arm=4
+                        \foreach \dx in {-4,...,4} {
+                            \filldraw[fill=orange!70, draw=black] ({22+\dx},0) rectangle ++(1,1);
+                        }
+                        \foreach \dy in {1,...,4} {
+                            \filldraw[fill=orange!70, draw=black] (22,\dy) rectangle ++(1,1);
+                        }
+                        \node[below] at (1.5,-0.2) {\small Step 1};
+                        \node[below] at (6.5,-0.2) {\small Step 2};
+                        \node[below] at (13.5,-0.2) {\small Step 3};
+                        \node[below] at (22.5,-0.2) {\small Step 4};
+                        \end{tikzpicture}
+                        </latex-image>
+                    </image>
+                </figure>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        Count the number of tiles at each step and write down the first four terms of the sequence.
+                        What is the common difference <m>d</m>?
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        The sequence is <m>4, 7, 10, 13, \ldots</m> with common difference <m>d = 3</m>.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        At each step, one tile is added to each of the three arms (left, right, and up):
+                        <md>
+                            <mrow>\text{Step 1} \amp =\; 1 + 3(1) = 4</mrow>
+                            <mrow>\text{Step 2} \amp =\; 1 + 3(2) = 7</mrow>
+                            <mrow>\text{Step 3} \amp =\; 1 + 3(3) = 10</mrow>
+                            <mrow>\text{Step 4} \amp =\; 1 + 3(4) = 13</mrow>
+                        </md>
+                        Each step adds 3 tiles (one per arm), so <m>d = 7 - 4 = 3</m>.
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Write a formula for <m>a_n</m>, the number of tiles at Step <m>n</m>.
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        <m>a_n = 3n + 1</m>
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        Using <m>a_n = a_1 + (n-1)d</m> with <m>a_1 = 4</m> and <m>d = 3</m>:
+                        <md>
+                            <mrow>a_n \amp =\; 4 + (n-1)(3)</mrow>
+                            <mrow> \amp =\; 4 + 3n - 3</mrow>
+                            <mrow> \amp =\; 3n + 1</mrow>
+                        </md>
+                        This can also be seen directly: 1 centre tile plus 3 arms of length <m>n</m> gives <m>3n + 1</m>.
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        How many tiles are needed at Step 10?
+                    </p>
+                </statement>
+                <answer>
+                    <p>
+                        <m>31</m> tiles.
+                    </p>
+                </answer>
+                <solution>
+                    <p>
+                        <md>
+                            <mrow>a_{10} = 3(10) + 1 = 31</mrow>
+                        </md>
+                    </p>
+                </solution>
+            </task>
+        </exercise>
      </exercises>
     <!-- [LP] Add information on how to differentiate  -->
 
