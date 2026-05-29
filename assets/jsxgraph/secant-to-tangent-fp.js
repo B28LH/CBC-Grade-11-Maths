@@ -1,4 +1,4 @@
-var board = JXG.JSXGraph.initBoard('secant-to-tangent', {
+var board = JXG.JSXGraph.initBoard('secant-to-tangent-fp', {
     boundingbox: [-0.5, 4, 5, -0.5],
     keepAspectRatio: true,
     axis: true,

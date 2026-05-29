@@ -71,39 +71,36 @@
             <p>
                 Consider the function <m>f(x) = x^2</m>. In the previous section we computed the average rate of change (AROC) between two points on a curve. Now let's see what happens when those two points get very close together.
             </p>
-
-            <!-- TODO: TikZ figure — graph of f(x) = x² with three secant lines at x = 3 for h = 1, 0.5, 0.1, rotating toward the tangent at (3, 9) as h decreases; label each secant with its slope -->
-
             <p>
-                Fix the first point at <m>x = 3</m> and let the second point be at <m>x = 3 + h</m>. Complete the table by calculating the AROC between these two points for each value of <m>h</m>.
+                Fix the first point at <m>x = 1</m> and let the second point be at <m>x = 1 + h</m>. Complete the table by calculating the AROC between these two points for each value of <m>h</m>.
             </p>
 
             <table xml:id="table-aroc-approaching-limit">
-                <title>AROC of <m>f(x)=x^2</m> at <m>x=3</m> for decreasing <m>h</m></title>
+                <title>AROC of <m>f(x)=x^2</m> at <m>x=1</m> for decreasing <m>h</m></title>
                 <tabular halign="center" top="minor" left="minor">
                     <row header="yes" bottom="medium">
                         <cell right="minor"><m>h</m></cell>
-                        <cell right="minor"><m>f(3+h)</m></cell>
-                        <cell right="minor"><m>f(3+h)-f(3)</m></cell>
-                        <cell right="minor"><m>\dfrac{f(3+h)-f(3)}{h}</m></cell>
+                        <cell right="minor"><m>f(1+h)</m></cell>
+                        <cell right="minor"><m>f(1+h)-f(1)</m></cell>
+                        <cell right="minor"><m>\dfrac{f(1+h)-f(1)}{h}</m></cell>
                     </row>
                     <row bottom="minor">
                         <cell right="minor"><m>1</m></cell>
-                        <cell right="minor"><m>16</m></cell>
-                        <cell right="minor"><m>7</m></cell>
-                        <cell right="minor"><m>7</m></cell>
+                        <cell right="minor"><m>4</m></cell>
+                        <cell right="minor"><m>3</m></cell>
+                        <cell right="minor"><m>3</m></cell>
                     </row>
                     <row bottom="minor">
                         <cell right="minor"><m>0.5</m></cell>
-                        <cell right="minor"><m>12.25</m></cell>
-                        <cell right="minor"><m>3.25</m></cell>
-                        <cell right="minor"><m>6.5</m></cell>
+                        <cell right="minor"><m>\phantom{00}</m></cell>
+                        <cell right="minor"><m>\phantom{00}</m></cell>
+                        <cell right="minor"><m>\phantom{00}</m></cell>
                     </row>
                     <row bottom="minor">
                         <cell right="minor"><m>0.1</m></cell>
-                        <cell right="minor"><m>9.61</m></cell>
-                        <cell right="minor"><m>0.61</m></cell>
-                        <cell right="minor"><m>6.1</m></cell>
+                        <cell right="minor"><m>\phantom{00}</m></cell>
+                        <cell right="minor"><m>\phantom{00}</m></cell>
+                        <cell right="minor"><m>\phantom{00}</m></cell>
                     </row>
                     <row bottom="minor">
                         <cell right="minor"><m>0.01</m></cell>
@@ -121,72 +118,43 @@
             </table>
 
             <p>
-                Use the Sage cell below to explore. Drag the slider to change <m>h</m> and watch the AROC update.
+                Use the interactive graph below to see what is happening geometrically. Drag <m>Q</m> closer and closer to <m>P</m>. Watch how the green secant line rotates toward the red tangent line, and how the secant slope approaches the tangent slope.
             </p>
 
-            <sage>
-                <input>
-@interact
-def _(h=slider(0.001, 1.0, 0.001, default=1.0, label='h')):
-    f = lambda x: x**2
-    a = 3
-    aroc = (f(a + h) - f(a)) / h
-    print(f"h        = {h:.3f}")
-    print(f"f(3 + h) = f({a + h:.3f}) = {f(a + h):.6f}")
-    print(f"AROC     = (f(3 + h) - f(3)) / h = {aroc:.6f}")
-                </input>
-            </sage>
-
-            <p>
-                Now ask Sage to compute the exact limit as <m>h \to 0</m>.
-            </p>
-
-            <sage>
-                <input>
-var('h')
-f(x) = x^2
-limit((f(3 + h) - f(3)) / h, h, 0)
-                </input>
-                <output>6</output>
-            </sage>
+            <interactive xml:id="interactive-secant-to-tangent-fp" platform="jsxgraph" width="90%" aspect="1:1" source="jsxgraph/secant-to-tangent-fp.js">
+                <slate xml:id="secant-to-tangent-fp" surface="jsxboard" aspect="1:1"/>
+                <instructions>
+                    <p> Drag <m>Q</m> toward <m>P</m> and observe how the secant slope (green) approaches the tangent slope (red).</p>
+                </instructions>
+            </interactive>
 
             <ol marker="(a)">
                 <li>
                     <p>
-                        Complete the last two rows of the table. What pattern do you notice in the AROC column?
+                        Complete the table. What pattern do you notice in the final column?
                     </p>
                     <solution component="lesson-plan">
                         <p>
-                            AROC values: <m>6.01</m> and <m>6.001</m>. The values approach <m>6</m> from above.
+                           The values approach <m>2</m> from above.
                         </p>
                     </solution>
                 </li>
                 <li>
                     <p>
-                        What value does the AROC appear to approach as <m>h \to 0</m>?
-                    </p>
-                    <solution component="lesson-plan">
-                        <p>
-                            The AROC approaches <m>6</m>.
-                        </p>
-                    </solution>
-                </li>
-                <li>
-                    <p>
-                        Write a simplified algebraic formula for the AROC of <m>f(x) = x^2</m> between <m>x = 3</m> and <m>x = 3 + h</m>. Use it to explain the pattern in part (a).
+                        Write a simplified algebraic formula for the AROC of <m>f(x) = x^2</m> between <m>x = 1</m> and <m>x = 1 + h</m>. Use it to explain the pattern in part (a).
                     </p>
                     <solution component="lesson-plan">
                         <p>
                             <md>
-                                <mrow>\text{AROC} \amp= \frac{f(3+h)-f(3)}{h} = \frac{(3+h)^2 - 9}{h}</mrow>
-                                <mrow>\amp= \frac{9 + 6h + h^2 - 9}{h} = \frac{6h + h^2}{h} = 6 + h</mrow>
+                                <mrow>\text{AROC} \amp= \frac{f(1+h)-f(1)}{h} = \frac{(1+h)^2 - 1}{h}</mrow>
+                                <mrow>\amp= \frac{1 + 2h + h^2 - 1}{h} = \frac{2h + h^2}{h} = 2 + h</mrow>
                             </md>
-                            Since AROC <m>= 6 + h</m>, as <m>h \to 0</m> the AROC approaches <m>6</m>.
+                            Since AROC <m>= 2 + h</m>, as <m>h \to 0</m> the AROC approaches <m>2</m>.
                         </p>
                     </solution>
                     <note component="lesson-plan">
                         <p>
-                            Learners who reach <m>\text{AROC} = 6 + h</m> have essentially computed the derivative. Ask: <q>So what is the <em>exact</em> slope of the tangent to <m>f(x) = x^2</m> at <m>x = 3</m>?</q>
+                            Learners who reach <m>\text{AROC} = 2 + h</m> have essentially computed the derivative. Ask: <q>So what is the <em>exact</em> slope of the tangent to <m>f(x) = x^2</m> at <m>x = 1</m>?</q>
                         </p>
                     </note>
                 </li>
@@ -196,7 +164,7 @@ limit((f(3 + h) - f(3)) / h, h, 0)
                     </p>
                     <solution component="lesson-plan">
                         <p>
-                            It is the slope of the tangent to <m>f(x) = x^2</m> at the point <m>(3, 9)</m>. As <m>h \to 0</m>, the secant line through <m>(3, 9)</m> and <m>(3+h, f(3+h))</m> rotates toward the tangent — exactly the picture in the previous section.
+                            It is the slope of the tangent to <m>f(x) = x^2</m> at the point <m>(1, 1)</m>. As <m>h \to 0</m>, the secant line through <m>(1, 1)</m> and <m>(1+h, f(1+h))</m> rotates toward the tangent — exactly the picture in the previous section.
                         </p>
                     </solution>
                 </li>
@@ -227,12 +195,12 @@ limit((f(3 + h) - f(3)) / h, h, 0)
             <ul>
                 <li>
                     <p>
-                        <alert>Connect to the activity:</alert> In part (c), learners found AROC <m>= 6 + h</m>. The derivative at <m>x = 3</m> is exactly what remains as <m>h \to 0</m>: the value <m>6</m>.
+                        <alert>Connect to the activity:</alert> In part (c), learners found AROC <m>= 2 + h</m>. The derivative at <m>x = 1</m> is exactly what remains as <m>h \to 0</m>: the value <m>2</m>.
                     </p>
                 </li>
                 <li>
                     <p>
-                        Replacing the specific input <m>x = 3</m> with a general <m>x</m> produces a formula that works everywhere — the derivative <em>function</em> <m>f'(x)</m>.
+                        Replacing the specific input <m>x = 1</m> with a general <m>x</m> produces a formula that works everywhere — the derivative <em>function</em> <m>f'(x)</m>.
                     </p>
                 </li>
                 <li>
@@ -247,30 +215,21 @@ limit((f(3 + h) - f(3)) / h, h, 0)
     <insight xml:id="insight-first-principles-key-ideas">
         <title>From AROC to the Derivative</title>
         <p>
-            The activity showed that as <m>h \to 0</m>, the AROC of <m>f(x) = x^2</m> at <m>x = 3</m> converges to the value <m>6</m>. Two key observations:
+            The activity showed that as <m>h \to 0</m>, the AROC of <m>f(x) = x^2</m> at <m>x = 1</m> converges to the value <m>2</m>. Two key observations:
         </p>
         <ul>
             <li>
                 <p>
-                    This limiting value is the <term>slope of the tangent</term> to the curve at <m>x = 3</m> — the instantaneous rate of change at that point.
+                    This limiting value is the <term>slope of the tangent</term> to the curve at <m>x = 1</m>, the instantaneous rate of change at that point.
                 </p>
             </li>
             <li>
                 <p>
-                    Repeating the process with a general input <m>x</m> instead of <m>x = 3</m> produces a <em>function</em> <m>f'(x)</m>, giving the slope at <em>every</em> point. This is the <term>derivative</term> of <m>f</m>.
+                    Repeating the process with a general input <m>x</m> instead of <m>x = 1</m> produces a <em>function</em> <m>f'(x)</m>, giving the slope at <em>every</em> point. This is the <term>derivative</term> of <m>f</m>.
                 </p>
             </li>
         </ul>
     </insight>
-
-    <p>Now that we can find the average rate of change, suppose we make <m>h</m> in <xref ref="PRECALC-h2P97umVs7"/> smaller and smaller. Then <m>a+h</m> will approach <m>a</m> as <m>h</m> gets smaller, getting closer and closer to 0. Likewise, the second point <m>(a+h,f(a+h))</m> will approach the first point, <m>(a,f(a)).</m> As a consequence, the connecting line between the two points, called the secant line, will get closer and closer to being a tangent to the function at <m>x=a,</m> and the slope of the secant line will get closer and closer to the slope of the tangent at <m>x=a.</m> See <xref ref="PRECALC-YRVPEZzgU0"/>.</p>
-
-    <!-- TODO: Replace with a jsxgraph that shows the secant -> tangent-->
-    <figure xml:id="PRECALC-YRVPEZzgU0" original="PRECALC/modules/m49455/index.cnxml" license="CC-BY-4.0">
-        <caption>The connecting line between two points moves closer to being a tangent line at <m>x=a.</m>
-        </caption>
-        <image source="PRECALC/CNX_Precalc_Figure_12_04_003.jpg" width="80%"/>
-    </figure>
 
     <p>Because we are looking for the <term>slope of the tangent</term> at <m>x=a,</m> we can think of the measure of the slope of the curve of a function <m>f</m> at a given point as the rate of change at a particular instant. We call this slope the <em>instantaneous rate of change</em>, or the <em>derivative</em> of the function at <m>x=a.</m> Both can be found by finding the limit of the slope of a line connecting the point at <m>x=a</m> with a second point infinitesimally close along the curve. For a function <m>f</m> both the instantaneous rate of change of the function and the derivative of the function at <m>x=a</m> are written as <m>f'(a),</m> and we can define them as a <term>two-sided limit</term> that has the same value whether approached from the left or the right.</p>
 
@@ -530,9 +489,6 @@ limit((f(3 + h) - f(3)) / h, h, 0)
         <exercise xml:id="ex-fp-reciprocal-extension">
             <title>Extension: Differentiating <m>\dfrac{1}{x}</m></title>
             <statement>
-                <p>
-                    Use first principles to find the derivative of <m>f(x) = \dfrac{1}{x}</m>.
-                </p>
                 <ol marker="(a)">
                     <li>
                         <p>
@@ -551,7 +507,7 @@ limit((f(3 + h) - f(3)) / h, h, 0)
                     </li>
                     <li>
                         <p>
-                            Find the gradient of <m>y = \dfrac{1}{x}</m> at <m>x = 2</m>, and write down the equation of the tangent at that point.
+                            Find the derivative of <m>y = \dfrac{1}{x}</m> at <m>x = 2</m>.
                         </p>
                     </li>
                 </ol>
@@ -584,8 +540,6 @@ limit((f(3 + h) - f(3)) / h, h, 0)
                     <li>
                         <p>
                             At <m>x = 2</m>: <m>f(2) = \tfrac{1}{2}</m> and <m>f'(2) = -\tfrac{1}{4}</m>.
-                            The equation of the tangent is
-                            <me>y - \tfrac{1}{2} = -\tfrac{1}{4}(x - 2) \implies y = -\tfrac{1}{4}x + 1.</me>
                         </p>
                     </li>
                 </ol>
@@ -595,10 +549,6 @@ limit((f(3 + h) - f(3)) / h, h, 0)
         <exercise xml:id="ex-fp-sqrt-extension">
             <title>Extension: Differentiating <m>\sqrt{x}</m></title>
             <statement>
-                <p>
-                    In the section on average rates of change you estimated the gradient of <m>f(x) = \sqrt{x}</m> numerically.
-                    Here you will find it exactly using first principles.
-                </p>
                 <ol marker="(a)">
                     <li>
                         <p>
@@ -609,7 +559,7 @@ limit((f(3 + h) - f(3)) / h, h, 0)
                     </li>
                     <li>
                         <p>
-                            Rationalise the numerator by multiplying the top and bottom of the difference quotient by <m>\bigl(\sqrt{x+h}+\sqrt{x}\bigr)</m>.
+                            Rationalise the <em>numerator</em> by multiplying the top and bottom of the difference quotient by <m>\bigl(\sqrt{x+h}+\sqrt{x}\bigr)</m>.
                             Show that after simplifying you obtain
                             <me>\frac{1}{\sqrt{x+h}+\sqrt{x}}.</me>
                         </p>
@@ -645,7 +595,7 @@ limit((f(3 + h) - f(3)) / h, h, 0)
                                 <mrow>\amp= \frac{h}{h\bigl(\sqrt{x+h}+\sqrt{x}\bigr)}</mrow>
                                 <mrow>\amp= \frac{1}{\sqrt{x+h}+\sqrt{x}}.</mrow>
                             </md>
-                            The key step is that <m>\bigl(\sqrt{x+h}-\sqrt{x}\bigr)\bigl(\sqrt{x+h}+\sqrt{x}\bigr) = (x+h)-x = h</m> by the difference of squares identity.
+                            The key step is that <md>\bigl(\sqrt{x+h}-\sqrt{x}\bigr)\bigl(\sqrt{x+h}+\sqrt{x}\bigr) = (x+h)-x = h</md> by the difference of squares identity.
                         </p>
                     </li>
                     <li>
