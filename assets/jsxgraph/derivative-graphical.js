@@ -1,13 +1,14 @@
 var board = JXG.JSXGraph.initBoard('derivative-graphical', {
     boundingbox: [-3, 6, 3, -1],
     axis: true,
+    grid: {majorStep: 1, minorStep: 0.25},
     showCopyright: false,
     showNavigation: false,
     defaultAxes: {
-        x: {ticks: {insertTicks: false, ticksDistance: 1},
+        x: {ticks: {insertTicks: false, ticksDistance: 1, minorticks: 10},
             name: 'x', withLabel: true,
             label: {position: 'rt', offset: [0, 15]}},
-        y: {ticks: {insertTicks: false, ticksDistance: 1},
+        y: {ticks: {insertTicks: false, ticksDistance: 1, minorticks: 10},
             name: 'y', withLabel: true,
             label: {position: 'rt', offset: [15, 0]}}
     }
