@@ -69,138 +69,6 @@
 
     <!-- Add Activity -->
 
-    <!-- <activity>
-        <statement>
-        </statement>
-    </activity> -->
-
-    <!-- [LP] Add guidance on structured lesson plan-->
-
-    <!-- <axiom component="lesson-plan">
-        <title>Structured Instruction</title>
-        <p>
-            <dl>
-            <li>
-                <title>Suggested Time</title>
-                <p>
-                    XX minutes
-                </p>
-            </li>
-            <li>
-                <title>Objective</title>
-                <p>
-                    To formalize the concepts and properties learners discovered in the anchor task.
-                </p>
-            </li>
-            </dl>
-        </p>
-        <paragraphs>
-            <title>Key Takeaways &amp; Teacher Connection</title>
-            <ol>
-                <li>
-                    <p>
-                        <alert>Connecting to Learner Work:</alert> XXXX
-                    </p>
-                </li>
-            </ol>
-        </paragraphs>
-    </axiom> -->
-
-    <!-- Add insight / key takeaway directly related to activity / learner experience -->
-
-    <!-- <insight>
-    </insight> -->
-
-    <!-- Add further instruction (not in a block) to develop ideas as needed -->
-
-    <xi:include href="../lesson-plan-templates/example-intro.ptx" />
-
-    <!-- Add at least 3 examples -->
-
-    <!-- <example>
-        <statement>
-        </statement>
-        <solution>
-        </solution>
-    </example>
-
-    <example>
-        <statement>
-        </statement>
-        <solution>
-        </solution>
-    </example>
-
-    <example>
-        <statement>
-        </statement>
-        <solution>
-        </solution>
-    </example> -->
-
-    <xi:include href="../lesson-plan-templates/assessment-intro.ptx" />
-
-    <!-- If STACK questions are included, uncomment this: -->
-
-    <!-- <xi:include href="../lesson-plan-templates/checkpoint.ptx" /> -->
-
-    <!-- Add STACK exercises if made -->
-
-    <!-- Add static exercises -->
-
-    <!-- <exercises>
-        <exercise>
-            <statement>   
-
-            </statement>   
-            <solution>
-
-            </solution>             
-        </exercise>        
-    </exercises> -->
-
-    <!-- [LP] Add information on how to differentiate  -->
-
-    <!-- <axiom component="lesson-plan">
-        <title>Differentiation</title>
-
-        <table>
-            <title>Differentiation</title>
-            <tabular halign="left">
-                <row header="yes" bottom="minor">
-                    <cell>Learner Group</cell>
-                    <cell>Strategy &amp; Learning Experience</cell>
-                    <cell></cell>
-                </row>
-                <row>
-                    <cell>Struggling Learners (Support)</cell>
-                    <cell>
-                        XXXX
-                    </cell>
-                    <cell></cell>
-                </row>
-                <row>
-                    <cell>On-Level Learners (Core)</cell>
-                    <cell>
-                        <line>The core lesson activities as described above.</line>
-                    </cell>
-                    <cell></cell>
-                </row>
-                <row>
-                    <cell>Advanced Learners (Challenge)</cell>
-                    <cell>
-                        XXXX
-                    </cell>
-                    <cell></cell>
-                </row>
-            </tabular>
-        </table>
-    </axiom> -->
-
-    <xi:include href="../lesson-plan-templates/assessment-methods.ptx" />
-
-    <xi:include href="../lesson-plan-templates/reflection.ptx"/>
-
     <activity xml:id="activity-exploring-core-trig-functions">
         <title>Exploring the Core Trigonometric Functions</title>
 
@@ -319,209 +187,325 @@
         </figure>
     </activity>
 
+    <!-- [LP] Add guidance on structured lesson plan-->
+
+    <!-- <axiom component="lesson-plan">
+        <title>Structured Instruction</title>
+        <p>
+            <dl>
+            <li>
+                <title>Suggested Time</title>
+                <p>
+                    XX minutes
+                </p>
+            </li>
+            <li>
+                <title>Objective</title>
+                <p>
+                    To formalize the concepts and properties learners discovered in the anchor task.
+                </p>
+            </li>
+            </dl>
+        </p>
+        <paragraphs>
+            <title>Key Takeaways &amp; Teacher Connection</title>
+            <ol>
+                <li>
+                    <p>
+                        <alert>Connecting to Learner Work:</alert> XXXX
+                    </p>
+                </li>
+            </ol>
+        </paragraphs>
+    </axiom> -->
+
+    <!-- Add insight / key takeaway directly related to activity / learner experience -->
 
     <insight>
         <p>
-            Sine, cosine, and tangent are the three primary trigonometric functions and are closely connected to the unit circle.
+            For any angle <m>x</m> measured from the positive <m>x</m>-axis, the point where the terminal side of the angle intersects the unit circle has coordinates <m>(\cos(x), \sin(x))</m>.
         </p>
 
         <p>
-            For any angle <m>x</m>, the point on the unit circle is written as <m>(\cos(x),\sin(x))</m>.
+            This means that the coordinates of a point on the unit circle can be used to define the trigonometric functions. The horizontal coordinate represents the cosine of the angle, while the vertical coordinate represents the sine of the angle.
+        </p>
+
+        <figure xml:id="fig-trig-definitions">
+            <caption>Unit circle definitions of trigonometric functions</caption>
+            <image width="50%" xml:id="img-trig-definitions">
+                <shortdescription>
+                    A unit circle on a coordinate grid showing an angle in standard position in Quadrant II. 
+                    The terminal side intersects the circle at point (cos(x), sin(x)). A dashed vertical line 
+                    to the negative x-axis is labeled cosine of x, and a dashed horizontal line to the 
+                    positive y-axis is labeled sine of x.
+                </shortdescription>
+                <latex-image>
+                    \begin{tikzpicture}[scale=2.5, &gt;=stealth]
+                        % Draw Axes
+                        \draw[&lt;-&gt;, thick] (-1.3, 0) -- (1.3, 0) node[right] {$x$};
+                        \draw[&lt;-&gt;, thick] (0, -1.3) -- (0, 1.3) node[above] {$y$};
+
+                        % Draw Unit Circle
+                        \draw[gray!50, thin] (0,0) circle (1);
+
+                        % Angle 'x' (theta) in standard position (Quadrant II)
+                        \def\theta{135}
+                        \coordinate (O) at (0,0);
+                        \coordinate (P) at ({\theta}:1);
+                        
+                        % Terminal side and origin labeling
+                        \draw[thick, blue] (O) -- (P);
+                        \filldraw[black] (O) circle (0.5pt) node[below left, font=\scriptsize] {$O$};
+
+                        % Coordinates of point P - labels are made prominent and slightly shifted
+                        \draw[dashed, blue] ({cos(\theta)},0) -- (P) node[midway, right, xshift=2pt, blue!90!black] {$\sin(x)$};
+                        \draw[dashed, blue] (0,0) -- ({cos(\theta)},0) node[midway, below, red!90!black] {$\cos(x)$};
+                        \filldraw (P) circle (1.2pt) node[above left] {$(\cos(x), \sin(x))$};
+
+                        % Angle arc labeling
+                        \draw[-&gt;, blue] (0.25,0) arc (0:\theta:0.25);
+                        \node[blue, font=\small] at (0.4, 0.4) {$x$};
+                    \end{tikzpicture}
+                </latex-image>
+            </image>
+        </figure>
+
+        <p>
+            From the unit circle, we can describe the three main trigonometric functions as follows.
         </p>
 
         <p>
             <ul>
-
                 <li>
                     <p>
-                        <alert>Cosine</alert> gives the horizontal coordinate.
+                        The <alert>cosine</alert> of an angle is the horizontal coordinate of the corresponding point on the unit circle.
                     </p>
 
                     <p>
-                        <me>\cos(x)=x\text{-coordinate}</me>
+                        <md>
+                            <mrow>\cos(x)=x\text{-coordinate}</mrow>
+                        </md>
                     </p>
 
                     <p>
-                        Domain <m>(-\infty,\infty)</m>
+                        Domain: <m>(-\infty,\infty)</m>
                     </p>
 
                     <p>
-                        Range <m>[-1,1]</m>
+                        Range: <m>[-1,1]</m>
                     </p>
 
                     <p>
-                        Period <m>2\pi</m>
+                        Period: <m>2\pi</m>
                     </p>
                 </li>
 
                 <li>
                     <p>
-                        <alert>Sine</alert> gives the vertical coordinate.
+                        The <alert>sine</alert> of an angle is the vertical coordinate of the corresponding point on the unit circle.
                     </p>
 
                     <p>
-                        <me>\sin(x)=y\text{-coordinate}</me>
+                        <md>
+                            <mrow>\sin(x)=y\text{-coordinate}</mrow>
+                        </md>
                     </p>
 
                     <p>
-                        Domain <m>(-\infty,\infty)</m>
+                        Domain: <m>(-\infty,\infty)</m>
                     </p>
 
                     <p>
-                        Range <m>[-1,1]</m>
+                        Range: <m>[-1,1]</m>
                     </p>
 
                     <p>
-                        Period <m>2\pi</m>
+                        Period: <m>2\pi</m>
                     </p>
                 </li>
 
                 <li>
                     <p>
-                        <alert>Tangent</alert> is the ratio of sine to cosine.
+                        The <alert>tangent</alert> of an angle is obtained by dividing the sine of the angle by its cosine.
                     </p>
 
                     <p>
-                        <me>\tan(x)=\frac{\sin(x)}{\cos(x)}</me>
+                        <md>
+                            <mrow>\tan(x)=\frac{\sin(x)}{\cos(x)}</mrow>
+                        </md>
                     </p>
 
                     <p>
-                        Tangent is undefined whenever <m>\cos(x)=0</m>.
+                        Since division by zero is undefined, the tangent function is not defined whenever <m>\cos(x)=0</m>. These values occur at odd multiples of <m>\frac{\pi}{2}</m>.
                     </p>
 
                     <p>
-                        Domain excludes odd multiples of <m>\frac{\pi}{2}</m>
+                        Domain: All real numbers except odd multiples of <m>\frac{\pi}{2}</m>
                     </p>
 
                     <p>
-                        Range <m>(-\infty,\infty)</m>
+                        Range: <m>(-\infty,\infty)</m>
                     </p>
 
                     <p>
-                        Period <m>\pi</m>
+                        Period: <m>\pi</m>
                     </p>
                 </li>
-
             </ul>
         </p>
 
         <p>
-            The signs of the trigonometric functions depend on the quadrant in which the angle lies.
+            The signs of the trigonometric functions depend on the quadrant in which the terminal side of the angle lies. This can be determined from the signs of the coordinates on the unit circle.
         </p>
 
         <figure xml:id="fig-trig-signs-quadrants">
-    <caption>Signs of trigonometric functions in each quadrant</caption>
-    
-    <image width="60%" xml:id="img-trig-signs-quadrants">
-        <shortdescription>
-            A diagram showing a coordinate plane divided into four quadrants. Labels indicate which trigonometric functions (Sine, Cosine, Tangent) are positive in each quadrant. 
-            Quadrant 1: All positive. Quadrant 2: Sine positive. Quadrant 3: Tangent positive. Quadrant 4: Cosine positive.
-        </shortdescription>
-        <latex-image>
-            \begin{tikzpicture}[scale=2.5, &gt;=stealth]
-                % Draw Axes
-                \draw[&lt;-&gt;, thick] (-1.3, 0) -- (1.3, 0) node[right] {$x$};
-                \draw[&lt;-&gt;, thick] (0, -1.3) -- (0, 1.3) node[above] {$y$};
+            <caption>Algebraic signs of trigonometric functions by quadrant</caption>
+            <image width="60%" xml:id="img-trig-signs-quadrants">
+                <shortdescription>
+                    A diagram of a coordinate plane showing the four quadrants (I, II, III, IV).
+                    The labels within each quadrant indicate which trigonometric functions (Sine, Cosine, Tangent) are positive. 
+                    Quadrant I: All are positive. 
+                    Quadrant II: Only Sine is positive. 
+                    Quadrant III: Only Tangent is positive. 
+                    Quadrant IV: Only Cosine is positive.
+                </shortdescription>
+                <latex-image>
+                    \begin{tikzpicture}[scale=2.5, &gt;=stealth]
+                        % Draw Axes
+                        \draw[&lt;-&gt;, thick] (-1.3, 0) -- (1.3, 0) node[right] {$x$};
+                        \draw[&lt;-&gt;, thick] (0, -1.3) -- (0, 1.3) node[above] {$y$};
 
-                % Draw Unit Circle (using a light color to remain background info)
-                \draw[gray!50, thin] (0,0) circle (1);
+                        % Draw Unit Circle
+                        \draw[gray!50, thin] (0,0) circle (1);
 
-                % Define a distance from the origin for labels to ensure they are inside circle
-                \def\r{0.65}
+                        % Define a distance from the origin for labels to ensure they are inside circle
+                        \def\r{0.65}
 
-                % --- Quadrant Labels ---
-                \node[font=\large\bfseries] at (0.9, 0.9) {I};
-                \node[font=\large\bfseries] at (-0.9, 0.9) {II};
-                \node[font=\large\bfseries] at (-0.9, -0.9) {III};
-                \node[font=\large\bfseries] at (0.9, -0.9) {IV};
+                        % --- Quadrant Labels ---
+                        \node[font=\large\bfseries] at (0.9, 0.9) {I};
+                        \node[font=\large\bfseries] at (-0.9, 0.9) {II};
+                        \node[font=\large\bfseries] at (-0.9, -0.9) {III};
+                        \node[font=\large\bfseries] at (0.9, -0.9) {IV};
 
-                % --- Trigonometric Signs Data ---
-                % Presented cleanly, standardizing presentation across all quadrants
-                
-                % Quadrant I: All Positive
-                \node[align=center, text=blue!80!black] at ({45}:\r) {
-                    \textbf{All Pos.}\\
-                    $\sin \theta &gt; 0$\\
-                    $\cos \theta &gt; 0$\\
-                    $\tan \theta &gt; 0$
-                };
+                        % --- Trigonometric Signs Mnemonic ---
+                        
+                        % Quadrant I: All Positive
+                        \node[align=center, text=blue!80!black] at ({45}:\r) {
+                            \textbf{All Pos.}\\
+                            $\sin \theta &gt; 0$\\
+                            $\cos \theta &gt; 0$\\
+                            $\tan \theta &gt; 0$
+                        };
 
-                % Quadrant II: Sine Positive
-                \node[align=center, text=green!60!black] at ({135}:\r) {
-                    \textbf{Sine Pos.}\\
-                    $\sin \theta &gt; 0$
-                };
+                        % Quadrant II: Sine Positive
+                        \node[align=center, text=green!60!black] at ({135}:\r) {
+                            \textbf{Sine Pos.}\\
+                            $\sin \theta &gt; 0$
+                        };
 
-                % Quadrant III: Tangent Positive
-                \node[align=center, text=orange!80!black] at ({225}:\r) {
-                    \textbf{Tangent Pos.}\\
-                    $\tan \theta &gt; 0$
-                };
+                        % Quadrant III: Tangent Positive
+                        \node[align=center, text=orange!80!black] at ({225}:\r) {
+                            \textbf{Tangent Pos.}\\
+                            $\tan \theta &gt; 0$
+                        };
 
-                % Quadrant IV: Cosine Positive
-                \node[align=center, text=red!80!black] at ({315}:\r) {
-                    \textbf{Cosine Pos.}\\
-                    $\cos \theta &gt; 0$
-                };
+                        % Quadrant IV: Cosine Positive
+                        \node[align=center, text=red!80!black] at ({315}:\r) {
+                            \textbf{Cosine Pos.}\\
+                            $\cos \theta &gt; 0$
+                        };
 
-            \end{tikzpicture}
-        </latex-image>
-    </image>
-</figure>
+                    \end{tikzpicture}
+                </latex-image>
+            </image>
+        </figure>
+
+        <p>
+            The diagram shows which trigonometric functions are positive in each quadrant. A popular mnemonic used to remember this counterclockwise sequence (A-S-T-C) from <term>Quadrant I</term> to <term>Quadrant IV</term> is <q>All Students Take Chemistry</q> or <q>Add Sugar To Coffee.</q>
+        </p>
+
+        <p>
+            <ul>
+                <li>
+                    <p>
+                        In <alert>Quadrant I</alert>, all three functions are positive.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        In <alert>Quadrant II</alert>, only sine is positive.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        In <alert>Quadrant III</alert>, only tangent is positive.
+                    </p>
+                </li>
+
+                <li>
+                    <p>
+                        In <alert>Quadrant IV</alert>, only cosine is positive.
+                    </p>
+                </li>
+            </ul>
+        </p>
+
+        <p>
+            Remembering these sign patterns helps when evaluating trigonometric functions for angles greater than <m>90^\circ</m> or when determining the sign of a trigonometric ratio without using a calculator.
+        </p>
     </insight>
 
+    <!-- Add further instruction (not in a block) to develop ideas as needed -->
+
+    <xi:include href="../lesson-plan-templates/example-intro.ptx" />
+
+    <!-- Add at least 3 examples -->
 
     <example xml:id="ex-eval-sine-unit-circle">
         <statement>
             <p>
-                Evaluate the exact value of <m>\sin\left(\frac{5\pi}{6}\right)</m>.
+                Determine the exact value of <m>\sin\left(\frac{5\pi}{6}\right)</m> using the unit circle.
             </p>
         </statement>
 
         <solution>
             <p>
-                The angle <m>\frac{5\pi}{6}</m> lies in Quadrant II.
+                The angle <m>\frac{5\pi}{6}</m> is located in Quadrant II. To evaluate the sine function, we first determine the reference angle by subtracting our angle from <m>\pi</m>.
             </p>
 
             <p>
-                First determine the reference angle.
+                <md>
+                    <mrow>\pi - \frac{5\pi}{6} = \frac{\pi}{6}</mrow>
+                </md>
             </p>
 
             <p>
-                <me>\pi-\frac{5\pi}{6}=\frac{\pi}{6}</me>
+                In Quadrant II, the sine function yields positive values. We already know the sine of this reference angle.
             </p>
 
             <p>
-                The reference angle is therefore <m>\frac{\pi}{6}</m>.
+                <md>
+                    <mrow>\sin\left(\frac{\pi}{6}\right) = \frac{1}{2}</mrow>
+                </md>
             </p>
 
             <p>
-                In Quadrant II, sine values are positive.
+                We can conclude that the exact value matches the reference sine.
             </p>
 
             <p>
-                Since
-            </p>
-
-            <p>
-                <me>\sin\left(\frac{\pi}{6}\right)=\frac{1}{2}</me>
-            </p>
-
-            <p>
-                we conclude that
-            </p>
-
-            <p>
-                <me>\sin\left(\frac{5\pi}{6}\right)=\frac{1}{2}</me>
+                <md>
+                    <mrow>\sin\left(\frac{5\pi}{6}\right) = \frac{1}{2}</mrow>
+                </md>
             </p>
 
             <figure xml:id="fig-sine-five-pi-six-improved">
                 <caption>Sine value in Quadrant II</caption>
-
                 <image width="45%">
                     <latex-image>
                         \begin{tikzpicture}[scale=2]
-
                             \draw (0,0) circle (1);
 
                             \draw[-&gt;] (-1.2,0)--(1.2,0);
@@ -530,7 +514,6 @@
                             \coordinate (P) at ({cos(150)},{sin(150)});
 
                             \draw[thick,blue] (0,0)--(P);
-
                             \draw[dashed] ({cos(150)},0)--(P);
 
                             \filldraw[blue] (P) circle (1pt);
@@ -539,16 +522,13 @@
                             {$\left(-\frac{\sqrt3}{2},\frac12\right)$};
 
                             \draw[-&gt;] (0.3,0) arc (0:150:0.3);
-
                             \node at (-0.2,0.35) {$\frac{5\pi}{6}$};
-
                         \end{tikzpicture}
                     </latex-image>
                 </image>
             </figure>
         </solution>
     </example>
-
 
     <example xml:id="ex-eval-cosine-unit-circle">
         <statement>
@@ -559,44 +539,40 @@
 
         <solution>
             <p>
-                The angle <m>\frac{4\pi}{3}</m> is located in Quadrant III.
+                The angle <m>\frac{4\pi}{3}</m> radians terminates in Quadrant III. We find the reference angle by calculating the difference between the given angle and <m>\pi</m>.
             </p>
 
             <p>
-                To find the reference angle, subtract <m>\pi</m>.
+                <md>
+                    <mrow>\frac{4\pi}{3} - \pi = \frac{\pi}{3}</mrow>
+                </md>
             </p>
 
             <p>
-                <me>\frac{4\pi}{3}-\pi=\frac{\pi}{3}</me>
+                Evaluating the cosine of this reference angle yields a familiar positive fraction.
             </p>
 
             <p>
-                The cosine of the reference angle is
+                <md>
+                    <mrow>\cos\left(\frac{\pi}{3}\right) = \frac{1}{2}</mrow>
+                </md>
             </p>
 
             <p>
-                <me>\cos\left(\frac{\pi}{3}\right)=\frac12</me>
+                Because <m>x</m>-coordinates (and thus cosine values) are negative in Quadrant III, we apply a negative sign to our result to get the final answer.
             </p>
 
             <p>
-                Cosine values are negative in Quadrant III, so the answer becomes negative.
-            </p>
-
-            <p>
-                Therefore,
-            </p>
-
-            <p>
-                <me>\cos\left(\frac{4\pi}{3}\right)=-\frac12</me>
+                <md>
+                    <mrow>\cos\left(\frac{4\pi}{3}\right) = -\frac{1}{2}</mrow>
+                </md>
             </p>
 
             <figure xml:id="fig-cos-four-pi-three-improved">
                 <caption>Cosine value in Quadrant III</caption>
-
                 <image width="45%">
                     <latex-image>
                         \begin{tikzpicture}[scale=2]
-
                             \draw (0,0) circle (1);
 
                             \draw[-&gt;] (-1.2,0)--(1.2,0);
@@ -605,7 +581,6 @@
                             \coordinate (P) at ({cos(240)},{sin(240)});
 
                             \draw[thick,red] (0,0)--(P);
-
                             \draw[dashed] (0,{sin(240)})--(P);
 
                             \filldraw[red] (P) circle (1pt);
@@ -614,9 +589,7 @@
                             {$\left(-\frac12,-\frac{\sqrt3}{2}\right)$};
 
                             \draw[-&gt;] (0.25,0) arc (0:240:0.25);
-
                             \node at (-0.25,0.25) {$\frac{4\pi}{3}$};
-
                         \end{tikzpicture}
                     </latex-image>
                 </image>
@@ -628,61 +601,55 @@
     <example xml:id="ex-eval-tangent-unit-circle">
         <statement>
             <p>
-                Evaluate the exact value of <m>\tan\left(-\frac{\pi}{4}\right)</m>.
+                Determine the exact value of <m>\tan\left(-\frac{\pi}{4}\right)</m>.
             </p>
         </statement>
 
         <solution>
             <p>
-                A negative angle means the rotation is clockwise from the positive <m>x</m>-axis.
-            </p>
-
-            <p>
-                The angle <m>-\frac{\pi}{4}</m> lies in Quadrant IV.
-            </p>
-
-            <p>
-                On the unit circle, the corresponding coordinates are
-            </p>
-
-            <p>
-                <me>\left(\frac{\sqrt2}{2},-\frac{\sqrt2}{2}\right)</me>
-            </p>
-
-            <p>
-                Tangent is found using the ratio
-            </p>
-
-            <p>
-                <me>\tan(x)=\frac{\sin(x)}{\cos(x)}</me>
-            </p>
-
-            <p>
-                Substitute the coordinates into the ratio.
+                A negative angle indicates a clockwise rotation from the positive <m>x</m>-axis, placing <m>-\frac{\pi}{4}</m> in Quadrant IV. The corresponding coordinate point on the unit circle is established as follows.
             </p>
 
             <p>
                 <md>
-                    <mrow>\tan\left(-\frac{\pi}{4}\right)\amp=\frac{-\frac{\sqrt2}{2}}{\frac{\sqrt2}{2}}</mrow>
-                    <mrow>\amp=-1</mrow>
+                    <mrow>\left(\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2}\right)</mrow>
                 </md>
             </p>
 
             <p>
-                Therefore,
+                The tangent of an angle is defined as the ratio of its sine (<m>y</m>-coordinate) to its cosine (<m>x</m>-coordinate).
             </p>
 
             <p>
-                <me>\tan\left(-\frac{\pi}{4}\right)=-1</me>
+                <md>
+                    <mrow>\tan(x) = \frac{\sin(x)}{\cos(x)}</mrow>
+                </md>
+            </p>
+
+            <p>
+                We substitute the coordinates from our unit circle point into this ratio.
+            </p>
+
+            <p>
+                <md>
+                    <mrow>\tan\left(-\frac{\pi}{4}\right) \amp= \frac{-\frac{\sqrt{2}}{2}}{\frac{\sqrt{2}}{2}}</mrow>
+                    <mrow>\amp= -1</mrow>
+                </md>
+            </p>
+            <p>
+                This simplifies to our exact value.
+            </p>
+            <p>
+                <md>
+                    <mrow>\tan\left(-\frac{\pi}{4}\right) = -1</mrow>
+                </md>
             </p>
 
             <figure xml:id="fig-tan-negative-pi-four-improved">
                 <caption>Tangent value in Quadrant IV</caption>
-
                 <image width="45%">
                     <latex-image>
                         \begin{tikzpicture}[scale=2]
-
                             \draw (0,0) circle (1);
 
                             \draw[-&gt;] (-1.2,0)--(1.2,0);
@@ -691,7 +658,6 @@
                             \coordinate (P) at ({cos(-45)},{sin(-45)});
 
                             \draw[thick,teal] (0,0)--(P);
-
                             \draw[dashed] ({cos(-45)},0)--(P);
 
                             \filldraw[teal] (P) circle (1pt);
@@ -700,15 +666,23 @@
                             {$\left(\frac{\sqrt2}{2},-\frac{\sqrt2}{2}\right)$};
 
                             \draw[-&gt;] (0.35,0) arc (0:-45:0.35);
-
                             \node at (0.45,-0.2) {$-\frac{\pi}{4}$};
-
                         \end{tikzpicture}
                     </latex-image>
                 </image>
             </figure>
         </solution>
     </example>
+
+    <xi:include href="../lesson-plan-templates/assessment-intro.ptx" />
+
+    <!-- If STACK questions are included, uncomment this: -->
+
+    <!-- <xi:include href="../lesson-plan-templates/checkpoint.ptx" /> -->
+
+    <!-- Add STACK exercises if made -->
+
+    <!-- Add static exercises -->
 
     <exercises xml:id="exercises-sin-cos-tan">
 
@@ -806,20 +780,49 @@
                     Tangent is defined as <m>\tan(x) = \frac{\sin(x)}{\cos(x)}</m>. The function is undefined wherever the denominator, <m>\cos(x)</m>, equals zero. On the interval <m>[0, 2\pi]</m>, <m>\cos(x) = 0</m> at the top and bottom of the unit circle: <m>x = \frac{\pi}{2}</m> and <m>x = \frac{3\pi}{2}</m>. These create vertical asymptotes.
                 </p>
 
-                <figure xml:id="fig-ex-tan-asymptotes">
+                <figure xml:id="fig-ex-tan-asymptotes-1">
                     <caption>Graph of <m>y = \tan(x)</m> with vertical asymptotes</caption>
                     <image width="60%">
+                        <shortdescription>A coordinate graph showing the periodic curves of y equals tangent of x from zero to two pi, bounded vertically between negative three and three with vertical dashed red asymptote lines at pi over two and three pi over two.</shortdescription>
                         <latex-image>
                             \begin{tikzpicture}[scale=1.0]
-                                \draw[-&gt;] (-0.5,0) -- (6.8,0) node[right]{$x$};
-                                \draw[-&gt;] (0,-3) -- (0,3) node[above]{$y$};
+                                % Restrict the rendering area so elements do not bleed out
+                                \clip (-0.8, -3.8) rectangle (7.5, 3.8);
+
+                                % Draw Grid lines for y-axis references
+                                \draw[gray!20, thin] (-0.5,-3) -- (6.5,-3);
+                                \draw[gray!20, thin] (-0.5,-1.5) -- (6.5,-1.5);
+                                \draw[gray!20, thin] (-0.5,1.5) -- (6.5,1.5);
+                                \draw[gray!20, thin] (-0.5,3) -- (6.5,3);
+
+                                % Axes
+                                \draw[-&gt;, thick] (-0.5,0) -- (6.8,0) node[right]{$x$};
+                                \draw[-&gt;, thick] (0,-3.3) -- (0,3.3) node[above]{$y$};
                                 
-                                \draw[dashed, thick, red] (1.57, -3) -- (1.57, 3) node[above, black] {$x=\frac{\pi}{2}$};
-                                \draw[dashed, thick, red] (4.71, -3) -- (4.71, 3) node[above, black] {$x=\frac{3\pi}{2}$};
+                                % X-Axis Ticks
+                                \foreach \x in {1.57, 3.14, 4.71, 6.28} {
+                                    \draw[thick] (\x,0.1) -- (\x,-0.1);
+                                }
                                 
-                                \draw[domain=0:1.45,smooth,thick,teal] plot (\x,{tan(\x r)});
-                                \draw[domain=1.69:4.59,smooth,thick,teal] plot (\x,{tan(\x r)});
-                                \draw[domain=4.83:6.28,smooth,thick,teal] plot (\x,{tan(\x r)});
+                                % Axis Labels
+                                \node[below left, font=\small] at (0,0) {$0$};
+                                \node[below, font=\small, yshift=-2pt] at (3.14,0) {$\pi$};
+                                \node[below, font=\small, yshift=-2pt] at (6.28,0) {$2\pi$};
+                                
+                                \node[left, font=\small] at (0,3) {$3$};
+                                \node[left, font=\small] at (0,-3) {$-3$};
+
+                                % Vertical Asymptotes 
+                                \draw[dashed, thick, red!90!black] (1.5708, -3.5) -- (1.5708, 3.5);
+                                \draw[dashed, thick, red!90!black] (4.7124, -3.5) -- (4.7124, 3.5);
+                                
+                                \node[above, red!90!black, font=\footnotesize] at (1.5708, 3.5) {$x=\frac{\pi}{2}$};
+                                \node[above, red!90!black, font=\footnotesize] at (4.7124, 3.5) {$x=\frac{3\pi}{2}$};
+                                
+                                % Tangent curves scaled precisely to terminate near y = 3 and y = -3
+                                \draw[domain=0:1.25,smooth,line width=1.2pt,teal] plot (\x,{tan(\x r)});
+                                \draw[domain=1.89:4.39,smooth,line width=1.2pt,teal] plot (\x,{tan(\x r)});
+                                \draw[domain=5.03:6.28,smooth,line width=1.2pt,teal] plot (\x,{tan(\x r)});
                             \end{tikzpicture}
                         </latex-image>
                     </image>
@@ -905,7 +908,9 @@
                 </p>
 
                 <p>
-                    <me>\frac{7\pi}{6}-\pi=\frac{\pi}{6}</me>
+                    <md>
+                        <mrow> \frac{7\pi}{6}-\pi \amp = \frac{\pi}{6} </mrow>
+                    </md>
                 </p>
 
                 <p>
@@ -921,7 +926,9 @@
                 </p>
 
                 <p>
-                    <me>\sin\left(\frac{\pi}{6}\right)=\frac{1}{2}</me>
+                    <md>
+                        <mrow> \sin\left(\frac{\pi}{6}\right) \amp = \frac{1}{2} </mrow>
+                    </md>
                 </p>
 
                 <p>
@@ -929,7 +936,9 @@
                 </p>
 
                 <p>
-                    <me>\sin\left(\frac{7\pi}{6}\right)=-\frac{1}{2}</me>
+                    <md>
+                        <mrow> \sin\left(\frac{7\pi}{6}\right) \amp = -\frac{1}{2} </mrow>
+                    </md>
                 </p>
 
                 <figure xml:id="fig-sine-seven-pi-six">
@@ -969,7 +978,9 @@
                 </p>
 
                 <p>
-                    <me>h(t)=20+15\sin(t)</me>
+                    <md>
+                        <mrow> h(t) \amp = 20+15\sin(t) </mrow>
+                    </md>
                 </p>
 
                 <p>
@@ -1023,7 +1034,9 @@
                 </p>
 
                 <p>
-                    <me>h(t)=20+15\sin(t)</me>
+                    <md>
+                        <mrow> h(t) \amp = 20+15\sin(t) </mrow>
+                    </md>
                 </p>
 
                 <p>
@@ -1108,4 +1121,48 @@
         </exercise>
 
     </exercises>
+
+    <!-- [LP] Add information on how to differentiate  -->
+
+    <!-- <axiom component="lesson-plan">
+        <title>Differentiation</title>
+
+        <table>
+            <title>Differentiation</title>
+            <tabular halign="left">
+                <row header="yes" bottom="minor">
+                    <cell>Learner Group</cell>
+                    <cell>Strategy &amp; Learning Experience</cell>
+                    <cell></cell>
+                </row>
+                <row>
+                    <cell>Struggling Learners (Support)</cell>
+                    <cell>
+                        XXXX
+                    </cell>
+                    <cell></cell>
+                </row>
+                <row>
+                    <cell>On-Level Learners (Core)</cell>
+                    <cell>
+                        <line>The core lesson activities as described above.</line>
+                    </cell>
+                    <cell></cell>
+                </row>
+                <row>
+                    <cell>Advanced Learners (Challenge)</cell>
+                    <cell>
+                        XXXX
+                    </cell>
+                    <cell></cell>
+                </row>
+            </tabular>
+        </table>
+    </axiom> -->
+
+    <xi:include href="../lesson-plan-templates/assessment-methods.ptx" />
+
+    <xi:include href="../lesson-plan-templates/reflection.ptx"/>
+
+
 </section>
