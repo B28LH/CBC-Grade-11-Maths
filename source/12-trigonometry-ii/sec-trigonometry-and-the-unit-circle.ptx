@@ -116,7 +116,7 @@
                         </p>
                         <solution component="lesson-plan">
                             <p>
-                                <me>x^2 + y^2 = 25</me>
+                                <md><mrow>x^2 + y^2 = 25</mrow></md>
                             </p>
                             <p>
                                 This comes directly from Pythagoras' Theorem: the distance from <m>(0,0)</m> to <m>(x, y)</m> is <m>\sqrt{x^2 + y^2}</m>, which must equal 5.
@@ -134,7 +134,7 @@
                         </p>
                         <solution component="lesson-plan">
                             <p>
-                                <me>x^2 + y^2 = r^2</me>
+                                <md><mrow>x^2 + y^2 = r^2</mrow></md>
                             </p>
                         </solution>
                     </li>
@@ -144,7 +144,7 @@
                         </p>
                         <solution component="lesson-plan">
                             <p>
-                                <me>x^2 + y^2 = 1</me>
+                                <md><mrow>x^2 + y^2 = 1</mrow></md>
                             </p>
                             <p>
                                 This special circle<mdash/>of radius 1 centred at the origin<mdash/>is called the <term>unit circle</term>, and we will spend the rest of this lesson exploring it.
@@ -204,7 +204,7 @@
                 <li>
                     <p>
                         <alert>Pythagorean Identity:</alert> Substituting <m>x = \cos\theta</m> and <m>y = \sin\theta</m> into <m>x^2 + y^2 = 1</m> gives
-                        <me>\cos^2\theta + \sin^2\theta = 1.</me>
+                        <md><mrow>\cos^2\theta + \sin^2\theta = 1.</mrow></md>
                         This relationship<mdash/>called the <term>Pythagorean Identity</term><mdash/>holds for <em>every</em> angle <m>\theta</m>, and it is one of the most useful identities in trigonometry.
                     </p>
                 </li>
@@ -218,20 +218,20 @@
                 <li>
                     <p>
                         The <term>unit circle</term> is the circle of radius <m>1</m> centred at the origin. Its equation is
-                        <me>x^2 + y^2 = 1.</me>
+                        <md><mrow>x^2 + y^2 = 1.</mrow></md>
                     </p>
                 </li>
                 <li>
                     <p>
                         For an acute angle <m>\theta</m> measured from the positive <m>x</m>-axis, the point on the unit circle at angle <m>\theta</m> has coordinates
-                        <me>(x, y) = (\cos\theta, \sin\theta).</me>
+                        <md><mrow>(x, y) = (\cos\theta, \sin\theta).</mrow></md>
                         That is, the <m>x</m>-coordinate <em>is</em> the cosine of the angle, and the <m>y</m>-coordinate <em>is</em> the sine.
                     </p>
                 </li>
                 <li>
                     <p>
                         Substituting these into the equation of the unit circle gives the <term>Pythagorean Identity</term>:
-                        <me>\cos^2\theta + \sin^2\theta = 1.</me>
+                        <md><mrow>\cos^2\theta + \sin^2\theta = 1.</mrow></md>
                         Here, <m>\cos^2\theta</m> is shorthand for <m>(\cos\theta)^2</m>, and similarly for <m>\sin^2\theta</m>.
                     </p>
                 </li>
@@ -282,7 +282,7 @@
             </p>
             <p>
                 Since <m>\theta</m> is acute, its sine is positive, so
-                <me>\sin\theta = \frac{12}{13}.</me>
+                <md><mrow>\sin\theta = \frac{12}{13}.</mrow></md>
             </p>
         </solution>
     </example>
@@ -309,7 +309,7 @@
                     <mrow>x \amp = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}</mrow>
                 </md>
                 (We take the positive root because <m>P</m> is in the first quadrant.) Hence <m>y = \dfrac{\sqrt{2}}{2}</m> too, so
-                <me>P = \left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right).</me>
+                <md><mrow>P = \left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right).</mrow></md>
             </p>
             <p>
                 Because <m>P</m> lies on the line <m>y = x</m>, the radius <m>OP</m> bisects the first quadrant, so the angle it makes with the positive <m>x</m>-axis is <m>45°</m>. Reading off the coordinates:
