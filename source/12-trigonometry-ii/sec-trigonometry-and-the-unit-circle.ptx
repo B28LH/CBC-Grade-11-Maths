@@ -43,7 +43,8 @@
 
     <axiom component="lesson-plan">
         <title>Problem-Solving and Discovery</title>
-        <dl>
+        <p>
+            <dl>
             <li>
                 <title>Suggested Time</title>
                 <p>
@@ -56,13 +57,15 @@
                     To discover, through coordinate geometry, the equation of a circle centred at the origin and use it to motivate the unit circle.
                 </p>
             </li>
+            </dl>
+        </p>
+        <ul>
             <li>
-                <title>Teacher's Role</title>
                 <p>
-                    Circulate between groups, asking probing questions that lead Learners from specific examples towards a general formula. Avoid revealing the equation <m>x^2 + y^2 = r^2</m> too early<mdash/>let Learners conjecture it themselves.
+                    Avoid revealing the equation <m>x^2 + y^2 = r^2</m> too early<mdash/>let Learners conjecture it from the specific case <m>r = 5</m>.
                 </p>
             </li>
-        </dl>
+        </ul>
     </axiom>
 
     <activity xml:id="points-on-a-circle">
@@ -178,39 +181,44 @@
             <li>
                 <title>Objective</title>
                 <p>
-                    To connect the equation of the unit circle to the trigonometric ratios <m>\sin</m> and <m>\cos</m>, and to derive the Pythagorean Identity.
+                    To connect the unit circle equation to the trigonometric ratios <m>\sin</m> and <m>\cos</m>, and to derive the Pythagorean Identity.
                 </p>
             </li>
             </dl>
         </p>
-        <paragraphs>
-            <title>Key Takeaways &amp; Teacher Connection</title>
-            <ol>
-                <li>
-                    <p>
-                        <alert>Connecting to Learner Work:</alert> Begin from the equation <m>x^2 + y^2 = 1</m> that Learners derived in the activity. Draw a unit circle and mark a point <m>P = (x, y)</m> on it in the <em>first quadrant</em>. Drop a perpendicular from <m>P</m> to the <m>x</m>-axis to form a right triangle with hypotenuse <m>1</m>.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <alert>From SOH-CAH-TOA to coordinates:</alert> Let <m>\theta</m> be the angle the radius to <m>P</m> makes with the positive <m>x</m>-axis. In this right triangle, the side adjacent to <m>\theta</m> has length <m>x</m> and the opposite side has length <m>y</m>. Since the hypotenuse is <m>1</m>:
-                        <md>
-                            <mrow>\cos\theta = \frac{\text{adjacent}}{\text{hypotenuse}} = \frac{x}{1} = x</mrow>
-                            <mrow>\sin\theta = \frac{\text{opposite}}{\text{hypotenuse}} = \frac{y}{1} = y</mrow>
-                        </md>
-                        So the coordinates of <m>P</m> are simply <m>(\cos\theta, \sin\theta)</m>.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <alert>Pythagorean Identity:</alert> Substituting <m>x = \cos\theta</m> and <m>y = \sin\theta</m> into <m>x^2 + y^2 = 1</m> gives
-                        <md><mrow>\cos^2\theta + \sin^2\theta = 1.</mrow></md>
-                        This relationship<mdash/>called the <term>Pythagorean Identity</term><mdash/>holds for <em>every</em> angle <m>\theta</m>, and it is one of the most useful identities in trigonometry.
-                    </p>
-                </li>
-            </ol>
-        </paragraphs>
+        <ul>
+            <li>
+                <p>
+                    Anchor the discussion in the equation <m>x^2 + y^2 = 1</m> that Learners derived in the activity. Introduce <m>\cos\theta</m> and <m>\sin\theta</m> as labels for the coordinates Learners have already met<mdash/>not as new objects.
+                </p>
+            </li>
+            <li>
+                <p>
+                    A common mistake is to read <m>\cos^2\theta</m> as <m>\cos(\theta^2)</m>. Stress that it means <m>(\cos\theta)^2</m>.
+                </p>
+            </li>
+        </ul>
     </axiom>
+
+    <paragraphs>
+        <title>From the Unit Circle to Sine and Cosine</title>
+        <p>
+            Consider any point <m>P = (x, y)</m> on the unit circle in the first quadrant, and let <m>\theta</m> be the angle that the radius <m>OP</m> makes with the positive <m>x</m>-axis. Dropping a perpendicular from <m>P</m> to the <m>x</m>-axis forms a right triangle whose hypotenuse is <m>1</m>, whose side adjacent to <m>\theta</m> has length <m>x</m>, and whose opposite side has length <m>y</m>.
+        </p>
+        <p>
+            Applying SOH-CAH-TOA in this triangle:
+            <md>
+                <mrow>\cos\theta = \frac{\text{adjacent}}{\text{hypotenuse}} = \frac{x}{1} = x</mrow>
+                <mrow>\sin\theta = \frac{\text{opposite}}{\text{hypotenuse}} = \frac{y}{1} = y</mrow>
+            </md>
+            So the coordinates of any point on the unit circle at angle <m>\theta</m> are simply <m>(\cos\theta, \sin\theta)</m>.
+        </p>
+        <p>
+            Substituting <m>x = \cos\theta</m> and <m>y = \sin\theta</m> into the unit-circle equation <m>x^2 + y^2 = 1</m> gives
+            <md><mrow>\cos^2\theta + \sin^2\theta = 1.</mrow></md>
+            This relationship<mdash/>called the <term>Pythagorean Identity</term><mdash/>holds for <em>every</em> angle <m>\theta</m>, and is one of the most useful identities in trigonometry.
+        </p>
+    </paragraphs>
 
     <insight>
         <p>
