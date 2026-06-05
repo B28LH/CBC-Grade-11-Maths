@@ -156,8 +156,53 @@
         </md>
     </p>
 
-    <!-- TODO: Add a diagram showing P = (cos θ, sin θ) in Q1 and its reflection
-         Q = (cos θ, −sin θ) in Q4, with the angles θ and −θ clearly labelled. -->
+    <figure xml:id="fig-negative-angle-reflection">
+        <caption>Point <m>P = (\cos\theta, \sin\theta)</m> and its reflection <m>Q = (\cos\theta, -\sin\theta)</m> across the <m>x</m>-axis, corresponding to angles <m>\theta</m> and <m>-\theta</m> respectively.</caption>
+        <image width="65%">
+            <shortdescription>Unit circle with point P at angle theta in Q1 and point Q (reflection of P across the x-axis) at angle negative theta in Q4, connected by a dashed vertical line.</shortdescription>
+            <latex-image>
+                \begin{tikzpicture}
+                    \pgfmathsetmacro{\rr}{2.5}
+                    \pgfmathsetmacro{\angval}{55}
+                    \pgfmathsetmacro{\pxx}{\rr*cos(\angval)}
+                    \pgfmathsetmacro{\pyy}{\rr*sin(\angval)}
+                    \pgfmathsetmacro{\halfangval}{\angval/2}
+                    \pgfmathsetmacro{\axlen}{1.2*\rr}
+
+                    % Unit circle
+                    \draw[thick] (0,0) circle (\rr);
+
+                    % Axes
+                    \draw[-&gt;] (-\axlen,0) -- (\axlen,0) node[right] {$x$};
+                    \draw[-&gt;] (0,-\axlen) -- (0,\axlen) node[above] {$y$};
+
+                    % Dashed vertical line from P to Q (reflection axis is the x-axis)
+                    \draw[dashed,gray!60] (\pxx,\pyy) -- (\pxx,-\pyy);
+
+                    % Radii OP and OQ
+                    \draw[blue!70!black, thick] (0,0) -- (\pxx, \pyy);
+                    \draw[red!70!black,  thick] (0,0) -- (\pxx,-\pyy);
+
+                    % Small angle arcs near origin
+                    \draw[blue!70!black, thick] (0.55,0) arc (0:\angval:0.55);
+                    \draw[red!70!black,  thick] (0.55,0) arc (0:{-\angval}:0.55);
+
+                    % Angle labels at midpoint of each arc
+                    \node[blue!70!black] at (\halfangval:0.95) {$\theta$};
+                    \node[red!70!black]  at (-\halfangval:0.95) {$-\theta$};
+
+                    % Points P and Q
+                    \filldraw[blue!70!black] (\pxx, \pyy)  circle (2.5pt)
+                        node[above right] {$P$};
+                    \filldraw[red!70!black]  (\pxx,-\pyy) circle (2.5pt)
+                        node[below right] {$Q$};
+
+                    % Origin
+                    \node[below left] at (0,0) {$O$};
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+    </figure>
 
     <p>
         From these two identities we can immediately derive the rule for tangent:
@@ -199,6 +244,42 @@
             <p>
                 Find the exact values of <m>\sin(-60°)</m>, <m>\cos(-60°)</m>, and <m>\tan(-60°)</m>.
             </p>
+            <figure xml:id="fig-negative-sixty-degrees">
+                <caption>The angle <m>-60°</m> measured clockwise (red). Point <m>Q</m> is the reflection of <m>P</m> (at <m>60°</m>, dashed blue) across the <m>x</m>-axis.</caption>
+                <image width="48%">
+                    <shortdescription>Unit circle showing the point at negative 60 degrees in Q4 (red), with a dashed comparison to the 60-degree point in Q1 (blue).</shortdescription>
+                    <latex-image>
+                        \begin{tikzpicture}
+                            \pgfmathsetmacro{\rr}{2.2}
+                            \pgfmathsetmacro{\ang}{60}
+                            \pgfmathsetmacro{\pxx}{\rr*cos(\ang)}
+                            \pgfmathsetmacro{\pyy}{\rr*sin(\ang)}
+                            \pgfmathsetmacro{\axlen}{1.25*\rr}
+                            % Unit circle and axes
+                            \draw[thick] (0,0) circle (\rr);
+                            \draw[-&gt;] (-\axlen,0) -- (\axlen,0) node[right] {$x$};
+                            \draw[-&gt;] (0,-\axlen) -- (0,\axlen) node[above] {$y$};
+                            % Dashed reflection line
+                            \draw[dashed,gray!60] (\pxx,\pyy) -- (\pxx,-\pyy);
+                            % Reference radius (60 degrees, blue dashed)
+                            \draw[blue!50!black, dashed] (0,0) -- (\pxx,\pyy);
+                            \draw[blue!40!black, dashed] (0.5,0) arc (0:\ang:0.5);
+                            \node[blue!60!black, font=\small] at ({\ang/2}:0.78) {$60°$};
+                            \filldraw[blue!50!black] (\pxx,\pyy) circle (2pt)
+                                node[above right, font=\small] {$P$};
+                            % Main radius (-60 degrees, red)
+                            \draw[red!70!black, thick] (0,0) -- (\pxx,-\pyy);
+                            % Clockwise arc for -60 degrees
+                            \draw[red!70!black, thick] (0.65,0) arc (0:{-\ang}:0.65);
+                            \node[red!70!black, font=\small] at ({-\ang/2}:0.95) {$-60°$};
+                            % Point Q
+                            \filldraw[red!70!black] (\pxx,-\pyy) circle (2.5pt)
+                                node[below right, font=\small] {$Q$};
+                            \node[below left, font=\small] at (0,0) {$O$};
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </figure>
         </statement>
         <solution>
             <p>
