@@ -149,9 +149,38 @@
         Similarly, <m>\cos\theta = k</m> corresponds to the vertical line <m>x = k</m>. The tangent function is unbounded, so <m>\tan\theta = k</m> always has exactly two solutions in <m>[0°, 360°)</m> for any finite <m>k</m>.
     </p>
 
-    <!-- TODO: Add a TikZ diagram showing the unit circle with the horizontal line y = 1/2
-         crossing in Q1 (at 30°) and Q2 (at 150°), with both points and the reference angle
-         arc labelled — illustrating the geometric meaning of sin θ = 1/2. -->
+    <figure xml:id="fig-sin-half-unit-circle">
+        <caption>The horizontal line <m>y = \tfrac{1}{2}</m> crosses the unit circle at <m>P_1</m> (<m>\theta = 30°</m>) and <m>P_2</m> (<m>\theta = 150°</m>) — two solutions to <m>\sin\theta = \tfrac{1}{2}</m>.</caption>
+        <image width="52%">
+            <latex-image>
+                \begin{tikzpicture}
+                    \pgfmathsetmacro{\rr}{2.5}
+                    \pgfmathsetmacro{\angA}{30}
+                    \pgfmathsetmacro{\angB}{150}
+                    \pgfmathsetmacro{\pAx}{\rr*cos(\angA)}
+                    \pgfmathsetmacro{\pAy}{\rr*sin(\angA)}
+                    \pgfmathsetmacro{\pBx}{\rr*cos(\angB)}
+                    \pgfmathsetmacro{\axlen}{1.15*\rr}
+                    \pgfmathsetmacro{\halfA}{\angA/2}
+                    \pgfmathsetmacro{\halfB}{\angB/2}
+                    \draw[thick] (0,0) circle (\rr);
+                    \draw[-&gt;] (-\axlen,0) -- (\axlen,0) node[right] {$x$};
+                    \draw[-&gt;] (0,-\axlen) -- (0,\axlen) node[above] {$y$};
+                    \draw[red!70!black, thick, dashed] (-\axlen,\pAy) -- (\axlen,\pAy)
+                        node[right, font=\small] {$y=\tfrac{1}{2}$};
+                    \draw[blue!70!black, thick] (0,0) -- (\pAx,\pAy);
+                    \draw[orange!80!black, thick] (0,0) -- (\pBx,\pAy);
+                    \draw[blue!70!black] (0.5,0) arc (0:\angA:0.5);
+                    \node[blue!70!black, font=\footnotesize] at (\halfA:0.78) {$30°$};
+                    \draw[orange!80!black] (0.7,0) arc (0:\angB:0.7);
+                    \node[orange!80!black, font=\footnotesize] at (\halfB:0.98) {$150°$};
+                    \filldraw[blue!70!black]   (\pAx,\pAy) circle (2.5pt) node[above right, font=\small] {$P_1$};
+                    \filldraw[orange!80!black] (\pBx,\pAy) circle (2.5pt) node[above left,  font=\small] {$P_2$};
+                    \node[below left, font=\small] at (0,0) {$O$};
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+    </figure>
 
     <p>
         <term>Method: reference angle + CAST.</term> To solve any equation of the form <m>\sin\theta = k</m>, <m>\cos\theta = k</m>, or <m>\tan\theta = k</m>:
