@@ -69,10 +69,98 @@
 
     <!-- Add Activity -->
 
-    <!-- <activity>
-        <statement>
-        </statement>
-    </activity> -->
+    <activity>
+        <title>Quadrant Classification Challenge</title>
+        <introduction>
+            <p>
+                Work in small groups to practise identifying which quadrant an angle belongs to using a large circle drawn on the ground or on manilla paper.
+            </p>
+            <p>
+                The teacher or students prepare folded angle cards with secret values. Each card is folded in half so the angle value is hidden, and the students pick a card from a central pile and place it in the quadrant they think is correct.
+            </p>
+        </introduction>
+        <task>
+            <statement>
+                <p>
+                     Draw a large circle on the ground or on a sheet of manilla paper and divide it into four equal quadrants.
+                </p>
+                <p>
+                     Label the quadrants I, II, III and IV, and write the sign of cosine and sine for each quadrant.
+                </p>
+                <p>
+                     Prepare a set of folded angle cards. Each card should show one angle on the inside, for example:
+                </p>
+                  <p>
+                     <ul>
+                         <li>30°</li>
+                         <li>120°</li>
+                         <li>-45°</li>
+                         <li>210°</li>
+                         <li>315°</li>
+                          <li>-150°</li>
+                          <li>270°</li>
+                           <li>135°</li>
+                      </ul>
+                </p>
+                <p>
+                    Place the folded cards in the centre of the circle so the angle values are hidden. Students take turns picking a card, unfolding it only after deciding, and then placing it in the quadrant they believe contains that angle.
+                </p>
+                <p>
+                     After all cards have been placed, open each card and check whether the classification is correct. If any card is in the wrong quadrant, move it to the correct quadrant and discuss why.
+                </p>
+                <p>
+                     Complete the table below for each angle by recording the quadrant and the signs of cosine, sine and tangent in that quadrant.
+                </p>
+                <table>
+                    <title>Angle Quadrant Classification</title>
+                    <tabular halign="left" border="minor" left="medium" right="medium" top="medium" bottom="medium">
+                        <row header="yes" bottom="minor">
+                            <cell>Angle</cell>
+                            <cell>Quadrant</cell>
+                            <cell>Cosine sign</cell>
+                            <cell>Sine sign</cell>
+                            <cell>Tangent sign</cell>
+                        </row>
+                        <row>
+                            <cell>30°</cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
+                        <row>
+                            <cell>120°</cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
+                        <row>
+                            <cell>-45°</cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
+                        <row>
+                            <cell>210°</cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
+                        <row>
+                            <cell>315°</cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
+                    </tabular>
+                </table>
+            </statement>
+        </task>
+    </activity>
 
     <exploration>
         <interactive xml:id="interactive-unit-circle" platform="jsxgraph" width="90%" aspect="2:1" source="jsxgraph/unit-circle.js">
@@ -114,8 +202,44 @@
 
     <!-- Add insight / key takeaway directly related to activity / learner experience -->
 
-    <!-- <insight>
-    </insight> -->
+     <insight>
+        <title>Key Takeaway</title>
+           <p>
+             Angles are measured from the positive <m>x -</m> axis. It is also important to note that positive angles are measured in the counterclockwise(left-hand side) direction, 
+             while negative angles are measured in the clockwise(right-hand side) direction.
+          </p>
+          <p>
+            Whether a trigonometric value is positive or negative depends on the quadrant in which the angle lies .
+            <hint>
+                <p>
+                    Kindly ensure that whenever you want to determine the quadrant in which an angle lies,begin from the positive <m>x -</m> axis and move(rotate) in the correct direction.
+                </p>
+            </hint>
+            A better illustration of this is shown in the image below:
+          </p>
+          <p>
+            <image source="path (no extension)">
+                <shortdescription></shortdescription>
+            </image>
+          </p>
+          <p>
+             Remember that the primary ratios are:
+          </p>
+          <p>
+            <ul>
+                <li>
+                    <p>
+                        <m>\sin(\theta)= y</m> and <m>\cos(\theta)= x</m> where <m>(x,y)</m> is the point on the unit circle corresponding to the angle <m>\theta</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\tan(\theta)= \frac{y}{x}</m>
+                    </p>
+                </li>
+            </ul>
+          </p>
+    </insight> 
 
     <!-- Add further instruction (not in a block) to develop ideas as needed -->
 
@@ -123,26 +247,41 @@
 
     <!-- Add at least 3 examples -->
 
-    <!-- <example>
+    <example>
         <statement>
+            <p>
+                 
+            </p>
         </statement>
         <solution>
+            <p>
+                
+            </p>
         </solution>
     </example>
 
     <example>
         <statement>
+            <p>
+                
+            </p>
         </statement>
         <solution>
+            <p>
+                
+            </p>
         </solution>
     </example>
 
     <example>
         <statement>
+            <p>
+                
+            </p>
         </statement>
         <solution>
         </solution>
-    </example> -->
+    </example> 
 
     <xi:include href="../lesson-plan-templates/assessment-intro.ptx" />
 
@@ -154,7 +293,7 @@
 
     <!-- Add static exercises -->
 
-    <!-- <exercises>
+    <exercises>
         <exercise>
             <statement>   
 
@@ -163,7 +302,7 @@
 
             </solution>             
         </exercise>        
-    </exercises> -->
+    </exercises>
 
     <!-- [LP] Add information on how to differentiate  -->
 
