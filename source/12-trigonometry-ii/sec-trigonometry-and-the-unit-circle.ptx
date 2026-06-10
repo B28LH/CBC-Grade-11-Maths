@@ -69,6 +69,7 @@
     </axiom>
 
     <activity xml:id="points-on-a-circle">
+        <title>(Ben)</title>
         <statement>
             <p>
                 In groups of 2-4, work through the following questions on graph paper.
@@ -157,6 +158,121 @@
                 </ol>
             </p>
         </statement>
+    <!-- Add Activity -->
+
+    <activity>
+        <title>Quadrant Classification Challenge (Monica)</title>
+        <introduction>
+            <p>
+                Work in small groups to practise identifying which quadrant an angle belongs to using a large circle drawn on the ground or on manilla paper.
+            </p>
+            <p>
+                The teacher or students prepare folded angle cards with secret values. Each card is folded in half so the angle value is hidden, and the students pick a card from a central pile and place it in the quadrant they think is correct.
+            </p>
+        </introduction>
+        <task>
+            <statement>
+                <p>
+                    Draw a large circle on the ground or on a sheet of manilla paper and divide it into four equal quadrants.
+                </p>
+            </statement>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Label the quadrants I, II, III and IV, and write the sign of cosine and sine for each quadrant.
+                </p>
+            </statement>
+        </task>
+            <task>
+                <statement>
+                    <p>
+                        Prepare a set of folded angle cards. Each card should show one angle on the inside, for example:
+                    </p>
+                    <p>
+                        <ul>
+                            <li>30°</li>
+                            <li>120°</li>
+                            <li>-45°</li>
+                            <li>210°</li>
+                            <li>315°</li>
+                            <li>-150°</li>
+                            <li>270°</li>
+                            <li>135°</li>
+                        </ul>
+                    </p>
+                </statement>
+            </task>
+                <task>
+                    <statement>
+                        <p>
+                            Place the folded cards in the centre of the circle so the angle values are hidden. Students take turns picking a card, unfolding it only after deciding, and then placing it in the quadrant they believe contains that angle.
+                        </p>
+                    </statement>
+                </task>
+                <task>
+                    <statement>
+                        <p>
+                            After all cards have been placed, open each card and check whether the classification is correct. If any card has been placed in the wrong quadrant, move it to the correct quadrant and discuss why.
+                        </p>
+                    </statement>
+                </task>
+                <task>
+                    <statement>
+                        <p>
+                            Complete the table below for each angle by recording the quadrant and the signs of cosine, sine and tangent in that quadrant.
+                        </p>
+                    </statement>
+                </task>
+                <p>
+                    <table>
+                    <title>Angle Quadrant Classification</title>
+                    <tabular halign="left" border="minor" left="medium" right="medium" top="medium" bottom="medium">
+                        <row header="yes" bottom="minor">
+                            <cell>Angle</cell>
+                            <cell>Quadrant</cell>
+                            <cell>Cosine sign</cell>
+                            <cell>Sine sign</cell>
+                            <cell>Tangent sign</cell>
+                        </row>
+                        <row>
+                            <cell>30°</cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
+                        <row>
+                            <cell>120°</cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
+                        <row>
+                            <cell>-45°</cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
+                        <row>
+                            <cell>210°</cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
+                        <row>
+                            <cell>315°</cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                            <cell></cell>
+                        </row>
+                    </tabular>
+                </table> 
+                </p>         
     </activity>
 
     <exploration>
@@ -229,6 +345,7 @@
                         <md><mrow>x^2 + y^2 = 1.</mrow></md>
                     </p>
                 </li>
+<<<<<<< HEAD
                 <li>
                     <p>
                         For an acute angle <m>\theta</m> measured from the positive <m>x</m>-axis, the point on the unit circle at angle <m>\theta</m> has coordinates
@@ -258,7 +375,7 @@
         </statement>
         <solution>
             <p>
-                Since <m>P</m> lies on the unit circle, its coordinates are <m>(\cos\theta, \sin\theta)</m>. Comparing with the given coordinates:
+            Since <m>P</m> lies on the unit circle, its coordinates are <m>(\cos\theta, \sin\theta)</m>. Comparing with the given coordinates:
                 <md>
                     <mrow>\cos\theta = \frac{1}{2}</mrow>
                     <mrow>\sin\theta = \frac{\sqrt{3}}{2}</mrow>
@@ -270,12 +387,157 @@
         </solution>
     </example>
 
+    <!-- Add insight / key takeaway directly related to activity / learner experience -->
+
+     <insight>
+        <title>Key Takeaway</title>
+        <p>
+            The unit circle is defined as a circle with a radius of <m>1</m> unit, with its center at the origin of a coordinate plane.
+        </p>
+        <p>
+            Any point <m>(x,y)</m> on the unit circle satisfies <m>x^2 + y^2 = 1</m>.
+        </p>
+        <p>
+            Because the radius is 1, the horizontal coordinate of the point is <m>\cos(\theta)=x</m> and the vertical coordinate is <m>\sin(\theta)=y</m>.
+        </p>
+           <p>
+             Angles are measured from the positive <m>x -</m> axis. It is also important to note that positive angles are measured in the counterclockwise(left-hand side) direction, 
+             while negative angles are measured in the clockwise(right-hand side) direction.
+          </p>
+          <p>
+            <hint>
+                <p>
+                    Kindly ensure that whenever you want to determine the quadrant in which an angle lies,begin from the positive <m>x -</m> axis and move(rotate) in the correct direction.
+                </p>
+            </hint>
+            A better illustration of this is shown in the image below:
+          </p>
+          <p>
+            <image source="path (no extension)">
+                <shortdescription></shortdescription>
+            </image>
+          </p>
+          <p>
+            For example, if we pick the first quadrant, we can form a right-angled triangle with the angle <m>\theta</m> at the origin, the adjacent side along the positive <m>x -</m> axis, and the opposite side along the positive <m>y -</m> axis. The hypotenuse of this triangle is 1 (the radius of the unit circle), as shown in the image below.
+          </p>
+            <p>
+                <image source="path (no extension)">
+                    <shortdescription></shortdescription>
+                </image>
+            </p>
+          <p>
+              With reference to the image above, the coordinates are determined as follows:
+              <ol>
+                  <li>
+                      <p>
+                          The adjacent side is the horizontal distance from the origin to the point on the circle, which is <m>x</m>. Since the hypotenuse is 1, we have <m>\cos(\theta)= \frac{x}{1}= x</m>.
+                      </p>
+                  </li>
+                  <li>
+                      <p>
+                          The opposite side is the vertical distance from the origin to the point on the circle, which is <m>y</m>. Since the hypotenuse is 1, we have <m>\sin(\theta)= \frac{y}{1}= y</m>.
+                      </p>
+                  </li>
+                    <li>
+                        <p>
+                            The tangent of the angle is the ratio of the opposite side to the adjacent side, which is <m>\tan(\theta)= \frac{y}{x}</m>.
+                        </p>
+                    </li>
+              </ol>
+          </p>
+          <p>
+            With respect to the Pythagorean identity,these ratios can be connected as follows:
+          </p>
+          <p>
+            <ol>
+                <li>
+                    <p>
+                        <m>\sin^2(\theta)+\cos^2(\theta)=1</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>1+\tan^2(\theta)=\sec^2(\theta)</m>
+                    </p>
+                </li>
+                    <li>
+                        <p>
+                            <m>1+\cot^2(\theta)=\csc^2(\theta)</m>
+                        </p>
+                    </li>
+            </ol>
+          </p>
+    </insight> 
+
+    <!-- Add further instruction (not in a block) to develop ideas as needed -->
+
+    <xi:include href="../lesson-plan-templates/example-intro.ptx" />
+
+    <!-- Add at least 3 examples -->
+
+    <example>
+        <statement>
+            <p>
+                 Identify the quadrant in which the folowing angles lie:
+            </p>
+            <p>
+                <ol>
+                    <li>
+                        <p>
+                            <m>-150°</m> 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>-60°</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>290°</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>330°</m>
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+        <solution>
+            <p>
+                 <ol>
+                    <li>
+                        <p>
+                            <m>-150°</m> lies in quadrant II
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>-60°</m> lies in quadrant IV
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>290°</m> lies in quadrant IV
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>330°</m> lies in quadrant IV
+                        </p>
+                    </li>
+                </ol>
+            </solution>
+    </example>
+
     <example>
         <title>Using the Pythagorean Identity</title>
         <statement>
             <p>
+
                 Suppose <m>\theta</m> is an acute angle with <m>\cos\theta = \dfrac{5}{13}</m>. Use the Pythagorean Identity to find <m>\sin\theta</m>.
-            </p>
         </statement>
         <solution>
             <p>
@@ -291,6 +553,54 @@
             <p>
                 Since <m>\theta</m> is acute, its sine is positive, so
                 <md><mrow>\sin\theta = \frac{12}{13}.</mrow></md>
+            </p>
+        </solution>
+    </example>
+
+    <example>
+        <title>Evaluating Trigonometric Expressions</title>
+        <statement>
+            <p> Use the unit circle to determine: 
+            </p>
+            <p>
+                <ol>
+                    <li>
+                        <p>
+                            <m>\sin(135°)+\cos(135°)</m> 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\cos(240°)-\sin(240°)</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\sin(300°)\div\cos(300°)</m>
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+        <solution>
+            <p>
+                <ol>
+                    <li>
+                        <p>
+                            <m>\sin(135°)+\cos(135°)= \frac{\sqrt{2}}{2} + \left(-\frac{\sqrt{2}}{2}\right)=0</m> 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\cos(240°)-\sin(240°)= \left(-\frac{1}{2}\right) - \left(-\frac{\sqrt{3}}{2}\right)= \frac{\sqrt{3}-1}{2}</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\sin(300°)\div\cos(300°)= \left(-\frac{\sqrt{3}}{2}\right) \div \left(\frac{1}{2}\right)= -\sqrt{3}</m>
+                        </p>
+                    </li>
+                </ol>
             </p>
         </solution>
     </example>
@@ -328,8 +638,78 @@
             </p>
         </solution>
     </example>
+    <example>
+        <statement>
+            <p>
+                Find all the angles between <m>0°</m> and <m>360°</m> that satisfy the equation <m>\tan(\theta)= -1</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                The angles that satisfy the equation <m>\tan(\theta)= -1</m> are <m>\theta=135°</m> and <m>\theta=315°</m>.
+            </p>
+        </solution>
+    </example>
 
+    <example>
+        <statement>
+              <p>
+                  The terminal side of an angle intersects the unit circle at the point <m>\left(-\frac{1}{2}, \frac{\sqrt{3}}{2}\right)</m>.
+              </p>
+                <p>
+                    Determine:
+                </p>
+                <p>
+                    <ol>
+                        <li>
+                            <p>
+                                <m>\sin(\theta)</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\cos(\theta)</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\tan(\theta)</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p> 
+        </statement>
+        <solution>
+            <p>
+               <ol>
+                   <li>
+                       <p>
+                           <m>\sin(\theta)= \frac{\sqrt{3}}{2}</m>
+                       </p>
+                   </li>
+                   <li>
+                       <p>
+                           <m>\cos(\theta)= -\frac{1}{2}</m>
+                       </p>
+                   </li>
+                   <li>
+                       <p>
+                           <m>\tan(\theta)= \frac{\sin(\theta)}{\cos(\theta)}= \frac{\frac{\sqrt{3}}{2}}{-\frac{1}{2}}= -\sqrt{3}</m>
+                       </p>
+                   </li>
+                </ol> 
+            </p>
+        </solution>
+    </example>
     <xi:include href="../lesson-plan-templates/assessment-intro.ptx" />
+
+        <!-- If STACK questions are included, uncomment this: -->
+
+        <!-- <xi:include href="../lesson-plan-templates/checkpoint.ptx" /> -->
+
+        <!-- Add STACK exercises if made -->
+
+        <!-- Add static exercises -->
 
     <exercises>
         <exercise xml:id="unit-circle-points">
@@ -443,7 +823,94 @@
                 </p>
             </answer>
         </exercise>
+        <exercise>
+            <statement>   
+             <p>
+                Determine the coordinates of the point on the unit circle corresponding to an angle of <m>210°</m>.
+             </p>
+            </statement>   
+            <solution>
+                <p>
+                    The coordinates of the point on the unit circle corresponding to an angle of <m>210°</m> are <m>\left(-\frac{\sqrt{3}}{2}, -\frac{1}{2}\right)</m>.
+                </p>
+            </solution>             
+        </exercise>
+        <exercise>
+            <statement>   
+             <p>
+                Determine the quadrant in which an angle of <m>-20°</m> lies.
+             </p>
+            </statement>   
+            <solution>
+                <p>
+                    An angle of <m>-20°</m> lies in quadrant IV.
+                </p>
+                </solution>
+        </exercise>
+        <exercise>
+            <statement>   
+             <p>
+                Determine the value of <m>\tan(150°)</m> using the unit circle.
+             </p>
+            </statement>   
+            <solution>
+                   <p>
+                      The value of <m>\tan(150°)</m> is <m>\tan(150°)= \frac{\sin(150°)}{\cos(150°)}= \frac{\frac{1}{2}}{-\frac{\sqrt{3}}{2}}= -\frac{1}{\sqrt{3}}</m>.
+                   </p>
+          </solution>
+        </exercise> 
+        <exercise>
+            <statement>
+                <p>
+                    Determine the angles between <m>0°</m> and <m>360°</m> that satisfy the equation <m>\cos(\theta)= -\frac{1}{2}</m>.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The angles between <m>0°</m> and <m>360°</m> that satisfy the equation <m>\cos(\theta)= -\frac{1}{2}</m> are <m>\theta= 120°</m> and <m>\theta= 240°</m>.
+                </p>
+            </solution>
+        </exercise>       
     </exercises>
+
+    <!-- [LP] Add information on how to differentiate  -->
+
+    <!-- <axiom component="lesson-plan">
+        <title>Differentiation</title>
+
+        <table>
+            <title>Differentiation</title>
+            <tabular halign="left">
+                <row header="yes" bottom="minor">
+                    <cell>Learner Group</cell>
+                    <cell>Strategy &amp; Learning Experience</cell>
+                    <cell></cell>
+                </row>
+                <row>
+                    <cell>Struggling Learners (Support)</cell>
+                    <cell>
+                        XXXX
+                    </cell>
+                    <cell></cell>
+                </row>
+                <row>
+                    <cell>On-Level Learners (Core)</cell>
+                    <cell>
+                        <line>The core lesson activities as described above.</line>
+                    </cell>
+                    <cell></cell>
+                </row>
+                <row>
+                    <cell>Advanced Learners (Challenge)</cell>
+                    <cell>
+                        XXXX
+                    </cell>
+                    <cell></cell>
+                </row>
+            </tabular>
+        </table>
+    </axiom> -->
+>>>>>>> trig
 
     <xi:include href="../lesson-plan-templates/assessment-methods.ptx" />
 
