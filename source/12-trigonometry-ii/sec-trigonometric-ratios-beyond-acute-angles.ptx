@@ -93,9 +93,6 @@
         <p>
             Understanding quadrant signs helps learners determine trigonometric ratios for obtuse and reflex angles without memorising each value separately.
         </p>
-        <p>
-            
-        </p>
     </insight>
 
     <xi:include href="../lesson-plan-templates/example-intro.ptx" />
@@ -118,7 +115,7 @@
                         <p>
                             Therefore the sine of <m>120^\circ</m> is positive, and can be calculated as:
                             <md>
-                                
+                                <m>\sin 120^\circ = \sin(180^\circ - 60^\circ) = \sin 60^\circ = \frac{\sqrt{3}}{2}</m>
                             </md>
                         </p>
                     </li>
@@ -130,12 +127,22 @@
     <example>
         <statement>
             <p>
-                
-            </p>
+                A radar antenna rotates through <m>225^\circ</m> from its starting position. Determine the exact values of <m>\sin 225^\circ</m> and <m>\cos 225^\circ</m>.
+         </p>
         </statement>
         <solution>
             <p>
-                
+                Since <m>225^\circ</m> is in the third quadrant, both sine and cosine are negative.
+            </p>
+            <p>
+                <md>
+                    <m>\sin 225^\circ = -\frac{\sqrt{2}}{2}</m>
+                </md>
+            </p>
+            <p>
+                <md>
+                    <m>\cos 225^\circ = -\frac{\sqrt{2}}{2}</m>
+                </md>
             </p>
         </solution>
     </example>
@@ -143,13 +150,52 @@
     <example>
         <statement>
             <p>
-                
+                A point on the unit circle corresponds to an angle of <m>300^\circ</m>. 
+            </p>
+            <p>
+                Find:
+                <ul>
+                    <li>
+                        <p>
+                            The coordinates of the point on the unit circle corresponding to an angle of <m>300^\circ</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The sine, cosine, and tangent of <m>300^\circ</m>.
+                        </p>
+                    </li>
+                </ul>
             </p>
         </statement>
         <solution>
             <p>
-                
+            <ul>
+                <li>
+                    <p>
+                        The coordinates of the point on the unit circle corresponding to an angle of <m>300^\circ</m> are <m>\left(\frac{1}{2}, -\frac{\sqrt{3}}{2}\right)</m>.
+                    </p>
+                    
+                </li>
+                <li>
+                     <p> 
+                        Therefore, we can determine the sine, cosine, and tangent as follows:
+                            <m>\sin 300^\circ = -\frac{\sqrt{3}}{2}</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\cos 300^\circ = \frac{1}{2}</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\tan 300^\circ = \frac{\sin 300^\circ}{\cos 300^\circ} = -\sqrt{3}</m>
+                        </p>
+                    </li>
+                </ul>
             </p>
+
         </solution>
     </example> 
 
@@ -166,12 +212,181 @@
     <exercises>
         <exercise>
             <statement>   
-
+                <p>
+                    Determine the sine, cosine, and tangent of <m>150^\circ</m>.
+                </p>
+                <p>
+                    <ol>
+                        <li>
+                            <p>
+                                sine
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                               cosine 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                               tangent 
+                            </p>
+                        </li>
+                    </ol>
+                </p>
             </statement>   
             <solution>
-
-            </solution>             
-        </exercise>        
+              <p>
+                <ol>
+                    <li>
+                        <p>
+                            The sine of <m>150^\circ</m> is <m>\frac{1}{2}</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The cosine of <m>150^\circ</m> is <m>-\frac{\sqrt{3}}{2}</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The tangent of <m>150^\circ</m> is <m>-\frac{1}{\sqrt{3}}</m>.
+                        </p>
+                    </li>
+                </ol>
+              </p>
+            </solution>                   
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    A point on the unit circle corresponds to an angle of <m>210^\circ</m>. 
+                </p>
+                <p>
+                    Find:
+                    <ul>
+                        <li>
+                            <p>
+                                The coordinates of the point on the unit circle corresponding to an angle of <m>210^\circ</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The sine, cosine, and tangent of <m>210^\circ</m>.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The coordinates of the point on the unit circle corresponding to an angle of <m>210^\circ</m> are <m>\left(-\frac{\sqrt{3}}{2}, -\frac{1}{2}\right)</m>.
+                </p>
+                <p> 
+                    Therefore, we can determine the sine, cosine, and tangent as follows:
+                    <ul>
+                        <li>
+                            <p>
+                                The sine of <m>210^\circ</m> is <m>-\frac{1}{2}</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The cosine of <m>210^\circ</m> is <m>-\frac{\sqrt{3}}{2}</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The tangent of <m>210^\circ</m> is <m>\frac{\sin 210^\circ}{\cos 210^\circ} = \frac{1}{\sqrt{3}}</m>.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </solution>
+        </exercise>
+        <exercise>
+            <statement>
+                <p>
+                    If <m>\theta = 330^\circ</m>, and <m>\sin \theta = -\frac{1}{2}</m>, determine:
+                <p>
+                    <ol>
+                        <li>
+                            <p>
+                                cosine of <m>\theta</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                tangent of <m>\theta</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>   
+            <solution>
+              <p>
+                <ol>
+                    <li>
+                        <p>
+                            The sine of <m>330^\circ</m> is <m>-\frac{1}{2}</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The cosine of <m>330^\circ</m> is <m>\frac{\sqrt{3}}{2}</m>.
+                        </p>
+                    </li>
+                </ol>
+              </p>
+            </solution>
+        </exercise> 
+        <exercise>
+            <statement>
+                <p>
+                    A point on the unit circle corresponds to an angle of <m>140^\circ</m>. 
+                </p>
+                <p>
+                    Find:
+                    <ul>
+                        <li>
+                            <p>
+                                The coordinates of the point on the unit circle corresponding to an angle of <m>140^\circ</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The sine, cosine, and tangent of <m>140^\circ</m>.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </statement>   
+            <solution>
+              <p>
+                The coordinates of the point on the unit circle corresponding to an angle of <m>140^\circ</m> are <m>\left(-\frac{\sqrt{3}}{2}, \frac{1}{2}\right)</m>.
+              </p>
+              <p> 
+                    Therefore, we can determine the sine, cosine, and tangent as follows:
+                    <ul>
+                        <li>
+                            <p>
+                                The sine of <m>140^\circ</m> is <m>\frac{1}{2}</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The cosine of <m>140^\circ</m> is <m>-\frac{\sqrt{3}}{2}</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The tangent of <m>140^\circ</m> is <m>\frac{\sin 140^\circ}{\cos 140^\circ} = -\frac{1}{\sqrt{3}}</m>.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </solution>
+        </exercise>       
     </exercises> 
 
     <!-- [LP] Add information on how to differentiate  -->
