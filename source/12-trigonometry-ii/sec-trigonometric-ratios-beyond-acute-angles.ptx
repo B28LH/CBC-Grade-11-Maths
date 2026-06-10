@@ -42,7 +42,7 @@
     </objectives>
 
     <axiom component="lesson-plan">
-        <title>Problem-Solving and Discovery (Monica)</title>
+        <title>Problem-Solving and Discovery (Ben)</title>
         <dl>
             <li>
                 <title>Suggested Time</title>
@@ -175,7 +175,7 @@
          with colour-coding to show when each is positive or negative. -->
 
     <axiom component="lesson-plan">
-        <title>Structured Instruction (Ben)</title>
+        <title>Structured Instruction (Monica)</title>
         <dl>
             <li>
                 <title>Suggested Time</title>
@@ -360,6 +360,8 @@
                     </p>
                 </li>
             </ul>
+        </p>
+    </insight>
     <!-- [LP] Add guidance on activity -->
 
     <activity>
@@ -535,7 +537,7 @@
                             The sine, cosine, and tangent of <m>300^\circ</m>.
                         </p>
                     </li>
-                </ul>
+                </ol>
             </p>
         </statement>
         <solution>
@@ -835,8 +837,6 @@
                 </p>
             </answer>
         </exercise>
-
-<<<<<<< HEAD
         <exercise xml:id="q3-all-ratios">
             <title>A Point in the Third Quadrant</title>
             <statement>

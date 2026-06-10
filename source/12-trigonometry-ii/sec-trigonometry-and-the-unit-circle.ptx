@@ -158,8 +158,8 @@
                 </ol>
             </p>
         </statement>
-    <!-- Add Activity -->
-
+    </activity>
+    
     <activity>
         <title>Quadrant Classification Challenge (Monica)</title>
         <introduction>
@@ -345,7 +345,6 @@
                         <md><mrow>x^2 + y^2 = 1.</mrow></md>
                     </p>
                 </li>
-<<<<<<< HEAD
                 <li>
                     <p>
                         For an acute angle <m>\theta</m> measured from the positive <m>x</m>-axis, the point on the unit circle at angle <m>\theta</m> has coordinates
@@ -529,7 +528,8 @@
                         </p>
                     </li>
                 </ol>
-            </solution>
+            </p>
+        </solution>
     </example>
 
     <example>
@@ -538,6 +538,7 @@
             <p>
 
                 Suppose <m>\theta</m> is an acute angle with <m>\cos\theta = \dfrac{5}{13}</m>. Use the Pythagorean Identity to find <m>\sin\theta</m>.
+            </p>
         </statement>
         <solution>
             <p>
@@ -910,7 +911,6 @@
             </tabular>
         </table>
     </axiom> -->
->>>>>>> trig
 
     <xi:include href="../lesson-plan-templates/assessment-methods.ptx" />
 
