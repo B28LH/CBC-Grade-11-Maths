@@ -19,7 +19,7 @@
                     </p>
                 </li>
                 <li>
-                    <title>Specific Learning Outcomes</title> 
+                    <title>Specific Learning Outcomes</title>
                     <p>
                         Determine trigonometric ratios of angles greater than 90 degrees in different situations
                     </p>
@@ -43,100 +43,115 @@
 
     <!-- [LP] Add guidance on activity -->
 
-    <!-- <axiom component="lesson-plan">
-            <title>Problem-Solving and Discovery</title>
-            <dl>
-                <li>
-                    <title>Suggested Time</title>
-                    <p>
-                        XX minutes
-                    </p>
-                </li>
-                <li>
-                    <title>Objective</title>
-                    <p>
-                        XXX
-                    </p>
-                </li>
-                <li>
-                    <title>Teacher's Role</title>
-                    <p>
-                        XXX
-                    </p>
-                </li>
-            </dl>
-        </axiom> -->
+    <activity>
+        <title>Magic Unit Circle</title>
+        <introduction>
+            <p>
+                Work in groups to explore how trigonometric ratios change for angles greater than 90 degrees using a unit circle.
+            </p>
+            <p>
+                Each group will create a unit circle on manila paper, label quadrants, and place angle values in the correct region. Then compare the signs and values of sine, cosine and tangent as the angle moves through each quadrant.
+            </p>
+        </introduction>
+        <task>
+            <statement>
+                <p>
+                    Draw a unit circle on manila paper and mark the four quadrants clearly with different colours.
+                </p>
+            </statement>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Write different angle measures on sticky notes, including acute, obtuse, and reflex angles.
+                </p>
+            </statement>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Place each sticky note on the quadrant where the angle ends on the unit circle. Be ready to explain your choice.
+                </p>
+            </statement>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Discuss how the signs of sin, cos and tan change in each quadrant, and how the unit circle helps determine those signs for angles beyond 90 degrees.
+                </p>
+            </statement>
+        </task>
+    </activity>
 
-    <!-- Add Activity -->
+    <!-- [LP] Add guidance on structured lesson plan -->
 
-    <!-- <activity>
-        <statement>
-        </statement>
-    </activity> -->
-
-    <!-- [LP] Add guidance on structured lesson plan-->
-
-    <!-- <axiom component="lesson-plan">
-        <title>Structured Instruction</title>
+    <insight>
+        <title>Key Takeaway</title>
         <p>
-            <dl>
-            <li>
-                <title>Suggested Time</title>
-                <p>
-                    XX minutes
-                </p>
-            </li>
-            <li>
-                <title>Objective</title>
-                <p>
-                    To formalize the concepts and properties learners discovered in the anchor task.
-                </p>
-            </li>
-            </dl>
+            The unit circle shows that sine and cosine for angles beyond 90 degrees depend on the quadrant, while tangent depends on both sine and cosine signs.
         </p>
-        <paragraphs>
-            <title>Key Takeaways &amp; Teacher Connection</title>
-            <ol>
-                <li>
-                    <p>
-                        <alert>Connecting to Learner Work:</alert> XXXX
-                    </p>
-                </li>
-            </ol>
-        </paragraphs>
-    </axiom> -->
-
-    <!-- Add insight / key takeaway directly related to activity / learner experience -->
-
-    <!-- <insight>
-    </insight> -->
-
-    <!-- Add further instruction (not in a block) to develop ideas as needed -->
+        <p>
+            Understanding quadrant signs helps learners determine trigonometric ratios for obtuse and reflex angles without memorising each value separately.
+        </p>
+        <p>
+            
+        </p>
+    </insight>
 
     <xi:include href="../lesson-plan-templates/example-intro.ptx" />
 
     <!-- Add at least 3 examples -->
 
-    <!-- <example>
+    <example>
         <statement>
+            <p>
+                Find the sine, cosine, and tangent of <m>120^\circ</m>.
+            </p>
         </statement>
         <solution>
+            <p> 
+               Since <m>120^\circ</m> is between <m>90^\circ</m> and <m>180^\circ</m>, it lies in the second quadrant. 
+            </p>
+            <p>
+                <ul>
+                    <li>
+                        <p>
+                            Therefore the sine of <m>120^\circ</m> is positive, and can be calculated as:
+                            <md>
+                                
+                            </md>
+                        </p>
+                    </li>
+                </ul>
+            </p>
         </solution>
     </example>
 
     <example>
         <statement>
+            <p>
+                
+            </p>
         </statement>
         <solution>
+            <p>
+                
+            </p>
         </solution>
     </example>
 
     <example>
         <statement>
+            <p>
+                
+            </p>
         </statement>
         <solution>
+            <p>
+                
+            </p>
         </solution>
-    </example> -->
+    </example> 
 
     <xi:include href="../lesson-plan-templates/assessment-intro.ptx" />
 
@@ -148,7 +163,7 @@
 
     <!-- Add static exercises -->
 
-    <!-- <exercises>
+    <exercises>
         <exercise>
             <statement>   
 
@@ -157,7 +172,7 @@
 
             </solution>             
         </exercise>        
-    </exercises> -->
+    </exercises> 
 
     <!-- [LP] Add information on how to differentiate  -->
 
@@ -199,5 +214,5 @@
 
     <xi:include href="../lesson-plan-templates/assessment-methods.ptx" />
 
-    <xi:include href="../lesson-plan-templates/reflection.ptx"/>
+    <xi:include href="../lesson-plan-templates/reflection.ptx" />
 </section>
