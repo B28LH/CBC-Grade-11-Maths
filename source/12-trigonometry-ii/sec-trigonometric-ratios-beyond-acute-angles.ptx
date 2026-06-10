@@ -154,7 +154,7 @@
             </p>
             <p>
                 Find:
-                <ul>
+                <ol>
                     <li>
                         <p>
                             The coordinates of the point on the unit circle corresponding to an angle of <m>300^\circ</m>.
@@ -170,7 +170,7 @@
         </statement>
         <solution>
             <p>
-            <ul>
+            <ol>
                 <li>
                     <p>
                         The coordinates of the point on the unit circle corresponding to an angle of <m>300^\circ</m> are <m>\left(\frac{1}{2}, -\frac{\sqrt{3}}{2}\right)</m>.
@@ -193,9 +193,8 @@
                             <m>\tan 300^\circ = \frac{\sin 300^\circ}{\cos 300^\circ} = -\sqrt{3}</m>
                         </p>
                     </li>
-                </ul>
+                </ol>
             </p>
-
         </solution>
     </example> 
 
@@ -213,7 +212,7 @@
         <exercise>
             <statement>   
                 <p>
-                    Determine the sine, cosine, and tangent of <m>150^\circ</m>.
+                    Given an angle of <m>150^\circ</m>, determine:
                 </p>
                 <p>
                     <ol>
@@ -264,7 +263,7 @@
                 </p>
                 <p>
                     Find:
-                    <ul>
+                    <ol>
                         <li>
                             <p>
                                 The coordinates of the point on the unit circle corresponding to an angle of <m>210^\circ</m>.
@@ -272,10 +271,20 @@
                         </li>
                         <li>
                             <p>
-                                The sine, cosine, and tangent of <m>210^\circ</m>.
+                                The sine.
                             </p>
                         </li>
-                    </ul>
+                        <li>
+                            <p>
+                                The cosine.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The tangent.
+                            </p>
+                        </li>
+                    </ol>
                 </p>
             </statement>
             <solution>
@@ -284,7 +293,7 @@
                 </p>
                 <p> 
                     Therefore, we can determine the sine, cosine, and tangent as follows:
-                    <ul>
+                    <ol>
                         <li>
                             <p>
                                 The sine of <m>210^\circ</m> is <m>-\frac{1}{2}</m>.
@@ -300,7 +309,7 @@
                                 The tangent of <m>210^\circ</m> is <m>\frac{\sin 210^\circ}{\cos 210^\circ} = \frac{1}{\sqrt{3}}</m>.
                             </p>
                         </li>
-                    </ul>
+                    </ol>
                 </p>
             </solution>
         </exercise>
